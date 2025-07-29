@@ -1238,6 +1238,19 @@ div.badge {
   background-color: #f8f9fa;
 }
 
+.roster-table thead tr {
+  border-top: 1px solid #13131320;
+}
+
+.roster-table thead tr th {
+  border-right: 1px solid #13131320;
+  border-bottom: 1px solid #13131320;
+}
+
+.roster-table thead tr th:last-child {
+  border-right: none;
+}
+
 .roster-popover {
   max-width: 300px !important;
   width: 100%;

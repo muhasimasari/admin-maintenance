@@ -241,20 +241,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ===================== 7. Close all popovers on outside click =====================
   document.addEventListener('click', function (event) {
-    // Cek apakah klik di dalam popover
     const popovers = document.querySelectorAll('.popover');
     const isClickInsideAnyPopover = Array.from(popovers).some(pop => pop.contains(event.target));
 
-    // Cek apakah klik di dalam elemen trigger (MC popover / add task)
     const isClickOnTrigger = event.target.closest('.popover-trigger, .popover-add-task');
 
     if (!isClickInsideAnyPopover && !isClickOnTrigger) {
-      // Tutup semua popover aktif
       const allTriggers = document.querySelectorAll('.popover-trigger, .popover-add-task, [data-bs-toggle="popover"]');
       allTriggers.forEach(el => {
         const instance = bootstrap.Popover.getInstance(el);
         if (instance) instance.hide();
       });
     }
+  });
+
+  // ===================== 8. Collapse Add Vendors =====================
+  const collapseEl = document.getElementById('vendorCollapse');
+  const iconEl = document.getElementById('vendorIcon');
+
+  collapseEl.addEventListener('show.bs.collapse', () => {
+    iconEl.classList.remove('mdi-plus');
+    iconEl.classList.add('mdi-minus');
+  });
+
+  collapseEl.addEventListener('hide.bs.collapse', () => {
+    iconEl.classList.remove('mdi-minus');
+    iconEl.classList.add('mdi-plus');
   });
 });
