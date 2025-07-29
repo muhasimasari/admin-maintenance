@@ -1028,6 +1028,10 @@ div.badge {
   background-color: var(--decline-color) !important;
 }
 
+.status-pending {
+  background-color: var(--secondary-color) !important;
+}
+
 .text-black-custom {
   color: var(--text-color) !important;
 }
@@ -1088,6 +1092,7 @@ div.badge {
 
 .custom-bg-danger {
   background-color: var(--decline-color) !important;
+  color: #FFF;
 }
 
 .custom-bg-info {
@@ -1176,7 +1181,7 @@ div.badge {
 }
 
 .selected-row {
-  background-color: #3c57a110!important;
+  background-color: #3c57a110 !important;
 }
 
 .resource-tags {
@@ -1205,7 +1210,7 @@ div.badge {
   gap: 4px;
   padding: 6px 12px;
   border-radius: 9999px;
-  background-color: #FFF;
+  background-color: #fff;
   color: #333;
   position: relative;
   transition: 0.1s;
@@ -1256,6 +1261,121 @@ div.badge {
   width: 100%;
 }
 
-.popover-trigger, .popover-add-task {
+.popover-trigger,
+.popover-add-task {
   cursor: pointer;
+}
+
+.form-check-success .form-check-input:checked {
+  background-color: var(--approve-color) !important;
+  border-color: var(--approve-color) !important;
+}
+
+.form-check-primary .form-check-input:checked {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.form-check-secondary .form-check-input:checked {
+  background-color: var(--secondary-color) !important;
+  border-color: var(--secondary-color) !important;
+}
+
+.form-check-warning .form-check-input:checked {
+  background-color: var(--waiting-approval-color) !important;
+  border-color: var(--waiting-approval-color) !important;
+}
+
+.form-check-danger .form-check-input:checked {
+  background-color: var(--decline-color) !important;
+  border-color: var(--decline-color) !important;
+}
+
+.completed-status {
+  background-color: var(--approve-color);
+}
+
+.in-progress-status {
+  background-color: var(--waiting-approval-color);
+}
+
+.failed-status {
+  background-color: var(--decline-color);
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-link.active:hover,
+.nav-tabs .nav-link.active:focus {
+  font-weight: 600;
+}
+
+.btn-outline-secondary {
+  color: var(--secondary-color) !important;
+  border-color: var(--secondary-color) !important;
+  background: rgba(0, 0, 0, 0);
+}
+
+.choose-radio-button .radio-button-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background-color: #fff;
+  color: #6c757d;
+  font-weight: 600;
+  min-width: 120px;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.choose-radio-button .radio-button-label svg {
+  margin-right: 0.5rem;
+  color: #6c757d; 
+}
+
+.choose-radio-button .radio-button-input {
+  display: none;
+}
+
+.choose-radio-button .radio-button-input:checked + .radio-button-label {
+  border-color: #0d6efd;
+  background-color: #e7f1ff;
+  color: #0d6efd;
+}
+
+.choose-radio-button .radio-button-input:checked + .radio-button-label svg {
+  color: #0d6efd;
+}
+
+.choose-radio-button #failRadio + .radio-button-label:hover {
+  border-color: var(--decline-color);
+  background-color: var(--decline-color);
+  color: #FFF;
+}
+
+.choose-radio-button #passRadio + .radio-button-label:hover {
+  border-color: var(--approve-color);
+  background-color: var(--approve-color);
+  color: #FFF;
+}
+
+#failRadio:checked + .radio-button-label {
+  border-color: #dc3545;
+  background-color: #f8d7da;
+  color: #dc3545;
+}
+#failRadio:checked + .radio-button-label svg {
+  color: #dc3545;
+}
+
+#passRadio:checked + .radio-button-label {
+  border-color: #198754;
+  background-color: #d1e7dd;
+  color: #198754;
+}
+#passRadio:checked + .radio-button-label svg {
+  color: #198754;
 }
