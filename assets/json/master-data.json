@@ -1,0 +1,43 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Budiman",
+      "department": "Finance",
+      "company_name": "Company A",
+      "branch_name": "Branch A",
+      "group_company": "Group A",
+      "division": "Division A",
+      "position": "Director",
+      "description_pos": "-",
+      "description": "-",
+      "status": "active"
+    },
+    {
+      "id": 2,
+      "name": "Andy Setyawan",
+      "department": "HR",
+      "group_company": "Group B",
+      "company_name": "Company B",
+      "branch_name": "Branch B",
+      "division": "Division B",
+      "position": "Staff",
+      "description_pos": "-",
+      "description": "Human Resource",
+      "status": "active"
+    },
+    {
+      "id": 3,
+      "name": "Delilah Santoso",
+      "department": "Marketing",
+      "group_company": "Group C",
+      "branch_name": "Branch C",
+      "company_name": "Company C",
+      "division": "Division C",
+      "position": "Head",
+      "description_pos": "-",
+      "description": "Sales & Marketing",
+      "status": "Inactive"
+    }
+  ]
+}

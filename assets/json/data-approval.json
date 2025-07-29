@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "step": "Layer 1",
+      "approve_by": "Budiman",
+      "approve_date": "01-Nov-24 11:20",
+      "comments": "-",
+      "status": "Approved"
+    },
+    {
+      "id": 2,
+      "step": "Layer 2",
+      "approve_by": "Antoni Setyawan",
+      "approve_date": "01-Nov-24 11:20",
+      "comments": "-",
+      "status": "Approved"
+    },
+    {
+      "id": 3,
+      "step": "Layer 2",
+      "approve_by": "Delilah Santoso",
+      "approve_date": "01-Nov-24 11:20",
+      "comments": "-",
+      "status": "Approved"
+    },
+    {
+      "id": 4,
+      "step": "Layer 3",
+      "approve_by": "Ihsan Dwi Santoso",
+      "approve_date": "01-Nov-24 11:20",
+      "comments": "-",
+      "status": "Waiting Approval"
+    }
+  ]
+}

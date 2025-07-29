@@ -1,0 +1,60 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "form_name": "Pengajuan Cuti",
+      "req_code": "CA-0020384",
+      "aging_day": 1,
+      "status": "Approved",
+      "request_date": "01-Nov-24 11:20",
+      "deadline": 1,
+      "department": "Human Resources",
+      "description": "Used for requesting leave or time off.",
+      "color": "#1A895A",
+      "color_desc": "Green",
+      "req_by": "John Doe"
+    },
+    {
+      "id": 2,
+      "form_name": "Pengajuan Lembur",
+      "req_code": "OT-0039483",
+      "aging_day": 3,
+      "status": "Waiting Approval",
+      "request_date": "02-Nov-24 09:15",
+      "deadline": 2,
+      "department": "Operations",
+      "description": "Used for overtime requests.",
+      "color": "#F2C94C",
+      "color_desc": "Yellow",
+      "req_by": "Jane Smith"
+    },
+    {
+      "id": 3,
+      "form_name": "Reimbursement Biaya",
+      "req_code": "RB-0054821",
+      "aging_day": 5,
+      "status": "Decline",
+      "request_date": "31-Oct-24 14:30",
+      "deadline": 4,
+      "department": "Finance",
+      "description": "Used for reimbursement claims.",
+      "color": "#EB5757",
+      "color_desc": "Red",
+      "req_by": "Robert Brown"
+    },
+    {
+      "id": 4,
+      "form_name": "Pengajuan Training",
+      "req_code": "TR-0062178",
+      "aging_day": 2,
+      "status": "Approved",
+      "request_date": "03-Nov-24 10:00",
+      "deadline": 1,
+      "department": "Learning and Development",
+      "description": "Used for training program applications.",
+      "color": "#56CCF2",
+      "color_desc": "Blue",
+      "req_by": "Emily Davis"
+    }
+  ]
+}
