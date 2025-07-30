@@ -307,12 +307,15 @@
               <div class="card mb-4">
                 <div class="card-body">
                   <div class="row justify-content-between align-items-center">
-                    <h5 class="col mb-0">General Information</h5>
-                    <div class="col-md-6 text-end">
+                    <h5 class="col-md-6 mb-0">General Information</h5>
+                    <div class="col-md-6 text-end d-none d-md-block">
                       <span class="px-4 py-2 custom-bg-warning rounded-1 text-white text-uppercase">In Progress</span>
                     </div>
                   </div>
                   <div class="row g-4 my-2">
+                    <div class="col-12 d-block d-md-none">
+                      <span class="px-4 py-2 custom-bg-warning rounded-1 text-white text-uppercase">In Progress</span>
+                    </div>
                     <div class="col-md-4">
                       <div class="card shadow-none">
                         <div class="card-body p-0">
@@ -418,7 +421,7 @@
                       <div id="requiredPartsCollapse" class="accordion-collapse collapse show" data-bs-parent="#accordionMain">
                         <div class="accordion-body p-0 mt-3">
                           <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-6 mb-3 mb-md-0">
                               <div class="accordion" id="accordion1">
                                 <div class="accordion-item border-0">
                                   <h2 class="accordion-header accordion-header-custom">
@@ -471,7 +474,7 @@
                                         <table class="table align-middle table-border">
                                           <thead>
                                             <tr>
-                                              <th>Part Name</th>
+                                              <th style="min-width: 160px;">Part Name</th>
                                               <th>Needed / Available</th>
                                               <th>Location</th>
                                             </tr>
@@ -516,7 +519,7 @@
                   <div class="row justify-content-between align-items-center mb-4">
                     <div class="col-md-12">
                       <div class="row align-items-center">
-                        <div class="col-md-4">
+                        <div class="col-md-4 mb-3 mb-md-0">
                           <select id="colorFilter" class="form-select select2" style="width: 100%;">
                             <option value="">All Status</option>
                             <option value="">Done</option>
@@ -534,7 +537,7 @@
                     </div>
                   </div>
                   <div class="col">
-                    <div class="d-md-flex d-block g-3 gap-2 align-items-center justify-content-end">
+                    <div class="d-md-flex d-block g-3 gap-2 align-items-center justify-content-end mb-3">
                       <label class="w-100 custom-search-input position-relative">
                         <i class="mdi mdi-24px mdi-magnify position-absolute" style="left: 10px; top: 50%; transform: translateY(-50%); color: #999;"></i>
                         <input

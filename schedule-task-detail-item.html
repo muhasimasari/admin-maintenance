@@ -299,7 +299,7 @@
                   </li>
                   <li class="breadcrumb-item">
                     <a href="./schedule-task-detail.html"
-                      >WO-2025-05-08-0071 - Engine Oil</a
+                      >...</a
                     >
                   </li>
                   <li class="breadcrumb-item">
@@ -359,74 +359,111 @@
                   id="navs-inspections"
                   role="tabpanel"
                 >
+                  <!-- 1 -->
                   <div class="card mb-3">
                     <div class="card-body">
                       <div class="row align-items-center" role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0002" aria-expanded="false" aria-controls="detailINSP-0002">
-                        <div class="col-md-9">
-                          <div class="d-flex gap-2 align-items-center mb-1">
-                            <span>INSP-0002</span>
-                            <span>(0/1)</span>
+                        <div class="col-md-6 mb-3 mb-md-0">
+                          <div class="d-flex gap-2 align-items-center justify-content-between justify-content-md-start mb-1">
+                            <div class="flex gap-2">
+                              <span>INSP-0001</span>
+                              <span>(0/1)</span>
+                            </div>
                             <span class="custom-bg-secondary text-uppercase px-2 py-1 rounded-1">Pending</span>
                           </div>
                           <div class="fs-6">Check Oil Volume</div>
                         </div>
-                        <div class="col-md-3 text-end">
-                          <button class="btn btn-outline-secondary">
-                            <i class="mdi mdi-information-variant"></i> ESCALATE
-                          </button>
-                          <i class="mdi mdi-36px mdi-chevron-down text-dark"></i>
+                        <div class="col-md-6">
+                          <div class="d-flex gap-1 justify-content-md-end">
+                            <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#escalateNotStartedModal">
+                              <i class="mdi mdi-information-variant"></i> ESCALATE
+                            </button>
+                            <i class="mdi mdi-36px mdi-chevron-down text-dark d-none d-md-block"></i>
+                          </div>
                         </div>
+                        <i class="mdi mdi-36px mdi-chevron-down text-dark d-block d-md-none text-center mt-1"></i>
                       </div>
 
                       <div class="collapse mt-2" id="detailINSP-0002">
                         <div class="mt-2">
                           <hr>
+                          <!-- Insp 1 -->
                           <div class="d-flex gap-2 mt-3">
                             <span>01</span>
                             <div class="border px-3 py-3 rounded-2 w-100">
                               <div class="row align-items-center justify-content-between">
                                 <div class="col-md-8">
-                                  <div class="d-flex flex-column">
+                                  <div class="d-flex flex-column mb-3 mb-md-0">
                                     <span>Read oil dipstick</span>
-                                    <span>Memeriksa kondisi volume oli setelah pergantian oli</span>
+                                    <span class="text-muted">Memeriksa kondisi volume oli setelah pergantian oli</span>
                                   </div>
                                 </div>
                                 <div class="col-md-4">
                                   <div class="radio-group choose-radio-button justify-content-end">
-                                    <input type="radio" id="failRadio" name="inspectionResult" class="radio-button-input" value="fail">
-                                    <label for="failRadio" class="radio-button-label">
+                                    <input type="radio" id="tireFail" name="inspectionResult-1" class="radio-button-input radio-fail" value="fail">
+                                    <label for="tireFail" class="radio-button-label">
                                       <i class="mdi mdi-close me-1"></i>
                                       FAIL
                                     </label>
 
-                                    <input type="radio" id="passRadio" name="inspectionResult" class="radio-button-input" value="pass">
-                                    <label for="passRadio" class="radio-button-label">
+                                    <input type="radio" id="tirePass" name="inspectionResult-1" class="radio-button-input radio-pass" value="pass">
+                                    <label for="tirePass" class="radio-button-label">
                                       <i class="mdi mdi-check me-1"></i>
                                       PASS
                                     </label>
                                   </div>
                                 </div>
                               </div>
+                              <div id="failDetails-1" class="collapse mt-3">
+                                <hr class="my-2">
+                                <div class="mt-3 d-md-flex  gap-2 text-wrap">
+                                  <label class="form-label me-2">Documentation</label>
+                                  <div class="d-flex gap-2">
+                                    <div id="previewContainer-1" class="d-flex gap-3 flex-wrap"></div>
+                                    <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
+                                    <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
+                                      <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="mt-4 d-md-flex gap-2 text-wrap">
+                                  <label class="form-label" style="margin-right: 4rem;">Remarks</label>
+                                  <textarea class="form-control" rows="5">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
+                                </div>
+                              </div>
+                              <button id="hideDetailsBtn-1" class="btn btn-outline-secondary mt-4 w-100" style="display: none!important;">
+                                hide details <i class="mdi mdi-chevron-up"></i>
+                              </button>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
+
+                  <!-- 2 -->
                   <div class="card mb-3">
                     <div class="card-body">
                       <div class="row align-items-center" role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0001" aria-expanded="false" aria-controls="detailINSP-0001">
-                        <div class="col-md-9">
-                          <div class="d-flex gap-2 align-items-center mb-1">
-                            <span>INSP-0002</span>
-                            <span>(0/1)</span>
+                        <div class="col-md-6 mb-3 mb-md-0">
+                          <div class="d-flex gap-2 align-items-center justify-content-between justify-content-md-start mb-1">
+                            <div class="flex gap-2">
+                              <span>INSP-0002</span>
+                              <span>(0/1)</span>
+                            </div>
                             <span class="custom-bg-danger text-uppercase px-2 py-1 rounded-1">DEFFERED</span>
                           </div>
                           <div class="fs-6">Check Seal Engine Cover</div>
                         </div>
-                        <div class="col-md-3 text-end">
-                          <i class="mdi mdi-36px mdi-chevron-down text-dark"></i>
+                        <div class="col-md-6">
+                          <div class="d-flex gap-1 justify-content-md-end">
+                            <button class="d-none btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#escalateModal">
+                              <i class="mdi mdi-information-variant"></i> ESCALATE
+                            </button>
+                            <i class="mdi mdi-36px mdi-chevron-down text-dark d-none d-md-block"></i>
+                          </div>
                         </div>
+                        <i class="mdi mdi-36px mdi-chevron-down text-dark d-block d-md-none text-center mt-1"></i>
                       </div>
 
                       <div class="collapse mt-2" id="detailINSP-0001">
@@ -436,10 +473,450 @@
                             <div class="row align-items-center justify-content-between">
                               <div class="col-md-12">
                                 <div class="d-flex flex-column">
-                                  <span>Read oil dipstick</span>
-                                  <span>Memeriksa kondisi volume oli setelah pergantian oli</span>
+                                  <div class="d-md-flex gap-2 mb-2">
+                                    <span class="small text-muted" style="min-width: 160px; max-height: 160px;">Discrepancy ID:</span>
+                                    <a href="./discprepancy-report-detail.html" class="text-decoration-underline fw-semibold">DR-A-AVANZ-KABEL</a>
+                                  </div>
+                                  <div class="d-md-flex gap-1">
+                                    <span class="small text-muted" style="min-width: 160px; max-height: 160px;">Reason/ Notes:</span>
+                                    <p class="mb-0">Inspection tidak bisa dilakukan karena parts yang digunakan tidak sesuai dengan spesifikasi/ membutuhkan parts yang dijual khusus di luar negeri</p>
+                                  </div>
                                 </div>
                               </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 3 -->
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <div class="row align-items-center" role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0003" aria-expanded="false" aria-controls="detailINSP-0003">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                          <div class="d-flex gap-2 align-items-center justify-content-between justify-content-md-start mb-1">
+                            <div class="flex gap-2">
+                              <span>INSP-0003</span>
+                              <span>(3/3)</span>
+                            </div>
+                            <span class="custom-bg-danger text-uppercase px-2 py-1 rounded-1">NG</span>
+                          </div>
+                          <div class="fs-6">Check Kebocoran Oli</div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="d-flex gap-3 justify-content-md-end">
+                            <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#escalateModal">
+                              <i class="mdi mdi-information-variant me-1"></i> ESCALATE
+                            </button>
+                            <button class="btn btn-outline-primary text-truncate" data-bs-toggle="modal" data-bs-target="#caModal">
+                              <i class="mdi mdi-hammer-wrench me-1"></i> correct. action
+                            </button>
+                            <i class="mdi mdi-36px mdi-chevron-down text-dark d-none d-md-block"></i>
+                          </div>
+                        </div>
+                        <i class="mdi mdi-36px mdi-chevron-down text-dark d-block d-md-none text-center mt-1"></i>
+                      </div>
+
+                      <div class="collapse mt-2" id="detailINSP-0003">
+                        <div class="mt-2">
+                          <hr>
+                          <!-- Insp 1 -->
+                          <div class="d-flex gap-2 mt-3">
+                            <span>01</span>
+                            <div id="insp-item" class="border px-3 py-3 rounded-2 w-100">
+                              <div class="row align-items-center justify-content-between">
+                                <div class="col-md-8">
+                                  <div class="d-flex flex-column mb-3 mb-md-0">
+                                    <span>Read oil dipstick</span>
+                                    <span class="text-muted">Memeriksa kondisi volume oli setelah pergantian oli</span>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="radio-group choose-radio-button justify-content-end">
+                                    <input type="radio" id="tireFail-13" name="inspectionResult-13" class="radio-button-input radio-fail" value="fail" checked>
+                                    <label for="tireFail-13" class="radio-button-label">
+                                      <i class="mdi mdi-close me-1"></i>
+                                      FAIL
+                                    </label>
+
+                                    <input type="radio" id="tirePass-13" name="inspectionResult-13" class="radio-button-input radio-pass" value="pass">
+                                    <label for="tirePass-13" class="radio-button-label">
+                                      <i class="mdi mdi-check me-1"></i>
+                                      PASS
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div id="failDetails-1" class="collapse mt-3 show">
+                                <hr class="my-2">
+                                <div class="mt-3 d-md-flex  gap-2 text-wrap">
+                                  <label class="form-label me-2">Documentation</label>
+                                  <div class="d-flex gap-2">
+                                    <div id="previewContainer-1" class="d-flex gap-3 flex-wrap"></div>
+                                    <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
+                                    <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
+                                      <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="mt-4 d-md-flex gap-2 text-wrap">
+                                  <label class="form-label" style="margin-right: 4rem;">Remarks</label>
+                                  <textarea class="form-control" rows="5">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
+                                </div>
+                              </div>
+                              <button id="hideDetailsBtn-1" class="btn btn-outline-secondary mt-4 w-100" style="display: none!important;">
+                                hide details <i class="mdi mdi-chevron-up"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 4 -->
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <div class="row align-items-center" role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0004" aria-expanded="false" aria-controls="detailINSP-0004">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                          <div class="d-flex gap-2 align-items-center justify-content-between justify-content-md-start mb-1">
+                            <div class="flex gap-2">
+                              <span>INSP-0004</span>
+                              <span>(1/1)</span>
+                            </div>
+                            <span class="custom-bg-success text-uppercase px-2 py-1 rounded-1">Resolved</span>
+                          </div>
+                          <div class="fs-6">Check Oil Seal</div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="d-flex gap-3 justify-content-md-end">
+                            <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#escalateModal">
+                              <i class="mdi mdi-information-variant me-1"></i> ESCALATE
+                            </button>
+                            <button class="btn btn-outline-primary text-truncate" data-bs-toggle="modal" data-bs-target="#caModal">
+                              <i class="mdi mdi-hammer-wrench me-1"></i> correct. action (2)
+                            </button>
+                            <i class="mdi mdi-36px mdi-chevron-down text-dark d-none d-md-block"></i>
+                          </div>
+                        </div>
+                        <i class="mdi mdi-36px mdi-chevron-down text-dark d-block d-md-none text-center mt-1"></i>
+                      </div>
+
+                      <div class="collapse mt-2" id="detailINSP-0004">
+                        <div class="mt-2">
+                          <hr>
+                          <!-- Insp 1 -->
+                          <div class="d-flex gap-2 mt-3">
+                            <span>01</span>
+                            <div id="insp-item" class="border px-3 py-3 rounded-2 w-100">
+                              <div class="row align-items-center justify-content-between">
+                                <div class="col-md-8">
+                                  <div class="d-flex flex-column mb-3 mb-md-0">
+                                    <span>Read oil dipstick</span>
+                                    <span class="text-muted">Memeriksa kondisi volume oli setelah pergantian oli</span>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="radio-group choose-radio-button justify-content-end">
+                                    <input type="radio" id="tireFail-14" name="inspectionResult-14" class="radio-button-input radio-fail" value="fail" checked>
+                                    <label for="tireFail-14" class="radio-button-label">
+                                      <i class="mdi mdi-close me-1"></i>
+                                      FAIL
+                                    </label>
+
+                                    <input type="radio" id="tirePass-14" name="inspectionResult-14" class="radio-button-input radio-pass" value="pass">
+                                    <label for="tirePass-14" class="radio-button-label">
+                                      <i class="mdi mdi-check me-1"></i>
+                                      PASS
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div id="failDetails-1" class="collapse mt-3">
+                                <hr class="my-2">
+                                <div class="mt-3 d-md-flex  gap-2 text-wrap">
+                                  <label class="form-label me-2">Documentation</label>
+                                  <div class="d-flex gap-2">
+                                    <div id="previewContainer-1" class="d-flex gap-3 flex-wrap"></div>
+                                    <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
+                                    <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
+                                      <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="mt-4 d-md-flex gap-2 text-wrap">
+                                  <label class="form-label" style="margin-right: 4rem;">Remarks</label>
+                                  <textarea class="form-control" rows="5">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
+                                </div>
+                              </div>
+                              <button id="hideDetailsBtn-1" class="btn btn-outline-secondary mt-4 w-100" style="display: none!important;">
+                                hide details <i class="mdi mdi-chevron-up"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 5 -->
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <div class="row align-items-center" role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0005" aria-expanded="false" aria-controls="detailINSP-0005">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                          <div class="d-flex gap-2 align-items-center justify-content-between justify-content-md-start mb-1">
+                            <div class="flex gap-2">
+                              <span>INSP-0005</span>
+                              <span>(3/3)</span>
+                            </div>
+                            <span class="custom-bg-success text-uppercase px-2 py-1 rounded-1">OK</span>
+                          </div>
+                          <div class="fs-6">Check Sensor after Oil Cange</div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="d-flex gap-3 justify-content-md-end">
+                            <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#escalateModal">
+                              <i class="mdi mdi-information-variant me-1"></i> ESCALATE
+                            </button>
+                            <button class="btn btn-outline-primary text-truncate" data-bs-toggle="modal" data-bs-target="#caModal">
+                              <i class="mdi mdi-hammer-wrench me-1"></i> correct. action
+                            </button>
+                            <i class="mdi mdi-36px mdi-chevron-down text-dark d-none d-md-block"></i>
+                          </div>
+                        </div>
+                        <i class="mdi mdi-36px mdi-chevron-down text-dark d-block d-md-none text-center mt-1"></i>
+                      </div>
+
+                      <div class="collapse mt-2" id="detailINSP-0005">
+                        <div class="mt-2">
+                          <hr>
+                          <!-- Insp 1 -->
+                          <div class="d-flex gap-2 mt-3">
+                            <span>01</span>
+                            <div id="insp-item" class="border px-3 py-3 rounded-2 w-100 inspect-success">
+                              <div class="row align-items-center justify-content-between">
+                                <div class="col-md-8">
+                                  <div class="d-flex flex-column mb-3 mb-md-0">
+                                    <span>Read oil dipstick</span>
+                                    <span class="text-muted">Memeriksa kondisi volume oli setelah pergantian oli</span>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="radio-group choose-radio-button justify-content-end">
+                                    <input type="radio" id="tireFail-15" name="inspectionResult-15" class="radio-button-input radio-fail" value="fail">
+                                    <label for="tireFail-15" class="radio-button-label">
+                                      <i class="mdi mdi-close me-1"></i>
+                                      FAIL
+                                    </label>
+
+                                    <input type="radio" id="tirePass-15" name="inspectionResult-15" class="radio-button-input radio-pass" value="pass" checked>
+                                    <label for="tirePass-15" class="radio-button-label">
+                                      <i class="mdi mdi-check me-1"></i>
+                                      PASS
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div id="failDetails-1" class="collapse mt-3">
+                                <hr class="my-2">
+                                <div class="mt-3 d-md-flex  gap-2 text-wrap">
+                                  <label class="form-label me-2">Documentation</label>
+                                  <div class="d-flex gap-2">
+                                    <div id="previewContainer-1" class="d-flex gap-3 flex-wrap"></div>
+                                    <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
+                                    <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
+                                      <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="mt-4 d-md-flex gap-2 text-wrap">
+                                  <label class="form-label" style="margin-right: 4rem;">Remarks</label>
+                                  <textarea class="form-control" rows="5">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
+                                </div>
+                              </div>
+                              <button id="hideDetailsBtn-1" class="btn btn-outline-secondary mt-4 w-100" style="display: none!important;">
+                                hide details <i class="mdi mdi-chevron-up"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 6 -->
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <div class="row align-items-center" role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0006" aria-expanded="false" aria-controls="detailINSP-0006">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                          <div class="d-flex gap-2 align-items-center justify-content-between justify-content-md-start mb-1">
+                            <div class="flex gap-2">
+                              <span>INSP-0006</span>
+                              <span>(2/3)</span>
+                            </div>
+                            <span class="custom-bg-warning text-uppercase px-2 py-1 rounded-1">In Progress</span>
+                          </div>
+                          <div class="fs-6">Check Sensor after Oil Cange</div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="d-flex gap-3 justify-content-md-end">
+                            <i class="mdi mdi-36px mdi-chevron-down text-dark d-none d-md-block"></i>
+                          </div>
+                        </div>
+                        <i class="mdi mdi-36px mdi-chevron-down text-dark d-block d-md-none text-center mt-1"></i>
+                      </div>
+
+                      <div class="collapse mt-2" id="detailINSP-0006">
+                        <div class="mt-2">
+                          <hr>
+                          <!-- Insp 1 -->
+                          <div class="d-flex gap-2 mt-3">
+                            <span>01</span>
+                            <div id="insp-item" class="border px-3 py-3 rounded-2 w-100 inspect-success">
+                              <div class="row align-items-center justify-content-between">
+                                <div class="col-md-8">
+                                  <div class="d-flex flex-column mb-3 mb-md-0">
+                                    <span>Read oil dipstick</span>
+                                    <span class="text-muted">Memeriksa kondisi volume oli setelah pergantian oli</span>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="radio-group choose-radio-button justify-content-end">
+                                    <input type="radio" id="tireFail-16" name="inspectionResult-16" class="radio-button-input radio-fail" value="fail">
+                                    <label for="tireFail-16" class="radio-button-label">
+                                      <i class="mdi mdi-close me-1"></i>
+                                      FAIL
+                                    </label>
+
+                                    <input type="radio" id="tirePass-16" name="inspectionResult-16" class="radio-button-input radio-pass" value="pass" checked>
+                                    <label for="tirePass-16" class="radio-button-label">
+                                      <i class="mdi mdi-check me-1"></i>
+                                      PASS
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div id="failDetails-1" class="collapse mt-3">
+                                <hr class="my-2">
+                                <div class="mt-3 d-md-flex  gap-2 text-wrap">
+                                  <label class="form-label me-2">Documentation</label>
+                                  <div class="d-flex gap-2">
+                                    <div id="previewContainer-1" class="d-flex gap-3 flex-wrap"></div>
+                                    <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
+                                    <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
+                                      <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="mt-4 d-md-flex gap-2 text-wrap">
+                                  <label class="form-label" style="margin-right: 4rem;">Remarks</label>
+                                  <textarea class="form-control" rows="5">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
+                                </div>
+                              </div>
+                              <button id="hideDetailsBtn-1" class="btn btn-outline-secondary mt-4 w-100" style="display: none!important;">
+                                hide details <i class="mdi mdi-chevron-up"></i>
+                              </button>
+                            </div>
+                          </div>
+
+                          <!-- Insp 2 -->
+                          <div class="d-flex gap-2 mt-3">
+                            <span>02</span>
+                            <div id="insp-item" class="border px-3 py-3 rounded-2 w-100">
+                              <div class="row align-items-center justify-content-between">
+                                <div class="col-md-8">
+                                  <div class="d-flex flex-column mb-3 mb-md-0">
+                                    <span>Read oil dipstick</span>
+                                    <span class="text-muted">Memeriksa kondisi volume oli setelah pergantian oli</span>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="radio-group choose-radio-button justify-content-end">
+                                    <input type="radio" id="tireFail-26" name="inspectionResult-26" class="radio-button-input radio-fail" value="fail" checked>
+                                    <label for="tireFail-26" class="radio-button-label">
+                                      <i class="mdi mdi-close me-1"></i>
+                                      FAIL
+                                    </label>
+
+                                    <input type="radio" id="tirePass-26" name="inspectionResult-26" class="radio-button-input radio-pass" value="pass">
+                                    <label for="tirePass-26" class="radio-button-label">
+                                      <i class="mdi mdi-check me-1"></i>
+                                      PASS
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div id="failDetails-1" class="collapse show mt-3">
+                                <hr class="my-2">
+                                <div class="mt-3 d-md-flex  gap-2 text-wrap">
+                                  <label class="form-label me-2">Documentation</label>
+                                  <div class="d-flex gap-2">
+                                    <div id="previewContainer-1" class="d-flex gap-3 flex-wrap"></div>
+                                    <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
+                                    <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
+                                      <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="mt-4 d-md-flex gap-2 text-wrap">
+                                  <label class="form-label" style="margin-right: 4rem;">Remarks</label>
+                                  <textarea class="form-control" rows="5">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
+                                </div>
+                              </div>
+                              <button id="hideDetailsBtn-1" class="btn btn-outline-secondary mt-4 w-100" style="display: none!important;">
+                                hide details <i class="mdi mdi-chevron-up"></i>
+                              </button>
+                            </div>
+                          </div>
+
+                          <!-- Insp 3 -->
+                          <div class="d-flex gap-2 mt-3">
+                            <span>03</span>
+                            <div id="insp-item" class="border px-3 py-3 rounded-2 w-100">
+                              <div class="row align-items-center justify-content-between">
+                                <div class="col-md-8">
+                                  <div class="d-flex flex-column mb-3 mb-md-0">
+                                    <span>Read oil dipstick</span>
+                                    <span class="text-muted">Memeriksa kondisi volume oli setelah pergantian oli</span>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="radio-group choose-radio-button justify-content-end">
+                                    <input type="radio" id="tireFail-36" name="inspectionResult-36" class="radio-button-input radio-fail" value="fail">
+                                    <label for="tireFail-36" class="radio-button-label">
+                                      <i class="mdi mdi-close me-1"></i>
+                                      FAIL
+                                    </label>
+
+                                    <input type="radio" id="tirePass-36" name="inspectionResult-36" class="radio-button-input radio-pass" value="pass">
+                                    <label for="tirePass-36" class="radio-button-label">
+                                      <i class="mdi mdi-check me-1"></i>
+                                      PASS
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div id="failDetails-1" class="collapse mt-3">
+                                <hr class="my-2">
+                                <div class="mt-3 d-md-flex  gap-2 text-wrap">
+                                  <label class="form-label me-2">Documentation</label>
+                                  <div class="d-flex gap-2">
+                                    <div id="previewContainer-1" class="d-flex gap-3 flex-wrap"></div>
+                                    <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
+                                    <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
+                                      <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="mt-4 d-md-flex gap-2 text-wrap">
+                                  <label class="form-label" style="margin-right: 4rem;">Remarks</label>
+                                  <textarea class="form-control" rows="5">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
+                                </div>
+                              </div>
+                              <button id="hideDetailsBtn-1" class="btn btn-outline-secondary mt-4 w-100" style="display: none!important;">
+                                hide details <i class="mdi mdi-chevron-up"></i>
+                              </button>
                             </div>
                           </div>
                         </div>
@@ -454,6 +931,186 @@
           <!-- Content wrapper -->
         </div>
         <!-- / Layout page -->
+      </div>
+
+      <!-- Escalate -->
+      <div class="modal fade" id="escalateModal" tabindex="-1" aria-labelledby="escalateModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="escalateModalLabel">INSP-0003 - Check Oil FIlter</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-3 text-md-end mb-2 mb-md-0">Discrepancy ID*</div>
+                <div class="col-md-9">
+                  <div class="d-flex gap-2 align-items-center">
+                    <input type="text" class="form-control text-center w-20" id="defaultFormControlInput" value="DR" placeholder="John Doe" aria-describedby="defaultFormControlHelp" disabled>
+                    <i class="mdi mdi-24px mdi-minus"></i>
+                    <input type="text" class="form-control text-center w-20" id="defaultFormControlInput" value="A" placeholder="John Doe" aria-describedby="defaultFormControlHelp" disabled>
+                    <i class="mdi mdi-24px mdi-minus"></i>
+                    <input type="text" class="form-control text-center w-20" id="defaultFormControlInput" value="AC" placeholder="John Doe" aria-describedby="defaultFormControlHelp" disabled>
+                    <i class="mdi mdi-24px mdi-minus"></i>
+                    <input type="text" class="form-control" id="defaultFormControlInput" value="AC" placeholder="John Doe" aria-describedby="defaultFormControlHelp">
+                  </div>
+                  <p class="fst-italic small text-muted mt-1">*Discrepancy ID is generated automatically by the system. You can modify the Task Code as needed.</p>
+                </div>
+              </div>
+              <div class="row align-items-center mb-4">
+                <div class="col-md-3 text-md-end mb-2 mb-md-0">Category</div>
+                <div class="col-md-9">
+                  <select class="form-select select2" id="categorySelect">
+                    <option selected>Machine</option>
+                    <option value="1">Electrical</option>
+                    <option value="2">Safety</option>
+                    <option value="3">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row mb-4">
+                <div class="col-md-3 text-md-end mb-2 mb-md-0">Issue Description</div>
+                <div class="col-md-9">
+                  <textarea class="form-control" id="issueDescription" rows="4">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
+                </div>
+              </div>
+              <div class="row align-items-center mb-4">
+                <div class="col-md-3 text-md-end mb-2 mb-md-0">Severity</div>
+                <div class="col-md-9">
+                  <div class="btn-group" role="group" aria-label="Time based radio group">
+                    <input type="radio" class="btn-check btn-severity" name="btnradio" id="low" autocomplete="off" />
+                    <label class="btn btn-outline-secondary px-3" for="low">Low</label>
+
+                    <input type="radio" class="btn-check btn-severity" name="btnradio" id="medium" autocomplete="off" />
+                    <label class="btn btn-outline-secondary px-3" for="medium">Medium</label>
+
+                    <input type="radio" class="btn-check btn-severity" name="btnradio" id="high" autocomplete="off" />
+                    <label class="btn btn-outline-secondary px-3" for="high">High</label>
+
+                    <input type="radio" class="btn-check btn-severity" name="btnradio" id="critical" autocomplete="off" />
+                    <label class="btn btn-outline-secondary px-3" for="critical">Critical</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-4">
+                <div class="col-md-3 text-md-end mb-2 mb-md-0">Documentation</div>
+                <div class="col-md-9">
+                  <div class="d-flex gap-2">
+                    <div id="previewContainer-1" class="d-flex gap-3 flex-wrap">
+                      <div class="image-preview position-relative">
+                        <img src="https://placehold.co/200x200/ccc/fff?text=Doc2" class="img-thumbnail">
+                        <button class="delete-btn">DELETE</button>
+                      </div>
+                    </div>
+                    <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
+                    <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
+                      <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success">Create discrepancy report</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Escalated with Status -->
+      <div class="modal fade" id="escalateNotStartedModal" tabindex="-1" aria-labelledby="escalateModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="escalateModalLabel">INSP-0003 - Check Oil FIlter</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-3 text-md-end mb-2 mb-md-0">Discrepancy ID*</div>
+                <div class="col-md-9">
+                  <div class="d-flex gap-2 align-items-center">
+                    <input type="text" class="form-control text-center w-20" id="defaultFormControlInput" value="DR" placeholder="John Doe" aria-describedby="defaultFormControlHelp" disabled>
+                    <i class="mdi mdi-24px mdi-minus"></i>
+                    <input type="text" class="form-control text-center w-20" id="defaultFormControlInput" value="A" placeholder="John Doe" aria-describedby="defaultFormControlHelp" disabled>
+                    <i class="mdi mdi-24px mdi-minus"></i>
+                    <input type="text" class="form-control text-center w-20" id="defaultFormControlInput" value="AC" placeholder="John Doe" aria-describedby="defaultFormControlHelp" disabled>
+                    <i class="mdi mdi-24px mdi-minus"></i>
+                    <input type="text" class="form-control" id="defaultFormControlInput" value="AC" placeholder="John Doe" aria-describedby="defaultFormControlHelp">
+                  </div>
+                  <p class="fst-italic small text-muted mt-1">*Discrepancy ID is generated automatically by the system. You can modify the Task Code as needed.</p>
+                </div>
+              </div>
+              <div class="row align-items-center mb-4">
+                <div class="col-md-3 text-md-end mb-2 mb-md-0">Choose Status</div>
+                <div class="col-md-9">
+                  <div class="btn-group" role="group" aria-label="Time based radio group">
+                    <input type="radio" class="btn-status" name="btnradio1" id="na" autocomplete="off" checked/>
+                    <label class="btn px-3 btn-outline-danger" for="na">N/A</label>
+
+                    <input type="radio" class="btn-status" name="btnradio1" id="deffered" autocomplete="off" />
+                    <label class="btn px-3 btn-outline-danger" for="deffered">Deffered</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row align-items-center mb-4">
+                <div class="col-md-3 text-md-end mb-2 mb-md-0">Category</div>
+                <div class="col-md-9">
+                  <select class="form-select select2" id="categorySelect">
+                    <option selected>Machine</option>
+                    <option value="1">Electrical</option>
+                    <option value="2">Safety</option>
+                    <option value="3">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row mb-4">
+                <div class="col-md-3 text-md-end mb-2 mb-md-0">Issue Description</div>
+                <div class="col-md-9">
+                  <textarea class="form-control" id="issueDescription" rows="4">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
+                </div>
+              </div>
+              <div class="row align-items-center mb-4">
+                <div class="col-md-3 text-md-end mb-2 mb-md-0">Severity</div>
+                <div class="col-md-9">
+                  <div class="btn-group" role="group" aria-label="Time based radio group">
+                    <input type="radio" class="btn-check btn-severity" name="btnradio" id="low" autocomplete="off" />
+                    <label class="btn btn-outline-secondary px-3" for="low">Low</label>
+
+                    <input type="radio" class="btn-check btn-severity" name="btnradio" id="medium" autocomplete="off" />
+                    <label class="btn btn-outline-secondary px-3" for="medium">Medium</label>
+
+                    <input type="radio" class="btn-check btn-severity" name="btnradio" id="high" autocomplete="off" />
+                    <label class="btn btn-outline-secondary px-3" for="high">High</label>
+
+                    <input type="radio" class="btn-check btn-severity" name="btnradio" id="critical" autocomplete="off" />
+                    <label class="btn btn-outline-secondary px-3" for="critical">Critical</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-4">
+                <div class="col-md-3 text-md-end mb-2 mb-md-0">Documentation</div>
+                <div class="col-md-9">
+                  <div class="d-flex gap-2">
+                    <div id="previewContainer-1" class="d-flex gap-3 flex-wrap">
+                      <div class="image-preview position-relative">
+                        <img src="https://placehold.co/200x200/ccc/fff?text=Doc2" class="img-thumbnail">
+                        <button class="delete-btn">DELETE</button>
+                      </div>
+                    </div>
+                    <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
+                    <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
+                      <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success">Create discrepancy report</button>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Overlay -->
@@ -486,6 +1143,7 @@
     <script src="./assets/js/main.js"></script>
 
     <!-- Page JS -->
+     <script src="./assets/js/schedule-task-items.js"></script>
   </body>
 </html>
 
