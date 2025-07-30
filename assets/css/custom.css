@@ -1456,8 +1456,22 @@ div.badge {
   border-color: var(--decline-color) !important;
 }
 
-.btn-status:checked + label {
+.btn-check.btn-status:checked + label {
   background-color: var(--decline-color)!important;
   color: white!important;
   border-color: var(--decline-color)!important;
+}
+
+.custom-accordion .accordion-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.custom-accordion .accordion-button .title-text {
+  flex-grow: 1;
+}
+.custom-accordion .action-buttons {
+  white-space: nowrap;
+  font-size: 0.9rem;
 }

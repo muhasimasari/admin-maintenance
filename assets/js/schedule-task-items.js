@@ -101,7 +101,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
   $(document).ready(function() {
     $('#categorySelect').select2({
-      dropdownParent: $('#escalateModal') // Required to make search and dropdown work inside a modal
+      dropdownParent: $('#escalateModal')
     });
+
+    $('#categorySelect1').select2({
+      dropdownParent: $('#escalateNotStartedModal')
+    });
+
+    $('#rootCauseSelect, #rootCauseSelect2, #engineerSelect, #vendorSelect').select2({
+      dropdownParent: $('#caModal')
+    });
+  });
+
+  flatpickr("#startDate", {
+    dateFormat: "Y-m-d",
+    allowInput: true
   });
 });
