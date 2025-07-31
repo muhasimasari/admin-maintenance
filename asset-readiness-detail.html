@@ -152,7 +152,7 @@
 
             <!-- Master Data -->
             <li class="menu-header fw-light mt-4">
-              <span class="menu-header-text">Engineering Maintenance</span>
+              <span class="menu-header-text">Engineering MTC</span>
             </li>
             <li class="menu-item active open" style="">
               <a
@@ -160,18 +160,18 @@
                 class="menu-link menu-toggle waves-effect"
               >
                 <i class="menu-icon tf-icons mdi mdi-file-document-outline"></i>
-                <div data-i18n="Maintenance Setup">Maintenance Setup</div>
+                <div data-i18n="MTC Setup">MTC Setup</div>
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="./maintenance-task.html" class="menu-link">
-                    <div data-i18n="MTC">MTC</div>
+                  <a href="./mtc-task.html" class="menu-link">
+                    <div data-i18n="MTC Task">MTC Task</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="./maintenance-template.html" class="menu-link">
-                    <div data-i18n="Maintenance Template">
-                      Maintenance Template
+                  <a href="./mtc-template.html" class="menu-link">
+                    <div data-i18n="MTC Template">
+                      MTC Template
                     </div>
                   </a>
                 </li>
@@ -295,7 +295,7 @@
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item">
-                    <a href="./asset-readiness.html">Asset - Maintenance Readiness</a>
+                    <a href="./asset-readiness.html">Asset - MTC Readiness</a>
                   </li>
                   <li class="breadcrumb-item">
                     <a href="javascript:void(0);" class="text-dark"
@@ -362,7 +362,7 @@
                             </div>
                             <div class="flex-grow-1">
                               <span class="fw-normal small">Template</span>
-                              <h6 class="mb-0 mt-1">Vehicle Maintenance</h6>
+                              <h6 class="mb-0 mt-1">Vehicle MTC</h6>
                             </div>
                           </div>
                         </div>
@@ -461,7 +461,7 @@
                           <input
                             type="search"
                             class="form-control form-control-sm ps-4 mb-md-0 mb-3 ml-2"
-                            placeholder="Search Item number, maintenance template"
+                            placeholder="Search Item number, MTC template"
                             aria-controls="search datatable"
                             style="padding-left: 2.5rem!important;"
                           >
@@ -503,7 +503,7 @@
                           <td>PO-00001<br/>01 May 2025</td>
                           <td>Daniel Sinanta</td>
                           <td class="text-center">
-                            <button type="button" class="btn btn-text-primary p-0 text-decoration-underline" data-bs-toggle="modal" data-bs-target="#maintenanceTask">
+                            <button type="button" class="btn btn-text-primary p-0 text-decoration-underline" data-bs-toggle="modal" data-bs-target="#MTCTask">
                               5
                             </button>
                           </td>
@@ -529,7 +529,7 @@
                           <td>PO-00001<br/>01 May 2025</td>
                           <td>Daniel Sinanta</td>
                           <td class="text-center">
-                            <button type="button" class="btn btn-text-primary p-0 text-center text-decoration-underline" data-bs-toggle="modal" data-bs-target="#maintenanceTask">
+                            <button type="button" class="btn btn-text-primary p-0 text-center text-decoration-underline" data-bs-toggle="modal" data-bs-target="#MTCTask">
                               5
                             </button>
                           </td>
@@ -555,7 +555,7 @@
                           <td>PO-00001<br/>01 May 2025</td>
                           <td>Daniel Sinanta</td>
                           <td class="text-center">
-                            <button type="button" class="btn btn-text-primary p-0 text-center text-decoration-underline" data-bs-toggle="modal" data-bs-target="#maintenanceTask">
+                            <button type="button" class="btn btn-text-primary p-0 text-center text-decoration-underline" data-bs-toggle="modal" data-bs-target="#MTCTask">
                               5
                             </button>
                           </td>
@@ -602,11 +602,11 @@
       <div class="layout-overlay layout-menu-toggle"></div>
 
       <!-- Modal Add Inspection -->
-      <div class="modal fade" id="maintenanceTask" tabindex="-1" aria-labelledby="maintenanceTasklabel" aria-hidden="true">
+      <div class="modal fade" id="MTCTask" tabindex="-1" aria-labelledby="MTCTasklabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
           <div class="modal-content border-0">
             <div class="modal-header">
-              <h5 class="modal-title" id="maintenanceTasklabel">MTC</h5>
+              <h5 class="modal-title" id="MTCTasklabel">MTC</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
@@ -615,8 +615,8 @@
                 <table class="table card-table table-borderless mb-0">
                   <thead>
                     <tr>
-                      <th style="max-width: 200px;">maintenance code</th>
-                      <th>maintenance name</th>
+                      <th style="max-width: 200px;">MTC code</th>
+                      <th>MTC name</th>
                       <th style="min-width: 90px; max-width: 90px;">Estimated</th>
                       <th style="min-width: 230px;">frequency</th>
                     </tr>
@@ -626,7 +626,7 @@
                       <td class="text-primary position-relative">
                         <div class="color-code" style="background-color: #3C57A1;"></div>
                         <div class="ps-3" >
-                          <a class="fw-bold" href="./maintenance-task-detail-asset.html">MC-A001</a>
+                          <a class="fw-bold" href="./mtc-task-detail-asset.html">MC-A001</a>
                         </div>
                       </td>
                       <td>Engine Oil</td>
@@ -641,7 +641,7 @@
                       <td class="text-primary position-relative">
                         <div class="color-code" style="background-color: #EA9612;"></div>
                         <div class="ps-3" >
-                          <a class="fw-bold" href="./maintenance-task-detail-location.html">MC-L002</a>
+                          <a class="fw-bold" href="./mtc-task-detail-location.html">MC-L002</a>
                         </div>
                       </td>
                       <td>Room Deluxe</td>
@@ -689,7 +689,7 @@
                     <div class="col-md-11">
                       <div class="form-floating form-floating-outline">
                         <select
-                          id="selectMaintenanceTask"
+                          id="selectMTCTask"
                           class="select2 form-select form-select-lg"
                           data-allow-clear="true"
                         >
@@ -697,7 +697,7 @@
                           <option value="s">MTC 1</option>
                           <option value="s">MTC 2</option>
                         </select>
-                        <label for="selectMaintenanceTask">Select MTC</label>
+                        <label for="selectMTCTask">Select MTC</label>
                       </div>
                     </div>
                     <div class="col-md-1 text-start">
@@ -710,7 +710,7 @@
                     <div class="col-md-11">
                       <div class="form-floating form-floating-outline">
                         <select
-                          id="selectMaintenanceTask2"
+                          id="selectMTCTask2"
                           class="select2 form-select form-select-lg"
                           data-allow-clear="true"
                         >
@@ -719,7 +719,7 @@
                           <option value="aa">MTC 1</option>
                           <option value="ssA">MTC 2</option>
                         </select>
-                        <label for="selectMaintenanceTask2">Select MTC</label>
+                        <label for="selectMTCTask2">Select MTC</label>
                       </div>
                     </div>
                     <div class="col-md-1 text-start">
@@ -729,7 +729,7 @@
                     </div>
                   </div>
                 </div>
-                <button type="button" class="btn btn-sm btn-text-primary mt-2 px-0" id="addChecklistBtn"><i class="mdi mdi-24px mdi-plus"></i> ADD MTC</button>
+                <button type="button" class="btn btn-sm btn-text-primary mt-2 px-0" id="addChecklistBtn"><i class="mdi mdi-24px mdi-plus"></i> Add MTC Task</button>
               </div>
             </div>
 

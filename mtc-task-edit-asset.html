@@ -152,7 +152,7 @@
 
             <!-- Master Data -->
             <li class="menu-header fw-light mt-4">
-              <span class="menu-header-text">Engineering Maintenance</span>
+              <span class="menu-header-text">Engineering MTC</span>
             </li>
             <li class="menu-item active open" style="">
               <a
@@ -160,18 +160,18 @@
                 class="menu-link menu-toggle waves-effect"
               >
                 <i class="menu-icon tf-icons mdi mdi-file-document-outline"></i>
-                <div data-i18n="Maintenance Setup">Maintenance Setup</div>
+                <div data-i18n="MTC Setup">MTC Setup</div>
               </a>
               <ul class="menu-sub">
                 <li class="menu-item active">
-                  <a href="./maintenance-task.html" class="menu-link">
-                    <div data-i18n="MTC">MTC</div>
+                  <a href="./mtc-task.html" class="menu-link">
+                    <div data-i18n="MTC Task">MTC Task</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="./maintenance-template.html" class="menu-link">
-                    <div data-i18n="Maintenance Template">
-                      Maintenance Template
+                  <a href="./mtc-template.html" class="menu-link">
+                    <div data-i18n="MTC Template">
+                      MTC Template
                     </div>
                   </a>
                 </li>
@@ -295,11 +295,11 @@
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item">
-                    <a href="./maintenance-task.html">MTC</a>
+                    <a href="./mtc-task.html">MTC</a>
                   </li>
                   <li class="breadcrumb-item">
                     <a href="javascript:void(0);" class="text-dark"
-                      >Edit Maintenance : MC-A001</a
+                      >Edit MTC Task : MC-A001</a
                     >
                   </li>
                 </ol>
@@ -322,7 +322,7 @@
                             aria-label="Title for Submission Form"
                           />
                           <label for="titleForm"
-                            >Maintenance Name
+                            >MTC Name
                             <span class="text-danger">*</span></label
                           >
                         </div>
@@ -333,7 +333,7 @@
                             <option value="Location">Location</option>
                           </select>
                           <label for="type"
-                            >Maintenance Type
+                            >MTC Type
                             <span class="text-danger">*</span></label
                           >
                         </div>
@@ -621,7 +621,7 @@
                         <div class="accordion-body">
                           <strong>Start On</strong>
                           <ul>
-                            <li>This is the first date maintenance is due.</li>
+                            <li>This is the first date MTC is due.</li>
                             <li>It’s used when the task happens only once (e.g., initial setup inspection).</li>
                           </ul>
                           <p><strong>Example:</strong><br>
@@ -632,7 +632,7 @@
 
                           <strong>Repeat Every</strong>
                           <ul>
-                            <li>This is used when you want maintenance to happen repeatedly.</li>
+                            <li>This is used when you want MTC to happen repeatedly.</li>
                             <li>Based on the last inspection date or "Start On" date if it’s the first one.</li>
                           </ul>
                           <p><strong>Example:</strong><br>
@@ -643,7 +643,7 @@
 
                           <strong>First-Time On + Repeat Every</strong>
                           <ul>
-                            <li>Use this if you want the first maintenance to start on a specific date, and then repeat regularly.</li>
+                            <li>Use this if you want the first MTC to start on a specific date, and then repeat regularly.</li>
                             <li>It will calculate all next dates based on that first date + repeat.</li>
                           </ul>
                           <p><strong>Example:</strong><br>
@@ -747,7 +747,7 @@
                           <td>2</td>
                           <td>
                             <div class="d-flex gap-2 align-items-center">
-                              <a href="./maintenance-task-edit-asset.html" class="btn btn-text-primary px-0">Edit</a> /
+                              <a href="./mtc-task-edit-asset.html" class="btn btn-text-primary px-0">Edit</a> /
                               <a href="#" class="btn btn-text-danger px-0">Delete</a>
                             </div>
                           </td>
@@ -758,7 +758,7 @@
                           <td>1</td>
                           <td>
                             <div class="d-flex gap-2 align-items-center">
-                              <a href="./maintenance-task-edit-asset.html" class="btn btn-text-primary px-0">Edit</a> /
+                              <a href="./mtc-task-edit-asset.html" class="btn btn-text-primary px-0">Edit</a> /
                               <a href="#" class="btn btn-text-danger px-0">Delete</a>
                             </div>
                           </td>
@@ -1109,7 +1109,7 @@
             <div class="modal-body">
               <div class="card-datatable table-responsive custom-table text-nowrap">
                 <div class="form-floating form-floating-outline mb-4">
-                  <select id="maintenanceTask" class="form-select" style="width: 100%;">
+                  <select id="MTCTask" class="form-select" style="width: 100%;">
                     <option value="Normal">Engine Oil</option>
                     <option value="BrakeFluid">Brake Fluid</option>
                     <option value="TirePressure">Tire Pressure</option>

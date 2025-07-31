@@ -110,7 +110,7 @@
           <div class="app-brand demo">
             <a href="./dashboard.html" class="app-brand-link">
               <span class="app-brand-text demo menu-text fw-bold ms-2"
-                >App Maintenance</span
+                >App MTC</span
               >
             </a>
 
@@ -152,22 +152,22 @@
 
             <!-- Master Data -->
             <li class="menu-header fw-light mt-4">
-              <span class="menu-header-text">Engineering Maintenance</span>
+              <span class="menu-header-text">Engineering MTC</span>
             </li>
             <li class="menu-item active open" style="">
               <a href="javascript:void(0);" class="menu-link menu-toggle waves-effect">
                 <i class="menu-icon tf-icons mdi mdi-file-document-outline"></i>
-                <div data-i18n="Maintenance Setup">Maintenance Setup</div>
+                <div data-i18n="MTC Setup">MTC Setup</div>
               </a>
               <ul class="menu-sub">
                 <li class="menu-item active">
-                  <a href="./maintenance-task.html" class="menu-link">
-                    <div data-i18n="MTC">MTC</div>
+                  <a href="./mtc-task.html" class="menu-link">
+                    <div data-i18n="MTC Task">MTC Task</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="./maintenance-template.html" class="menu-link">
-                    <div data-i18n="Maintenance Template">Maintenance Template</div>
+                  <a href="./mtc-template.html" class="menu-link">
+                    <div data-i18n="MTC Template">MTC Template</div>
                   </a>
                 </li>
                 <li class="menu-item">
@@ -274,7 +274,7 @@
                     <a href="javascript:void(0);">MTC</a>
                   </li>
                   <!-- <li class="breadcrumb-item">
-                    <a href="javascript:void(0);">Add Maintenance</a>
+                    <a href="javascript:void(0);">Add MTC Task</a>
                   </li> -->
                 </ol>
               </nav>
@@ -285,11 +285,11 @@
                     <div class="row align-items-center">
                       <div class="col-md-4">
                         <div class="col-auto">
-                          <label for="statusFilter" class="form-label mb-1">Maintenance Type</label>
+                          <label for="statusFilter" class="form-label mb-1">MTC Type</label>
                         </div>
                         <div class="col">
                           <select id="statusFilter" class="form-select">
-                            <option value="" selected>All Maintenance Type</option>
+                            <option value="" selected>All MTC Type</option>
                             <option value="Asset">Asset</option>
                             <option value="Location">Location</option>
                           </select>
@@ -344,8 +344,8 @@
                     </div>
                   </div>
                   <div class="col-md-4">
-                    <a href="maintenance-task-add.html" class="btn btn-primary waves-effect waves-light w-100 text-white">
-                      <i class="mdi mdi-24px mdi-plus" style="margin-right: 5px;"></i>Add Maintenance code
+                    <a href="mtc-task-add.html" class="btn btn-primary waves-effect waves-light w-100 text-white">
+                      <i class="mdi mdi-24px mdi-plus" style="margin-right: 5px;"></i>Add MTC code
                     </a>
                   </div>
                 </div>
@@ -354,9 +354,9 @@
                   <table class="table card-table table-borderless">
                     <thead>
                       <tr>
-                        <th style="max-width: 200px;">maintenance code</th>
-                        <th>maintenance name</th>
-                        <th class="text-center">maintenance Type</th>
+                        <th style="max-width: 200px;">MTC code</th>
+                        <th>MTC name</th>
+                        <th class="text-center">MTC Type</th>
                         <th class="text-center">priority</th>
                         <th style="min-width: 90px; max-width: 90px;">Estimated</th>
                         <th class="text-center" style="min-width: 230px;">frequency</th>
@@ -368,7 +368,7 @@
                         <td class="text-primary position-relative">
                           <div class="color-code" style="background-color: #3C57A1;"></div>
                           <div class="ps-3" >
-                            <a class="fw-bold" href="./maintenance-task-detail-asset.html">MC-A001</a>
+                            <a class="fw-bold" href="./mtc-task-detail-asset.html">MC-A001</a>
                           </div>
                         </td>
                         <td>Engine Oil</td>
@@ -381,7 +381,7 @@
                         </td>
                         <td>
                           <div class="d-flex gap-2 align-items-center">
-                            <a href="./maintenance-task-edit-asset.html" class="btn btn-text-primary px-0">Edit</a> /
+                            <a href="./mtc-task-edit-asset.html" class="btn btn-text-primary px-0">Edit</a> /
                             <a href="#" class="btn btn-text-danger px-0">Delete</a>
                           </div>
                         </td>
@@ -391,7 +391,7 @@
                         <td class="text-primary position-relative">
                           <div class="color-code" style="background-color: #EA9612;"></div>
                           <div class="ps-3" >
-                            <a class="fw-bold" href="./maintenance-task-detail-location.html">MC-L002</a>
+                            <a class="fw-bold" href="./mtc-task-detail-location.html">MC-L002</a>
                           </div>
                         </td>
                         <td>Room Deluxe</td>
@@ -403,7 +403,7 @@
                         </td>
                         <td>
                           <div class="d-flex gap-2 align-items-center">
-                            <a href="./maintenance-task-edit-location.html" class="btn btn-text-primary px-0">Edit</a> /
+                            <a href="./mtc-task-edit-location.html" class="btn btn-text-primary px-0">Edit</a> /
                             <a href="#" class="btn btn-text-danger px-0">Delete</a>
                           </div>
                         </td>
@@ -413,7 +413,7 @@
                         <td class="text-primary position-relative">
                           <div class="color-code" style="background-color: #3C57A1;"></div>
                           <div class="ps-3" >
-                            <a class="fw-bold" href="./maintenance-task-detail-asset.html">MC-A002</a>
+                            <a class="fw-bold" href="./mtc-task-detail-asset.html">MC-A002</a>
                           </div>
                         </td>
                         <td>Brake Fluid</td>
@@ -425,7 +425,7 @@
                         </td>
                         <td>
                           <div class="d-flex gap-2 align-items-center">
-                            <a href="./maintenance-task-edit-asset.html" class="btn btn-text-primary px-0">Edit</a> /
+                            <a href="./mtc-task-edit-asset.html" class="btn btn-text-primary px-0">Edit</a> /
                             <a href="#" class="btn btn-text-danger px-0">Delete</a>
                           </div>
                         </td>

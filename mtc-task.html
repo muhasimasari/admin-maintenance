@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html
   lang="en"
@@ -110,7 +110,7 @@
           <div class="app-brand demo">
             <a href="./dashboard.html" class="app-brand-link">
               <span class="app-brand-text demo menu-text fw-bold ms-2"
-                >App Maintenance</span
+                >App MTC</span
               >
             </a>
 
@@ -152,22 +152,22 @@
 
             <!-- Master Data -->
             <li class="menu-header fw-light mt-4">
-              <span class="menu-header-text">Engineering Maintenance</span>
+              <span class="menu-header-text">Engineering MTC</span>
             </li>
             <li class="menu-item active open" style="">
               <a href="javascript:void(0);" class="menu-link menu-toggle waves-effect">
                 <i class="menu-icon tf-icons mdi mdi-file-document-outline"></i>
-                <div data-i18n="Maintenance Setup">Maintenance Setup</div>
+                <div data-i18n="MTC Setup">MTC Setup</div>
               </a>
               <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="./maintenance-task.html" class="menu-link">
-                    <div data-i18n="MTC">MTC</div>
+                <li class="menu-item active">
+                  <a href="./mtc-task.html" class="menu-link">
+                    <div data-i18n="MTC Task">MTC Task</div>
                   </a>
                 </li>
-                <li class="menu-item active">
-                  <a href="./maintenance-template.html" class="menu-link">
-                    <div data-i18n="Maintenance Template">Maintenance Template</div>
+                <li class="menu-item">
+                  <a href="./mtc-template.html" class="menu-link">
+                    <div data-i18n="MTC Template">MTC Template</div>
                   </a>
                 </li>
                 <li class="menu-item">
@@ -271,79 +271,63 @@
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item">
-                    <a href="./maintenance-template.html">Maintenance Template</a>
+                    <a href="javascript:void(0);">MTC Task</a>
                   </li>
-                  <li class="breadcrumb-item">
-                    <a href="javascript:void(0);" class="text-dark">Add Template</a>
-                  </li>
+                  <!-- <li class="breadcrumb-item">
+                    <a href="javascript:void(0);">Add MTC Task</a>
+                  </li> -->
                 </ol>
               </nav>
-              <div class="card mb-4">
-                <div class="card-body">
-                  <h5>General Informations</h5>
-                  <div class="row g-6">
-                    <!-- Title Form -->
-                    <div class="col-md-6">
-                      <div class="d-flex flex-column">
-
-                        <div class="form-floating form-floating-outline mb-4">
-                          <select id="type" class="form-select">
+              <!-- Form Template Table -->
+              <div class="card">
+                <div class="row g-3 px-4 pb-3 my-2">
+                  <div class="col-md-12">
+                    <div class="row align-items-center">
+                      <div class="col-md-4">
+                        <div class="col-auto">
+                          <label for="statusFilter" class="form-label mb-1">MTC Type</label>
+                        </div>
+                        <div class="col">
+                          <select id="statusFilter" class="form-select">
+                            <option value="" selected>All MTC Type</option>
                             <option value="Asset">Asset</option>
                             <option value="Location">Location</option>
                           </select>
-                          <label for="type"
-                            >Maintenance Type
-                            <span class="text-danger">*</span></label
-                          >
-                        </div>
-
-                        <div class="form-floating form-floating-outline mb-4">
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="titleForm"
-                            placeholder="eg. Engine Oil Change"
-                            name="titleForm"
-                            value=""
-                            aria-label="Title for Submission Form"
-                          />
-                          <label for="titleForm"
-                            >Template Name
-                            <span class="text-danger">*</span></label
-                          >
-                        </div>
-
-                        <div class="form-floating form-floating-outline">
-                          <textarea class="form-control h-px-100" id="exampleFormControlTextarea1" placeholder="Comments here..."></textarea>
-                          <label for="titleForm"
-                            >Description
-                            <span class="text-danger">*</span></label
-                          >
                         </div>
                       </div>
-                    </div>
-
-                    <div class="col-md-6">
-                      <div class="form-floating form-floating-outline mb-4">
-                        <select id="assetCategory" class="form-select select2" style="width: 100%;">
-                          <option value="Normal">Asset Category</option>
-                          <option value="Normal">Vehicle</option>
-                          <option value="High">Furniture</option>
-                        </select>
+                      <div class="col-md-4">
+                        <div class="col-auto">
+                          <label for="skillSet" class="form-label mb-1">Skill Set</label>
+                        </div>
+                        <div class="col">
+                          <select id="skillSet" class="form-select select2" style="width: 100%;" data-placeholder="Select a skill">
+                            <option selected>All Skill Set</option> <!-- Empty option for placeholder -->
+                            <option value="Engineering Skill 1">Engineering Skill 1</option>
+                            <option value="Engineering Skill 2">Engineering Skill 2</option>
+                            <option value="Engineering Skill 3">Engineering Skill 3</option>
+                            <option value="Engineering Skill 4">Engineering Skill 4</option>
+                          </select>
+                        </div>
                       </div>
-                      <div class="form-floating form-floating-outline mb-4">
-                        <select id="assetGroup" class="form-select select2" style="width: 100%;">
-                          <option value="Normal">Asset Group</option>
-                          <option value="Normal">Car</option>
-                          <option value="High">Receptionist Table</option>
-                        </select>
+                      <div class="col-md-4">
+                        <div class="col-auto">
+                          <label for="colorFilter" class="form-label mb-1">Color Code</label>
+                        </div>
+                        <div class="col">
+                          <select id="colorFilter" class="form-select select2" style="width: 100%;">
+                            <option value="">All Colors</option>
+                            <option value="red" data-color="#CA4046">Red</option>
+                            <option value="blue" data-color="#007BFF">Blue</option>
+                            <option value="green" data-color="#28A745">Green</option>
+                            <option value="yellow" data-color="#FFC107">Yellow</option>
+                            <option value="purple" data-color="#6F42C1">Purple</option>
+                          </select>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <!-- Form Template Table -->
-              <div class="card mb-4">
+                <hr/>
                 <div class="row g-3 px-4 py-3 align-items-center">
                   <div class="col">
                     <div class="d-md-flex d-block g-3 gap-2 align-items-center justify-content-end">
@@ -352,7 +336,7 @@
                         <input
                           type="search"
                           class="form-control form-control-sm ps-4 mb-md-0 mb-3 ml-2"
-                          placeholder="Search by maintenance code or name"
+                          placeholder="Search forms name or request code"
                           aria-controls="search datatable"
                           style="padding-left: 2.5rem!important;"
                         >
@@ -360,9 +344,9 @@
                     </div>
                   </div>
                   <div class="col-md-4">
-                    <button type="button" class="btn btn-primary waves-effect waves-light w-100 text-white" data-bs-toggle="modal" data-bs-target="#addMaintenanceCodeModal">
-                      <i class="mdi mdi-24px mdi-plus" style="margin-right: 5px;"></i>Add Maintenance Code
-                    </button>
+                    <a href="mtc-task-add.html" class="btn btn-primary waves-effect waves-light w-100 text-white">
+                      <i class="mdi mdi-24px mdi-plus" style="margin-right: 5px;"></i>Add MTC code
+                    </a>
                   </div>
                 </div>
                 <hr>
@@ -370,9 +354,9 @@
                   <table class="table card-table table-borderless">
                     <thead>
                       <tr>
-                        <th style="max-width: 200px;">maintenance code</th>
-                        <th>maintenance name</th>
-                        <th class="text-center">maintenance Type</th>
+                        <th style="min-width: 200px; max-width: 200px;">MTC code</th>
+                        <th style="min-width: 200px; max-width: 200px;">MTC name</th>
+                        <th class="text-center">MTC Type</th>
                         <th class="text-center">priority</th>
                         <th style="min-width: 90px; max-width: 90px;">Estimated</th>
                         <th class="text-center" style="min-width: 230px;">frequency</th>
@@ -384,7 +368,7 @@
                         <td class="text-primary position-relative">
                           <div class="color-code" style="background-color: #3C57A1;"></div>
                           <div class="ps-3" >
-                            <a class="fw-bold" href="./maintenance-task-detail-asset.html">MC-A001</a>
+                            <a class="fw-bold" href="./mtc-task-detail-asset.html">MC-A001</a>
                           </div>
                         </td>
                         <td>Engine Oil</td>
@@ -397,6 +381,7 @@
                         </td>
                         <td>
                           <div class="d-flex gap-2 align-items-center">
+                            <a href="./mtc-task-edit-asset.html" class="btn btn-text-primary px-0">Edit</a> /
                             <a href="#" class="btn btn-text-danger px-0">Delete</a>
                           </div>
                         </td>
@@ -406,7 +391,7 @@
                         <td class="text-primary position-relative">
                           <div class="color-code" style="background-color: #EA9612;"></div>
                           <div class="ps-3" >
-                            <a class="fw-bold" href="./maintenance-task-detail-location.html">MC-L002</a>
+                            <a class="fw-bold" href="./mtc-task-detail-location.html">MC-L002</a>
                           </div>
                         </td>
                         <td>Room Deluxe</td>
@@ -418,6 +403,29 @@
                         </td>
                         <td>
                           <div class="d-flex gap-2 align-items-center">
+                            <a href="./mtc-task-edit-location.html" class="btn btn-text-primary px-0">Edit</a> /
+                            <a href="#" class="btn btn-text-danger px-0">Delete</a>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="text-primary position-relative">
+                          <div class="color-code" style="background-color: #3C57A1;"></div>
+                          <div class="ps-3" >
+                            <a class="fw-bold" href="./mtc-task-detail-asset.html">MC-A002</a>
+                          </div>
+                        </td>
+                        <td>Brake Fluid</td>
+                        <td>Asset</td>
+                        <td><div class="badge status-danger w-100">Urgent</div></td>
+                        <td>1 Hour(s)</td>
+                        <td>
+                          Repeat Every : 60 day(s)
+                        </td>
+                        <td>
+                          <div class="d-flex gap-2 align-items-center">
+                            <a href="./mtc-task-edit-asset.html" class="btn btn-text-primary px-0">Edit</a> /
                             <a href="#" class="btn btn-text-danger px-0">Delete</a>
                           </div>
                         </td>
@@ -450,17 +458,6 @@
                       </li>
                     </ul>
                   </nav>
-                </div>
-              </div>
-
-              <div class="pt-1 row g-2 align-items-center">
-                <div class="col-md-6 col-4">
-                  <button type="reset" class="btn btn-danger">Cancel</button>
-                </div>
-                <div class="col-md-6 col-8 text-end">
-                  <button type="submit" class="btn btn-primary">
-                    Save
-                  </button>
                 </div>
               </div>
             </div>
@@ -506,151 +503,6 @@
                 </div>
               </div>
             </div>
-
-            <div class="modal fade" id="addMaintenanceCodeModal" tabindex="-1" aria-labelledby="addMaintenanceCodeModal" aria-hidden="true">
-              <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content shadow-lg">
-                  <!-- Modal Header -->
-                  <div class="modal-header border-b border-gray-200 px-6 py-4">
-                    <h5 class="modal-title" id="cloneInspectionModalLabel">Add MTC</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-
-                  <!-- Modal Body -->
-                  <div class="modal-body">
-                    <div class="row align-items-center">
-                      <div class="col-md-4">
-                        <div class="col">
-                          <select id="statusFilter" class="form-select">
-                            <option value="" selected>All Asset Category</option>
-                            <option value="Asset">Asset Category 1</option>
-                            <option value="Location">Asset Category 2</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="col">
-                          <select id="colorFilter" class="form-select select2" style="width: 100%;">
-                            <option value="">All Asset Group</option>
-                            <option value="red" data-color="#CA4046">Asset Group 1</option>
-                            <option value="blue" data-color="#007BFF">Asset Group 2</option>
-                            <option value="green" data-color="#28A745">Asset Group 3</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="col">
-                          <select id="colorFilter" class="form-select select2" style="width: 100%;">
-                            <option value="">All Colors</option>
-                            <option value="red" data-color="#CA4046">Red</option>
-                            <option value="blue" data-color="#007BFF">Blue</option>
-                            <option value="green" data-color="#28A745">Green</option>
-                            <option value="yellow" data-color="#FFC107">Yellow</option>
-                            <option value="purple" data-color="#6F42C1">Purple</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-md-12 my-3">
-                        Active Filter:
-                        <button
-                          type="button"
-                          class="btn-danger btn btn-sm rounded-pill ms-2 col"
-                          aria-label="Remove filter"
-                          id="removeFilterButton"
-                        >
-                          Asset Category : Vehicle
-                          <i class="mdi mdi-20px mdi-close-circle ms-2"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="row g-3 align-items-center">
-                      <div class="col">
-                        <div class="d-md-flex d-block g-3 gap-2 align-items-center justify-content-end">
-                          <label class="w-100 custom-search-input position-relative">
-                            <i class="mdi mdi-24px mdi-magnify position-absolute" style="left: 10px; top: 50%; transform: translateY(-50%); color: #999;"></i>
-                            <input
-                              type="search"
-                              class="form-control form-control-sm ps-4 mb-md-0 mb-3 ml-2"
-                              placeholder="Search forms name or request code"
-                              aria-controls="search datatable"
-                              style="padding-left: 2.5rem!important;"
-                            >
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card-datatable table-responsive custom-table text-nowrap">
-                      <table class="min-w-full divide-y divide-gray-200">
-                        <thead>
-                          <tr>
-                            <th>
-                              <div class="form-check mb-0 d-flex justify-content-center">
-                                <input class="form-check-input" type="checkbox" value="" id="allCheckbox">
-                              </div>
-                            </th>
-                            <th class="px-6 py-3">MAINTENANCE CODE</th>
-                            <th class="px-6 py-3">MAINTENANCE NAME</th>
-                            <th class="px-6 py-3">FREQUENCY</th>
-                          </tr>
-                        </thead>
-                        <tbody id="tableBody" class="bg-white divide-y divide-gray-200">
-                          <tr>
-                            <td>
-                              <div class="form-check mb-0 d-flex justify-content-center">
-                                <input class="form-check-input" type="checkbox" value="" id="checkbox-1">
-                              </div>
-                            </td>
-                            <td class="text-primary position-relative">
-                              <div class="color-code" style="background-color: #3C57A1;"></div>
-                              <div class="ps-3" >
-                                MC-A001
-                              </div>
-                            </td>
-                            <td>Engine Oil</td>
-                            <td>
-                              Start On : 0<br/><hr class="my-2"/>
-                              Repeat Every : 25 day(s) / 600 hour(s) / 15 cycle(s)
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <hr class="my-2">
-                    <div class="d-md-flex d-block justify-content-between align-items-center">
-                      <div>Showing 1 to 7 of 100 entries</div>
-                      <nav aria-label="Page navigation">
-                        <ul class="pagination mb-0">
-                          <li class="page-item first">
-                            <a class="page-link waves-effect" href="javascript:void(0);"><i class="tf-icon mdi mdi-skip-previous-outline mdi-20px"></i></a>
-                          </li>
-                          <li class="page-item prev">
-                            <a class="page-link waves-effect" href="javascript:void(0);"><i class="tf-icon mdi mdi-chevron-left mdi-20px"></i></a>
-                          </li>
-                          <li class="page-item active">
-                            <a class="page-link waves-effect" href="javascript:void(0);">1</a>
-                          </li>
-                          <li class="page-item">
-                            <a class="page-link waves-effect" href="javascript:void(0);">2</a>
-                          </li>
-                          <li class="page-item next">
-                            <a class="page-link waves-effect" href="javascript:void(0);"><i class="tf-icon mdi mdi-chevron-right mdi-20px"></i></a>
-                          </li>
-                          <li class="page-item last">
-                            <a class="page-link waves-effect" href="javascript:void(0);"><i class="tf-icon mdi mdi-skip-next-outline mdi-20px"></i></a>
-                          </li>
-                        </ul>
-                      </nav>
-                    </div>
-                  </div>
-
-                  <!-- Modal Footer -->
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">CANCEL</button>
-                    <button type="button" class="btn btn-primary">Add</button>
-                  </div>
-                </div>
-        </div>
-      </div>
 
           </div>
           <!-- Content wrapper -->
@@ -733,7 +585,7 @@
     <script src="./assets/js/approval-forms.js"></script>
     <script>
       $(document).ready(function () {
-        $('#skillSet, #category').select2({
+        $('#skillSet').select2({
           placeholder: $(this).data('placeholder'),
           allowClear: true,
         });

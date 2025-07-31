@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Inisialisasi awal Select2
   $(".select2").select2({
-    dropdownParent: $('#maintenanceTask')
+    dropdownParent: $('#MTCTask')
   });
 
   // -----------------------
