@@ -15,7 +15,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Dashboard - Maintenance Task Engineering</title>
+    <title>Dashboard - MTC Engineering</title>
 
     <!-- Favicon -->
     <link
@@ -162,7 +162,7 @@
               <ul class="menu-sub">
                 <li class="menu-item">
                   <a href="./maintenance-task.html" class="menu-link">
-                    <div data-i18n="Maintenance Task">Maintenance Task</div>
+                    <div data-i18n="MTC">MTC</div>
                   </a>
                 </li>
                 <li class="menu-item">
@@ -282,72 +282,98 @@
               <div class="card">
                 <div class="row">
                   <div class="col-md-3">
-                    <div class="accordion" id="accordionFilter">
-                      <!-- Accordion Filter Priority (terbuka default) -->
-                      <div class="accordion-item shadow-none">
-                        <h2 class="accordion-header" id="headingPriority">
-                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePriority" aria-expanded="true" aria-controls="collapsePriority">
-                            Filter Priority
-                          </button>
-                        </h2>
-                        <div id="collapsePriority" class="accordion-collapse collapse show" aria-labelledby="headingPriority" data-bs-parent="#accordionFilter">
-                          <div class="accordion-body p-0">
-                            <div class="filter-priority">
-                              <div class="form-check form-check-success mb-3">
-                                <input class="form-check-input input-filter" type="checkbox" id="Normal" data-value="Normal" />
-                                <label class="form-check-label" for="Normal">Normal</label>
-                              </div>
-                              <div class="form-check form-check-warning mb-3">
-                                <input class="form-check-input input-filter" type="checkbox" id="High" data-value="High" checked />
-                                <label class="form-check-label" for="High">High</label>
-                              </div>
-                              <div class="form-check form-check-danger mb-3">
-                                <input class="form-check-input input-filter" type="checkbox" id="Urgent" data-value="Urgent" checked />
-                                <label class="form-check-label" for="Urgent">Urgent</label>
+                    <div class="mt-2">
+                      <div class="accordion" id="accordionFilter">
+                        <!-- Accordion Filter Priority (terbuka) -->
+                        <div class="accordion-item shadow-none">
+                          <h2 class="accordion-header" id="headingTarget">
+                            <button class="accordion-button fs-5 text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTarget" aria-expanded="true" aria-controls="collapseTarget">
+                              Target
+                            </button>
+                          </h2>
+                          <div id="collapseTarget" class="accordion-collapse collapse show" aria-labelledby="headingTarget">
+                            <div class="accordion-body pe-md-0">
+                              <div class="filter-target">
+                                <div class="form-check form-check mb-3">
+                                  <input class="form-check-input input-filter" type="checkbox" id="target-asset" data-value="Normal" />
+                                  <label class="form-check-label" for="target-asset">Asset</label>
+                                </div>
+                                <div class="form-check form-check">
+                                  <input class="form-check-input input-filter" type="checkbox" id="target-location" data-value="medium" />
+                                  <label class="form-check-label" for="target-location">Location</label>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <!-- Accordion Filter Status -->
-                      <div class="accordion-item shadow-none">
-                        <h2 class="accordion-header" id="headingStatus">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseStatus" aria-expanded="false" aria-controls="collapseStatus">
-                            Filter Status
-                          </button>
-                        </h2>
-                        <div id="collapseStatus" class="accordion-collapse collapse" aria-labelledby="headingStatus" data-bs-parent="#accordionFilter">
-                          <div class="accordion-body p-0">
-                            <div class="filter-status">
-                              <div class="form-check form-check-primary mb-3">
-                                <input class="form-check-input input-filter" type="checkbox" id="select-personal" data-value="personal" checked />
-                                <label class="form-check-label" for="select-personal">Pending</label>
+                        <!-- Accordion Filter Priority (terbuka) -->
+                        <div class="accordion-item shadow-none">
+                          <h2 class="accordion-header" id="headingPriority">
+                            <button class="accordion-button fs-5 text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePriority" aria-expanded="true" aria-controls="collapsePriority">
+                              Filters Severity
+                            </button>
+                          </h2>
+                          <div id="collapsePriority" class="accordion-collapse collapse show" aria-labelledby="headingPriority">
+                            <div class="accordion-body pe-md-0">
+                              <div class="filter-priority">
+                                <div class="form-check form-check-success mb-3">
+                                  <input class="form-check-input input-filter" type="checkbox" id="lvl-normal" data-value="Normal" />
+                                  <label class="form-check-label" for="lvl-normal">Low</label>
+                                </div>
+                                <div class="form-check form-check-warning mb-3">
+                                  <input class="form-check-input input-filter" type="checkbox" id="lvl-medium" data-value="medium" />
+                                  <label class="form-check-label" for="lvl-medium">Medium</label>
+                                </div>
+                                <div class="form-check form-check-warning-high mb-3">
+                                  <input class="form-check-input input-filter" type="checkbox" id="lvl-high" data-value="High" checked />
+                                  <label class="form-check-label" for="lvl-high">High</label>
+                                </div>
+                                <div class="form-check form-check-danger mb-3">
+                                  <input class="form-check-input input-filter" type="checkbox" id="lvl-urgent" data-value="Urgent" checked />
+                                  <label class="form-check-label" for="lvl-urgent">Urgent</label>
+                                </div>
                               </div>
-                              <div class="form-check form-check-primary mb-3">
-                                <input class="form-check-input input-filter" type="checkbox" id="select-business" data-value="business" checked />
-                                <label class="form-check-label" for="select-business">Assigned</label>
-                              </div>
-                              <div class="form-check form-check-primary mb-3">
-                                <input class="form-check-input input-filter" type="checkbox" id="select-family" data-value="family" checked />
-                                <label class="form-check-label" for="select-family">In Progress</label>
-                              </div>
-                              <div class="form-check form-check-primary mb-3">
-                                <input class="form-check-input input-filter" type="checkbox" id="select-holiday" data-value="holiday" checked />
-                                <label class="form-check-label" for="select-holiday">Completed by Engineer</label>
-                              </div>
-                              <div class="form-check form-check-primary mb-3">
-                                <input class="form-check-input input-filter" type="checkbox" id="select-etc1" data-value="etc1" />
-                                <label class="form-check-label" for="select-etc1">Closed</label>
-                              </div>
-                              <div class="form-check form-check-primary">
-                                <input class="form-check-input input-filter" type="checkbox" id="select-etc" data-value="etc" />
-                                <label class="form-check-label" for="select-etc">Cancelled</label>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Accordion Filter Status (terbuka) -->
+                        <div class="accordion-item shadow-none">
+                          <h2 class="accordion-header" id="headingStatus">
+                            <button class="accordion-button fs-5 text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseStatus" aria-expanded="true" aria-controls="collapseStatus">
+                              Filter Status
+                            </button>
+                          </h2>
+                          <div id="collapseStatus" class="accordion-collapse collapse show" aria-labelledby="headingStatus">
+                            <div class="accordion-body pe-md-0">
+                              <div class="filter-status">
+                                <div class="form-check form-check-primary mb-3">
+                                  <input class="form-check-input input-filter" type="checkbox" id="select-business" data-value="business" checked />
+                                  <label class="form-check-label" for="select-business">Assigned</label>
+                                </div>
+                                <div class="form-check form-check-primary mb-3">
+                                  <input class="form-check-input input-filter" type="checkbox" id="select-family" data-value="family" checked />
+                                  <label class="form-check-label" for="select-family">In Progress</label>
+                                </div>
+                                <div class="form-check form-check-primary mb-3">
+                                  <input class="form-check-input input-filter" type="checkbox" id="select-holiday" data-value="holiday" checked />
+                                  <label class="form-check-label" for="select-holiday">Completed</label>
+                                </div>
+                                <div class="form-check form-check-primary mb-3">
+                                  <input class="form-check-input input-filter" type="checkbox" id="select-etc1" data-value="etc1" />
+                                  <label class="form-check-label" for="select-etc1">Closed</label>
+                                </div>
+                                <div class="form-check form-check-primary">
+                                  <input class="form-check-input input-filter" type="checkbox" id="select-etc" data-value="etc" />
+                                  <label class="form-check-label" for="select-etc">Finished</label>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
+
                   </div>
                   <div class="col-md-9">
                     <div class="px-3 pt-3">
@@ -374,14 +400,75 @@
                             </tr>
                             <tr>
                               <td style="min-width: 40px; max-width: 40px;">
+                                <i class="mdi mdi-24px mdi-checkbox-blank-circle text-warning"></i>
+                              </td>
+                              <td class="text-wrap" style="min-width: 230px; max-width: 230px;">
+                                <a href="./corrective-work-order-detail.html" class="text-primary text-decoration-none fw-semibold">CWO-2025-05-07-0041</a><br>
+                                <div class="d-flex flex-column">
+                                  <span>AC DAIKIN 3/4 PK</span>
+                                  <span>i-2024-01-01-0123</span>
+                                </div>
+                              </td>
+                              <td class="text-wrap" style="min-width: 200px; max-width: 200px;">
+                                <div class="fw-semibold">Asset</div>
+                                <div class="d-flex flex-column">
+                                  <span class="text-primary fw-semibold">DR-A-AC-CELAR</span>
+                                  <span class="text-truncate">Tetesan Air dari indoor</span>
+                                </div>
+                              </td>
+                              <td>
+                                <div>MC-A007 - Cleaning</div>
+                                <div class="d-flex gap-1 align-items-center">
+                                  <i class="mdi mdi-arrow-right-bottom"></i>
+                                  <span class="fw-semibold">INSP-0012 - Wastafel</span>
+                                </div>
+                              </td>
+                              <td>
+                                <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
+                                  <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up" aria-label="Vinnie Mostowy" data-bs-original-title="Vinnie Mostowy">
+                                    <img class="rounded-circle" src="./assets/img/avatars/5.png" alt="Avatar">
+                                  </li>
+                                  <li class="avatar">
+                                    <span class="avatar-initial rounded-circle pull-up bg-label-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Ahmad Setyawan">AS</span>
+                                  </li>
+                                </ul>
+                              </td>
+                              <td>
+                                <div class="badge custom-bg-info p-2 rounded-pill w-100 mb-2">
+                                  Completed
+                                  <i class="mdi mdi-alert-circle-outline ms-1"></i>
+                                </div>
+                                <div class="text-wrap text-center">
+                                  <span class="badge border border-danger text-danger mb-1">NG</span>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="min-width: 40px; max-width: 40px;">
                                 <i class="mdi mdi-24px mdi-checkbox-blank-circle text-danger"></i>
                               </td>
-                              <td class="text-wrap" style="min-width: 220px; max-width: 220px;">
-                                <a href="./schedule-task-detail.html" class="text-primary text-decoration-none fw-semibold">WO-2025-05-07-0041</a><br>
-                                <small>All New Avanza Hitam</small>
+                              <td class="text-wrap" style="min-width: 230px; max-width: 230px;">
+                                <a href="./corrective-work-order-detail.html" class="text-primary text-decoration-none fw-semibold">CWO-2025-05-07-0043</a><br>
+                                <div class="d-flex gap-1 align-items-center">
+                                  <span>Floor 1</span>
+                                  <i class="mdi mdi-24px mdi-arrow-right-box text-dark"></i>
+                                  <span>Room 101</span>
+                                </div>
                               </td>
-                              <td>Asset</td>
-                              <td>4 Item(s)</td>
+                              <td class="text-wrap" style="min-width: 200px; max-width: 200px;">
+                                <div class="fw-semibold">Location</div>
+                                <div class="d-flex flex-column">
+                                  <span class="text-primary fw-semibold">DR-L-R101-MONTHLY</span>
+                                  <span class="text-truncate">Pembuatan Saluran pembuangan air kotor</span>
+                                </div>
+                              </td>
+                              <td>
+                                <div>MC-L001 - Check Sanitary</div>
+                                <div class="d-flex gap-1 align-items-center">
+                                  <i class="mdi mdi-arrow-right-bottom"></i>
+                                  <span class="fw-semibold">INSP-0012 - Wastafel</span>
+                                </div>
+                              </td>
                               <td>
                                 <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
                                   <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up" aria-label="Vinnie Mostowy" data-bs-original-title="Vinnie Mostowy">
@@ -398,58 +485,10 @@
                                   </li>
                                 </ul>
                               </td>
-                              <td><span class="badge bg-success p-2 rounded-pill w-100">Completed</span></td>
-                              <td style="min-width: 160px; max-width: 160px;"></td>
-                            </tr>
-                            <tr>
-                              <td style="min-width: 40px; max-width: 40px;">
-                                <i class="mdi mdi-24px mdi-checkbox-blank-circle text-warning"></i>
-                              </td>
-                              <td class="text-wrap" style="min-width: 220px; max-width: 220px;">
-                                <a href="./schedule-task-detail.html" class="text-primary text-decoration-none fw-semibold">WO-2025-05-07-0045</a><br>
-                                <small>Toyota Innova Reborn Hitam</small>
-                              </td>
-                              <td>Asset</td>
-                              <td>2 Item(s)</td>
                               <td>
-                                <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
-                                  <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up" aria-label="Vinnie Mostowy" data-bs-original-title="Vinnie Mostowy">
-                                    <img class="rounded-circle" src="./assets/img/avatars/5.png" alt="Avatar">
-                                  </li>
-                                  <li class="avatar">
-                                    <span class="avatar-initial rounded-circle pull-up bg-label-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Ahmad Setyawan">AS</span>
-                                  </li>
-                                </ul>
-                              </td>
-                              <td><span class="badge custom-bg-info p-2 rounded-pill w-100">Completed<i class="mdi mdi-alert-circle-outline ms-1"></i></span></td>
-                              <td class="text-wrap" style="min-width: 160px; max-width: 160px;">
-                                <span class="badge border border-danger text-danger mb-1">NG</span>
-                                <span class="badge border border-warning text-warning mb-1">RV</span>
-                                <span class="badge border border-danger text-danger mb-1">DF</span>
-                                <span class="badge border border-secondary text-secondary mb-1">N/A</span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td style="min-width: 40px; max-width: 40px;">
-                                <i class="mdi mdi-24px mdi-checkbox-blank-circle text-danger"></i>
-                              </td>
-                              <td class="text-wrap" style="min-width: 220px; max-width: 220px;">
-                                <a href="./schedule-task-detail.html" class="text-primary text-decoration-none fw-semibold">WO-2025-05-07-0090</a><br>
-                                <small>Honda Beat 110cc th. 2016</small>
-                              </td>
-                              <td>Asset</td>
-                              <td>1 Item</td>
-                              <td>
-                                <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
-                                  <li class="avatar">
-                                    <span class="avatar-initial rounded-circle pull-up bg-label-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Ahmad Setyawan">AS</span>
-                                  </li>
-                                </ul>
-                              </td>
-                              <td><span class="badge bg-warning text-dark p-2 rounded-pill w-100">In Progress</span></td>
-                              <td class="text-wrap" style="min-width: 160px; max-width: 160px;">
-                                <span class="badge border border-danger text-danger mb-1">NG</span>
-                                <span class="badge border border-warning text-warning mb-1">RV</span>
+                                <div class="badge custom-bg-success p-2 rounded-pill w-100 mb-2">
+                                  Completed
+                                </div>
                               </td>
                             </tr>
 
@@ -461,12 +500,27 @@
                               <td style="min-width: 40px; max-width: 40px;">
                                 <i class="mdi mdi-24px mdi-checkbox-blank-circle text-warning"></i>
                               </td>
-                              <td class="text-wrap" style="min-width: 220px; max-width: 220px;">
-                                <a href="./schedule-task-detail.html" class="text-primary text-decoration-none fw-semibold">WO-2025-05-08-0091</a><br>
-                                <small>Toyota All New Avanza type G th. 2020</small>
+                              <td class="text-wrap" style="min-width: 230px; max-width: 230px;">
+                                <a href="./corrective-work-order-detail.html" class="text-primary text-decoration-none fw-semibold">CWO-2025-05-08-0071</a><br>
+                                <div class="d-flex flex-column">
+                                  <span>AC DAIKIN 3/4 PK</span>
+                                  <span>i-2024-01-01-0123</span>
+                                </div>
                               </td>
-                              <td>Asset</td>
-                              <td>8 Item(s)</td>
+                              <td class="text-wrap" style="min-width: 200px; max-width: 200px;">
+                                <div class="fw-semibold">Asset</div>
+                                <div class="d-flex flex-column">
+                                  <span class="text-primary fw-semibold">DR-A-AC-CELAR</span>
+                                  <span class="text-truncate">Kapasitor mati</span>
+                                </div>
+                              </td>
+                              <td>
+                                <div>MC-A007 - Cleaning</div>
+                                <div class="d-flex gap-1 align-items-center">
+                                  <i class="mdi mdi-arrow-right-bottom"></i>
+                                  <span class="fw-semibold">INSP-0003 - Check Outdoor</span>
+                                </div>
+                              </td>
                               <td>
                                 <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
                                   <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up" aria-label="Vinnie Mostowy" data-bs-original-title="Vinnie Mostowy">
@@ -475,13 +529,13 @@
                                   <li class="avatar">
                                     <span class="avatar-initial rounded-circle pull-up bg-label-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Ahmad Setyawan">AS</span>
                                   </li>
-                                  <li class="avatar">
-                                    <span class="avatar-initial rounded-circle pull-up bg-label-success" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Ahmad Setyawan">TH</span>
-                                  </li>
                                 </ul>
                               </td>
-                              <td><span class="badge bg-dark p-2 rounded-pill w-100">Assigned</span></td>
-                              <td class="text-wrap" style="min-width: 160px; max-width: 160px;"></td>
+                              <td>
+                                <div class="badge custom-bg-primary p-2 rounded-pill w-100 mb-2">
+                                  Finished
+                                </div>
+                              </td>
                             </tr>
 
                             <tr class="custom-text-dark fw-semibold">
@@ -489,51 +543,37 @@
                             </tr>
                             <tr>
                               <td style="min-width: 40px; max-width: 40px;">
-                                <i class="mdi mdi-24px mdi-checkbox-blank-circle text-danger"></i>
-                              </td>
-                              <td class="text-wrap" style="min-width: 220px; max-width: 220px;">
-                                <a href="./schedule-task-detail.html" class="text-primary text-decoration-none fw-semibold">WO-2025-05-08-0071</a><br>
-                                <small>Pickup Grandmax Silver type G</small>
-                              </td>
-                              <td>Asset</td>
-                              <td>3 Item(s)</td>
-                              <td>
-                                <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
-                                  <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up" aria-label="Vinnie Mostowy" data-bs-original-title="Vinnie Mostowy">
-                                    <img class="rounded-circle" src="./assets/img/avatars/5.png" alt="Avatar">
-                                  </li>
-                                  <li class="avatar">
-                                    <span class="avatar-initial rounded-circle pull-up bg-label-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Ahmad Setyawan">AS</span>
-                                  </li>
-                                </ul>
-                              </td>
-                              <td><span class="badge bg-success p-2 rounded-pill w-100">Completed</span></td>
-                              <td class="text-wrap" style="min-width: 160px; max-width: 160px;">
-                                <span class="badge border border-warning text-warning mb-1">RV</span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td style="min-width: 40px; max-width: 40px;">
                                 <i class="mdi mdi-24px mdi-checkbox-blank-circle text-warning"></i>
                               </td>
-                              <td class="text-wrap" style="min-width: 220px; max-width: 220px;">
-                                <a href="./schedule-task-detail.html" class="text-primary text-decoration-none fw-semibold">WO-2025-05-08-0081</a><br>
-                                <small>Honda Vario 160cc th. 2019</small>
+                              <td class="text-wrap" style="min-width: 230px; max-width: 230px;">
+                                <a href="./corrective-work-order-detail.html" class="text-primary text-decoration-none fw-semibold">CWO-2025-05-08-0073</a><br>
+                                <div class="d-flex flex-column">
+                                  <span>Toyota Avanza G Hitam </span>
+                                  <span>i-2025-01-01-0002</span>
+                                </div>
                               </td>
-                              <td>Asset</td>
-                              <td>2 Item(s)</td>
+                              <td class="text-wrap" style="min-width: 200px; max-width: 200px;">
+                                <div class="fw-semibold">Asset</div>
+                                <div class="d-flex flex-column">
+                                  <span class="text-primary fw-semibold">DR-A-AVANZ-KABEL</span>
+                                  <span class="text-truncate">Kabel Body Konslet</span>
+                                </div>
+                              </td>
+                              <td>
+                                -
+                              </td>
                               <td>
                                 <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
-                                  <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up" aria-label="Vinnie Mostowy" data-bs-original-title="Vinnie Mostowy">
-                                    <img class="rounded-circle" src="./assets/img/avatars/5.png" alt="Avatar">
-                                  </li>
                                   <li class="avatar">
-                                    <span class="avatar-initial rounded-circle pull-up bg-label-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Ahmad Setyawan">AS</span>
+                                    <span class="avatar-initial rounded-circle pull-up bg-label-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Ahmad Setyawan">AS</span>
                                   </li>
                                 </ul>
                               </td>
-                              <td><span class="badge bg-dark p-2 rounded-pill w-100">Assigned</span></td>
-                              <td class="text-wrap" style="min-width: 160px; max-width: 160px;"></td>
+                              <td>
+                                <div class="badge custom-bg-secondary p-2 rounded-pill w-100 mb-2">
+                                  Assigned
+                                </div>
+                              </td>
                             </tr>
                           </tbody>
                         </table>
@@ -580,7 +620,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="deleteConfirmationLabel">
-                      Delete Maintenance Task : MC-A001
+                      Delete MTC : MC-A001
                     </h5>
                     <button
                       type="button"

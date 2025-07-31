@@ -15,7 +15,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Dashboard - Maintenance Task Engineering</title>
+    <title>Dashboard - MTC Engineering</title>
 
     <!-- Favicon -->
     <link
@@ -162,7 +162,7 @@
               <ul class="menu-sub">
                 <li class="menu-item">
                   <a href="./maintenance-task.html" class="menu-link">
-                    <div data-i18n="Maintenance Task">Maintenance Task</div>
+                    <div data-i18n="MTC">MTC</div>
                   </a>
                 </li>
                 <li class="menu-item">
@@ -282,130 +282,76 @@
               <div class="card">
                 <div class="row">
                   <div class="col-md-3">
-                    <div class="p-4">
-                      <div class="mb-3">
-                        <small class="text-small text-muted text-uppercase align-middle">
-                          Filter Priority
-                        </small>
-                      </div>
-                      <div class="filter-priority">
-                        <div class="form-check form-check-success mb-3">
-                          <input
-                            class="form-check-input input-filter"
-                            type="checkbox"
-                            id="Normal"
-                            data-value="Normal"
-                          />
-                          <label class="form-check-label" for="Normal"
-                            >Normal</label
-                          >
+                    <div class="mt-2">
+                      <div class="accordion" id="accordionFilter">
+                        <!-- Accordion Filter Priority (terbuka) -->
+                        <div class="accordion-item shadow-none">
+                          <h2 class="accordion-header" id="headingPriority">
+                            <button class="accordion-button fs-5 text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePriority" aria-expanded="true" aria-controls="collapsePriority">
+                              Filters Priority
+                            </button>
+                          </h2>
+                          <div id="collapsePriority" class="accordion-collapse collapse show" aria-labelledby="headingPriority">
+                            <div class="accordion-body pe-md-0">
+                              <div class="filter-priority">
+                                <div class="form-check form-check-success mb-3">
+                                  <input class="form-check-input input-filter" type="checkbox" id="lvl-normal" data-value="Normal" />
+                                  <label class="form-check-label" for="lvl-normal">Normal</label>
+                                </div>
+                                <div class="form-check form-check-warning mb-3">
+                                  <input class="form-check-input input-filter" type="checkbox" id="lvl-medium" data-value="medium" checked />
+                                  <label class="form-check-label" for="lvl-medium">High</label>
+                                </div>
+                                <div class="form-check form-check-danger mb-3">
+                                  <input class="form-check-input input-filter" type="checkbox" id="lvl-urgent" data-value="Urgent" checked />
+                                  <label class="form-check-label" for="lvl-urgent">Urgent</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div class="form-check form-check-warning mb-3">
-                          <input
-                            class="form-check-input input-filter"
-                            type="checkbox"
-                            id="High"
-                            data-value="High"
-                            checked
-                          />
-                          <label class="form-check-label" for="High"
-                            >High</label
-                          >
-                        </div>
-                        <div class="form-check form-check-danger mb-3">
-                          <input
-                            class="form-check-input input-filter"
-                            type="checkbox"
-                            id="Urgent"
-                            data-value="Urgent"
-                            checked
-                          />
-                          <label class="form-check-label" for="Urgent"
-                            >Urgent</label
-                          >
-                        </div>
-                      </div>
-                      <hr class="container-m-nx my-4" />
-                      <!-- Filter -->
-                      <div class="mb-3">
-                        <small class="text-small text-muted text-uppercase align-middle">
-                          Filter Status
-                        </small>
-                      </div>
 
-                      <div class="filter-status">
-                        <div class="form-check form-check-primary mb-3">
-                          <input
-                            class="form-check-input input-filter"
-                            type="checkbox"
-                            id="select-personal"
-                            data-value="personal"
-                            checked=""
-                          />
-                          <label class="form-check-label" for="select-personal"
-                            >Pending</label
-                          >
-                        </div>
-                        <div class="form-check form-check-primary mb-3">
-                          <input
-                            class="form-check-input input-filter"
-                            type="checkbox"
-                            id="select-business"
-                            data-value="business"
-                            checked=""
-                          />
-                          <label class="form-check-label" for="select-business"
-                            >Assigned</label
-                          >
-                        </div>
-                        <div class="form-check form-check-primary mb-3">
-                          <input
-                            class="form-check-input input-filter"
-                            type="checkbox"
-                            id="select-family"
-                            data-value="family"
-                            checked=""
-                          />
-                          <label class="form-check-label" for="select-family"
-                            >In Progress</label
-                          >
-                        </div>
-                        <div class="form-check form-check-primary mb-3">
-                          <input
-                            class="form-check-input input-filter"
-                            type="checkbox"
-                            id="select-holiday"
-                            data-value="holiday"
-                            checked=""
-                          />
-                          <label class="form-check-label" for="select-holiday"
-                            >Completed by Engineer</label
-                          >
-                        </div>
-                        <div class="form-check form-check-primary mb-3">
-                          <input
-                            class="form-check-input input-filter"
-                            type="checkbox"
-                            id="select-etc1"
-                            data-value="etc1"
-                          />
-                          <label class="form-check-label" for="select-etc1"
-                            >Closed</label
-                          >
-                        </div>
-                        <div class="form-check form-check-primary">
-                          <input
-                            class="form-check-input input-filter"
-                            type="checkbox"
-                            id="select-etc"
-                            data-value="etc"
-                          />
-                          <label class="form-check-label" for="select-etc"
-                            >Cancelled</label
-                          >
+                        <!-- Accordion Filter Status (terbuka) -->
+                        <div class="accordion-item shadow-none">
+                          <h2 class="accordion-header" id="headingStatus">
+                            <button class="accordion-button fs-5 text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseStatus" aria-expanded="true" aria-controls="collapseStatus">
+                              Filter Status
+                            </button>
+                          </h2>
+                          <div id="collapseStatus" class="accordion-collapse collapse show" aria-labelledby="headingStatus">
+                            <div class="accordion-body pe-md-0">
+                              <div class="filter-status">
+                                <div class="form-check form-check-primary mb-3">
+                                  <input class="form-check-input input-filter" type="checkbox" id="select-personal" data-value="personal" checked />
+                                  <label class="form-check-label" for="select-personal">Pending</label>
+                                </div>
+                                <div class="form-check form-check-primary mb-3">
+                                  <input class="form-check-input input-filter" type="checkbox" id="select-business" data-value="business" checked />
+                                  <label class="form-check-label" for="select-business">Assigned</label>
+                                </div>
+                                <div class="form-check form-check-primary mb-3">
+                                  <input class="form-check-input input-filter" type="checkbox" id="select-family" data-value="family" checked />
+                                  <label class="form-check-label" for="select-family">In Progress</label>
+                                </div>
+                                <div class="form-check form-check-primary mb-3">
+                                  <input class="form-check-input input-filter" type="checkbox" id="select-holiday" data-value="holiday" checked />
+                                  <label class="form-check-label" for="select-holiday">Completed by Engineer</label>
+                                </div>
+                                <div class="form-check form-check-primary mb-3">
+                                  <input class="form-check-input input-filter" type="checkbox" id="select-etc1" data-value="etc1" />
+                                  <label class="form-check-label" for="select-etc1">Closed</label>
+                                </div>
+                                <div class="form-check form-check-primary">
+                                  <input class="form-check-input input-filter" type="checkbox" id="select-etc" data-value="etc" />
+                                  <label class="form-check-label" for="select-etc">Cancelled</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
+
                   </div>
                   <div class="col-md-9">
                     <div class="px-3 pt-3">
@@ -638,7 +584,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="deleteConfirmationLabel">
-                      Delete Maintenance Task : MC-A001
+                      Delete MTC : MC-A001
                     </h5>
                     <button
                       type="button"

@@ -1288,6 +1288,11 @@ div.badge {
   border-color: var(--waiting-approval-color) !important;
 }
 
+.form-check-warning-high .form-check-input:checked {
+  background-color: #EA7712 !important;
+  border-color: #EA7712 !important;
+}
+
 .form-check-danger .form-check-input:checked {
   background-color: var(--decline-color) !important;
   border-color: var(--decline-color) !important;
