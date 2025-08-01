@@ -340,7 +340,7 @@
                     </div>
                     <div class="d-flex d-block g-3 align-items-center justify-content-between mt-3 py-2 px-3" style="background-color: #13131310; border-radius: 8px;">
                       <div><span class="text-primary fw-semibold">Showing 100 Asset. </span>50 Template N/A & 50 Assigned</div>
-                      <button class="btn btn-text-danger px-0 text-capitalize"><i class="mdi mdi-20px mdi-close me-1"></i>Remove Assignment (All)</button>
+                      <button class="btn btn-text-danger px-0 text-capitalize" data-bs-toggle="modal" data-bs-target="#confirmRemoveAllModal"><i class="mdi mdi-20px mdi-close me-1"></i>Remove Assignment (All)</button>
                     </div>
                   </div>
                 </div>
@@ -349,6 +349,7 @@
                   <table class="table card-table table-borderless">
                     <thead>
                       <tr>
+                        <th></th>
                         <th style="min-width: 260px;">asset code & name</th>
                         <th style="min-width: 200px;">category</th>
                         <th style="min-width: 200px;">group</th>
@@ -360,6 +361,7 @@
                     </thead>
                     <tbody class="table-border-bottom-0">
                       <tr>
+                        <td></td>
                         <td>
                           <div class="ps-3">
                             <a href="asset-readiness-detail.html" class="fw-bold text-primary">01-03-39-57-84-0V2</a><br/>
@@ -383,6 +385,7 @@
                       </tr>
 
                       <tr>
+                        <td></td>
                         <td>
                           <div class="ps-3">
                             <a href="asset-readiness-detail.html" class="fw-bold text-primary">02-04-55-43-g01</a><br/>
@@ -805,6 +808,24 @@
               </div>
             </div>
 
+            <div class="modal fade" id="confirmRemoveAllModal" tabindex="-1" aria-labelledby="confirmRemoveAllLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content shadow">
+                  <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title" id="confirmRemoveAllLabel">Confirm Removal</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p class="mb-0">Are you sure you want to remove <strong>all assignments</strong>? This action cannot be undone.</p>
+                  </div>
+                  <div class="modal-footer border-0 pt-0">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="confirmRemoveAllBtn">Yes, Remove All</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
           <!-- Content wrapper -->
         </div>
@@ -877,7 +898,6 @@
     <script src="./assets/js/main.js"></script>
 
     <!-- Page JS -->
-    <script src="./assets/js/approval-forms.js"></script>
     <script>
       $(document).ready(function () {
         $('#skillSet').select2({

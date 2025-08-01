@@ -187,7 +187,7 @@
               <a href="./dispatcher-center.html" class="menu-link">
                 <i class="menu-icon tf-icons mdi mdi-clipboard-account-outline"></i>
                 <div data-i18n="Dispatcher Center">Dispatcher Center</div>
-                <i class="mdi mdi-alert-circle-outline ms-2"></i>
+                <i class="mdi mdi-alert-circle ms-2 text-warning"></i>
               </a>
             </li>
             <li class="menu-item">
@@ -200,6 +200,12 @@
               <a href="./corrective-work-order.html" class="menu-link">
                 <i class="menu-icon tf-icons mdi mdi-wrench-outline"></i>
                 <div data-i18n="Corrective Work Order">Corrective Work Order</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="./discrepancy-report.html" class="menu-link">
+                <i class="menu-icon tf-icons mdi mdi-finance"></i>
+                <div data-i18n="Discrepancy Report">Discrepancy Report</div>
               </a>
             </li>
           </ul>
@@ -290,7 +296,7 @@
                       aria-controls="navs-assets"
                       aria-selected="true"
                     >
-                      Assets <i class="mdi mdi-alert-circle-outline ms-2 text-warning"></i>
+                      Assets <i class="mdi mdi-alert-circle ms-2 text-warning"></i>
                     </button>
                   </li>
                   <li class="nav-item">
@@ -303,7 +309,7 @@
                       aria-controls="navs-locations"
                       aria-selected="false"
                     >
-                      Locations <i class="mdi mdi-alert-circle-outline ms-2 text-warning"></i>
+                      Locations <i class="mdi mdi-alert-circle ms-2 text-warning"></i>
                     </button>
                   </li>
                 </ul>
@@ -319,31 +325,28 @@
                     <div class="row g-3 px-4 my-3">
                       <div class="col-md-12">
                         <div class="row align-items-center">
-                          <div class="col-md-4">
+                          <div class="col-md-6">
                             <div class="col-auto">
                               <label for="statusFilter" class="form-label mb-1">Priority</label>
                             </div>
                             <div class="col">
                               <select id="statusFilter" class="form-select">
-                                <option value="" selected>All Priority</option>
+                                <option value="" selected>All</option>
                                 <option value="Asset">Normal</option>
                                 <option value="Asset">High</option>
                                 <option value="Asset">Urgent</option>
                               </select>
                             </div>
                           </div>
-                          <div class="col-md-4">
+                          <div class="col-md-6">
                             <div class="col-auto">
-                              <label for="colorFilter" class="form-label mb-1">Assigment Status</label>
+                              <label for="colorFilter" class="form-label mb-1">Assigned Status</label>
                             </div>
                             <div class="col">
                               <select id="colorFilter" class="form-select select2" style="width: 100%;">
-                                <option value="">All Colors</option>
-                                <option value="red" data-color="#CA4046">Red</option>
-                                <option value="blue" data-color="#007BFF">Blue</option>
-                                <option value="green" data-color="#28A745">Green</option>
-                                <option value="yellow" data-color="#FFC107">Yellow</option>
-                                <option value="purple" data-color="#6F42C1">Purple</option>
+                                <option value="">Not Assigned + Assigned</option>
+                                <option value="">Not Assigned</option>
+                                <option value="">Assigned</option>
                               </select>
                             </div>
                           </div>
@@ -384,11 +387,11 @@
                       <table class="table card-table table-borderless">
                         <thead>
                           <tr>
-                            <th class="align-middle" style="max-width: 230px;">MTC & name</th>
+                            <th class="align-middle" style="min-width: 200px;max-width: 200px;">MTC Task & name</th>
                             <th class="text-center align-middle">#asset item</th>
-                            <th class="text-center align-middle"><i class="mdi mdi-close-circle text-danger me-1"></i>overdue</th>
-                            <th class="text-center align-middle">
-                              <i class="mdi mdi-alert-circle text-warning me-1"></i> due soon
+                            <th class="text-center align-middle" style="min-width: 160px;max-width: 160px;">overdue</th>
+                            <th class="text-center align-middle" style="min-width: 160px;max-width: 160px;">
+                              due soon
                               <button
                                 type="button"
                                 class="btn btn-sm btn-outline-secondary p-1"
@@ -413,14 +416,26 @@
                                 <span>Engine Oil</span>
                               </div>
                             </td>
-                            <td class="text-center fw-bold fs-4">10</td>
-                            <td class="text-center text-danger fw-bold fs-4">3</td>
-                            <td class="text-center text-warning fw-bold fs-4">2</td>
+                            <td class="text-center fw-bold fs-4">
+                              <a href="./dispatcher-center-assign.html" class="d-flex flex-column">8</a>
+                            </td>
+                            <td class="text-center">
+                              <a href="./dispatcher-center-assign.html" class="d-flex flex-column">
+                                <span class="fs-4 fw-bold text-danger">5</span>
+                                <span class="fs-6 text-dark">2 Assigned <i class="mdi mdi-alert-circle text-warning"></i></span>
+                              </a>
+                            </td>
+                            <td class="text-center">
+                              <a href="./dispatcher-center-assign.html" class="d-flex flex-column">
+                                <span class="fs-4 fw-bold text-warning">3</span>
+                                <span class="fs-6 text-dark">3 Assigned <i class="mdi mdi-check-circle text-success"></i></span>
+                              </a>
+                            </td>
                             <td class="text-center"><div class="badge status-success w-100">Normal</div></td>
                             <td>
                               <div class="d-flex justify-content-center align-items-center">
                                 <div class="d-flex flex-column gap-1 align-items-center justify-content-center">
-                                  <span class="badge badge-center rounded-pill text-bg-dark p-3 fs-5">6</span>
+                                  <span class="badge badge-center rounded-pill text-bg-dark p-3 fs-5">2</span>
                                   <span class="small">Scheduled</span>
                                 </div>
                                 <hr class="divider divider-vertical my-0 mx-4">
@@ -445,19 +460,31 @@
                                 <span>Brake Fluid</span>
                               </div>
                             </td>
-                            <td class="text-center fw-bold fs-4">10</td>
-                            <td class="text-center text-danger fw-bold fs-4">3</td>
-                            <td class="text-center text-warning fw-bold fs-4">2</td>
+                            <td class="text-center fw-bold fs-4">
+                              <a href="./dispatcher-center-assign.html" class="d-flex flex-column">5</a>
+                            </td>
+                            <td class="text-center">
+                              <a href="./dispatcher-center-assign.html" class="d-flex flex-column">
+                                <span class="fs-4 fw-bold text-danger">2</span>
+                                <span class="fs-6 text-dark">2 Assigned <i class="mdi mdi-check-circle text-success"></i></span>
+                              </a>
+                            </td>
+                            <td class="text-center">
+                              <a href="./dispatcher-center-assign.html" class="d-flex flex-column">
+                                <span class="fs-4 fw-bold text-warning">3</span>
+                                <span class="fs-6 text-dark">3 Assigned <i class="mdi mdi-check-circle text-success"></i></span>
+                              </a>
+                            </td>
                             <td class="text-center"><div class="badge status-danger w-100">Urgent</div></td>
                             <td>
                               <div class="d-flex justify-content-center align-items-center">
                                 <div class="d-flex flex-column gap-1 align-items-center justify-content-center">
-                                  <span class="badge badge-center rounded-pill text-bg-dark p-3 fs-5">12</span>
+                                  <span class="badge badge-center rounded-pill text-bg-dark p-3 fs-5">2</span>
                                   <span class="small">Scheduled</span>
                                 </div>
                                 <hr class="divider divider-vertical my-0 mx-4">
                                 <div class="d-flex flex-column gap-1 align-items-center justify-content-center">
-                                  <span class="badge badge-center rounded-pill custom-text-bg-warning p-3 fs-5">6</span>
+                                  <span class="badge badge-center rounded-pill custom-text-bg-warning p-3 fs-5">3</span>
                                   <span class="small">In Progress</span>
                                 </div>
                               </div>
@@ -477,19 +504,31 @@
                                 <span>Understeel</span>
                               </div>
                             </td>
-                            <td class="text-center fw-bold fs-4">10</td>
-                            <td class="text-center text-danger fw-bold fs-4">3</td>
-                            <td class="text-center text-warning fw-bold fs-4">2</td>
+                            <td class="text-center fw-bold fs-4">
+                              <a href="./dispatcher-center-assign.html" class="d-flex flex-column">6</a>
+                            </td>
+                            <td class="text-center">
+                              <a href="./dispatcher-center-assign.html" class="d-flex flex-column">
+                                <span class="fs-4 fw-bold text-danger">3</span>
+                                <span class="fs-6 text-dark">3 Assigned <i class="mdi mdi-check-circle text-success"></i></span>
+                              </a>
+                            </td>
+                            <td class="text-center">
+                              <a href="./dispatcher-center-assign.html" class="d-flex flex-column">
+                                <span class="fs-4 fw-bold text-warning">3</span>
+                                <span class="fs-6 text-dark">1 Assigned <i class="mdi mdi-alert-circle text-warning"></i></span>
+                              </a>
+                            </td>
                             <td class="text-center"><div class="badge status-warning w-100">High</div></td>
                             <td>
                               <div class="d-flex justify-content-center align-items-center">
                                 <div class="d-flex flex-column gap-1 align-items-center justify-content-center">
-                                  <span class="badge badge-center rounded-pill text-bg-dark p-3 fs-5">23</span>
+                                  <span class="badge badge-center rounded-pill text-bg-dark p-3 fs-5">3</span>
                                   <span class="small">Scheduled</span>
                                 </div>
                                 <hr class="divider divider-vertical my-0 mx-4">
                                 <div class="d-flex flex-column gap-1 align-items-center justify-content-center">
-                                  <span class="badge badge-center rounded-pill custom-text-bg-warning p-3 fs-5">4</span>
+                                  <span class="badge badge-center rounded-pill custom-text-bg-warning p-3 fs-5">1</span>
                                   <span class="small">In Progress</span>
                                 </div>
                               </div>
@@ -546,7 +585,7 @@
                             </div>
                             <div class="col">
                               <select id="statusFilter" class="form-select">
-                                <option value="" selected>All Priority</option>
+                                <option value="" selected>All</option>
                                 <option value="Asset">Normal</option>
                                 <option value="Asset">High</option>
                                 <option value="Asset">Urgent</option>
@@ -555,16 +594,13 @@
                           </div>
                           <div class="col-md-4">
                             <div class="col-auto">
-                              <label for="colorFilter" class="form-label mb-1">Assigment Status</label>
+                              <label for="colorFilter" class="form-label mb-1">Assigned Status</label>
                             </div>
                             <div class="col">
                               <select id="colorFilter" class="form-select select2" style="width: 100%;">
-                                <option value="">All Colors</option>
-                                <option value="red" data-color="#CA4046">Red</option>
-                                <option value="blue" data-color="#007BFF">Blue</option>
-                                <option value="green" data-color="#28A745">Green</option>
-                                <option value="yellow" data-color="#FFC107">Yellow</option>
-                                <option value="purple" data-color="#6F42C1">Purple</option>
+                                <option value="">Not Assigned + Assigned</option>
+                                <option value="">Not Assigned</option>
+                                <option value="">Assigned</option>
                               </select>
                             </div>
                           </div>
@@ -574,7 +610,7 @@
                             </div>
                             <div class="col">
                               <select id="skillSet" class="form-select select2" style="width: 100%;" data-placeholder="Select a skill">
-                                <option selected>All Location</option> 
+                                <option selected>All</option> 
                                 <option value="Engineering Skill 1">Location 1</option>
                                 <option value="Engineering Skill 2">Location 2</option>
                                 <option value="Engineering Skill 3">Location 3</option>
@@ -619,11 +655,11 @@
                       <table class="table card-table table-borderless">
                         <thead>
                           <tr>
-                            <th class="align-middle" style="max-width: 230px;">MTC & name</th>
+                            <th class="align-middle" style="min-width: 200px;max-width: 200px;">MTC Task & name</th>
                             <th class="text-center align-middle">#location</th>
-                            <th class="text-center align-middle"><i class="mdi mdi-close-circle text-danger me-1"></i>overdue</th>
-                            <th class="text-center align-middle">
-                              <i class="mdi mdi-alert-circle text-warning me-1"></i> due soon
+                            <th class="text-center align-middle" style="min-width: 160px;max-width: 160px;">overdue</th>
+                            <th class="text-center align-middle" style="min-width: 160px;max-width: 160px;">
+                              due soon
                               <button
                                 type="button"
                                 class="btn btn-sm btn-outline-secondary p-1"
@@ -644,30 +680,40 @@
                             <td class="position-relative">
                               <div class="color-code" style="background-color: #3C57A1;"></div>
                               <div class="ps-3" >
-                                <span class="fw-semibold text-primary">MC-A001</span><br/>
-                                <span>Engine Oil</span>
+                                <span class="fw-semibold text-primary">MC-L006</span><br/>
+                                <span>Check Sanitary</span>
                               </div>
                             </td>
                             <td class="text-center fw-bold fs-4">10</td>
-                            <td class="text-center text-danger fw-bold fs-4">3</td>
-                            <td class="text-center text-warning fw-bold fs-4">2</td>
+                            <td class="text-center">
+                              <a href="./dispatcher-center-assign.html" class="d-flex flex-column">
+                                <span class="fs-4 fw-bold text-danger">5</span>
+                                <span class="fs-6 text-dark">2 Assigned <i class="mdi mdi-alert-circle text-warning"></i></span>
+                              </a>
+                            </td>
+                            <td class="text-center">
+                              <a href="./dispatcher-center-assign.html" class="d-flex flex-column">
+                                <span class="fs-4 fw-bold text-warning">3</span>
+                                <span class="fs-6 text-dark">3 Assigned <i class="mdi mdi-check-circle text-success"></i></span>
+                              </a>
+                            </td>
                             <td class="text-center"><div class="badge status-success w-100">Normal</div></td>
                             <td>
                               <div class="d-flex justify-content-center align-items-center">
                                 <div class="d-flex flex-column gap-1 align-items-center justify-content-center">
-                                  <span class="badge badge-center rounded-pill text-bg-dark p-3 fs-5">6</span>
+                                  <span class="badge badge-center rounded-pill text-bg-dark p-3 fs-5">1</span>
                                   <span class="small">Scheduled</span>
                                 </div>
                                 <hr class="divider divider-vertical my-0 mx-4">
                                 <div class="d-flex flex-column gap-1 align-items-center justify-content-center">
-                                  <span class="badge badge-center rounded-pill custom-text-bg-warning p-3 fs-5">3</span>
+                                  <span class="badge badge-center rounded-pill custom-text-bg-warning p-3 fs-5">1</span>
                                   <span class="small">In Progress</span>
                                 </div>
                               </div>
                             </td>
                             <td>
                               <div class="d-flex gap-2 align-items-center">
-                                <a href="./dispatcher-center-assign-location.html" class="btn btn-text-primary px-0 text-capitalize">Assign To</a>
+                                <a href="./dispatcher-center-assign.html" class="btn btn-text-primary px-0 text-capitalize">Assign To</a>
                               </div>
                             </td>
                           </tr>
@@ -676,30 +722,40 @@
                             <td class="position-relative">
                               <div class="color-code" style="background-color: #EA9612;"></div>
                               <div class="ps-3" >
-                                <span class="fw-semibold text-primary">MC-A002</span><br/>
-                                <span>Brake Fluid</span>
+                                <span class="fw-semibold text-primary">MC-L008</span><br/>
+                                <span>Check AC</span>
                               </div>
                             </td>
                             <td class="text-center fw-bold fs-4">10</td>
-                            <td class="text-center text-danger fw-bold fs-4">3</td>
-                            <td class="text-center text-warning fw-bold fs-4">2</td>
+                            <td class="text-center">
+                              <a href="./dispatcher-center-assign.html" class="d-flex flex-column">
+                                <span class="fs-4 fw-bold text-danger">2</span>
+                                <span class="fs-6 text-dark">2 Assigned <i class="mdi mdi-check-circle text-success"></i></span>
+                              </a>
+                            </td>
+                            <td class="text-center">
+                              <a href="./dispatcher-center-assign.html" class="d-flex flex-column">
+                                <span class="fs-4 fw-bold text-warning">3</span>
+                                <span class="fs-6 text-dark">3 Assigned <i class="mdi mdi-check-circle text-success"></i></span>
+                              </a>
+                            </td>
                             <td class="text-center"><div class="badge status-danger w-100">Urgent</div></td>
                             <td>
                               <div class="d-flex justify-content-center align-items-center">
                                 <div class="d-flex flex-column gap-1 align-items-center justify-content-center">
-                                  <span class="badge badge-center rounded-pill text-bg-dark p-3 fs-5">12</span>
+                                  <span class="badge badge-center rounded-pill text-bg-dark p-3 fs-5">1</span>
                                   <span class="small">Scheduled</span>
                                 </div>
                                 <hr class="divider divider-vertical my-0 mx-4">
                                 <div class="d-flex flex-column gap-1 align-items-center justify-content-center">
-                                  <span class="badge badge-center rounded-pill custom-text-bg-warning p-3 fs-5">6</span>
+                                  <span class="badge badge-center rounded-pill custom-text-bg-warning p-3 fs-5">1</span>
                                   <span class="small">In Progress</span>
                                 </div>
                               </div>
                             </td>
                             <td>
                               <div class="d-flex gap-2 align-items-center">
-                                <a href="./dispatcher-center-assign-location.html" class="btn btn-text-primary px-0 text-capitalize">Assign To</a>
+                                <a href="./dispatcher-center-assign.html" class="btn btn-text-primary px-0 text-capitalize">Assign To</a>
                               </div>
                             </td>
                           </tr>
@@ -708,30 +764,40 @@
                             <td class="position-relative">
                               <div class="color-code" style="background-color: #3C57A1;"></div>
                               <div class="ps-3" >
-                                <span class="fw-semibold text-primary">MC-A003</span><br/>
-                                <span>Understeel</span>
+                                <span class="fw-semibold text-primary">MC-L0010</span><br/>
+                                <span>Check Lighting</span>
                               </div>
                             </td>
                             <td class="text-center fw-bold fs-4">10</td>
-                            <td class="text-center text-danger fw-bold fs-4">3</td>
-                            <td class="text-center text-warning fw-bold fs-4">2</td>
+                            <td class="text-center">
+                              <a href="./dispatcher-center-assign.html" class="d-flex flex-column">
+                                <span class="fs-4 fw-bold text-danger">3</span>
+                                <span class="fs-6 text-dark">3 Assigned <i class="mdi mdi-check-circle text-success"></i></span>
+                              </a>
+                            </td>
+                            <td class="text-center">
+                              <a href="./dispatcher-center-assign.html" class="d-flex flex-column">
+                                <span class="fs-4 fw-bold text-warning">3</span>
+                                <span class="fs-6 text-dark">1 Assigned <i class="mdi mdi-alert-circle text-warning"></i></span>
+                              </a>
+                            </td>
                             <td class="text-center"><div class="badge status-warning w-100">High</div></td>
                             <td>
                               <div class="d-flex justify-content-center align-items-center">
                                 <div class="d-flex flex-column gap-1 align-items-center justify-content-center">
-                                  <span class="badge badge-center rounded-pill text-bg-dark p-3 fs-5">23</span>
+                                  <span class="badge badge-center rounded-pill text-bg-dark p-3 fs-5">2</span>
                                   <span class="small">Scheduled</span>
                                 </div>
                                 <hr class="divider divider-vertical my-0 mx-4">
                                 <div class="d-flex flex-column gap-1 align-items-center justify-content-center">
-                                  <span class="badge badge-center rounded-pill custom-text-bg-warning p-3 fs-5">4</span>
+                                  <span class="badge badge-center rounded-pill custom-text-bg-warning p-3 fs-5">1</span>
                                   <span class="small">In Progress</span>
                                 </div>
                               </div>
                             </td>
                             <td>
                               <div class="d-flex gap-2 align-items-center">
-                                <a href="./dispatcher-center-assign-location.html" class="btn btn-text-primary px-0 text-capitalize">Assign To</a>
+                                <a href="./dispatcher-center-assign.html" class="btn btn-text-primary px-0 text-capitalize">Assign To</a>
                               </div>
                             </td>
                           </tr>

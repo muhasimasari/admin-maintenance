@@ -386,28 +386,29 @@
                     </div>
 
                     <div class="col-md-6">
-                      <div class="d-flex g-2 flex-column mb-4">
-                        <div class="col-md p-6">
-                          <p class="text fw-medium mb-2">Color Form</p>
-                          <div
-                            class="radio-group"
-                            id="radio-group-container"
-                          ></div>
-                        </div>
-                      </div>
                       <div class="form-floating form-floating-outline mb-4">
-                        <select id="assetCategory" class="form-select select2" style="width: 100%;">
-                          <option value="Normal">Asset Category</option>
-                          <option value="Normal">Vehicle</option>
-                          <option value="High">Furniture</option>
+                        <select id="colorFilter" class="form-select select2" style="width: 100%;">
+                          <option value="">Choose Category</option>
+                          <option value="red" data-color="#CA4046">Category 1</option>
+                          <option value="blue" data-color="#007BFF">Category 2</option>
+                          <option value="green" data-color="#28A745">Category 3</option>
+                          <option value="yellow" data-color="#FFC107">Category 4</option>
+                          <option value="purple" data-color="#6F42C1">Category 5</option>
                         </select>
                       </div>
                       <div class="form-floating form-floating-outline mb-4">
-                        <select id="assetGroup" class="form-select select2" style="width: 100%;">
-                          <option value="Normal">Asset Group</option>
-                          <option value="Normal">Car</option>
-                          <option value="High">Receptionist Table</option>
-                        </select>
+                        <select
+                          id="assetCategory-1"
+                          class="form-select select2"
+                          style="width: 100%"
+                        ></select>
+                      </div>
+                      <div class="form-floating form-floating-outline mb-4">
+                        <select
+                          id="assetGroup-1"
+                          class="form-select select2"
+                          style="width: 100%"
+                        ></select>
                       </div>
                     </div>
                   </div>
@@ -933,29 +934,30 @@
               <!-- Registered Form -->
               <div id="registered-form" class="row g-3 mb-3 d-none">
                 <div class="col-md-6">
-                  <div class="form-floating form-floating-outline">
-                    <select id="assetCategory-1" class="form-select" data-placeholder="Select Asset Category">
-                      <option>Select Asset Category</option>
-                      <option value="Vehicle">Vehicle</option>
-                      <option value="Furniture">Furniture</option>
-                    </select>
-                    <label for="assetCategory-1">Asset Category</label>
+                  <div
+                    class="form-floating form-floating-outline form-floating-select2"
+                  >
+                    <select
+                      id="assetCategories"
+                      class="form-select select2"
+                      style="width: 100%"
+                    ></select>
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <div class="form-floating form-floating-outline">
-                    <select id="assetGroup-1" class="form-select" data-placeholder="Select Asset Group">
-                      <option>Select Asset Group</option>
-                      <option value="Car">Car</option>
-                      <option value="Receptionist Table">Receptionist Table</option>
-                    </select>
-                    <label for="assetGroup-1">Asset Group</label>
+                  <div
+                    class="form-floating form-floating-outline form-floating-select2"
+                  >
+                    <select
+                      id="assetGroups"
+                      class="form-select select2"
+                      style="width: 100%"
+                    ></select>
                   </div>
                 </div>
                 <div class="col-md-9">
-                  <div class="form-floating form-floating-outline">
-                    <input type="text" class="form-control" id="partNameRegistered" placeholder="eg. Baut size 10mm" />
-                    <label for="partNameRegistered">Part Name <span class="text-danger">*</span></label>
+                  <div class="form-floating form-floating-outline form-floating-select2">
+                    <select id="partList" class="form-select select2" style="width: 100%;" data-placeholder="Choose Part"></select>
                   </div>
                 </div>
                 <div class="col-md-3">
@@ -1100,21 +1102,16 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
           <div class="modal-content shadow-lg">
             <!-- Modal Header -->
-            <div class="modal-header border-b border-gray-200 px-6 py-4">
-              <h5 class="modal-title" id="cloneInspectionModalLabel">Clone Inspection From another MTC</h5>
+            <div class="modal-header border-b border-gray-200">
+              <h5 class="modal-title" id="cloneInspectionModalLabel">Clone Inspection From another MTC Task</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
             <!-- Modal Body -->
             <div class="modal-body">
               <div class="card-datatable table-responsive custom-table text-nowrap">
-                <div class="form-floating form-floating-outline mb-4">
-                  <select id="MTCTask" class="form-select" style="width: 100%;">
-                    <option value="Normal">Engine Oil</option>
-                    <option value="BrakeFluid">Brake Fluid</option>
-                    <option value="TirePressure">Tire Pressure</option>
-                    <option value="Coolant">Coolant</option>
-                  </select>
+                <div class="form-floating form-floating-outline form-floating-select2">
+                  <select id="mtcTaskList" class="form-select select2" style="width: 100%;"></select>
                 </div>
                 <table class="min-w-full divide-y divide-gray-200">
                   <thead>
@@ -1236,125 +1233,7 @@
     <script src="./assets/js/main.js"></script>
 
     <!-- Page JS -->
-    <script>
-      $(document).ready(function () {
-        $("#assetGroup, #assetCategory, #engineeringSkills").select2({
-          placeholder: function () {
-            return $(this).data("placeholder");
-          }
-        });
-      });
-
-      // Radio Button for Color Form
-      const colors = [
-        { name: "Blue", value: "blue", hex: "#2F8FCF" },
-        { name: "Green", value: "green", hex: "#1A895A" },
-        { name: "Red", value: "red", hex: "#CA4046" },
-        { name: "Yellow", value: "yellow", hex: "#EA9612" },
-      ];
-
-      const container = document.getElementById("radio-group-container");
-
-      colors.forEach((color) => {
-        const label = document.createElement("label");
-        label.className = "custom-radio";
-        label.style.border = "1px solid " + color.hex;
-        label.style.borderRadius = "8px";
-        label.style.backgroundColor = color.hex;
-
-        label.innerHTML = `
-          <input type="radio" name="color" value="${color.value}">
-          <div class="custom-radio-content py-1 px-3">
-            ${color.name} <i class="ms-1 mdi mdi-check"></i>
-          </div>
-        `;
-
-        container.appendChild(label);
-      });
-
-      $(document).ready(function () {
-        const $select = $('#engineeringSkills');
-        const $container = $('#selectedSkillsContainer');
-
-        // Initialize Select2
-        $select.select2({
-          placeholder: $select.data('placeholder'),
-          // allowClear: true,
-          templateSelection: function () {
-            return null;
-          },
-        });
-
-        // Render selected items as chips
-        function renderSelectedChips() {
-          const selected = $select.val() || [];
-          $container.empty();
-          selected.forEach(val => {
-            const chip = $(`
-              <div class="badge rounded-pill bg-label-primary small" data-value="${val}">
-                ${val}
-                <span class="remove-btn">&times;</span>
-              </div>
-            `);
-            chip.find('.remove-btn').on('click', function () {
-              // Remove from select2
-              const updated = $select.val().filter(v => v !== val);
-              $select.val(updated).trigger('change');
-            });
-            $container.append(chip);
-          });
-        }
-
-        // Listen for changes
-        $select.on('change', renderSelectedChips);
-
-        // Initial render (if pre-selected)
-        renderSelectedChips();
-      });
-
-      $(document).ready(function () {
-        $(".select2").select2();
-
-        $('input[name="partType"]').change(function () {
-          if (this.value === "adhoc") {
-            $("#adhoc-form").removeClass("d-none");
-            $("#registered-form").addClass("d-none");
-          } else {
-            $("#adhoc-form").addClass("d-none");
-            $("#registered-form").removeClass("d-none");
-          }
-        });
-      });
-
-      $(document).on("click", "#addChecklistBtn", function () {
-        const checklistHTML = `
-          <div class="row g-3 align-items-center checklist-item mb-2">
-            <div class="col-md-4">
-              <div class="form-floating form-floating-outline">
-                <input type="text" class="form-control" placeholder="Checklist Name" />
-                <label>Name</label>
-              </div>
-            </div>
-            <div class="col-md-7">
-              <div class="form-floating form-floating-outline">
-                <input type="text" class="form-control" placeholder="Notes" />
-                <label>Notes</label>
-              </div>
-            </div>
-            <div class="col-md-1 text-start">
-              <button type="button" class="btn btn-text-danger remove-checklist px-0">
-                <i class="mdi mdi-24px mdi-trash-can-outline"></i>
-              </button>
-            </div>
-          </div>
-        `;
-        $("#checklist-container").append(checklistHTML);
-      });
-
-      $(document).on("click", ".remove-checklist", function () {
-        $(this).closest(".checklist-item").remove();
-      });
-    </script>
+     <script src="./assets/js/mtc-task-add.js"></script>
   </body>
 </html>
 
