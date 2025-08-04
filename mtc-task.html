@@ -289,7 +289,7 @@
                         </div>
                         <div class="col">
                           <select id="statusFilter" class="form-select">
-                            <option value="" selected>All MTC Type</option>
+                            <option value="" selected>Asset + Location</option>
                             <option value="Asset">Asset</option>
                             <option value="Location">Location</option>
                           </select>
@@ -301,7 +301,7 @@
                         </div>
                         <div class="col">
                           <select id="skillSet" class="form-select select2" style="width: 100%;" data-placeholder="Select a skill">
-                            <option selected>All Skill Set</option> <!-- Empty option for placeholder -->
+                            <option selected>All</option> <!-- Empty option for placeholder -->
                             <option value="Engineering Skill 1">Engineering Skill 1</option>
                             <option value="Engineering Skill 2">Engineering Skill 2</option>
                             <option value="Engineering Skill 3">Engineering Skill 3</option>
@@ -311,16 +311,16 @@
                       </div>
                       <div class="col-md-4">
                         <div class="col-auto">
-                          <label for="colorFilter" class="form-label mb-1">Color Code</label>
+                          <label for="colorFilter" class="form-label mb-1">Category</label>
                         </div>
                         <div class="col">
                           <select id="colorFilter" class="form-select select2" style="width: 100%;">
-                            <option value="">All Colors</option>
-                            <option value="red" data-color="#CA4046">Red</option>
-                            <option value="blue" data-color="#007BFF">Blue</option>
-                            <option value="green" data-color="#28A745">Green</option>
-                            <option value="yellow" data-color="#FFC107">Yellow</option>
-                            <option value="purple" data-color="#6F42C1">Purple</option>
+                            <option value="">All</option>
+                            <option value="red" data-color="#CA4046">Category 1</option>
+                            <option value="blue" data-color="#007BFF">Category 2</option>
+                            <option value="green" data-color="#28A745">Category 3</option>
+                            <option value="yellow" data-color="#FFC107">Category 4</option>
+                            <option value="purple" data-color="#6F42C1">Category 5</option>
                           </select>
                         </div>
                       </div>
@@ -336,7 +336,7 @@
                         <input
                           type="search"
                           class="form-control form-control-sm ps-4 mb-md-0 mb-3 ml-2"
-                          placeholder="Search forms name or request code"
+                          placeholder="Search for mtc code, mtc name"
                           aria-controls="search datatable"
                           style="padding-left: 2.5rem!important;"
                         >
@@ -345,7 +345,7 @@
                   </div>
                   <div class="col-md-4">
                     <a href="mtc-task-add.html" class="btn btn-primary waves-effect waves-light w-100 text-white">
-                      <i class="mdi mdi-24px mdi-plus" style="margin-right: 5px;"></i>Add MTC code
+                      <i class="mdi mdi-24px mdi-plus" style="margin-right: 5px;"></i>Add MTC Task
                     </a>
                   </div>
                 </div>
@@ -356,7 +356,9 @@
                       <tr>
                         <th style="min-width: 200px; max-width: 200px;">MTC code</th>
                         <th style="min-width: 200px; max-width: 200px;">MTC name</th>
+                        <th class="text-center">required parts</th>
                         <th class="text-center">MTC Type</th>
+                        <th class="text-center">required vendors</th>
                         <th class="text-center">priority</th>
                         <th style="min-width: 90px; max-width: 90px;">Estimated</th>
                         <th class="text-center" style="min-width: 230px;">frequency</th>
@@ -372,7 +374,13 @@
                           </div>
                         </td>
                         <td>Engine Oil</td>
+                        <td class="text-center">
+                          <i class="mdi mdi-24px mdi-minus text-dark"></i>
+                        </td>
                         <td>Asset</td>
+                        <td class="text-center">
+                          <i class="mdi mdi-24px mdi-minus text-dark"></i>
+                        </td>
                         <td><div class="badge status-success">Normal</div></td>
                         <td>1 Day(s)</td>
                         <td>
@@ -382,7 +390,7 @@
                         <td>
                           <div class="d-flex gap-2 align-items-center">
                             <a href="./mtc-task-edit-asset.html" class="btn btn-text-primary px-0">Edit</a> /
-                            <a href="#" class="btn btn-text-danger px-0">Delete</a>
+                            <a href="#" class="btn btn-text-danger px-0" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">Delete</a>
                           </div>
                         </td>
                       </tr>
@@ -395,7 +403,13 @@
                           </div>
                         </td>
                         <td>Room Deluxe</td>
+                        <td class="text-center">
+                          <i class="mdi mdi-24px mdi-check text-success"></i>
+                        </td>
                         <td>Location</td>
+                        <td class="text-center">
+                          <i class="mdi mdi-24px mdi-check text-success"></i>
+                        </td>
                         <td><div class="badge status-warning w-100">High</div></td>
                         <td>1 Day(s)</td>
                         <td>
@@ -404,7 +418,7 @@
                         <td>
                           <div class="d-flex gap-2 align-items-center">
                             <a href="./mtc-task-edit-location.html" class="btn btn-text-primary px-0">Edit</a> /
-                            <a href="#" class="btn btn-text-danger px-0">Delete</a>
+                            <a href="#" class="btn btn-text-danger px-0" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">Delete</a>
                           </div>
                         </td>
                       </tr>
@@ -417,7 +431,13 @@
                           </div>
                         </td>
                         <td>Brake Fluid</td>
+                        <td class="text-center">
+                          <i class="mdi mdi-24px mdi-minus text-dark"></i>
+                        </td>
                         <td>Asset</td>
+                        <td class="text-center">
+                          <i class="mdi mdi-24px mdi-check text-success"></i>
+                        </td>
                         <td><div class="badge status-danger w-100">Urgent</div></td>
                         <td>1 Hour(s)</td>
                         <td>
@@ -426,7 +446,7 @@
                         <td>
                           <div class="d-flex gap-2 align-items-center">
                             <a href="./mtc-task-edit-asset.html" class="btn btn-text-primary px-0">Edit</a> /
-                            <a href="#" class="btn btn-text-danger px-0">Delete</a>
+                            <a href="#" class="btn btn-text-danger px-0" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">Delete</a>
                           </div>
                         </td>
                       </tr>
@@ -463,12 +483,7 @@
             </div>
             <!-- / Content -->
 
-            <div
-              class="modal fade"
-              id="deleteConfirmation"
-              tabindex="-1"
-              aria-hidden="true"
-            >
+            <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -495,7 +510,7 @@
                     </button>
                     <button
                       type="button"
-                      class="btn btn-primary btn-confirm-delete"
+                      class="btn btn-danger btn-confirm-delete"
                     >
                       Delete
                     </button>
@@ -582,12 +597,29 @@
     <script src="./assets/js/main.js"></script>
 
     <!-- Page JS -->
-    <script src="./assets/js/approval-forms.js"></script>
     <script>
       $(document).ready(function () {
         $('#skillSet').select2({
           placeholder: $(this).data('placeholder'),
           allowClear: true,
+        });
+
+        function formatColor(option) {
+          if (!option.id) return option.text;
+          var color = $(option.element).data('color');
+          var $option = $(`
+            <span>
+              <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background-color:${color};margin-right:8px;"></span>
+              ${option.text}
+            </span>
+          `);
+          return $option;
+        }
+
+        $('#colorFilter').select2({
+          templateResult: formatColor,
+          templateSelection: formatColor,
+          width: '100%',
         });
       });
     </script>

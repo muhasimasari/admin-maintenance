@@ -1289,8 +1289,8 @@ div.badge {
 }
 
 .form-check-warning-high .form-check-input:checked {
-  background-color: #EA7712 !important;
-  border-color: #EA7712 !important;
+  background-color: #ea7712 !important;
+  border-color: #ea7712 !important;
 }
 
 .form-check-danger .form-check-input:checked {
@@ -1450,9 +1450,9 @@ div.badge {
 }
 
 #high:checked + label {
-  background-color: #EA7712 !important;
+  background-color: #ea7712 !important;
   color: white !important;
-  border-color: #EA7712 !important;
+  border-color: #ea7712 !important;
 }
 
 #critical:checked + label {
@@ -1462,9 +1462,9 @@ div.badge {
 }
 
 .btn-check.btn-status:checked + label {
-  background-color: var(--decline-color)!important;
-  color: white!important;
-  border-color: var(--decline-color)!important;
+  background-color: var(--decline-color) !important;
+  color: white !important;
+  border-color: var(--decline-color) !important;
 }
 
 .custom-accordion .accordion-button {
@@ -1473,10 +1473,16 @@ div.badge {
   align-items: center;
   width: 100%;
 }
+
 .custom-accordion .accordion-button .title-text {
   flex-grow: 1;
 }
+
 .custom-accordion .action-buttons {
   white-space: nowrap;
   font-size: 0.9rem;
+}
+
+.badge.text-bg-primary {
+  background-color: var(--primary-color)!important;
 }

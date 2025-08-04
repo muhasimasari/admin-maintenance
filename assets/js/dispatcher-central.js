@@ -111,9 +111,14 @@ document.addEventListener("DOMContentLoaded", function () {
   if (selectAll) {
     selectAll.addEventListener("change", function () {
       checkboxes.forEach((checkbox) => {
+        // Lewati checkbox yang disabled
+        if (checkbox.disabled) return;
+
         checkbox.checked = this.checked;
+
         const row = checkbox.closest("tr");
         const tds = row.querySelectorAll("td");
+
         if (this.checked) {
           row.classList.add("selected-row");
           tds.forEach((td) => {
@@ -156,8 +161,14 @@ document.addEventListener("DOMContentLoaded", function () {
         </label>`;
 
     const deleteTask = `
-      <button class="btn btn-sm btn-text-dark delete-task p-0" data-id="${id}">
+      <button class="btn btn-sm btn-text-danger delete-task p-0" data-id="${id}">
       <i class="mdi mdi-20px mdi-trash-can-outline"></i>
+    `;
+
+    const editTask =`
+      <button class="btn btn-sm btn-text-primary delete-task p-0" data-id="${id}">
+        <i class="mdi mdi-20px mdi-pencil-outline"></i>
+      </button>
     `
 
     const content = `
@@ -165,6 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <span class="fw-semibold fs-6 custom-text-dark">${id}</span>
           <span class="d-flex align-items-center gap-1">
             ${repeatSwitch}
+            ${editTask}
             ${deleteTask}
           </span>
         </div>
@@ -188,12 +200,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // ===================== 6. Popover Add Task =====================
-  const addTaskButtons = document.querySelectorAll('.popover-add-task');
+  const addTaskButtons = document.querySelectorAll(".popover-add-task");
 
-  addTaskButtons.forEach(btn => {
-    const taskId = btn.getAttribute('data-task-id');
-    const taskUser = btn.getAttribute('data-task-user');
-    const taskDate = btn.getAttribute('data-task-date');
+  addTaskButtons.forEach((btn) => {
+    const taskId = btn.getAttribute("data-task-id");
+    const taskUser = btn.getAttribute("data-task-user");
+    const taskDate = btn.getAttribute("data-task-date");
 
     const repeatSwitch = `
       <label class="switch switch-sm">
@@ -208,13 +220,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const deleteTask = `
       <button class="btn btn-sm btn-text-dark delete-task p-0" data-id="${taskId}">
-      <i class="mdi mdi-20px mdi-trash-can-outline"></i>
+        <i class="mdi mdi-20px mdi-trash-can-outline"></i>
+      </button>
+    `;
+
+    const editTask =`
+      <button class="btn btn-sm btn-text-primary delete-task p-0" data-id="${taskId}">
+        <i class="mdi mdi-20px mdi-pencil-outline"></i>
+      </button>
     `
 
     const content = `
       <div class="d-flex align-items-center justify-content-between mb-2">
         <span class="fw-semibold fs-6 custom-text-dark">${taskId}</span>
         <span class="d-flex align-items-center gap-1">
+          ${editTask}
           ${repeatSwitch}
           ${deleteTask}
         </span>
@@ -229,26 +249,32 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
 
     new bootstrap.Popover(btn, {
-      trigger: 'click',
-      placement: 'left',
+      trigger: "click",
+      placement: "left",
       html: true,
       content: content,
-      container: 'body',
+      container: "body",
       sanitize: false,
       customClass: "roster-popover",
     });
   });
 
   // ===================== 7. Close all popovers on outside click =====================
-  document.addEventListener('click', function (event) {
-    const popovers = document.querySelectorAll('.popover');
-    const isClickInsideAnyPopover = Array.from(popovers).some(pop => pop.contains(event.target));
+  document.addEventListener("click", function (event) {
+    const popovers = document.querySelectorAll(".popover");
+    const isClickInsideAnyPopover = Array.from(popovers).some((pop) =>
+      pop.contains(event.target)
+    );
 
-    const isClickOnTrigger = event.target.closest('.popover-trigger, .popover-add-task');
+    const isClickOnTrigger = event.target.closest(
+      ".popover-trigger, .popover-add-task"
+    );
 
     if (!isClickInsideAnyPopover && !isClickOnTrigger) {
-      const allTriggers = document.querySelectorAll('.popover-trigger, .popover-add-task, [data-bs-toggle="popover"]');
-      allTriggers.forEach(el => {
+      const allTriggers = document.querySelectorAll(
+        '.popover-trigger, .popover-add-task, [data-bs-toggle="popover"]'
+      );
+      allTriggers.forEach((el) => {
         const instance = bootstrap.Popover.getInstance(el);
         if (instance) instance.hide();
       });
@@ -256,16 +282,76 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // ===================== 8. Collapse Add Vendors =====================
-  const collapseEl = document.getElementById('vendorCollapse');
-  const iconEl = document.getElementById('vendorIcon');
+  const collapseEl = document.getElementById("vendorCollapse");
+  const iconEl = document.getElementById("vendorIcon");
 
-  collapseEl.addEventListener('show.bs.collapse', () => {
-    iconEl.classList.remove('mdi-plus');
-    iconEl.classList.add('mdi-minus');
+  collapseEl.addEventListener("show.bs.collapse", () => {
+    iconEl.classList.remove("mdi-plus");
+    iconEl.classList.add("mdi-minus");
   });
 
-  collapseEl.addEventListener('hide.bs.collapse', () => {
-    iconEl.classList.remove('mdi-minus');
-    iconEl.classList.add('mdi-plus');
+  collapseEl.addEventListener("hide.bs.collapse", () => {
+    iconEl.classList.remove("mdi-minus");
+    iconEl.classList.add("mdi-plus");
+  });
+
+  // ===================== 9. Engineer List =====================
+  function initSelect2() {
+    $("#engineerList").select2({
+      placeholder: "Choose Engineer",
+      allowClear: true,
+      width: "100%",
+    });
+  }
+
+  // Initial load
+  $(document).ready(function () {
+    initSelect2();
+
+    $("#addEngineer").click(function () {
+      const newRow = `
+        <div class="row g-2 align-items-center mb-3 engineer-row">
+          <div class="form-floating form-floating-outline col-11">
+            <select class="form-select select2" style="width: 100%;">
+              <option value="">Choose Engineer</option>
+              <option value="eng1">Antoni Setiawan</option>
+              <option value="eng1">Budi Kuncoro</option>
+              <option value="eng1">John Doe</option>
+              <option value="eng2">Jane Smith</option>
+              <option value="eng3">Michael Johnson</option>
+              <option value="eng4">Sarah Williams</option>
+            </select>
+          </div>
+          <div class="col-1 text-end d-flex align-items-center">
+            <button class="btn btn-text-danger p-0 btn-remove"><i class="mdi mdi-minus"></i></button>
+          </div>
+        </div>
+      `;
+      $("#engineerWrapper").append(newRow);
+      initSelect2();
+      toggleRemoveButtons();
+    });
+
+    $("#engineerWrapper").on("click", ".btn-remove", function () {
+      $(this).closest(".engineer-row").remove();
+      toggleRemoveButtons();
+    });
+
+    function toggleRemoveButtons() {
+      const rows = $(".engineer-row");
+      if (rows.length > 1) {
+        rows.find(".btn-remove").removeClass("d-none");
+      } else {
+        rows.find(".btn-remove").addClass("d-none");
+      }
+    }
+  });
+
+  $(document).ready(function () {
+    $('#skillSetForm').select2({
+      placeholder: $('#skillSetForm').data('placeholder'),
+      allowClear: true,
+      minimumResultsForSearch: 0 // selalu tampilkan search box
+    });
   });
 });

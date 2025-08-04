@@ -386,28 +386,29 @@
                     </div>
 
                     <div class="col-md-6">
-                      <div class="d-flex g-2 flex-column mb-4">
-                        <div class="col-md p-6">
-                          <p class="text fw-medium mb-2">Color Form</p>
-                          <div
-                            class="radio-group"
-                            id="radio-group-container"
-                          ></div>
-                        </div>
-                      </div>
                       <div class="form-floating form-floating-outline mb-4">
-                        <select id="assetCategory" class="form-select select2" style="width: 100%;">
-                          <option value="Normal">Asset Category</option>
-                          <option value="Normal" selected>Vehicle</option>
-                          <option value="High">Furniture</option>
+                        <select id="colorFilter" class="form-select select2" style="width: 100%;">
+                          <option value="">Choose Category</option>
+                          <option value="red" data-color="#CA4046">Category 1</option>
+                          <option value="blue" data-color="#007BFF">Category 2</option>
+                          <option value="green" data-color="#28A745">Category 3</option>
+                          <option value="yellow" data-color="#FFC107">Category 4</option>
+                          <option value="purple" data-color="#6F42C1">Category 5</option>
                         </select>
                       </div>
                       <div class="form-floating form-floating-outline mb-4">
-                        <select id="assetGroup" class="form-select select2" style="width: 100%;">
-                          <option value="Normal">Asset Group</option>
-                          <option value="Normal" selected>Car</option>
-                          <option value="High">Receptionist Table</option>
-                        </select>
+                        <select
+                          id="assetCategory-1"
+                          class="form-select select2"
+                          style="width: 100%"
+                        ></select>
+                      </div>
+                      <div class="form-floating form-floating-outline mb-4">
+                        <select
+                          id="assetGroup-1"
+                          class="form-select select2"
+                          style="width: 100%"
+                        ></select>
                       </div>
                     </div>
                   </div>
@@ -1030,66 +1031,105 @@
       </div>
 
       <!-- Modal Add Inspection -->
-       <div class="modal fade" id="addInspectionModal" tabindex="-1" aria-labelledby="addInspectionModalLabel" aria-hidden="true">
+      <div class="modal fade" id="cloneInspectionModal" tabindex="-1" aria-labelledby="cloneInspectionModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
-          <div class="modal-content border-0">
-            <div class="modal-header">
-              <h5 class="modal-title" id="addInspectionModalLabel">Add Inspection</h5>
+          <div class="modal-content shadow-lg">
+            <!-- Modal Header -->
+            <div class="modal-header border-b border-gray-200">
+              <h5 class="modal-title" id="cloneInspectionModalLabel">Clone Inspection From another MTC Task</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
+            <!-- Modal Body -->
             <div class="modal-body">
-              <!-- Form Top -->
-              <div class="row g-3 mb-4">
-                <div class="col-md-6">
-                  <div class="form-floating form-floating-outline">
-                    <textarea class="form-control h-px-100" id="exampleFormControlTextarea1" placeholder="Comments here..."></textarea>
-                    <label for="exampleFormControlTextarea1">Description</label>
-                  </div>
+              <div class="card-datatable table-responsive custom-table text-nowrap">
+                <div class="form-floating form-floating-outline form-floating-select2 mt-2 mb-3">
+                  <select id="mtcTaskList" class="form-select select2" style="width: 100%;"></select>
                 </div>
-                <div class="col-md-6">
-                  <div style="border: 1px solid #13131320; border-radius: 8px; padding: 10px;">
-                    <label class="form-label">SOP Document (Max size 5 MB)</label>
-                    <input class="form-control mb-2" type="file" id="sopFile" />
-                    <ul class="list-unstyled">
-                      <li class="d-flex gap-2 justify-content-between mb-1">1. SOP nomer 1.pdf <div><a href="#" class="text-danger ms-2">Delete</a></div></li>
-                      <li class="d-flex gap-2 justify-content-between  mb-1">2. SOP nomer 1.pdf <div><a href="#" class="text-danger ms-2">Delete</a></div></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <hr/>
-              <!-- Checklist Section -->
-              <div class="pt-3">
-                <h6 class="mb-3">Checklist</h6>
-                <div id="checklist-container">
-                  <div class="row g-3 align-items-center checklist-item mb-2">
-                    <div class="col-md-4">
-                      <div class="form-floating form-floating-outline">
-                        <input type="text" class="form-control" id="821" placeholder="eg. Check Wastafel" />
-                        <label for="821">Name</label>
-                      </div>
-                    </div>
-                    <div class="col-md-7">
-                      <div class="form-floating form-floating-outline">
-                        <input type="text" class="form-control" id="21" placeholder="Notes" />
-                        <label for="21">Notes</label>
-                      </div>
-                    </div>
-                    <div class="col-md-1 text-start">
-                      <button type="button" class="btn btn-text-danger remove-checklist px-0">
-                        <i class="mdi mdi-24px mdi-trash-can-outline"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <button type="button" class="btn btn-sm btn-text-primary mt-2 px-0" id="addChecklistBtn"><i class="mdi mdi-24px mdi-plus"></i> ADD CHECKLIST</button>
+                <table class="min-w-full divide-y divide-gray-200">
+                  <thead>
+                    <tr>
+                      <th>
+                        <div class="form-check mb-0 d-flex justify-content-center">
+                          <input class="form-check-input" type="checkbox" value="" id="allCheckbox">
+                        </div>
+                      </th>
+                      <th class="px-6 py-3">Step</th>
+                      <th class="px-6 py-3">Inspection ID</th>
+                      <th class="px-6 py-3">Description</th>
+                      <th class="px-6 py-3">Checklist / Task</th>
+                      <th class="px-6 py-3">SOP Document</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tableBody" class="bg-white divide-y divide-gray-200">
+                    <tr>
+                      <td>
+                        <div class="form-check mb-0 d-flex justify-content-center">
+                          <input class="form-check-input" type="checkbox" value="" id="checkbox-1">
+                        </div>
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">1</td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">INSP-001</td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Visual Check</td>
+                      <td class="px-6 py-4 text-sm text-gray-900">
+                        1. Check oil filter condition<br/>
+                        2. Check for leaks
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                        <ul class="mb-0 list-none">
+                            <li><a href="#" class="btn-text-primary">SOP A001.pdf</a></li>
+                            <li><a href="#" class="btn-text-primary">SOP A002.pdf</a></li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="form-check mb-0 d-flex justify-content-center">
+                          <input class="form-check-input" type="checkbox" value="" id="checkbox-2">
+                        </div>
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">2</td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">INSP-002</td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Fluid Level Check</td>
+                      <td class="px-6 py-4 text-sm text-gray-900">
+                        1. Check engine oil level<br/>
+                        2. Check brake fluid level
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                        <ul class="mb-0 list-none">
+                          <li><a href="#" class="btn-text-primary">SOP B001.pdf</a></li>
+                          <li><a href="#" class="btn-text-primary">SOP B002.pdf</a></li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="form-check mb-0 d-flex justify-content-center">
+                          <input class="form-check-input" type="checkbox" value="" id="checkbox-3">
+                        </div>
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">3</td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">INSP-003</td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Tire Pressure</td>
+                      <td class="px-6 py-4 text-sm text-gray-900">
+                        1. Check all tire pressures<br/>
+                        2. Inspect tire tread
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                        <ul class="mb-0 list-none">
+                            <span class="italic">no file</span>
+                        </ul>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
 
+            <!-- Modal Footer -->
             <div class="modal-footer">
               <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">CANCEL</button>
-              <button type="button" class="btn btn-primary">ADD INSPECTION</button>
+              <button type="button" class="btn btn-primary">Clone INSPECTION</button>
             </div>
           </div>
         </div>
@@ -1234,129 +1274,9 @@
 
     <!-- Main JS -->
     <script src="./assets/js/main.js"></script>
-
+    
     <!-- Page JS -->
-    <script>
-      $(document).ready(function () {
-        $("#assetGroup, #assetCategory, #engineeringSkills").select2({
-          placeholder: function () {
-            return $(this).data("placeholder");
-          }
-        });
-      });
-
-      // Radio Button for Color Form
-      const colors = [
-        { name: "Blue", value: "blue", hex: "#2F8FCF" },
-        { name: "Green", value: "green", hex: "#1A895A" },
-        { name: "Red", value: "red", hex: "#CA4046" },
-        { name: "Yellow", value: "yellow", hex: "#EA9612" },
-      ];
-
-      const container = document.getElementById("radio-group-container");
-
-      colors.forEach((color) => {
-        const label = document.createElement("label");
-        label.className = "custom-radio";
-        label.style.border = "1px solid " + color.hex;
-        label.style.borderRadius = "8px";
-        label.style.backgroundColor = color.hex;
-
-        const checkedAttr = color.value === "blue" ? "checked" : "";
-
-        label.innerHTML = `
-          <input type="radio" name="color" value="${color.value}" ${checkedAttr}>
-          <div class="custom-radio-content py-1 px-3">
-            ${color.name} <i class="ms-1 mdi mdi-check"></i>
-          </div>
-        `;
-
-        container.appendChild(label);
-      });
-
-      $(document).ready(function () {
-        const $select = $('#engineeringSkills');
-        const $container = $('#selectedSkillsContainer');
-
-        // Initialize Select2
-        $select.select2({
-          placeholder: $select.data('placeholder'),
-          // allowClear: true,
-          templateSelection: function () {
-            return null;
-          },
-        });
-
-        // Render selected items as chips
-        function renderSelectedChips() {
-          const selected = $select.val() || [];
-          $container.empty();
-          selected.forEach(val => {
-            const chip = $(`
-              <div class="badge rounded-pill bg-label-primary small" data-value="${val}">
-                ${val}
-                <span class="remove-btn">&times;</span>
-              </div>
-            `);
-            chip.find('.remove-btn').on('click', function () {
-              // Remove from select2
-              const updated = $select.val().filter(v => v !== val);
-              $select.val(updated).trigger('change');
-            });
-            $container.append(chip);
-          });
-        }
-
-        // Listen for changes
-        $select.on('change', renderSelectedChips);
-
-        // Initial render (if pre-selected)
-        renderSelectedChips();
-      });
-
-      $(document).ready(function () {
-        $(".select2").select2();
-
-        $('input[name="partType"]').change(function () {
-          if (this.value === "adhoc") {
-            $("#adhoc-form").removeClass("d-none");
-            $("#registered-form").addClass("d-none");
-          } else {
-            $("#adhoc-form").addClass("d-none");
-            $("#registered-form").removeClass("d-none");
-          }
-        });
-      });
-
-      $(document).on("click", "#addChecklistBtn", function () {
-        const checklistHTML = `
-          <div class="row g-3 align-items-center checklist-item mb-2">
-            <div class="col-md-4">
-              <div class="form-floating form-floating-outline">
-                <input type="text" class="form-control" placeholder="Checklist Name" />
-                <label>Name</label>
-              </div>
-            </div>
-            <div class="col-md-7">
-              <div class="form-floating form-floating-outline">
-                <input type="text" class="form-control" placeholder="Notes" />
-                <label>Notes</label>
-              </div>
-            </div>
-            <div class="col-md-1 text-start">
-              <button type="button" class="btn btn-text-danger remove-checklist px-0">
-                <i class="mdi mdi-24px mdi-trash-can-outline"></i>
-              </button>
-            </div>
-          </div>
-        `;
-        $("#checklist-container").append(checklistHTML);
-      });
-
-      $(document).on("click", ".remove-checklist", function () {
-        $(this).closest(".checklist-item").remove();
-      });
-    </script>
+    <script src="./assets/js/mtc-task-add.js"></script>
   </body>
 </html>
 
