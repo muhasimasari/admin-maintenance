@@ -185,25 +185,42 @@
                     <div data-i18n="Location Readiness">Location Readiness</div>
                   </a>
                 </li>
+                <li class="menu-item">
+                  <a href="./asset-meter-update.html" class="menu-link">
+                    <div data-i18n="Asset Meter Update">Asset Meter Update</div>
+                  </a>
+                </li>
               </ul>
             </li>
             <li class="menu-item">
               <a href="./dispatcher-center.html" class="menu-link">
                 <i class="menu-icon tf-icons mdi mdi-clipboard-account-outline"></i>
                 <div data-i18n="Dispatcher Center">Dispatcher Center</div>
-                <i class="mdi mdi-alert-circle-outline ms-2"></i>
+                <i class="mdi mdi-alert-circle ms-2 text-warning"></i>
               </a>
             </li>
             <li class="menu-item">
               <a href="./schedule-task.html" class="menu-link">
-                <i class="menu-icon tf-icons mdi mdi-progress-wrench"></i>
+                <i class="menu-icon tf-icons mdi mdi-calendar-badge-outline"></i>
                 <div data-i18n="Scheduled Task">Scheduled Task</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="./preventive-work-orders.html" class="menu-link">
+                <i class="menu-icon tf-icons mdi mdi-progress-wrench"></i>
+                <div data-i18n="Preventive Work Order">Preventive Work Order</div>
               </a>
             </li>
             <li class="menu-item">
               <a href="./corrective-work-order.html" class="menu-link">
                 <i class="menu-icon tf-icons mdi mdi-wrench-outline"></i>
                 <div data-i18n="Corrective Work Order">Corrective Work Order</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="./mtc-setting.html" class="menu-link">
+                <i class="menu-icon tf-icons mdi mdi-cog-outline"></i>
+                <div data-i18n="MTC Setting">MTC Setting</div>
               </a>
             </li>
           </ul>
@@ -386,15 +403,31 @@
                     </div>
 
                     <div class="col-md-6">
-                      <div class="form-floating form-floating-outline mb-4">
-                        <select id="colorFilter" class="form-select select2" style="width: 100%;">
-                          <option value="">Choose Category</option>
-                          <option value="red" data-color="#CA4046">Category 1</option>
-                          <option value="blue" data-color="#007BFF">Category 2</option>
-                          <option value="green" data-color="#28A745">Category 3</option>
-                          <option value="yellow" data-color="#FFC107">Category 4</option>
-                          <option value="purple" data-color="#6F42C1">Category 5</option>
-                        </select>
+                      <div class="row g-3 mb-4">
+                        <div class="col-9">
+                          <div class="form-floating form-floating-outline">
+                            <select id="categoryTask" class="form-select select2" data-placeholder="Search Task Category">
+                              <option value="cat-1">Category 1</option>
+                              <option value="cat-2">Category 2</option>
+                              <option value="cat-3">Category 3</option>
+                              <option value="cat-4">Category 4</option>
+                              <option value="cat-5">Category 5</option>
+                            </select>
+                            <label for="categoryTask">Maintenance Category</label>
+                          </div>
+                        </div>
+                        <div class="col-3">
+                          <div class="form-floating form-floating-outline">
+                            <select id="colorFilter" class="form-select select2" data-placeholder="Search Color Category">
+                              <option value="red" data-color="#CA4046">1</option>
+                              <option value="blue" data-color="#007BFF">2</option>
+                              <option value="green" data-color="#28A745">3</option>
+                              <option value="yellow" data-color="#FFC107">4</option>
+                              <option value="purple" data-color="#6F42C1">6</option>
+                            </select>
+                            <label for="colorFilter">Color Category</label>
+                          </div>
+                        </div>
                       </div>
                       <div class="form-floating form-floating-outline mb-4">
                         <select
