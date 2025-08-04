@@ -348,3 +348,42 @@ function checkFilterSelection() {
 
 document.getElementById("mtcCategory").addEventListener("change", checkFilterSelection);
 document.getElementById("mtcType").addEventListener("change", checkFilterSelection);
+
+const collapseEl = document.getElementById("anotherTrigger");
+const iconEl = document.getElementById("triggerIcon");
+
+collapseEl.addEventListener("show.bs.collapse", () => {
+  iconEl.classList.remove("mdi-plus");
+  iconEl.classList.add("mdi-minus");
+});
+
+collapseEl.addEventListener("hide.bs.collapse", () => {
+  iconEl.classList.remove("mdi-minus");
+  iconEl.classList.add("mdi-plus");
+});
+
+document.getElementById('intervalTab').addEventListener('change', () => {
+  document.getElementById('intervalContent').classList.remove('d-none');
+  document.getElementById('fixedContent').classList.add('d-none');
+});
+
+document.getElementById('fixedTab').addEventListener('change', () => {
+  document.getElementById('intervalContent').classList.add('d-none');
+  document.getElementById('fixedContent').classList.remove('d-none');
+});
+
+flatpickr("#assignmentDate", {
+  dateFormat: "d-M-Y",
+  defaultDate: "today",
+});
+
+// Switch content based on radio selection in Fixed Scheduled
+document.getElementById('oneTime').addEventListener('change', () => {
+  document.getElementById('oneTimeDate').classList.remove('d-none');
+  document.getElementById('schedulingDates').classList.add('d-none');
+});
+
+document.getElementById('scheduling').addEventListener('change', () => {
+  document.getElementById('oneTimeDate').classList.add('d-none');
+  document.getElementById('schedulingDates').classList.remove('d-none');
+});
