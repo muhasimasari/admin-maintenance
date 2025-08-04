@@ -185,19 +185,30 @@
                     <div data-i18n="Location Readiness">Location Readiness</div>
                   </a>
                 </li>
+                <li class="menu-item">
+                  <a href="./asset-meter-update.html" class="menu-link">
+                    <div data-i18n="Asset Meter Update">Asset Meter Update</div>
+                  </a>
+                </li>
               </ul>
             </li>
             <li class="menu-item">
               <a href="./dispatcher-center.html" class="menu-link">
                 <i class="menu-icon tf-icons mdi mdi-clipboard-account-outline"></i>
                 <div data-i18n="Dispatcher Center">Dispatcher Center</div>
-                <i class="mdi mdi-alert-circle-outline ms-2"></i>
+                <i class="mdi mdi-alert-circle ms-2 text-warning"></i>
               </a>
             </li>
             <li class="menu-item">
               <a href="./schedule-task.html" class="menu-link">
-                <i class="menu-icon tf-icons mdi mdi-progress-wrench"></i>
+                <i class="menu-icon tf-icons mdi mdi-calendar-badge-outline"></i>
                 <div data-i18n="Scheduled Task">Scheduled Task</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="./preventive-work-orders.html" class="menu-link">
+                <i class="menu-icon tf-icons mdi mdi-progress-wrench"></i>
+                <div data-i18n="Preventive Work Order">Preventive Work Order</div>
               </a>
             </li>
             <li class="menu-item">
@@ -206,6 +217,47 @@
                 <div data-i18n="Corrective Work Order">Corrective Work Order</div>
               </a>
             </li>
+            <li class="menu-item">
+              <a href="./discrepancy-report.html" class="menu-link">
+                <i class="menu-icon tf-icons mdi mdi-finance"></i>
+                <div data-i18n="Discrepancy Report">Discrepancy Report</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="./mtc-setting.html" class="menu-link">
+                <i class="menu-icon tf-icons mdi mdi-cog-outline"></i>
+                <div data-i18n="MTC Setting">MTC Setting</div>
+              </a>
+            </li>
+            <div class="d-none"> <!-- If you want to show this menu please remove <div class="d-none"> -->
+              <li class="menu-header fw-light mt-4">
+                <span class="menu-header-text">MASTER DATA MAINTENANCE</span>
+              </li>
+              <li class="menu-item">
+                <a href="./skill-set.html" class="menu-link">
+                  <i class="menu-icon tf-icons mdi mdi-briefcase-account-outline"></i>
+                  <div data-i18n="Skill Set">Skill Set</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="./engineer.html" class="menu-link">
+                  <i class="menu-icon tf-icons mdi mdi-account-hard-hat-outline"></i>
+                  <div data-i18n="Engineer">Engineer</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="./engineer.html" class="menu-link">
+                  <i class="menu-icon tf-icons mdi mdi-store-outline"></i>
+                  <div data-i18n="Vendor">Vendor</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="./root-cause-category.html" class="menu-link">
+                  <i class="menu-icon tf-icons mdi mdi-list-box-outline"></i>
+                  <div data-i18n="Root Cause Category">Root Cause Category</div>
+                </a>
+              </li>
+            </div>
           </ul>
         </aside>
         <!-- / Menu -->
@@ -606,11 +658,21 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
           <div class="modal-content border-0">
             <div class="modal-header">
-              <h5 class="modal-title" id="MTCTasklabel">MTC</h5>
+              <h5 class="modal-title" id="MTCTasklabel">MTC Task</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
             <div class="modal-body">
+              <div class="row g-3 pb-2 align-items-center">
+                <div class="col-12">
+                  <div class="d-md-flex d-block g-3 gap-2 align-items-center justify-content-end">
+                    <label class="w-100 custom-search-input position-relative">
+                      <i class="mdi mdi-24px mdi-magnify position-absolute" style="left: 10px; top: 50%; transform: translateY(-50%); color: #999;"></i>
+                      <input type="search" class="form-control form-control-sm ps-4 mb-md-0 mb-3 ml-2" placeholder="Search MTC Task Template" aria-controls="search datatable" style="padding-left: 2.5rem!important;">
+                    </label>
+                  </div>
+                </div>
+              </div>
               <div class="card-datatable table-responsive custom-table text-nowrap pb-0 mb-4">
                 <table class="table card-table table-borderless mb-0">
                   <thead>
@@ -683,7 +745,7 @@
               <hr/>
               <!-- Checklist Section -->
               <div class="pt-3">
-                <h6 class="mb-3">Additional MTC</h6>
+                <h6 class="mb-3">Additional MTC Task</h6>
                 <div id="checklist-container">
                   <div class="row g-3 align-items-center checklist-item mb-3">
                     <div class="col-md-11">
@@ -693,11 +755,11 @@
                           class="select2 form-select form-select-lg"
                           data-allow-clear="true"
                         >
-                          <option value="schedule-task">Electrical</option>
-                          <option value="s">MTC 1</option>
-                          <option value="s">MTC 2</option>
+                          <option value="schedule-task">MTC-001 | Break Oil</option>
+                          <option value="s">MTC-002 | Break Oil</option>
+                          <option value="s">MTC-001 | Break Oil</option>
                         </select>
-                        <label for="selectMTCTask">Select MTC</label>
+                        <label for="selectMTCTask">MTC Task Template</label>
                       </div>
                     </div>
                     <div class="col-md-1 text-start">
@@ -714,12 +776,12 @@
                           class="select2 form-select form-select-lg"
                           data-allow-clear="true"
                         >
-                          <option value="as" selected>Choose MTC</option>
-                          <option value="as">Electrical</option>
-                          <option value="aa">MTC 1</option>
-                          <option value="ssA">MTC 2</option>
+                          <option value="as" selected>Choose MTC Template</option>
+                          <option value="schedule-task">MTC-001 | Break Oil</option>
+                          <option value="s">MTC-002 | Break Oil</option>
+                          <option value="s">MTC-001 | Break Oil</option>
                         </select>
-                        <label for="selectMTCTask2">Select MTC</label>
+                        <label for="selectMTCTask2">MTC Task Template</label>
                       </div>
                     </div>
                     <div class="col-md-1 text-start">

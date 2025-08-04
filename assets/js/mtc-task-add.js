@@ -54,12 +54,12 @@ $(document).on("click", ".remove-checklist", function () {
 // Dummy data
 const allMTCTasks = Array.from({ length: 500 }, (_, i) => ({
   id: `mtc-${i + 1}`,
-  name: `MC-${String(i + 1).padStart(3, '0')} | Task ${i + 1}`
+  name: `MC-${String(i + 1).padStart(3, "0")} | Task ${i + 1}`,
 }));
 
 const allAssetParts = Array.from({ length: 300 }, (_, i) => ({
   id: `part-${i + 1}`,
-  name: `Part ${i + 1} - ${["Filter", "Pump", "Motor", "Valve"][i % 4]}`
+  name: `Part ${i + 1} - ${["Filter", "Pump", "Motor", "Valve"][i % 4]}`,
 }));
 
 // Fungsi simulasi AJAX untuk Select2
@@ -69,36 +69,50 @@ function simulateAjax(source) {
     const page = params.data.page || 1;
     const pageSize = 20;
 
-    const filtered = source.filter(item => item.name.toLowerCase().includes(term));
+    const filtered = source.filter((item) =>
+      item.name.toLowerCase().includes(term)
+    );
     const paginated = filtered.slice((page - 1) * pageSize, page * pageSize);
 
     setTimeout(() => {
       success({
         items: paginated,
-        hasMore: page * pageSize < filtered.length
+        hasMore: page * pageSize < filtered.length,
       });
     }, 300);
   };
 }
 
 // Modal Select2 untuk clone MTC
-$('#cloneInspectionModal').on('shown.bs.modal', function () {
-  $('#mtcTaskList').select2({
-    dropdownParent: $('#cloneInspectionModal'),
-    placeholder: 'Choose MTC Task',
+$("#cloneInspectionModal").on("shown.bs.modal", function () {
+  $("#mtcTaskList").select2({
+    dropdownParent: $("#cloneInspectionModal"),
+    placeholder: "Choose MTC Task",
     ajax: {
       transport: simulateAjax(allMTCTasks),
       processResults: function (data, params) {
         params.page = params.page || 1;
         return {
-          results: data.items.map(item => ({
+          results: data.items.map((item) => ({
             id: item.id,
-            text: item.name
+            text: item.name,
           })),
-          pagination: { more: data.hasMore }
+          pagination: { more: data.hasMore },
         };
-      }
-    }
+      },
+    },
+  });
+
+  $('#mtcCategory').select2({
+    dropdownParent: $('#cloneInspectionModal'),
+    placeholder: 'Select MTC Category',
+    width: '100%'
+  });
+
+  $('#mtcType').select2({
+    dropdownParent: $('#cloneInspectionModal'),
+    placeholder: 'Select MTC Type',
+    width: '100%'
   });
 });
 
@@ -178,11 +192,11 @@ $("#assetGroup-1").select2({
 });
 
 // Inisialisasi Select2 untuk #partList
-$('#addPartModal').on('shown.bs.modal', function () {
-  $('#partList').select2({
-    placeholder: $('#partList').data('placeholder'),
+$("#addPartModal").on("shown.bs.modal", function () {
+  $("#partList").select2({
+    placeholder: $("#partList").data("placeholder"),
     allowClear: true,
-    dropdownParent: $('#addPartModal'), // ⬅️ Penting agar dropdown tidak terpotong
+    dropdownParent: $("#addPartModal"), // ⬅️ Penting agar dropdown tidak terpotong
     ajax: {
       transport: simulateAjax(allAssetParts),
       processResults: function (data, params) {
@@ -298,18 +312,39 @@ $("#tableBody").on("change", 'input[type="checkbox"]', function () {
 
 function formatColor(option) {
   if (!option.id) return option.text;
-  var color = $(option.element).data('color');
+  var color = $(option.element).data("color");
   var $option = $(`
-    <span>
-      <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background-color:${color};margin-right:8px;"></span>
-      ${option.text}
+    <span class="d-flex align-items-center">
+      <span style="display:inline-block;width:24px;height:24px;border-radius:4px;background-color:${color};"></span>
+      <span class="text-white">${option.text}</span>
     </span>
   `);
   return $option;
 }
 
-$('#colorFilter').select2({
+$("#colorFilter").select2({
   templateResult: formatColor,
   templateSelection: formatColor,
-  width: '100%',
+  width: "100%",
 });
+
+$("#categoryTask").select2({
+  placeholder: $("#categoryTask").data("placeholder"),
+  allowClear: true,
+  width: "100%",
+});
+
+function checkFilterSelection() {
+  const category = document.getElementById("mtcCategory").value;
+  const type = document.getElementById("mtcType").value;
+  const tableContainer = document.getElementById("tableContainer");
+
+  if (category && type) {
+    tableContainer.classList.remove("d-none");
+  } else {
+    tableContainer.classList.add("d-none");
+  }
+}
+
+document.getElementById("mtcCategory").addEventListener("change", checkFilterSelection);
+document.getElementById("mtcType").addEventListener("change", checkFilterSelection);

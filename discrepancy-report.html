@@ -94,14 +94,16 @@
               <div data-i18n="MTC Setup">MTC Setup</div>
             </a>
             <ul class="menu-sub">
-              <li class="menu-item">
+              <li class="menu-item ">
                 <a href="./mtc-task.html" class="menu-link">
                   <div data-i18n="MTC Task">MTC Task</div>
                 </a>
               </li>
               <li class="menu-item">
                 <a href="./mtc-template.html" class="menu-link">
-                  <div data-i18n="MTC Template">MTC Template</div>
+                  <div data-i18n="MTC Template">
+                    MTC Template
+                  </div>
                 </a>
               </li>
               <li class="menu-item">
@@ -112,6 +114,11 @@
               <li class="menu-item">
                 <a href="./location-readiness.html" class="menu-link">
                   <div data-i18n="Location Readiness">Location Readiness</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="./asset-meter-update.html" class="menu-link">
+                  <div data-i18n="Asset Meter Update">Asset Meter Update</div>
                 </a>
               </li>
             </ul>
@@ -125,16 +132,20 @@
           </li>
           <li class="menu-item">
             <a href="./schedule-task.html" class="menu-link">
-              <i class="menu-icon tf-icons mdi mdi-progress-wrench"></i>
+              <i class="menu-icon tf-icons mdi mdi-calendar-badge-outline"></i>
               <div data-i18n="Scheduled Task">Scheduled Task</div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="./preventive-work-orders.html" class="menu-link">
+              <i class="menu-icon tf-icons mdi mdi-progress-wrench"></i>
+              <div data-i18n="Preventive Work Order">Preventive Work Order</div>
             </a>
           </li>
           <li class="menu-item">
             <a href="./corrective-work-order.html" class="menu-link">
               <i class="menu-icon tf-icons mdi mdi-wrench-outline"></i>
-              <div data-i18n="Corrective Work Order">
-                Corrective Work Order
-              </div>
+              <div data-i18n="Corrective Work Order">Corrective Work Order</div>
             </a>
           </li>
           <li class="menu-item active">
@@ -143,8 +154,44 @@
               <div data-i18n="Discrepancy Report">Discrepancy Report</div>
             </a>
           </li>
+          <li class="menu-item">
+            <a href="./mtc-setting.html" class="menu-link">
+              <i class="menu-icon tf-icons mdi mdi-cog-outline"></i>
+              <div data-i18n="MTC Setting">MTC Setting</div>
+            </a>
+          </li>
+          <div class="d-none"> <!-- If you want to show this menu please remove <div class="d-none"> -->
+            <li class="menu-header fw-light mt-4">
+              <span class="menu-header-text">MASTER DATA MAINTENANCE</span>
+            </li>
+            <li class="menu-item">
+              <a href="./skill-set.html" class="menu-link">
+                <i class="menu-icon tf-icons mdi mdi-briefcase-account-outline"></i>
+                <div data-i18n="Skill Set">Skill Set</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="./engineer.html" class="menu-link">
+                <i class="menu-icon tf-icons mdi mdi-account-hard-hat-outline"></i>
+                <div data-i18n="Engineer">Engineer</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="./engineer.html" class="menu-link">
+                <i class="menu-icon tf-icons mdi mdi-store-outline"></i>
+                <div data-i18n="Vendor">Vendor</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="./root-cause-category.html" class="menu-link">
+                <i class="menu-icon tf-icons mdi mdi-list-box-outline"></i>
+                <div data-i18n="Root Cause Category">Root Cause Category</div>
+              </a>
+            </li>
+          </div>
         </ul>
       </aside>
+
       <!-- / Menu -->
 
       <!-- Layout container -->
@@ -328,7 +375,7 @@
                       </th>
                       <th class="text-center">Asset Item/Location</th>
                       <th class="text-center">Category & Description</th>
-                      <th class="text-center">Severiy</th>
+                      <th class="text-center">Severity</th>
                       <th style="min-width: 180px;">Status</th>
                       <th style="min-width: 180px;">Action</th>
                     </tr>
@@ -336,9 +383,10 @@
                   <tbody class="table-border-bottom-0">
                     <tr>
                       <td class="position-relative">
-                        
+
                         <div class="ps-3">
-                          <a href="#" class="fw-semibold text-primary">DR–A–AVANZ–KABEL</a><br />
+                          <a href="discrepancy-report-detail-assign-to-manual.html"
+                            class="fw-semibold text-primary">DR–A–AVANZ–KABEL</a><br />
                           <small>01 Jun 2025</small><br />
                           <span>Admin Operational</span>
                         </div>
@@ -359,7 +407,8 @@
                         OPEN
                       </td>
                       <td class="text-center">
-                        <a href="discrepancy-report-assign-to-manual.html" class="btn btn-text-primary px-0 text-capitalize">Assign To</a>
+                        <a href="discrepancy-report-assign-to-manual.html"
+                          class="btn btn-text-primary px-0 text-capitalize">Assign To</a>
                         |
                         <a href="#" class="btn btn-text-danger px-0 text-capitalize">Decline</a><br />
                         <a href="#" class="btn btn-text-primary px-0 text-capitalize">View WO</a>
@@ -368,7 +417,47 @@
 
                     <tr>
                       <td class="position-relative">
-                        
+
+                        <div class="ps-3">
+                          <a href="discrepancy-report-detail-assign-to-otomatis.html"
+                            class="fw-semibold text-primary">DR–B–AVANZ–KABEL</a><br />
+                          <small>02 Jun 2025</small><br />
+                          <span>Kuncoro</span>
+                        </div>
+                      </td>
+                      <td class="text-center fw-bold">30</td>
+                      <td>
+                        <div>MC–A009 – Check</div>
+                        <div>
+                          <span class="mdi mdi-arrow-right-bottom"></span><b>INSP–0003 – Drain Pipe</b>
+                          <span class="badge status-danger rounded text-white">Failed Insp.</span>
+                        </div>
+                      </td>
+                      <td class="text-center">
+                        <a href="#" class="text-decoration-underline">i-2025–01–01–0003</a>
+                      </td>
+                      <td class="text-center">
+                        <strong>Electrical</strong><br />
+                        Kabel Body Konslet
+                      </td>
+                      <td class="text-center">
+                        <div class="badge status-success w-100">Low</div>
+                      </td>
+                      <td class="text-center fw-semibold text-primary">
+                        OPEN
+                      </td>
+                      <td class="text-center">
+                        <a href="discrepancy-report-assign-to-otomatis.html"
+                          class="btn btn-text-primary px-0 text-capitalize">Assign To</a>
+                        |
+                        <a href="#" class="btn btn-text-danger px-0 text-capitalize">Decline</a><br />
+                        <a href="#" class="btn btn-text-primary px-0 text-capitalize">View WO</a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="position-relative">
+
                         <div class="ps-3">
                           <a href="#" class="fw-semibold text-primary">DR–A–AC–CLEAN</a><br />
                           <small>01 Jun 2025</small><br />
@@ -403,7 +492,7 @@
 
                     <tr>
                       <td class="position-relative">
-                        
+
                         <div class="ps-3">
                           <a href="#" class="fw-semibold text-primary">DR–L–R101–MONTHLY</a><br />
                           <small>01 Jun 2025</small><br />
@@ -436,7 +525,7 @@
 
                     <tr>
                       <td class="position-relative">
-                        
+
                         <div class="ps-3">
                           <a href="#" class="fw-semibold text-primary">DR–A–AC–CLEAN</a><br />
                           <small>01 Jun 2025</small><br />

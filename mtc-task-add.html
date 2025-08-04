@@ -185,19 +185,30 @@
                     <div data-i18n="Location Readiness">Location Readiness</div>
                   </a>
                 </li>
+                <li class="menu-item">
+                  <a href="./asset-meter-update.html" class="menu-link">
+                    <div data-i18n="Asset Meter Update">Asset Meter Update</div>
+                  </a>
+                </li>
               </ul>
             </li>
             <li class="menu-item">
               <a href="./dispatcher-center.html" class="menu-link">
                 <i class="menu-icon tf-icons mdi mdi-clipboard-account-outline"></i>
                 <div data-i18n="Dispatcher Center">Dispatcher Center</div>
-                <i class="mdi mdi-alert-circle-outline ms-2"></i>
+                <i class="mdi mdi-alert-circle ms-2 text-warning"></i>
               </a>
             </li>
             <li class="menu-item">
               <a href="./schedule-task.html" class="menu-link">
-                <i class="menu-icon tf-icons mdi mdi-progress-wrench"></i>
+                <i class="menu-icon tf-icons mdi mdi-calendar-badge-outline"></i>
                 <div data-i18n="Scheduled Task">Scheduled Task</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="./preventive-work-orders.html" class="menu-link">
+                <i class="menu-icon tf-icons mdi mdi-progress-wrench"></i>
+                <div data-i18n="Preventive Work Order">Preventive Work Order</div>
               </a>
             </li>
             <li class="menu-item">
@@ -206,6 +217,47 @@
                 <div data-i18n="Corrective Work Order">Corrective Work Order</div>
               </a>
             </li>
+            <li class="menu-item">
+              <a href="./discrepancy-report.html" class="menu-link">
+                <i class="menu-icon tf-icons mdi mdi-finance"></i>
+                <div data-i18n="Discrepancy Report">Discrepancy Report</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="./mtc-setting.html" class="menu-link">
+                <i class="menu-icon tf-icons mdi mdi-cog-outline"></i>
+                <div data-i18n="MTC Setting">MTC Setting</div>
+              </a>
+            </li>
+            <div class="d-none"> <!-- If you want to show this menu please remove <div class="d-none"> -->
+              <li class="menu-header fw-light mt-4">
+                <span class="menu-header-text">MASTER DATA MAINTENANCE</span>
+              </li>
+              <li class="menu-item">
+                <a href="./skill-set.html" class="menu-link">
+                  <i class="menu-icon tf-icons mdi mdi-briefcase-account-outline"></i>
+                  <div data-i18n="Skill Set">Skill Set</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="./engineer.html" class="menu-link">
+                  <i class="menu-icon tf-icons mdi mdi-account-hard-hat-outline"></i>
+                  <div data-i18n="Engineer">Engineer</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="./engineer.html" class="menu-link">
+                  <i class="menu-icon tf-icons mdi mdi-store-outline"></i>
+                  <div data-i18n="Vendor">Vendor</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="./root-cause-category.html" class="menu-link">
+                  <i class="menu-icon tf-icons mdi mdi-list-box-outline"></i>
+                  <div data-i18n="Root Cause Category">Root Cause Category</div>
+                </a>
+              </li>
+            </div>
           </ul>
         </aside>
         <!-- / Menu -->
@@ -386,29 +438,52 @@
                     </div>
 
                     <div class="col-md-6">
-                      <div class="form-floating form-floating-outline mb-4">
-                        <select id="colorFilter" class="form-select select2" style="width: 100%;">
-                          <option value="">Choose Category</option>
-                          <option value="red" data-color="#CA4046">Category 1</option>
-                          <option value="blue" data-color="#007BFF">Category 2</option>
-                          <option value="green" data-color="#28A745">Category 3</option>
-                          <option value="yellow" data-color="#FFC107">Category 4</option>
-                          <option value="purple" data-color="#6F42C1">Category 5</option>
-                        </select>
+                      <div class="row g-3 mb-4">
+                        <div class="col-9">
+                          <div class="form-floating form-floating-outline">
+                            <select id="categoryTask" class="form-select select2" data-placeholder="Search Task Category">
+                              <option value="cat-1">Category 1</option>
+                              <option value="cat-2">Category 2</option>
+                              <option value="cat-3">Category 3</option>
+                              <option value="cat-4">Category 4</option>
+                              <option value="cat-5">Category 5</option>
+                            </select>
+                            <label for="categoryTask">Maintenance Category</label>
+                          </div>
+                        </div>
+                        <div class="col-3">
+                          <div class="form-floating form-floating-outline">
+                            <select id="colorFilter" class="form-select select2" data-placeholder="Search Color Category">
+                              <option value="red" data-color="#CA4046">#</option>
+                              <option value="blue" data-color="#007BFF">#</option>
+                              <option value="green" data-color="#28A745">#</option>
+                              <option value="yellow" data-color="#FFC107">#</option>
+                              <option value="purple" data-color="#6F42C1">#</option>
+                            </select>
+                            <label for="colorFilter">Color Category</label>
+                          </div>
+                        </div>
                       </div>
                       <div class="form-floating form-floating-outline mb-4">
                         <select
                           id="assetCategory-1"
                           class="form-select select2"
-                          style="width: 100%"
-                        ></select>
+                          style="width: 100%;"
+                          aria-label="Asset Category"
+                        >
+                        </select>
+                        <label for="assetCategory-1">Asset Category</label>
                       </div>
+
                       <div class="form-floating form-floating-outline mb-4">
                         <select
                           id="assetGroup-1"
                           class="form-select select2"
-                          style="width: 100%"
-                        ></select>
+                          style="width: 100%;"
+                          aria-label="Asset Group"
+                        >
+                        </select>
+                        <label for="assetGroup-1">Asset Group</label>
                       </div>
                     </div>
                   </div>
@@ -1099,7 +1174,7 @@
 
       <!-- Modal Clone Inspection -->
       <div class="modal fade" id="cloneInspectionModal" tabindex="-1" aria-labelledby="cloneInspectionModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
           <div class="modal-content shadow-lg">
             <!-- Modal Header -->
             <div class="modal-header border-b border-gray-200">
@@ -1109,87 +1184,146 @@
 
             <!-- Modal Body -->
             <div class="modal-body">
-              <div class="card-datatable table-responsive custom-table text-nowrap">
-                <div class="form-floating form-floating-outline form-floating-select2">
-                  <select id="mtcTaskList" class="form-select select2" style="width: 100%;"></select>
+              <!-- Filter Dropdowns -->
+              <div class="row g-4 align-items-center">
+                <div class="col-md-6">
+                  <div class="form-floating form-floating-outline form-floating-select2">
+                    <select id="mtcType" class="form-select select2" data-placeholder="Select MTC Type" style="width: 100%;">
+                      <option value=""></option>
+                      <option value="preventive">Asset</option>
+                      <option value="corrective">Location</option>
+                    </select>
+                    <label for="mtcType">MTC Task Type</label>
+                  </div>
                 </div>
-                <table class="min-w-full divide-y divide-gray-200">
-                  <thead>
-                    <tr>
-                      <th>
-                        <div class="form-check mb-0 d-flex justify-content-center">
-                          <input class="form-check-input" type="checkbox" value="" id="allCheckbox">
-                        </div>
-                      </th>
-                      <th class="px-6 py-3">Step</th>
-                      <th class="px-6 py-3">Inspection ID</th>
-                      <th class="px-6 py-3">Description</th>
-                      <th class="px-6 py-3">Checklist / Task</th>
-                      <th class="px-6 py-3">SOP Document</th>
-                    </tr>
-                  </thead>
-                  <tbody id="tableBody" class="bg-white divide-y divide-gray-200">
-                    <tr>
-                      <td>
-                        <div class="form-check mb-0 d-flex justify-content-center">
-                          <input class="form-check-input" type="checkbox" value="" id="checkbox-1">
-                        </div>
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">1</td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">INSP-001</td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Visual Check</td>
-                      <td class="px-6 py-4 text-sm text-gray-900">
-                        1. Check oil filter condition<br/>
-                        2. Check for leaks
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        <ul class="mb-0 list-none">
+                <div class="col-md-6">
+                  <div class="form-floating form-floating-outline form-floating-select2">
+                    <select id="mtcCategory" class="form-select select2" data-placeholder="Select MTC Category" style="width: 100%;">
+                      <option value=""></option>
+                      <option value="electrical">Electrical</option>
+                      <option value="mechanical">Mechanical</option>
+                      <option value="hydraulic">Hydraulic</option>
+                    </select>
+                    <label for="mtcCategory">Category MTC Task</label>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <!-- Task List Select -->
+                  <div class="form-floating form-floating-outline form-floating-select2 mb-2">
+                    <select id="mtcTaskList" class="form-select select2" style="width: 100%;"></select>
+                    <label for="mtcTaskList">MTC Task Template</label>
+                  </div>
+                </div>
+              </div>
+              <div class="card-datatable table-responsive custom-table text-nowrap pt-2">
+
+                <!-- Hidden initially -->
+                <div id="tableContainer">
+                  <!-- Table -->
+                  <table class="min-w-full divide-y divide-gray-200">
+                    <thead>
+                      <tr>
+                        <th>
+                          <div class="form-check mb-0 d-flex justify-content-center">
+                            <input class="form-check-input" type="checkbox" id="allCheckbox">
+                          </div>
+                        </th>
+                        <th class="px-6 py-3">Step</th>
+                        <th class="px-6 py-3">Inspection ID</th>
+                        <th class="px-6 py-3">Description</th>
+                        <th class="px-6 py-3">Checklist / Task</th>
+                        <th class="px-6 py-3">SOP Document</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tableBody" class="bg-white divide-y divide-gray-200">
+                      <tr>
+                        <td>
+                          <div class="form-check mb-0 d-flex justify-content-center">
+                            <input class="form-check-input" type="checkbox" value="" id="checkbox-1">
+                          </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">1</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">INSP-001</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Visual Check</td>
+                        <td class="px-6 py-4 text-sm text-gray-900">
+                          1. Check oil filter condition<br />
+                          2. Check for leaks
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                          <ul class="mb-0 list-none">
                             <li><a href="#" class="btn-text-primary">SOP A001.pdf</a></li>
                             <li><a href="#" class="btn-text-primary">SOP A002.pdf</a></li>
-                        </ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="form-check mb-0 d-flex justify-content-center">
-                          <input class="form-check-input" type="checkbox" value="" id="checkbox-2">
-                        </div>
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">2</td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">INSP-002</td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Fluid Level Check</td>
-                      <td class="px-6 py-4 text-sm text-gray-900">
-                        1. Check engine oil level<br/>
-                        2. Check brake fluid level
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        <ul class="mb-0 list-none">
-                          <li><a href="#" class="btn-text-primary">SOP B001.pdf</a></li>
-                          <li><a href="#" class="btn-text-primary">SOP B002.pdf</a></li>
-                        </ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="form-check mb-0 d-flex justify-content-center">
-                          <input class="form-check-input" type="checkbox" value="" id="checkbox-3">
-                        </div>
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">3</td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">INSP-003</td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Tire Pressure</td>
-                      <td class="px-6 py-4 text-sm text-gray-900">
-                        1. Check all tire pressures<br/>
-                        2. Inspect tire tread
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        <ul class="mb-0 list-none">
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="form-check mb-0 d-flex justify-content-center">
+                            <input class="form-check-input" type="checkbox" value="" id="checkbox-2">
+                          </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">2</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">INSP-002</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Fluid Level Check</td>
+                        <td class="px-6 py-4 text-sm text-gray-900">
+                          1. Check engine oil level<br />
+                          2. Check brake fluid level
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                          <ul class="mb-0 list-none">
+                            <li><a href="#" class="btn-text-primary">SOP B001.pdf</a></li>
+                            <li><a href="#" class="btn-text-primary">SOP B002.pdf</a></li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="form-check mb-0 d-flex justify-content-center">
+                            <input class="form-check-input" type="checkbox" value="" id="checkbox-3">
+                          </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">3</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">INSP-003</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Tire Pressure</td>
+                        <td class="px-6 py-4 text-sm text-gray-900">
+                          1. Check all tire pressures<br />
+                          2. Inspect tire tread
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                          <ul class="mb-0 list-none">
                             <span class="italic">no file</span>
-                        </ul>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                          </ul>
+                        </td>
+                      </tr>
+                    </tbody>
+
+                  </table>
+                </div>
+              </div>
+              <div class="d-md-flex d-block justify-content-between align-items-center">
+                <div>Showing 1 to 7 of 100 entries</div>
+                <nav aria-label="Page navigation">
+                  <ul class="pagination mb-0">
+                    <li class="page-item first">
+                      <a class="page-link waves-effect" href="javascript:void(0);"><i class="tf-icon mdi mdi-skip-previous-outline mdi-20px"></i></a>
+                    </li>
+                    <li class="page-item prev">
+                      <a class="page-link waves-effect" href="javascript:void(0);"><i class="tf-icon mdi mdi-chevron-left mdi-20px"></i></a>
+                    </li>
+                    <li class="page-item active">
+                      <a class="page-link waves-effect" href="javascript:void(0);">1</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link waves-effect" href="javascript:void(0);">2</a>
+                    </li>
+                    <li class="page-item next">
+                      <a class="page-link waves-effect" href="javascript:void(0);"><i class="tf-icon mdi mdi-chevron-right mdi-20px"></i></a>
+                    </li>
+                    <li class="page-item last">
+                      <a class="page-link waves-effect" href="javascript:void(0);"><i class="tf-icon mdi mdi-skip-next-outline mdi-20px"></i></a>
+                    </li>
+                  </ul>
+                </nav>
               </div>
             </div>
 
@@ -1233,7 +1367,7 @@
     <script src="./assets/js/main.js"></script>
 
     <!-- Page JS -->
-     <script src="./assets/js/mtc-task-add.js"></script>
+    <script src="./assets/js/mtc-task-add.js"></script>
   </body>
 </html>
 
