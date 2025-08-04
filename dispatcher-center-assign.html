@@ -1334,7 +1334,7 @@
                       <th class="align-middle" style="min-width: 160px;">Location</th>
                       <th class="align-middle" style="min-width: 160px;">Assigned</th>
                       <th class="align-middle" style="min-width: 140px; max-width: 140px;">Start Date</th>
-                      <th class="align-middle">Duration<br/>(days)</th>
+                      <th class="align-middle">est. Duration<br/>(hours)</th>
                       <th class="text-center align-middle" style="min-width: 230px; max-width: 230px;">
                         next due
                         <button
@@ -1496,21 +1496,11 @@
               <hr class="my-4"/>
               <div class="row g-2 mb-4 align-items-center">
                 <div class="col-md-3 fw-semibold">Start Date</div>
-                <div class="col-md-7">
+                <div class="col-md-9">
                   <div class="position-relative form-floating form-floating-outline">
                     <input type="text" id="assignmentDate" class="form-control ps-3 pe-5" placeholder="Select date" style="background-color: #eaeaea;" disabled />
                     <i class="mdi mdi-calendar position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
                   </div>
-                </div>
-                <div class="col-md-2">
-                  <label class="switch">
-                    <input type="checkbox" class="switch-input" checked>
-                    <span class="switch-toggle-slider">
-                      <span class="switch-on"></span>
-                      <span class="switch-off"></span>
-                    </span>
-                    <span class="switch-label">Repeat</span>
-                  </label> 
                 </div>
               </div>
               <div class="row g-2 mb-4 align-items-center">
@@ -1519,6 +1509,19 @@
                   <div class="form-floating form-floating-outline">
                     <input type="number" id="duration" class="form-control ps-3 pe-5" placeholder="e.g 10" />
                   </div>
+                </div>
+              </div>
+              <div class="row g-2 mb-4 align-items-center">
+                <div class="col-md-3 fw-semibold">Repeat Task</div>
+                <div class="col-md-9">
+                  <label class="switch">
+                    <input type="checkbox" class="switch-input" checked>
+                    <span class="switch-toggle-slider">
+                      <span class="switch-on"></span>
+                      <span class="switch-off"></span>
+                    </span>
+                    <span class="switch-label">Yes</span>
+                  </label> 
                 </div>
               </div>
             </div>
