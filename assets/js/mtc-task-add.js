@@ -300,9 +300,9 @@ function formatColor(option) {
   if (!option.id) return option.text;
   var color = $(option.element).data('color');
   var $option = $(`
-    <span>
-      <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background-color:${color};margin-right:8px;"></span>
+    <span class="d-flex align-items-center justify-content-between">
       ${option.text}
+      <span style="display:inline-block;width:24px;height:24px;border-radius:50%;background-color:${color};"></span>
     </span>
   `);
   return $option;
