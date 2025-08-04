@@ -102,6 +102,18 @@ $("#cloneInspectionModal").on("shown.bs.modal", function () {
       },
     },
   });
+
+  $('#mtcCategory').select2({
+    dropdownParent: $('#cloneInspectionModal'),
+    placeholder: 'Select MTC Category',
+    width: '100%'
+  });
+
+  $('#mtcType').select2({
+    dropdownParent: $('#cloneInspectionModal'),
+    placeholder: 'Select MTC Type',
+    width: '100%'
+  });
 });
 
 const allAssetGroups = Array.from({ length: 1000 }, (_, i) => ({
@@ -321,3 +333,18 @@ $("#categoryTask").select2({
   allowClear: true,
   width: "100%",
 });
+
+function checkFilterSelection() {
+  const category = document.getElementById("mtcCategory").value;
+  const type = document.getElementById("mtcType").value;
+  const tableContainer = document.getElementById("tableContainer");
+
+  if (category && type) {
+    tableContainer.classList.remove("d-none");
+  } else {
+    tableContainer.classList.add("d-none");
+  }
+}
+
+document.getElementById("mtcCategory").addEventListener("change", checkFilterSelection);
+document.getElementById("mtcType").addEventListener("change", checkFilterSelection);

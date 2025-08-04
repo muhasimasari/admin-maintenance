@@ -218,6 +218,12 @@
               </a>
             </li>
             <li class="menu-item">
+              <a href="./discrepancy-report.html" class="menu-link">
+                <i class="menu-icon tf-icons mdi mdi-finance"></i>
+                <div data-i18n="Discrepancy Report">Discrepancy Report</div>
+              </a>
+            </li>
+            <li class="menu-item">
               <a href="./mtc-setting.html" class="menu-link">
                 <i class="menu-icon tf-icons mdi mdi-cog-outline"></i>
                 <div data-i18n="MTC Setting">MTC Setting</div>
@@ -1216,15 +1222,37 @@
 
             <!-- Modal Body -->
             <div class="modal-body">
-              <div class="card-datatable table-responsive custom-table text-nowrap">
-                <div class="form-floating form-floating-outline mb-4">
-                  <select id="MTCTask" class="form-select" style="width: 100%;">
-                    <option value="Normal">Engine Oil</option>
-                    <option value="BrakeFluid">Brake Fluid</option>
-                    <option value="TirePressure">Tire Pressure</option>
-                    <option value="Coolant">Coolant</option>
-                  </select>
+              <div class="row g-4 align-items-center">
+                <div class="col-md-6">
+                  <div class="form-floating form-floating-outline form-floating-select2">
+                    <select id="mtcType" class="form-select select2" data-placeholder="Select MTC Type" style="width: 100%;">
+                      <option value=""></option>
+                      <option value="preventive">Asset</option>
+                      <option value="corrective">Location</option>
+                    </select>
+                    <label for="mtcType">MTC Task Type</label>
+                  </div>
                 </div>
+                <div class="col-md-6">
+                  <div class="form-floating form-floating-outline form-floating-select2">
+                    <select id="mtcCategory" class="form-select select2" data-placeholder="Select MTC Category" style="width: 100%;">
+                      <option value=""></option>
+                      <option value="electrical">Electrical</option>
+                      <option value="mechanical">Mechanical</option>
+                      <option value="hydraulic">Hydraulic</option>
+                    </select>
+                    <label for="mtcCategory">Category MTC Task</label>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <!-- Task List Select -->
+                  <div class="form-floating form-floating-outline form-floating-select2 mb-2">
+                    <select id="mtcTaskList" class="form-select select2" style="width: 100%;"></select>
+                    <label for="mtcTaskList">Select Task List</label>
+                  </div>
+                </div>
+              </div>
+              <div class="card-datatable table-responsive custom-table text-nowrap">
                 <table class="min-w-full divide-y divide-gray-200">
                   <thead>
                     <tr>

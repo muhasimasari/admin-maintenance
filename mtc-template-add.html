@@ -218,6 +218,12 @@
               </a>
             </li>
             <li class="menu-item">
+              <a href="./discrepancy-report.html" class="menu-link">
+                <i class="menu-icon tf-icons mdi mdi-finance"></i>
+                <div data-i18n="Discrepancy Report">Discrepancy Report</div>
+              </a>
+            </li>
+            <li class="menu-item">
               <a href="./mtc-setting.html" class="menu-link">
                 <i class="menu-icon tf-icons mdi mdi-cog-outline"></i>
                 <div data-i18n="MTC Setting">MTC Setting</div>
@@ -677,219 +683,98 @@
 
                   <!-- Modal Body -->
                   <div class="modal-body">
-                    <div class="row align-items-center">
-                      <div class="col-md-4">
-                        <div
-                          class="form-floating form-floating-outline form-floating-select2"
-                        >
-                          <select
-                            id="assetCategories"
-                            class="form-select select2"
-                            style="width: 100%"
-                          ></select>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div
-                          class="form-floating form-floating-outline form-floating-select2"
-                        >
-                          <select
-                            id="assetGroups"
-                            class="form-select select2"
-                            style="width: 100%"
-                          ></select>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-floating form-floating-outline">
-                          <select
-                            id="colorFilter"
-                            class="form-select"
-                            style="width: 100%"
-                          >
-                            <option value="">All Colors</option>
-                            <option value="red" data-color="#CA4046">
-                              <span
-                                class="p-2 rounded-circle"
-                                style="background-color: #3c57a1"
-                              ></span>
-                              Red
-                            </option>
-                            <option value="blue" data-color="#007BFF">
-                              Blue
-                            </option>
-                            <option value="green" data-color="#28A745">
-                              Green
-                            </option>
-                            <option value="yellow" data-color="#FFC107">
-                              Yellow
-                            </option>
-                            <option value="purple" data-color="#6F42C1">
-                              Purple
-                            </option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-md-12 my-3">
-                        Active Filter:
-                        <button
-                          type="button"
-                          class="btn-danger btn btn-sm rounded-pill ms-2 col"
-                          aria-label="Remove filter"
-                          id="removeFilterButton"
-                        >
-                          Asset Category : Vehicle
-                          <i class="mdi mdi-20px mdi-close-circle ms-2"></i>
-                        </button>
-                      </div>
-                    </div>
+                    <!-- Search -->
+                    <div class="row align-items-center"></div>
                     <div class="row g-3 align-items-center">
                       <div class="col">
-                        <div
-                          class="d-md-flex d-block g-3 gap-2 align-items-center justify-content-end"
-                        >
-                          <label
-                            class="w-100 custom-search-input position-relative"
-                          >
-                            <i
-                              class="mdi mdi-24px mdi-magnify position-absolute"
-                              style="
-                                left: 10px;
-                                top: 50%;
-                                transform: translateY(-50%);
-                                color: #999;
-                              "
-                            ></i>
+                        <div class="d-md-flex d-block gap-2 align-items-center justify-content-end">
+                          <label class="w-100 custom-search-input position-relative">
+                            <i class="mdi mdi-24px mdi-magnify position-absolute" style="left: 10px; top: 50%; transform: translateY(-50%); color: #999;"></i>
                             <input
                               type="search"
                               class="form-control form-control-sm ps-4 mb-md-0 mb-3 ml-2"
                               placeholder="Search forms name or request code"
                               aria-controls="search datatable"
-                              style="padding-left: 2.5rem !important"
+                              style="padding-left: 2.5rem !important;"
                             />
                           </label>
                         </div>
                       </div>
                     </div>
-                    <div
-                      class="card-datatable table-responsive custom-table text-nowrap"
-                    >
+
+                    <!-- Table -->
+                    <div class="card-datatable table-responsive custom-table text-nowrap">
                       <table class="min-w-full divide-y divide-gray-200">
                         <thead>
                           <tr>
                             <th>
-                              <div
-                                class="form-check mb-0 d-flex justify-content-center"
-                              >
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="allCheckbox"
-                                />
+                              <div class="form-check mb-0 d-flex justify-content-center">
+                                <input class="form-check-input" type="checkbox" id="allCheckbox" />
                               </div>
                             </th>
-                            <th class="px-6 py-3">MTC CODE</th>
-                            <th class="px-6 py-3">MTC NAME</th>
-                            <th class="px-6 py-3">FREQUENCY</th>
+                            <th style="min-width: 200px; max-width: 200px;">MTC CODE</th>
+                            <th style="min-width: 200px; max-width: 200px;">MTC NAME</th>
+                            <th class="w-100">FREQUENCY</th>
                           </tr>
                         </thead>
-                        <tbody
-                          id="tableBody"
-                          class="bg-white divide-y divide-gray-200"
-                        >
+                        <tbody id="tableBody" class="bg-white divide-y divide-gray-200">
                           <tr>
                             <td>
-                              <div
-                                class="form-check mb-0 d-flex justify-content-center"
-                              >
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="checkbox-1"
-                                />
+                              <div class="form-check mb-0 d-flex justify-content-center">
+                                <input class="form-check-input" type="checkbox" id="checkbox-1" />
                               </div>
                             </td>
                             <td class="text-primary position-relative">
-                              <div
-                                class="color-code"
-                                style="background-color: #3c57a1"
-                              ></div>
+                              <div class="color-code" style="background-color: #3c57a1;"></div>
                               <div class="ps-3">MC-A001</div>
                             </td>
                             <td>Engine Oil</td>
                             <td>
                               Start On : 0<br />
                               <hr class="my-2" />
-                              Repeat Every : 25 day(s) / 600 hour(s) / 15
-                              cycle(s)
+                              Repeat Every : 25 day(s) / 600 hour(s) / 15 cycle(s)
                             </td>
                           </tr>
                         </tbody>
                       </table>
                     </div>
-                    <hr class="my-2" />
-                    <div
-                      class="d-md-flex d-block justify-content-between align-items-center"
-                    >
+
+                    <!-- Pagination Info -->
+                    <div class="d-md-flex d-block justify-content-between align-items-center">
                       <div>Showing 1 to 7 of 100 entries</div>
                       <nav aria-label="Page navigation">
                         <ul class="pagination mb-0">
                           <li class="page-item first">
-                            <a
-                              class="page-link waves-effect"
-                              href="javascript:void(0);"
-                              ><i
-                                class="tf-icon mdi mdi-skip-previous-outline mdi-20px"
-                              ></i
-                            ></a>
+                            <a class="page-link waves-effect" href="javascript:void(0);">
+                              <i class="tf-icon mdi mdi-skip-previous-outline mdi-20px"></i>
+                            </a>
                           </li>
                           <li class="page-item prev">
-                            <a
-                              class="page-link waves-effect"
-                              href="javascript:void(0);"
-                              ><i
-                                class="tf-icon mdi mdi-chevron-left mdi-20px"
-                              ></i
-                            ></a>
+                            <a class="page-link waves-effect" href="javascript:void(0);">
+                              <i class="tf-icon mdi mdi-chevron-left mdi-20px"></i>
+                            </a>
                           </li>
                           <li class="page-item active">
-                            <a
-                              class="page-link waves-effect"
-                              href="javascript:void(0);"
-                              >1</a
-                            >
+                            <a class="page-link waves-effect" href="javascript:void(0);">1</a>
                           </li>
                           <li class="page-item">
-                            <a
-                              class="page-link waves-effect"
-                              href="javascript:void(0);"
-                              >2</a
-                            >
+                            <a class="page-link waves-effect" href="javascript:void(0);">2</a>
                           </li>
                           <li class="page-item next">
-                            <a
-                              class="page-link waves-effect"
-                              href="javascript:void(0);"
-                              ><i
-                                class="tf-icon mdi mdi-chevron-right mdi-20px"
-                              ></i
-                            ></a>
+                            <a class="page-link waves-effect" href="javascript:void(0);">
+                              <i class="tf-icon mdi mdi-chevron-right mdi-20px"></i>
+                            </a>
                           </li>
                           <li class="page-item last">
-                            <a
-                              class="page-link waves-effect"
-                              href="javascript:void(0);"
-                              ><i
-                                class="tf-icon mdi mdi-skip-next-outline mdi-20px"
-                              ></i
-                            ></a>
+                            <a class="page-link waves-effect" href="javascript:void(0);">
+                              <i class="tf-icon mdi mdi-skip-next-outline mdi-20px"></i>
+                            </a>
                           </li>
                         </ul>
                       </nav>
                     </div>
                   </div>
+
 
                   <!-- Modal Footer -->
                   <div class="modal-footer">

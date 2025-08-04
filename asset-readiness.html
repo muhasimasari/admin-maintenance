@@ -711,7 +711,7 @@
 
             <!-- Modal Apply Template -->
             <div class="modal fade" id="applyTemplate" tabindex="-1" aria-labelledby="applyTemplateLabel" aria-hidden="true">
-              <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="applyTemplateLabel">Assigning Template</h5>
@@ -774,14 +774,46 @@
                       </div>
                     </div>
                     <hr class="my-2">
-                    <div class="row align-items-center">
-                      <h6 class="my-4 col-md-6">MTC Template</h6>
+                    <div class="row align-items-center mb-3">
+                      <h6 class="my-4 col-md-6">MTC Task Template</h6>
                       <div class="col-md-6 text-end">
                         <a href="mtc-template-add.html" class="btn btn-sm btn-primary text-white">
                           <i class="mdi mdi-24px mdi-plus" style="margin-right: 5px;"></i>Add New template
                         </a>
                       </div>
                     </div>
+                    <div class="row g-4 align-items-center mb-3">
+                      <div class="col-md-6">
+                        <div class="form-floating form-floating-outline form-floating-select2">
+                          <select id="mtcType" class="form-select select2" data-placeholder="Select MTC Type" style="width: 100%;">
+                            <option value=""></option>
+                            <option value="preventive">Asset</option>
+                            <option value="corrective">Location</option>
+                          </select>
+                          <label for="mtcType">MTC Task Type</label>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-floating form-floating-outline form-floating-select2">
+                          <select id="mtcCategory" class="form-select select2" data-placeholder="Select MTC Category" style="width: 100%;">
+                            <option value=""></option>
+                            <option value="electrical">Electrical</option>
+                            <option value="mechanical">Mechanical</option>
+                            <option value="hydraulic">Hydraulic</option>
+                          </select>
+                          <label for="mtcCategory">Category MTC Task</label>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <!-- Task List Select -->
+                        <div class="form-floating form-floating-outline form-floating-select2 mb-2">
+                          <select id="mtcTaskList" class="form-select select2" style="width: 100%;"></select>
+                          <label for="mtcTaskList">Select Task List</label>
+                        </div>
+                      </div>
+                    </div>
+                    <hr class="my-2">
+                    <h6 class="mt-3">Maintenance Task</h6>
                     <div class="card-datatable table-responsive custom-table text-nowrap">
                       <table class="table card-table table-borderless">
                         <thead>
@@ -947,8 +979,9 @@
 
     <!-- Main JS -->
     <script src="./assets/js/main.js"></script>
-
+    
     <!-- Page JS -->
+    <script src="./assets/js/mtc-task-add.js"></script>
     <script>
       $(document).ready(function () {
         $('#skillSet').select2({
