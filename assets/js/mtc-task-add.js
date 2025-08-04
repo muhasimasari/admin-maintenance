@@ -103,16 +103,16 @@ $("#cloneInspectionModal").on("shown.bs.modal", function () {
     },
   });
 
-  $('#mtcCategory').select2({
-    dropdownParent: $('#cloneInspectionModal'),
-    placeholder: 'Select MTC Category',
-    width: '100%'
+  $("#mtcCategory").select2({
+    dropdownParent: $("#cloneInspectionModal"),
+    placeholder: "Select MTC Category",
+    width: "100%",
   });
 
-  $('#mtcType').select2({
-    dropdownParent: $('#cloneInspectionModal'),
-    placeholder: 'Select MTC Type',
-    width: '100%'
+  $("#mtcType").select2({
+    dropdownParent: $("#cloneInspectionModal"),
+    placeholder: "Select MTC Type",
+    width: "100%",
   });
 });
 
@@ -346,8 +346,12 @@ function checkFilterSelection() {
   }
 }
 
-document.getElementById("mtcCategory").addEventListener("change", checkFilterSelection);
-document.getElementById("mtcType").addEventListener("change", checkFilterSelection);
+document
+  .getElementById("mtcCategory")
+  .addEventListener("change", checkFilterSelection);
+document
+  .getElementById("mtcType")
+  .addEventListener("change", checkFilterSelection);
 
 const collapseEl = document.getElementById("anotherTrigger");
 const iconEl = document.getElementById("triggerIcon");
@@ -362,14 +366,14 @@ collapseEl.addEventListener("hide.bs.collapse", () => {
   iconEl.classList.add("mdi-plus");
 });
 
-document.getElementById('intervalTab').addEventListener('change', () => {
-  document.getElementById('intervalContent').classList.remove('d-none');
-  document.getElementById('fixedContent').classList.add('d-none');
+document.getElementById("intervalTab").addEventListener("change", () => {
+  document.getElementById("intervalContent").classList.remove("d-none");
+  document.getElementById("fixedContent").classList.add("d-none");
 });
 
-document.getElementById('fixedTab').addEventListener('change', () => {
-  document.getElementById('intervalContent').classList.add('d-none');
-  document.getElementById('fixedContent').classList.remove('d-none');
+document.getElementById("fixedTab").addEventListener("change", () => {
+  document.getElementById("intervalContent").classList.add("d-none");
+  document.getElementById("fixedContent").classList.remove("d-none");
 });
 
 flatpickr("#assignmentDate", {
@@ -378,12 +382,33 @@ flatpickr("#assignmentDate", {
 });
 
 // Switch content based on radio selection in Fixed Scheduled
-document.getElementById('oneTime').addEventListener('change', () => {
-  document.getElementById('oneTimeDate').classList.remove('d-none');
-  document.getElementById('schedulingDates').classList.add('d-none');
+document.getElementById("oneTime").addEventListener("change", () => {
+  document.getElementById("oneTimeDate").classList.remove("d-none");
+  document.getElementById("schedulingDates").classList.add("d-none");
 });
 
-document.getElementById('scheduling').addEventListener('change', () => {
-  document.getElementById('oneTimeDate').classList.add('d-none');
-  document.getElementById('schedulingDates').classList.remove('d-none');
+document.getElementById("scheduling").addEventListener("change", () => {
+  document.getElementById("oneTimeDate").classList.add("d-none");
+  document.getElementById("schedulingDates").classList.remove("d-none");
 });
+
+function toggleInput(selectId, inputGroupId) {
+  const select = document.getElementById(selectId);
+  const inputGroup = document.getElementById(inputGroupId);
+
+  function updateVisibility() {
+    if (select.value === "every") {
+      inputGroup.style.display = "none";
+    } else {
+      inputGroup.style.display = "block";
+    }
+  }
+
+  // Run on load
+  updateVisibility();
+  // Update on change
+  select.addEventListener("change", updateVisibility);
+}
+
+toggleInput("dateTypeSelect", "dateInputGroup");
+toggleInput("monthTypeSelect", "monthInputGroup");
