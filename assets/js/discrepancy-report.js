@@ -104,7 +104,7 @@ function CtrlDiscrepancyReportAdd() {
         if (priority === 'LOW') this.classList.add('btn-success');
         if (priority === 'MEDIUM') this.classList.add('btn-warning');
         if (priority === 'HIGH') this.classList.add('btn-warning-high');
-        if (priority === 'CRITICAL') this.classList.add('btn-dark');
+        if (priority === 'CRITICAL') this.classList.add('btn-danger');
       });
     });
 
@@ -463,6 +463,43 @@ function CtrlDiscrepancyReportAdd() {
         minimumResultsForSearch: 0 // selalu tampilkan search box
       });
     });
+  }
+
+  function addImagePreview(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      const container = document.getElementById('imageContainer');
+
+      // Buat elemen baru
+      const wrapper = document.createElement('div');
+      wrapper.className = 'mr-3 text-center';
+
+      const img = document.createElement('img');
+      img.src = e.target.result;
+      img.className = 'img-thumbnail';
+      img.style.width = '100px';
+      img.style.height = '100px';
+
+      const btn = document.createElement('button');
+      btn.className = 'btn text-danger p-0 mt-1';
+      btn.type = 'button';
+      btn.innerText = 'DELETE';
+      btn.onclick = () => wrapper.remove();
+
+      wrapper.appendChild(img);
+      wrapper.appendChild(btn);
+
+      // Sisipkan sebelum tombol "+"
+      const plusBtn = container.lastElementChild;
+      container.insertBefore(wrapper, plusBtn);
+    };
+
+    reader.readAsDataURL(file);
+    // reset input agar bisa upload file dengan nama yang sama lagi
+    event.target.value = '';
   }
 }
 
