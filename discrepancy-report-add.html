@@ -358,8 +358,8 @@
                     </div>
                     <div class="col-md-6">
                       <select class="form-control" name="asset_item">
-                        <option>Choose Category</option>
-                        <option selected>Machine</option>
+                        <option selected>Choose Category</option>
+                        <option>Machine</option>
                       </select>
                     </div>
                   </div>
@@ -369,15 +369,14 @@
                     </div>
                     <div class="col-md-6">
                       <input type="text" id="issue_description" name="issue_description" class="form-control"
-                        value="FILTER OLI">
+                        placeholder="">
                     </div>
                   </div>
                   <div class="form-group row pb-3">
                     <div class="col-md-3 d-flex justify-content-end align-items-center">
                     </div>
                     <div class="col-md-6">
-                      <textarea class="form-control mt-2" rows="3"
-                        name="issue_detail">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
+                      <textarea class="form-control mt-2" rows="3" name="issue_detail" placeholder=""></textarea>
                     </div>
                   </div>
                   <div class="form-group row pb-3">
@@ -398,25 +397,24 @@
                       <label>Documentation</label>
                     </div>
                     <div class="col-md-6">
-                      <div class="d-flex">
+                      <div class="d-flex flex-wrap" id="imageContainer">
+                        <!-- Gambar yang sudah ada -->
                         <div class="mr-3 text-center">
-                          <img src="./assets/img/default-image.png" class="img-thumbnail"
+                          <img src="./assets/img/pdf_icon.svg" class="img-thumbnail"
                             style="width: 100px; height: 100px;" />
                           <button type="button" class="btn text-danger p-0 mt-1">DELETE</button>
                         </div>
-
-                        <div class="mr-3 text-center">
-                          <img src="./assets/img/default-image.png" class="img-thumbnail"
-                            style="width: 100px; height: 100px;" />
-                          <button type="button" class="btn text-danger p-0 mt-1">DELETE</button>
-                        </div>
-
+                        <!-- Tombol Upload -->
                         <div class="border d-flex align-items-center justify-content-center"
-                          style="width: 100px; height: 100px; cursor: pointer;">
+                          style="width: 100px; height: 100px; cursor: pointer;"
+                          onclick="document.getElementById('imageUploadInput').click();">
                           <span style="font-size: 30px;">+</span>
                         </div>
                       </div>
 
+                      <!-- Input file tersembunyi -->
+                      <input type="file" id="imageUploadInput" accept="image/*" style="display: none;"
+                        onchange="addImagePreview(event)" />
                     </div>
                   </div>
                   <div class="form-group mt-4 d-flex justify-content-end">

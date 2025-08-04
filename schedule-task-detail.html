@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+
+<html
+  lang="en"
+  class="light-style layout-navbar-fixed layout-menu-fixed"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="./assets/"
+  data-template="vertical-menu-template"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+
+    <title>Dashboard - MTC Engineering</title>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/img/favicon/favicon.ico"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="./assets/vendor/fonts/materialdesignicons.css"
+    />
+    <link rel="stylesheet" href="./assets/vendor/fonts/fontawesome.css" />
+
+    <!-- Core CSS -->
+    <link
+      rel="stylesheet"
+      href="./assets/vendor/css/rtl/core.css"
+      class="template-customizer-core-css"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/vendor/css/rtl/theme-default.css"
+      class="template-customizer-theme-css"
+    />
+    <link rel="stylesheet" href="./assets/css/custom.css" />
+
+    <!-- Vendors CSS -->
+    <link
+      rel="stylesheet"
+      href="./assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/vendor/libs/node-waves/node-waves.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/vendor/libs/typeahead-js/typeahead.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/vendor/libs/flatpickr/flatpickr.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css"
+    />
+    <link rel="stylesheet" href="./assets/vendor/libs/select2/select2.css" />
+
+    <!-- Page CSS -->
+    <!-- <link rel="stylesheet" href="./assets/vendor/css/pages/core-theme.css" /> -->
+
+    <!-- Helpers -->
+    <script src="./assets/vendor/js/helpers.js"></script>
+
+    <script src="./assets/vendor/js/template-customizer.js"></script>
+    <script src="./assets/js/config.js"></script>
+  </head>
+
+  <body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+      <div class="layout-container">
+        <!-- Menu -->
+
+        <aside
+          id="layout-menu"
+          class="layout-menu menu-vertical menu bg-menu-theme"
+        >
+          <div class="app-brand demo">
+            <a href="./dashboard.html" class="app-brand-link">
+              <span class="app-brand-text demo menu-text fw-bold ms-2"
+                >App Workflow</span
+              >
+            </a>
+
+            <a
+              href="javascript:void(0);"
+              class="layout-menu-toggle menu-link text-large ms-auto"
+            >
+              <svg
+                width="22"
+                height="22"
+                viewbox="0 0 22 22"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.4854 4.88844C11.0081 4.41121 10.2344 4.41121 9.75715 4.88844L4.51028 10.1353C4.03297 10.6126 4.03297 11.3865 4.51028 11.8638L9.75715 17.1107C10.2344 17.5879 11.0081 17.5879 11.4854 17.1107C11.9626 16.6334 11.9626 15.8597 11.4854 15.3824L7.96672 11.8638C7.48942 11.3865 7.48942 10.6126 7.96672 10.1353L11.4854 6.61667C11.9626 6.13943 11.9626 5.36568 11.4854 4.88844Z"
+                  fill="currentColor"
+                  fill-opacity="0.6"
+                ></path>
+                <path
+                  d="M15.8683 4.88844L10.6214 10.1353C10.1441 10.6126 10.1441 11.3865 10.6214 11.8638L15.8683 17.1107C16.3455 17.5879 17.1192 17.5879 17.5965 17.1107C18.0737 16.6334 18.0737 15.8597 17.5965 15.3824L14.0778 11.8638C13.6005 11.3865 13.6005 10.6126 14.0778 10.1353L17.5965 6.61667C18.0737 6.13943 18.0737 5.36568 17.5965 4.88844C17.1192 4.41121 16.3455 4.41121 15.8683 4.88844Z"
+                  fill="currentColor"
+                  fill-opacity="0.38"
+                ></path>
+              </svg>
+            </a>
+          </div>
+
+          <div class="menu-inner-shadow"></div>
+
+          <ul class="menu-inner py-1">
+            <!-- Dashboards -->
+            <!-- <li class="menu-item">
+              <a href="./dashboard.html" class="menu-link">
+                <i class="menu-icon tf-icons mdi mdi-home-outline"></i>
+                <div data-i18n="Dashboard">Dashboard</div>
+              </a>
+            </li> -->
+
+            <!-- Master Data -->
+            <li class="menu-header fw-light mt-4">
+              <span class="menu-header-text">Engineering MTC</span>
+            </li>
+            <li class="menu-item" style="">
+              <a
+                href="javascript:void(0);"
+                class="menu-link menu-toggle waves-effect"
+              >
+                <i class="menu-icon tf-icons mdi mdi-file-document-outline"></i>
+                <div data-i18n="MTC Setup">MTC Setup</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="./mtc-task.html" class="menu-link">
+                    <div data-i18n="MTC Task">MTC Task</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="./mtc-template.html" class="menu-link">
+                    <div data-i18n="MTC Template">
+                      MTC Template
+                    </div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="./asset-readiness.html" class="menu-link">
+                    <div data-i18n="Asset Readiness">Asset Readiness</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="./location-readiness.html" class="menu-link">
+                    <div data-i18n="Location Readiness">Location Readiness</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="./asset-meter-update.html" class="menu-link">
+                    <div data-i18n="Asset Meter Update">Asset Meter Update</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="./dispatcher-center.html" class="menu-link">
+                <i class="menu-icon tf-icons mdi mdi-clipboard-account-outline"></i>
+                <div data-i18n="Dispatcher Center">Dispatcher Center</div>
+                <i class="mdi mdi-alert-circle ms-2 text-warning"></i>
+              </a>
+            </li>
+            <li class="menu-item active">
+              <a href="./schedule-task.html" class="menu-link">
+                <i class="menu-icon tf-icons mdi mdi-calendar-badge-outline"></i>
+                <div data-i18n="Scheduled Task">Scheduled Task</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="./preventive-work-orders.html" class="menu-link">
+                <i class="menu-icon tf-icons mdi mdi-progress-wrench"></i>
+                <div data-i18n="Preventive Work Order">Preventive Work Order</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="./corrective-work-order.html" class="menu-link">
+                <i class="menu-icon tf-icons mdi mdi-wrench-outline"></i>
+                <div data-i18n="Corrective Work Order">Corrective Work Order</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="./discrepancy-report.html" class="menu-link">
+                <i class="menu-icon tf-icons mdi mdi-finance"></i>
+                <div data-i18n="Discrepancy Report">Discrepancy Report</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="./mtc-setting.html" class="menu-link">
+                <i class="menu-icon tf-icons mdi mdi-cog-outline"></i>
+                <div data-i18n="MTC Setting">MTC Setting</div>
+              </a>
+            </li>
+            <div class="d-none"> <!-- If you want to show this menu please remove <div class="d-none"> -->
+              <li class="menu-header fw-light mt-4">
+                <span class="menu-header-text">MASTER DATA MAINTENANCE</span>
+              </li>
+              <li class="menu-item">
+                <a href="./skill-set.html" class="menu-link">
+                  <i class="menu-icon tf-icons mdi mdi-briefcase-account-outline"></i>
+                  <div data-i18n="Skill Set">Skill Set</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="./engineer.html" class="menu-link">
+                  <i class="menu-icon tf-icons mdi mdi-account-hard-hat-outline"></i>
+                  <div data-i18n="Engineer">Engineer</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="./engineer.html" class="menu-link">
+                  <i class="menu-icon tf-icons mdi mdi-store-outline"></i>
+                  <div data-i18n="Vendor">Vendor</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="./root-cause-category.html" class="menu-link">
+                  <i class="menu-icon tf-icons mdi mdi-list-box-outline"></i>
+                  <div data-i18n="Root Cause Category">Root Cause Category</div>
+                </a>
+              </li>
+            </div>
+          </ul>
+        </aside>
+        <!-- / Menu -->
+
+        <!-- Layout container -->
+        <div class="layout-page">
+          <!-- Navbar -->
+
+          <nav
+            class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+            id="layout-navbar-fixed"
+          >
+            <div
+              class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none"
+            >
+              <a
+                class="nav-item nav-link px-0 me-xl-4"
+                href="javascript:void(0)"
+              >
+                <i class="mdi mdi-menu mdi-24px"></i>
+              </a>
+            </div>
+
+            <div
+              class="navbar-nav-right d-flex align-items-center"
+              id="navbar-collapse"
+            >
+              <ul class="navbar-nav flex-row align-items-center ms-auto">
+                <!-- User -->
+                <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                  <a
+                    class="nav-link dropdown-toggle hide-arrow"
+                    href="javascript:void(0);"
+                    data-bs-toggle="dropdown"
+                  >
+                    <div class="avatar avatar-online">
+                      <img
+                        src="./assets/img/avatars/1.png"
+                        alt=""
+                        class="w-px-40 h-auto rounded-circle"
+                      />
+                    </div>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <div class="d-flex">
+                          <div class="flex-shrink-0 me-3">
+                            <div class="avatar avatar-online">
+                              <img
+                                src="./assets/img/avatars/1.png"
+                                alt=""
+                                class="w-px-40 h-auto rounded-circle"
+                              />
+                            </div>
+                          </div>
+                          <div class="flex-grow-1">
+                            <span class="fw-semibold d-block">John Doe</span>
+                            <small class="text-muted">Admin</small>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="./index.html"
+                        target="_blank"
+                      >
+                        <i class="mdi mdi-logout me-2"></i>
+                        <span class="align-middle">Log Out</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!--/ User -->
+              </ul>
+            </div>
+          </nav>
+
+          <!-- / Navbar -->
+
+          <!-- Content wrapper -->
+          <div class="content-wrapper">
+            <!-- Content -->
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="./schedule-task.html">Scheduled Task</a>
+                  </li>
+                  <li class="breadcrumb-item">
+                    <a href="javascript:void(0);" class="text-dark"
+                      >WO-2025-05-07-0041</a
+                    >
+                  </li>
+                </ol>
+              </nav>
+              
+              <div class="nav-align-top mb-4">
+                <ul class="nav nav-tabs" role="tablist">
+                  <li class="nav-item">
+                    <button
+                      type="button fw-semibold"
+                      class="nav-link active"
+                      role="tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#navs-inspections"
+                      aria-controls="navs-inspections"
+                      aria-selected="true"
+                    >
+                      Inspections
+                    </button>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      type="button fw-semibold"
+                      class="nav-link"
+                      role="tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#navs-service-report"
+                      aria-controls="navs-service-report"
+                      aria-selected="false"
+                    >
+                      Service Report
+                    </button>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      type="button fw-semibold"
+                      class="nav-link"
+                      role="tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#navs-update-last-done"
+                      aria-controls="navs-update-last-done"
+                      aria-selected="false"
+                    >
+                      Update Last Done
+                    </button>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="tab-content p-0">
+                <div
+                  class="tab-pane fade show active"
+                  id="navs-inspections"
+                  role="tabpanel"
+                >
+                  <!-- 1 -->
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <div class="row align-items-center" role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0002" aria-expanded="false" aria-controls="detailINSP-0002">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                          <div class="d-flex gap-2 align-items-center justify-content-between justify-content-md-start mb-1">
+                            <div class="flex gap-2">
+                              <span>INSP-0001</span>
+                              <span>(0/1)</span>
+                            </div>
+                            <span class="custom-bg-secondary text-uppercase px-2 py-1 rounded-1">Pending</span>
+                          </div>
+                          <div class="fs-6">Check Oil Volume</div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="d-flex gap-1 justify-content-md-end">
+                            <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#escalateNotStartedModal">
+                              <i class="mdi mdi-information-variant"></i> ESCALATE
+                            </button>
+                            <i class="mdi mdi-36px mdi-chevron-down text-dark d-none d-md-block"></i>
+                          </div>
+                        </div>
+                        <i class="mdi mdi-36px mdi-chevron-down text-dark d-block d-md-none text-center mt-1"></i>
+                      </div>
+
+                      <div class="collapse mt-2" id="detailINSP-0002">
+                        <div class="mt-2">
+                          <hr>
+                          <!-- Insp 1 -->
+                          <div class="d-flex gap-2 mt-3">
+                            <span>01</span>
+                            <div class="border px-3 py-3 rounded-2 w-100">
+                              <div class="row align-items-center justify-content-between">
+                                <div class="col-md-8">
+                                  <div class="d-flex flex-column mb-3 mb-md-0">
+                                    <span>Read oil dipstick</span>
+                                    <span class="text-muted">Memeriksa kondisi volume oli setelah pergantian oli</span>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="radio-group choose-radio-button justify-content-end">
+                                    <input type="radio" id="tireFail" name="inspectionResult-1" class="radio-button-input radio-fail" value="fail">
+                                    <label for="tireFail" class="radio-button-label">
+                                      <i class="mdi mdi-close me-1"></i>
+                                      FAIL
+                                    </label>
+
+                                    <input type="radio" id="tirePass" name="inspectionResult-1" class="radio-button-input radio-pass" value="pass">
+                                    <label for="tirePass" class="radio-button-label">
+                                      <i class="mdi mdi-check me-1"></i>
+                                      PASS
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div id="failDetails-1" class="collapse mt-3">
+                                <hr class="my-2">
+                                <div class="mt-3 d-md-flex  gap-2 text-wrap">
+                                  <label class="form-label me-2">Documentation</label>
+                                  <div class="d-flex gap-2">
+                                    <div id="previewContainer-1" class="d-flex gap-3 flex-wrap"></div>
+                                    <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
+                                    <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
+                                      <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="mt-4 d-md-flex gap-2 text-wrap">
+                                  <label class="form-label" style="margin-right: 4rem;">Remarks</label>
+                                  <textarea class="form-control" rows="5">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
+                                </div>
+                              </div>
+                              <button id="hideDetailsBtn-1" class="btn btn-outline-secondary mt-4 w-100" style="display: none!important;">
+                                hide details <i class="mdi mdi-chevron-up"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 2 -->
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <div class="row align-items-center" role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0001" aria-expanded="false" aria-controls="detailINSP-0001">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                          <div class="d-flex gap-2 align-items-center justify-content-between justify-content-md-start mb-1">
+                            <div class="flex gap-2">
+                              <span>INSP-0002</span>
+                              <span>(0/1)</span>
+                            </div>
+                            <span class="custom-bg-danger text-uppercase px-2 py-1 rounded-1">DEFFERED</span>
+                          </div>
+                          <div class="fs-6">Check Seal Engine Cover</div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="d-flex gap-1 justify-content-md-end">
+                            <button class="d-none btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#escalateModal">
+                              <i class="mdi mdi-information-variant"></i> ESCALATE
+                            </button>
+                            <i class="mdi mdi-36px mdi-chevron-down text-dark d-none d-md-block"></i>
+                          </div>
+                        </div>
+                        <i class="mdi mdi-36px mdi-chevron-down text-dark d-block d-md-none text-center mt-1"></i>
+                      </div>
+
+                      <div class="collapse mt-2" id="detailINSP-0001">
+                        <div class="mt-2">
+                          <hr>
+                          <div class="d-flex gap-2 mt-3">
+                            <div class="row align-items-center justify-content-between">
+                              <div class="col-md-12">
+                                <div class="d-flex flex-column">
+                                  <div class="d-md-flex gap-2 mb-2">
+                                    <span class="small text-muted" style="min-width: 160px; max-height: 160px;">Discrepancy ID:</span>
+                                    <a href="./discprepancy-report-detail.html" class="text-decoration-underline fw-semibold">DR-A-AVANZ-KABEL</a>
+                                  </div>
+                                  <div class="d-md-flex gap-1">
+                                    <span class="small text-muted" style="min-width: 160px; max-height: 160px;">Reason/ Notes:</span>
+                                    <p class="mb-0">Inspection tidak bisa dilakukan karena parts yang digunakan tidak sesuai dengan spesifikasi/ membutuhkan parts yang dijual khusus di luar negeri</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 3 -->
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <div class="row align-items-center" role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0003" aria-expanded="false" aria-controls="detailINSP-0003">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                          <div class="d-flex gap-2 align-items-center justify-content-between justify-content-md-start mb-1">
+                            <div class="flex gap-2">
+                              <span>INSP-0003</span>
+                              <span>(3/3)</span>
+                            </div>
+                            <span class="custom-bg-danger text-uppercase px-2 py-1 rounded-1">NG</span>
+                          </div>
+                          <div class="fs-6">Check Kebocoran Oli</div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="d-flex gap-3 justify-content-md-end">
+                            <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#escalateModal">
+                              <i class="mdi mdi-information-variant me-1"></i> ESCALATE
+                            </button>
+                            <button class="btn btn-outline-primary text-truncate" data-bs-toggle="modal" data-bs-target="#caModal">
+                              <i class="mdi mdi-hammer-wrench me-1"></i> correct. action
+                            </button>
+                            <i class="mdi mdi-36px mdi-chevron-down text-dark d-none d-md-block"></i>
+                          </div>
+                        </div>
+                        <i class="mdi mdi-36px mdi-chevron-down text-dark d-block d-md-none text-center mt-1"></i>
+                      </div>
+
+                      <div class="collapse mt-2" id="detailINSP-0003">
+                        <div class="mt-2">
+                          <hr>
+                          <!-- Insp 1 -->
+                          <div class="d-flex gap-2 mt-3">
+                            <span>01</span>
+                            <div id="insp-item" class="border px-3 py-3 rounded-2 w-100">
+                              <div class="row align-items-center justify-content-between">
+                                <div class="col-md-8">
+                                  <div class="d-flex flex-column mb-3 mb-md-0">
+                                    <span>Read oil dipstick</span>
+                                    <span class="text-muted">Memeriksa kondisi volume oli setelah pergantian oli</span>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="radio-group choose-radio-button justify-content-end">
+                                    <input type="radio" id="tireFail-13" name="inspectionResult-13" class="radio-button-input radio-fail" value="fail" checked>
+                                    <label for="tireFail-13" class="radio-button-label">
+                                      <i class="mdi mdi-close me-1"></i>
+                                      FAIL
+                                    </label>
+
+                                    <input type="radio" id="tirePass-13" name="inspectionResult-13" class="radio-button-input radio-pass" value="pass">
+                                    <label for="tirePass-13" class="radio-button-label">
+                                      <i class="mdi mdi-check me-1"></i>
+                                      PASS
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div id="failDetails-1" class="collapse mt-3 show">
+                                <hr class="my-2">
+                                <div class="mt-3 d-md-flex  gap-2 text-wrap">
+                                  <label class="form-label me-2">Documentation</label>
+                                  <div class="d-flex gap-2">
+                                    <div id="previewContainer-1" class="d-flex gap-3 flex-wrap"></div>
+                                    <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
+                                    <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
+                                      <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="mt-4 d-md-flex gap-2 text-wrap">
+                                  <label class="form-label" style="margin-right: 4rem;">Remarks</label>
+                                  <textarea class="form-control" rows="5">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
+                                </div>
+                              </div>
+                              <button id="hideDetailsBtn-1" class="btn btn-outline-secondary mt-4 w-100" style="display: none!important;">
+                                hide details <i class="mdi mdi-chevron-up"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 4 -->
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <div class="row align-items-center" role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0004" aria-expanded="false" aria-controls="detailINSP-0004">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                          <div class="d-flex gap-2 align-items-center justify-content-between justify-content-md-start mb-1">
+                            <div class="flex gap-2">
+                              <span>INSP-0004</span>
+                              <span>(1/1)</span>
+                            </div>
+                            <span class="custom-bg-success text-uppercase px-2 py-1 rounded-1">Resolved</span>
+                          </div>
+                          <div class="fs-6">Check Oil Seal</div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="d-flex gap-3 justify-content-md-end">
+                            <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#escalateModal">
+                              <i class="mdi mdi-information-variant me-1"></i> ESCALATE
+                            </button>
+                            <button class="btn btn-outline-primary text-truncate" data-bs-toggle="modal" data-bs-target="#caModal">
+                              <i class="mdi mdi-hammer-wrench me-1"></i> correct. action (2)
+                            </button>
+                            <i class="mdi mdi-36px mdi-chevron-down text-dark d-none d-md-block"></i>
+                          </div>
+                        </div>
+                        <i class="mdi mdi-36px mdi-chevron-down text-dark d-block d-md-none text-center mt-1"></i>
+                      </div>
+
+                      <div class="collapse mt-2" id="detailINSP-0004">
+                        <div class="mt-2">
+                          <hr>
+                          <!-- Insp 1 -->
+                          <div class="d-flex gap-2 mt-3">
+                            <span>01</span>
+                            <div id="insp-item" class="border px-3 py-3 rounded-2 w-100">
+                              <div class="row align-items-center justify-content-between">
+                                <div class="col-md-8">
+                                  <div class="d-flex flex-column mb-3 mb-md-0">
+                                    <span>Read oil dipstick</span>
+                                    <span class="text-muted">Memeriksa kondisi volume oli setelah pergantian oli</span>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="radio-group choose-radio-button justify-content-end">
+                                    <input type="radio" id="tireFail-14" name="inspectionResult-14" class="radio-button-input radio-fail" value="fail" checked>
+                                    <label for="tireFail-14" class="radio-button-label">
+                                      <i class="mdi mdi-close me-1"></i>
+                                      FAIL
+                                    </label>
+
+                                    <input type="radio" id="tirePass-14" name="inspectionResult-14" class="radio-button-input radio-pass" value="pass">
+                                    <label for="tirePass-14" class="radio-button-label">
+                                      <i class="mdi mdi-check me-1"></i>
+                                      PASS
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div id="failDetails-1" class="collapse mt-3">
+                                <hr class="my-2">
+                                <div class="mt-3 d-md-flex  gap-2 text-wrap">
+                                  <label class="form-label me-2">Documentation</label>
+                                  <div class="d-flex gap-2">
+                                    <div id="previewContainer-1" class="d-flex gap-3 flex-wrap"></div>
+                                    <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
+                                    <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
+                                      <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="mt-4 d-md-flex gap-2 text-wrap">
+                                  <label class="form-label" style="margin-right: 4rem;">Remarks</label>
+                                  <textarea class="form-control" rows="5">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
+                                </div>
+                              </div>
+                              <button id="hideDetailsBtn-1" class="btn btn-outline-secondary mt-4 w-100" style="display: none!important;">
+                                hide details <i class="mdi mdi-chevron-up"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 5 -->
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <div class="row align-items-center" role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0005" aria-expanded="false" aria-controls="detailINSP-0005">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                          <div class="d-flex gap-2 align-items-center justify-content-between justify-content-md-start mb-1">
+                            <div class="flex gap-2">
+                              <span>INSP-0005</span>
+                              <span>(3/3)</span>
+                            </div>
+                            <span class="custom-bg-success text-uppercase px-2 py-1 rounded-1">OK</span>
+                          </div>
+                          <div class="fs-6">Check Sensor after Oil Cange</div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="d-flex gap-3 justify-content-md-end">
+                            <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#escalateModal">
+                              <i class="mdi mdi-information-variant me-1"></i> ESCALATE
+                            </button>
+                            <button class="btn btn-outline-primary text-truncate" data-bs-toggle="modal" data-bs-target="#caModal">
+                              <i class="mdi mdi-hammer-wrench me-1"></i> correct. action
+                            </button>
+                            <i class="mdi mdi-36px mdi-chevron-down text-dark d-none d-md-block"></i>
+                          </div>
+                        </div>
+                        <i class="mdi mdi-36px mdi-chevron-down text-dark d-block d-md-none text-center mt-1"></i>
+                      </div>
+
+                      <div class="collapse mt-2" id="detailINSP-0005">
+                        <div class="mt-2">
+                          <hr>
+                          <!-- Insp 1 -->
+                          <div class="d-flex gap-2 mt-3">
+                            <span>01</span>
+                            <div id="insp-item" class="border px-3 py-3 rounded-2 w-100 inspect-success">
+                              <div class="row align-items-center justify-content-between">
+                                <div class="col-md-8">
+                                  <div class="d-flex flex-column mb-3 mb-md-0">
+                                    <span>Read oil dipstick</span>
+                                    <span class="text-muted">Memeriksa kondisi volume oli setelah pergantian oli</span>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="radio-group choose-radio-button justify-content-end">
+                                    <input type="radio" id="tireFail-15" name="inspectionResult-15" class="radio-button-input radio-fail" value="fail">
+                                    <label for="tireFail-15" class="radio-button-label">
+                                      <i class="mdi mdi-close me-1"></i>
+                                      FAIL
+                                    </label>
+
+                                    <input type="radio" id="tirePass-15" name="inspectionResult-15" class="radio-button-input radio-pass" value="pass" checked>
+                                    <label for="tirePass-15" class="radio-button-label">
+                                      <i class="mdi mdi-check me-1"></i>
+                                      PASS
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div id="failDetails-1" class="collapse mt-3">
+                                <hr class="my-2">
+                                <div class="mt-3 d-md-flex  gap-2 text-wrap">
+                                  <label class="form-label me-2">Documentation</label>
+                                  <div class="d-flex gap-2">
+                                    <div id="previewContainer-1" class="d-flex gap-3 flex-wrap"></div>
+                                    <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
+                                    <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
+                                      <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="mt-4 d-md-flex gap-2 text-wrap">
+                                  <label class="form-label" style="margin-right: 4rem;">Remarks</label>
+                                  <textarea class="form-control" rows="5">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
+                                </div>
+                              </div>
+                              <button id="hideDetailsBtn-1" class="btn btn-outline-secondary mt-4 w-100" style="display: none!important;">
+                                hide details <i class="mdi mdi-chevron-up"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 6 -->
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <div class="row align-items-center" role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0006" aria-expanded="false" aria-controls="detailINSP-0006">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                          <div class="d-flex gap-2 align-items-center justify-content-between justify-content-md-start mb-1">
+                            <div class="flex gap-2">
+                              <span>INSP-0006</span>
+                              <span>(2/3)</span>
+                            </div>
+                            <span class="custom-bg-warning text-uppercase px-2 py-1 rounded-1">In Progress</span>
+                          </div>
+                          <div class="fs-6">Check Sensor after Oil Cange</div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="d-flex gap-3 justify-content-md-end">
+                            <i class="mdi mdi-36px mdi-chevron-down text-dark d-none d-md-block"></i>
+                          </div>
+                        </div>
+                        <i class="mdi mdi-36px mdi-chevron-down text-dark d-block d-md-none text-center mt-1"></i>
+                      </div>
+
+                      <div class="collapse mt-2" id="detailINSP-0006">
+                        <div class="mt-2">
+                          <hr>
+                          <!-- Insp 1 -->
+                          <div class="d-flex gap-2 mt-3">
+                            <span>01</span>
+                            <div id="insp-item" class="border px-3 py-3 rounded-2 w-100 inspect-success">
+                              <div class="row align-items-center justify-content-between">
+                                <div class="col-md-8">
+                                  <div class="d-flex flex-column mb-3 mb-md-0">
+                                    <span>Read oil dipstick</span>
+                                    <span class="text-muted">Memeriksa kondisi volume oli setelah pergantian oli</span>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="radio-group choose-radio-button justify-content-end">
+                                    <input type="radio" id="tireFail-16" name="inspectionResult-16" class="radio-button-input radio-fail" value="fail">
+                                    <label for="tireFail-16" class="radio-button-label">
+                                      <i class="mdi mdi-close me-1"></i>
+                                      FAIL
+                                    </label>
+
+                                    <input type="radio" id="tirePass-16" name="inspectionResult-16" class="radio-button-input radio-pass" value="pass" checked>
+                                    <label for="tirePass-16" class="radio-button-label">
+                                      <i class="mdi mdi-check me-1"></i>
+                                      PASS
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div id="failDetails-1" class="collapse mt-3">
+                                <hr class="my-2">
+                                <div class="mt-3 d-md-flex  gap-2 text-wrap">
+                                  <label class="form-label me-2">Documentation</label>
+                                  <div class="d-flex gap-2">
+                                    <div id="previewContainer-1" class="d-flex gap-3 flex-wrap"></div>
+                                    <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
+                                    <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
+                                      <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="mt-4 d-md-flex gap-2 text-wrap">
+                                  <label class="form-label" style="margin-right: 4rem;">Remarks</label>
+                                  <textarea class="form-control" rows="5">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
+                                </div>
+                              </div>
+                              <button id="hideDetailsBtn-1" class="btn btn-outline-secondary mt-4 w-100" style="display: none!important;">
+                                hide details <i class="mdi mdi-chevron-up"></i>
+                              </button>
+                            </div>
+                          </div>
+
+                          <!-- Insp 2 -->
+                          <div class="d-flex gap-2 mt-3">
+                            <span>02</span>
+                            <div id="insp-item" class="border px-3 py-3 rounded-2 w-100">
+                              <div class="row align-items-center justify-content-between">
+                                <div class="col-md-8">
+                                  <div class="d-flex flex-column mb-3 mb-md-0">
+                                    <span>Read oil dipstick</span>
+                                    <span class="text-muted">Memeriksa kondisi volume oli setelah pergantian oli</span>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="radio-group choose-radio-button justify-content-end">
+                                    <input type="radio" id="tireFail-26" name="inspectionResult-26" class="radio-button-input radio-fail" value="fail" checked>
+                                    <label for="tireFail-26" class="radio-button-label">
+                                      <i class="mdi mdi-close me-1"></i>
+                                      FAIL
+                                    </label>
+
+                                    <input type="radio" id="tirePass-26" name="inspectionResult-26" class="radio-button-input radio-pass" value="pass">
+                                    <label for="tirePass-26" class="radio-button-label">
+                                      <i class="mdi mdi-check me-1"></i>
+                                      PASS
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div id="failDetails-1" class="collapse show mt-3">
+                                <hr class="my-2">
+                                <div class="mt-3 d-md-flex  gap-2 text-wrap">
+                                  <label class="form-label me-2">Documentation</label>
+                                  <div class="d-flex gap-2">
+                                    <div id="previewContainer-1" class="d-flex gap-3 flex-wrap"></div>
+                                    <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
+                                    <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
+                                      <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="mt-4 d-md-flex gap-2 text-wrap">
+                                  <label class="form-label" style="margin-right: 4rem;">Remarks</label>
+                                  <textarea class="form-control" rows="5">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
+                                </div>
+                              </div>
+                              <button id="hideDetailsBtn-1" class="btn btn-outline-secondary mt-4 w-100" style="display: none!important;">
+                                hide details <i class="mdi mdi-chevron-up"></i>
+                              </button>
+                            </div>
+                          </div>
+
+                          <!-- Insp 3 -->
+                          <div class="d-flex gap-2 mt-3">
+                            <span>03</span>
+                            <div id="insp-item" class="border px-3 py-3 rounded-2 w-100">
+                              <div class="row align-items-center justify-content-between">
+                                <div class="col-md-8">
+                                  <div class="d-flex flex-column mb-3 mb-md-0">
+                                    <span>Read oil dipstick</span>
+                                    <span class="text-muted">Memeriksa kondisi volume oli setelah pergantian oli</span>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="radio-group choose-radio-button justify-content-end">
+                                    <input type="radio" id="tireFail-36" name="inspectionResult-36" class="radio-button-input radio-fail" value="fail">
+                                    <label for="tireFail-36" class="radio-button-label">
+                                      <i class="mdi mdi-close me-1"></i>
+                                      FAIL
+                                    </label>
+
+                                    <input type="radio" id="tirePass-36" name="inspectionResult-36" class="radio-button-input radio-pass" value="pass">
+                                    <label for="tirePass-36" class="radio-button-label">
+                                      <i class="mdi mdi-check me-1"></i>
+                                      PASS
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div id="failDetails-1" class="collapse mt-3">
+                                <hr class="my-2">
+                                <div class="mt-3 d-md-flex  gap-2 text-wrap">
+                                  <label class="form-label me-2">Documentation</label>
+                                  <div class="d-flex gap-2">
+                                    <div id="previewContainer-1" class="d-flex gap-3 flex-wrap"></div>
+                                    <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
+                                    <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
+                                      <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="mt-4 d-md-flex gap-2 text-wrap">
+                                  <label class="form-label" style="margin-right: 4rem;">Remarks</label>
+                                  <textarea class="form-control" rows="5">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
+                                </div>
+                              </div>
+                              <button id="hideDetailsBtn-1" class="btn btn-outline-secondary mt-4 w-100" style="display: none!important;">
+                                hide details <i class="mdi mdi-chevron-up"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="navs-service-report"
+                  role="tabpanel"
+                >
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <div class="d-flex gap-2 align-items-center mb-3">
+                        <h5 class="mb-0">Labor</h5>
+                        <button class="btn btn-text-primary p-0"><i class="mdi mdi-plus"></i>ADD</button>
+                      </div>
+                      <div class="row g-2 align-items-start mb-3">
+                        <div class="row g-2 align-items-center text-wrap mb-2">
+                          <div class="col-md-7 col-7">
+                            <div class="form-floating form-floating-outline">
+                              <input type="text" class="form-control" id="floatingInput" placeholder="John Doe" aria-describedby="floatingInputHelp">
+                              <label for="floatingInput">Item</label>
+                            </div>
+                          </div>
+                          <div class="col-md-3 col-3">
+                            <div class="form-floating form-floating-outline">
+                              <input type="number" class="form-control" id="floatingInput" placeholder="John Doe" aria-describedby="floatingInputHelp">
+                              <label for="floatingInput">Cost</label>
+                            </div>
+                          </div>
+                          <div class="col-md-2 col-2 d-flex align-items-center">
+                            <button class="btn btn-text-danger text-capitalize p-0">
+                              <i class="mdi mdi-minus me-2"></i>
+                              <span class="d-none d-md-block">Remove</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <hr class="my-2"/>
+                      <div class="d-flex gap-2 align-items-center mb-3">
+                        <h5 class="mb-0">Vendor</h5>
+                        <button class="btn btn-text-primary p-0"><i class="mdi mdi-plus"></i>ADD</button>
+                      </div>
+                      <div class="row g-2 align-items-start mb-3">
+                        <div class="row g-2 align-items-center text-wrap mb-2">
+                          <div class="col-md-7 col-7">
+                            <div class="form-floating form-floating-outline">
+                              <input type="text" class="form-control" id="floatingInput" placeholder="John Doe" aria-describedby="floatingInputHelp">
+                              <label for="floatingInput">Item</label>
+                            </div>
+                          </div>
+                          <div class="col-md-3 col-3">
+                            <div class="form-floating form-floating-outline">
+                              <input type="number" class="form-control" id="floatingInput" placeholder="John Doe" aria-describedby="floatingInputHelp">
+                              <label for="floatingInput">Cost</label>
+                            </div>
+                          </div>
+                          <div class="col-md-2 col-2 d-flex align-items-center">
+                            <button class="btn btn-text-danger text-capitalize p-0">
+                              <i class="mdi mdi-minus me-2"></i>
+                              <span class="d-none d-md-block">Remove</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <hr class="my-2"/>
+                      <h5>Part</h5>
+                      <div class="px-md-3">
+                        <div class="d-flex gap-2 align-items-center mb-3">
+                          <h6 class="mb-0">Ad-Hoc Consumable</h6>
+                          <button class="btn btn-text-primary p-0"><i class="mdi mdi-plus"></i>ADD</button>
+                        </div>
+                        <div class="row g-2 align-items-center mb-3">
+                          <div class="col-md-7 col-7">
+                            <div class="form-floating form-floating-outline">
+                              <input type="text" class="form-control" id="floatingInput" placeholder="John Doe" aria-describedby="floatingInputHelp">
+                              <label for="floatingInput">Item</label>
+                            </div>
+                          </div>
+
+                          <!-- Cost Input -->
+                          <div class="col-md-3 col-3">
+                            <div class="form-floating form-floating-outline">
+                              <input type="number" class="form-control" id="floatingInput" value="50.000" placeholder="Cost" disabled>
+                              <label for="floatingInput">Cost</label>
+                            </div>
+                          </div>
+
+                          <!-- Remove Button -->
+                          <div class="col-md-2 col-2 d-flex align-items-center">
+                            <button class="btn btn-text-danger text-capitalize p-0">
+                              <i class="mdi mdi-minus me-2"></i>
+                              <span class="d-none d-md-block">Remove</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="px-md-3">
+                        <div class="d-flex gap-2 align-items-center mb-3">
+                          <h6 class="mb-0">Registered Part</h6>
+                          <button class="btn btn-text-primary p-0">
+                            <i class="mdi mdi-plus"></i> ADD
+                          </button>
+                        </div>
+
+                        <div class="row g-2 align-items-center mb-3">
+                          <!-- Dropdown Selects -->
+                          <div class="col-md-7 col-7">
+                            <div class="row g-2">
+                              <div class="col-md-6 col-6">
+                                <div class="form-floating form-floating-outline">
+                                  <select class="form-select select" id="assetName">
+                                    <option>Select Asset Name</option>
+                                    <option selected>Oil Filter</option>
+                                    <option value="1">Asset Name 1</option>
+                                    <option value="2">Asset Name 2</option>
+                                    <option value="3">Asset Name 3</option>
+                                  </select>
+                                  <label for="assetName">Asset Name</label>
+                                </div>
+                              </div>
+                              <div class="col-md-6 col-6">
+                                <div class="form-floating form-floating-outline">
+                                  <select class="form-select select" id="itemNumber">
+                                    <option>Select Item Number</option>
+                                    <option selected>i-2024-01-11-0001</option>
+                                    <option value="1">Item Number 1</option>
+                                    <option value="2">Item Number 2</option>
+                                    <option value="3">Item Number 3</option>
+                                  </select>
+                                  <label for="itemNumber">Item Number</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Cost Input -->
+                          <div class="col-md-3 col-3">
+                            <div class="form-floating form-floating-outline">
+                              <input type="number" class="form-control" id="floatingInput" value="50.000" placeholder="Cost" disabled>
+                              <label for="floatingInput">Cost</label>
+                            </div>
+                          </div>
+
+                          <!-- Remove Button -->
+                          <div class="col-md-2 col-2 d-flex align-items-center">
+                            <button class="btn btn-text-danger text-capitalize p-0">
+                              <i class="mdi mdi-minus me-2"></i>
+                              <span class="d-none d-md-block">Remove</span>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="row g-2 align-items-center mb-3">
+                          <!-- Dropdown Selects -->
+                          <div class="col-md-7 col-7">
+                            <div class="row g-2">
+                              <div class="col-md-6 col-6">
+                                <div class="form-floating form-floating-outline">
+                                  <select class="form-select select" id="assetName">
+                                    <option>Select Asset Name</option>
+                                    <option selected>Oil Filter</option>
+                                    <option value="1">Asset Name 1</option>
+                                    <option value="2">Asset Name 2</option>
+                                    <option value="3">Asset Name 3</option>
+                                  </select>
+                                  <label for="assetName">Asset Name</label>
+                                </div>
+                              </div>
+                              <div class="col-md-3 col-3">
+                                <div class="form-floating form-floating-outline">
+                                  <input type="number" class="form-control" id="floatingInput" value="10" placeholder="John Doe" aria-describedby="floatingInputHelp" disabled>
+                                  <label for="floatingInput">Available</label>
+                                </div>
+                              </div>
+                              <div class="col-md-3 col-3">
+                                <div class="form-floating form-floating-outline">
+                                  <input type="number" class="form-control" id="floatingInput" value="40" placeholder="John Doe" aria-describedby="floatingInputHelp">
+                                  <label for="floatingInput">Qty Used</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Cost Input -->
+                          <div class="col-md-3 col-3">
+                            <div class="form-floating form-floating-outline">
+                              <input type="number" class="form-control" id="floatingInput" value="5000" placeholder="Cost" disabled>
+                              <label for="floatingInput">Cost</label>
+                            </div>
+                          </div>
+
+                          <!-- Remove Button -->
+                          <div class="col-md-2 col-2 d-flex align-items-center">
+                            <button class="btn btn-text-danger text-capitalize p-0">
+                              <i class="mdi mdi-minus me-2"></i>
+                              <span class="d-none d-md-block">Remove</span>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="row g-2 align-items-center mb-3">
+                          <!-- Dropdown Selects -->
+                          <div class="col-md-7 col-7">
+                            <div class="row g-2">
+                              <div class="col-md-12">
+                                <div class="form-floating form-floating-outline">
+                                  <select class="form-select select" id="assetName">
+                                    <option>Select Asset Name</option>
+                                    <option selected>Oil Filter</option>
+                                    <option value="1">Asset Name 1</option>
+                                    <option value="2">Asset Name 2</option>
+                                    <option value="3">Asset Name 3</option>
+                                  </select>
+                                  <label for="assetName">Asset Name</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Cost Input -->
+                          <div class="col-md-3 col-3">
+                            <div class="form-floating form-floating-outline">
+                              <input type="number" class="form-control" id="floatingInput" value="0" placeholder="Cost" disabled>
+                              <label for="floatingInput">Cost</label>
+                            </div>
+                          </div>
+
+                          <!-- Remove Button -->
+                          <div class="col-md-2 col-2 d-flex align-items-center">
+                            <button class="btn btn-text-danger text-capitalize p-0">
+                              <i class="mdi mdi-minus me-2"></i>
+                              <span class="d-none d-md-block">Remove</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <hr class="my-2">
+                      <div class="text-end fs-3 text-primary fw-semibold">Total : 755.000</div>
+                      <hr class="my-2">
+                      <div class="row align-items-start mt-4">
+                        <div class="col-md-2 text-md-end mb-2 mb-md-0">Documentation</div>
+                          <div class="col-md-10">
+                            <div class="d-flex gap-3">
+                              <div id="previewContainer-1" class="d-flex gap-3 flex-wrap">
+                                <div class="image-preview position-relative">
+                                  <img src="https://image.sumberberkatabadi.com/s3/productimages/webp/co26696/p1323680/w600-h600/5d9804e6-8311-4c0d-b3e7-9b7d6fa129fc.jpg" class="img-thumbnail">
+                                  <button class="delete-btn">DELETE</button>
+                                </div>
+                              </div>
+                              <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
+                              <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
+                                <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                              </label>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="card-footer">
+                      <div class="pt-1 row g-2">
+                        <div class="col-md-12 col-12 text-end">
+                          <button type="submit" class="btn btn-primary">
+                            Save Cost
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h5>Corrective Action</h5>
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <div class="row align-items-center" role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0002" aria-expanded="false" aria-controls="detailINSP-0002">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                          <div class="d-flex gap-2 align-items-center justify-content-between justify-content-md-start mb-1">
+                            <div class="flex gap-2">
+                              <span>INSP-0001</span>
+                              <span>(0/1)</span>
+                            </div>
+                          </div>
+                          <div class="fs-6">Check Oil Volume</div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="d-flex gap-1 justify-content-md-end">
+                            <i class="mdi mdi-36px mdi-chevron-down text-dark d-none d-md-block"></i>
+                          </div>
+                        </div>
+                        <i class="mdi mdi-36px mdi-chevron-down text-dark d-block d-md-none text-center mt-1"></i>
+                      </div>
+
+                      <div class="collapse mt-2" id="detailINSP-0002">
+                        <hr class="my-3"/>
+                        <div class="row align-items-start mb-3">
+                          <div class="col-md-2 text-md-end mb-2 mb-md-0">Root Cause:</div>
+                          <div class="col-md-10">
+                            <ol>
+                              <li >Machine > Lubrication System</li>
+                              <li >Machine > Colant Mechines </li>
+                            </ol>
+                          </div>
+                        </div>
+                        <div class="row align-items-start mb-3">
+                          <div class="col-md-2 text-md-end mb-2 mb-md-0">Issue Description:</div>
+                          <div class="col-md-10">
+                            Ada kebocoran oli dari area mesin
+                          </div>
+                        </div>
+                        <!-- 1 -->
+                        <div class="accordion border rounded-2 shadow-none mb-3" id="accordionExample">
+                          <div class="accordion-item bordered-box">
+                            <h2 class="accordion-header" id="headingOne">
+                              <button class="accordion-button text-dark collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="background-color: #3c57a110;">
+                                01. Wednesday, 02 Jul 2025
+                              </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                <div class="row align-items-start mb-3">
+                                  <div class="col-md-3 text-md-end mb-2 mb-md-0">Engineering:</div>
+                                  <div class="col-md-9">Ahmad Kurniawan</div>
+                                </div>
+                                <div class="row align-items-start mb-3">
+                                  <div class="col-md-3 text-md-end mb-2 mb-md-0">Vendor:</div>
+                                  <div class="col-md-9">-</div>
+                                </div>
+                                <div class="row align-items-start mb-3">
+                                  <div class="col-md-3 text-md-end mb-2 mb-md-0">Action Description:</div>
+                                  <div class="col-md-9">Dilakukan pergantian seal pada cover engine merk after market</div>
+                                </div>
+                                <div class="row align-items-start mb-3">
+                                  <div class="col-md-3 text-md-end mb-2 mb-md-0">Documentation</div>
+                                    <div class="col-md-9">
+                                      <div id="previewContainer-1" class="d-flex gap-3 flex-wrap">
+                                        <div class="image-preview position-relative">
+                                          <img src="https://image.sumberberkatabadi.com/s3/productimages/webp/co26696/p1323680/w600-h600/5d9804e6-8311-4c0d-b3e7-9b7d6fa129fc.jpg" class="img-thumbnail">
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="navs-update-last-done"
+                  role="tabpanel"
+                >
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <div class="row g-4 mb-4">
+                        <div class="col-md-4">
+                          <div class="card shadow-none bg-transparent border border-dark text-dark">
+                            <div class="card-body p-3">
+                              <div class="d-flex justify-content-between mb-4 gap-3" >
+                                <div class="d-flex flex-column">
+                                  <span class="text-black-custom">Finish Date</span>
+                                </div>
+                              </div>
+                              <div class="position-relative mb-3">
+                                <div class="form-floating form-floating-outline">
+                                  <input
+                                    type="text"
+                                    class="form-control pe-5"
+                                    placeholder="YYYY-MM-DD"
+                                    id="startDate"
+                                  />
+                                  <label for="startDate">Start On</label>
+                                </div>
+                                <i class="mdi mdi-calendar position-absolute text-muted" style="top: 50%; right: 15px; transform: translateY(-50%); pointer-events: none;"></i>
+                              </div>
+                              <div>Next Due : 16 Des 2025</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="card shadow-none bg-transparent border border-dark text-dark">
+                            <div class="card-body p-3">
+                              <div class="d-flex justify-content-between mb-4 gap-3" >
+                                <div class="d-flex flex-column">
+                                  <span class="text-black-custom">Last Usage (KM)</span>
+                                </div>
+                              </div>
+                              <div class="form-floating form-floating-outline mb-3">
+                                <input type="text" class="form-control" id="initalData" placeholder="e.g 10">
+                                <label for="initalData">Start on</label>
+                              </div>
+                              <div>Next Due : 16 Des 2025</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="card shadow-none bg-transparent border border-dark text-dark">
+                            <div class="card-body p-3">
+                              <div class="d-flex justify-content-between mb-4 gap-3" >
+                                <div class="d-flex flex-column">
+                                  <span class="text-black-custom">Last Cycle</span>
+                                </div>
+                              </div>
+                              <div class="form-floating form-floating-outline mb-3">
+                                <input type="text" class="form-control" id="initalData" placeholder="e.g 10">
+                                <label for="initalData">Start On</label>
+                              </div>
+                              <div>Next Due : 16 Des 2025</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mb-2">
+                        <div class="col-md-2 text-md-end mb-2 mb-md-0">Documentation (Optional)</div>
+                        <div class="col-md-10">
+                          <div class="d-flex gap-3">
+                            <div id="previewContainer-1" class="d-flex gap-3 flex-wrap">
+                              <div class="image-preview position-relative">
+                                <img src="https://placehold.co/200x200/ccc/fff?text=Doc2" class="img-thumbnail">
+                                <button class="delete-btn">DELETE</button>
+                              </div>
+                              <div class="image-preview position-relative">
+                                <img src="https://placehold.co/200x200/ccc/fff?text=Doc2" class="img-thumbnail">
+                                <button class="delete-btn">DELETE</button>
+                              </div>
+                            </div>
+                            <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
+                            <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
+                              <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-footer">
+                      <div class="pt-1 row g-2">
+                        <div class="col-md-12 col-12 text-end">
+                          <button type="submit" class="btn btn-primary">
+                            Save Last DOne
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- / Content -->
+          </div>
+          <!-- Content wrapper -->
+        </div>
+        <!-- / Layout page -->
+      </div>
+
+      <!-- Escalate -->
+      <div class="modal fade" id="escalateModal" tabindex="-1" aria-labelledby="escalateModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="escalateModalLabel">INSP-0003 - Check Oil FIlter</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-3 text-md-end mb-2 mb-md-0">Discrepancy ID*</div>
+                <div class="col-md-9">
+                  <div class="d-flex gap-2 align-items-center">
+                    <input type="text" class="form-control text-center w-20" id="defaultFormControlInput" value="DR" placeholder="John Doe" aria-describedby="defaultFormControlHelp" disabled>
+                    <i class="mdi mdi-24px mdi-minus"></i>
+                    <input type="text" class="form-control text-center w-20" id="defaultFormControlInput" value="A" placeholder="John Doe" aria-describedby="defaultFormControlHelp" disabled>
+                    <i class="mdi mdi-24px mdi-minus"></i>
+                    <input type="text" class="form-control text-center w-20" id="defaultFormControlInput" value="AC" placeholder="John Doe" aria-describedby="defaultFormControlHelp" disabled>
+                    <i class="mdi mdi-24px mdi-minus"></i>
+                    <input type="text" class="form-control" id="defaultFormControlInput" value="AC" placeholder="John Doe" aria-describedby="defaultFormControlHelp">
+                  </div>
+                  <p class="fst-italic small text-muted mt-1">*Discrepancy ID is generated automatically by the system. You can modify the Task Code as needed.</p>
+                </div>
+              </div>
+              <div class="row align-items-center mb-4">
+                <div class="col-md-3 text-md-end mb-2 mb-md-0">Category</div>
+                <div class="col-md-9">
+                  <select class="form-select select2" id="categorySelect">
+                    <option selected>Machine</option>
+                    <option value="1">Electrical</option>
+                    <option value="2">Safety</option>
+                    <option value="3">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row mb-4">
+                <div class="col-md-3 text-md-end mb-2 mb-md-0">Issue Description</div>
+                <div class="col-md-9">
+                  <textarea class="form-control" id="issueDescription" rows="4">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
+                </div>
+              </div>
+              <div class="row align-items-center mb-4">
+                <div class="col-md-3 text-md-end mb-2 mb-md-0">Severity</div>
+                <div class="col-md-9">
+                  <div class="btn-group" role="group" aria-label="Time based radio group">
+                    <input type="radio" class="btn-check btn-severity" name="btnradio" id="low" autocomplete="off" />
+                    <label class="btn btn-outline-secondary px-3" for="low">Low</label>
+
+                    <input type="radio" class="btn-check btn-severity" name="btnradio" id="medium" autocomplete="off" />
+                    <label class="btn btn-outline-secondary px-3" for="medium">Medium</label>
+
+                    <input type="radio" class="btn-check btn-severity" name="btnradio" id="high" autocomplete="off" />
+                    <label class="btn btn-outline-secondary px-3" for="high">High</label>
+
+                    <input type="radio" class="btn-check btn-severity" name="btnradio" id="critical" autocomplete="off" />
+                    <label class="btn btn-outline-secondary px-3" for="critical">Critical</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-4">
+                <div class="col-md-3 text-md-end mb-2 mb-md-0">Documentation</div>
+                <div class="col-md-9">
+                  <div class="d-flex gap-2">
+                    <div id="previewContainer-1" class="d-flex gap-3 flex-wrap">
+                      <div class="image-preview position-relative">
+                        <img src="https://placehold.co/200x200/ccc/fff?text=Doc2" class="img-thumbnail">
+                        <button class="delete-btn">DELETE</button>
+                      </div>
+                    </div>
+                    <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
+                    <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
+                      <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success">Create discrepancy report</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Escalated with Status -->
+      <div class="modal fade" id="escalateNotStartedModal" tabindex="-1" aria-labelledby="escalateModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="escalateModalLabel">INSP-0003 - Check Oil FIlter</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-3 text-md-end mb-2 mb-md-0">Discrepancy ID*</div>
+                <div class="col-md-9">
+                  <div class="d-flex gap-2 align-items-center">
+                    <input type="text" class="form-control text-center w-20" id="defaultFormControlInput" value="DR" placeholder="John Doe" aria-describedby="defaultFormControlHelp" disabled>
+                    <i class="mdi mdi-24px mdi-minus"></i>
+                    <input type="text" class="form-control text-center w-20" id="defaultFormControlInput" value="A" placeholder="John Doe" aria-describedby="defaultFormControlHelp" disabled>
+                    <i class="mdi mdi-24px mdi-minus"></i>
+                    <input type="text" class="form-control text-center w-20" id="defaultFormControlInput" value="AC" placeholder="John Doe" aria-describedby="defaultFormControlHelp" disabled>
+                    <i class="mdi mdi-24px mdi-minus"></i>
+                    <input type="text" class="form-control" id="defaultFormControlInput" value="AC" placeholder="John Doe" aria-describedby="defaultFormControlHelp">
+                  </div>
+                  <p class="fst-italic small text-muted mt-1">*Discrepancy ID is generated automatically by the system. You can modify the Task Code as needed.</p>
+                </div>
+              </div>
+              <div class="row align-items-center mb-4">
+                <div class="col-md-3 text-md-end mb-2 mb-md-0">Choose Status</div>
+                <div class="col-md-9">
+                  <div class="btn-group" role="group" aria-label="Time based radio group">
+                    <input type="radio" class="btn-check btn-status" name="btnradio1" id="na" autocomplete="off" checked/>
+                    <label class="btn px-3 btn-outline-danger" for="na">N/A</label>
+
+                    <input type="radio" class="btn-check btn-status" name="btnradio1" id="deffered" autocomplete="off" />
+                    <label class="btn px-3 btn-outline-danger" for="deffered">Deffered</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row align-items-center mb-4">
+                <div class="col-md-3 text-md-end mb-2 mb-md-0">Category</div>
+                <div class="col-md-9">
+                  <select class="form-select select2" id="categorySelect1">
+                    <option selected>Machine</option>
+                    <option value="1">Electrical</option>
+                    <option value="2">Safety</option>
+                    <option value="3">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row mb-4">
+                <div class="col-md-3 text-md-end mb-2 mb-md-0">Issue Description</div>
+                <div class="col-md-9">
+                  <textarea class="form-control" id="issueDescription" rows="4">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
+                </div>
+              </div>
+              <div class="row align-items-center mb-4">
+                <div class="col-md-3 text-md-end mb-2 mb-md-0">Severity</div>
+                <div class="col-md-9">
+                  <div class="btn-group" role="group" aria-label="Time based radio group">
+                    <input type="radio" class="btn-check btn-severity" name="btnradio" id="low" autocomplete="off" />
+                    <label class="btn btn-outline-secondary px-3" for="low">Low</label>
+
+                    <input type="radio" class="btn-check btn-severity" name="btnradio" id="medium" autocomplete="off" />
+                    <label class="btn btn-outline-secondary px-3" for="medium">Medium</label>
+
+                    <input type="radio" class="btn-check btn-severity" name="btnradio" id="high" autocomplete="off" />
+                    <label class="btn btn-outline-secondary px-3" for="high">High</label>
+
+                    <input type="radio" class="btn-check btn-severity" name="btnradio" id="critical" autocomplete="off" />
+                    <label class="btn btn-outline-secondary px-3" for="critical">Critical</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-4">
+                <div class="col-md-3 text-md-end mb-2 mb-md-0">Documentation</div>
+                <div class="col-md-9">
+                  <div class="d-flex gap-2">
+                    <div id="previewContainer-1" class="d-flex gap-3 flex-wrap">
+                      <div class="image-preview position-relative">
+                        <img src="https://placehold.co/200x200/ccc/fff?text=Doc2" class="img-thumbnail">
+                        <button class="delete-btn">DELETE</button>
+                      </div>
+                    </div>
+                    <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
+                    <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
+                      <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success">Create discrepancy report</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Corrective Action -->
+      <div class="modal fade" id="caModal" tabindex="-1" aria-labelledby="caModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="caModalLabel">Corrective Actions: INSP-0003 - Check Kebocoran Oli</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row align-items-start mb-3">
+                <div class="col-md-2 text-md-end mb-2 mb-md-0">Root Cause Category</div>
+                <div class="col-md-10">
+                  <div class="d-flex gap-2 align-items-center text-wrap mb-2">
+                    <div class="col-md-4">
+                      <select class="form-select select2 col-md-3 col-12" id="rootCauseSelect">
+                        <option selected>Machine</option>
+                        <option value="1">Electrical</option>
+                        <option value="2">Safety</option>
+                        <option value="3">Other</option>
+                      </select>
+                    </div>
+                    <input type="text" class="form-control" id="defaultFormControlInput" value="Lubrication System" placeholder="e.g Lubrication System" aria-describedby="defaultFormControlHelp">
+                    <button class="btn btn-sm btn-text-danger text-capitalize px-md-4"><i class="mdi mdi-minus me-2"></i><span class="d-none d-md-block">Remove</span></button>
+                  </div>
+                  <div class="d-flex gap-2 align-items-center text-wrap mb-2">
+                    <div class="col-md-4">
+                      <select class="form-select select2 col-md-3 col-12" id="rootCauseSelect2">
+                        <option selected>Machine</option>
+                        <option value="1">Electrical</option>
+                        <option value="2">Safety</option>
+                        <option value="3">Other</option>
+                      </select>
+                    </div>
+                    <input type="text" class="form-control" id="defaultFormControlInput" value="Coolant Machines" placeholder="e.g Lubrication System" aria-describedby="defaultFormControlHelp">
+                    <button class="btn btn-sm btn-text-danger text-capitalize px-md-4"><i class="mdi mdi-minus me-2"></i><span class="d-none d-md-block">Remove</span></button>
+                  </div>
+                  <button class="btn btn-text-primary p-0"><i class="mdi mdi-plus"></i>Add root cause</button>
+                </div>
+              </div>
+              <div class="row align-items-start mb-3">
+                <div class="col-md-2 text-md-end mb-2 mb-md-0">Issue Description</div>
+                <div class="col-md-10">
+                  <textarea class="form-control" id="issueDescription" rows="4">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
+                </div>
+              </div>
+              <hr class="my-3">
+              <div class="d-flex gap-2 align-items-center mb-3">
+                <h5 class="mb-0">Actions:</h5>
+                <button class="btn btn-text-primary p-0"><i class="mdi mdi-plus"></i>ADD</button>
+              </div>
+              <!-- 1 -->
+              <div class="accordion border rounded-2 shadow-none mb-3" id="accordionExample">
+                <div class="accordion-item bordered-box">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button text-dark collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="background-color: #3c57a110;">
+                      01. Wednesday, 02 Jul 2025
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="d-flex justify-content-end px-3 py-3">
+                      <a href="#" class="me-3 text-decoration-none">Edit</a>
+                      <a href="#" class="text-danger text-decoration-none">Remove</a>
+                    </div>
+                    <div class="accordion-body">
+                      <div class="row align-items-start mb-3">
+                        <div class="col-md-3 text-md-end mb-2 mb-md-0">Engineering:</div>
+                        <div class="col-md-9">Ahmad Kurniawan</div>
+                      </div>
+                      <div class="row align-items-start mb-3">
+                        <div class="col-md-3 text-md-end mb-2 mb-md-0">Vendor:</div>
+                        <div class="col-md-9">-</div>
+                      </div>
+                      <div class="row align-items-start mb-3">
+                        <div class="col-md-3 text-md-end mb-2 mb-md-0">Action Description:</div>
+                        <div class="col-md-9">Dilakukan pergantian seal pada cover engine merk after market</div>
+                      </div>
+                      <div class="row align-items-start mb-3">
+                        <div class="col-md-3 text-md-end mb-2 mb-md-0">Documentation</div>
+                          <div class="col-md-9">
+                            <div id="previewContainer-1" class="d-flex gap-3 flex-wrap">
+                              <div class="image-preview position-relative">
+                                <img src="https://image.sumberberkatabadi.com/s3/productimages/webp/co26696/p1323680/w600-h600/5d9804e6-8311-4c0d-b3e7-9b7d6fa129fc.jpg" class="img-thumbnail">
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 2 -->
+              <div class="accordion border rounded-2 shadow-none mb-3" id="accordionExample">
+                <div class="accordion-item bordered-box">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button text-dark collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseOne" style="background-color: #3c57a110;">
+                      02. -
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <div class="d-flex justify-content-end px-3">
+                        <a href="#" class="btn btn-lg btn-text-primary p-0">Save</a>
+                      </div>
+                      <div class="row align-items-center mb-3">
+                        <div class="col-md-3 text-md-end mb-2 mb-md-0">Date:</div>
+                        <div class="col-md-9">
+                          <div class="position-relative">
+                            <div class="form-floating form-floating-outline">
+                              <input
+                                type="text"
+                                class="form-control pe-5"
+                                placeholder="YYYY-MM-DD"
+                                id="startDate"
+                              />
+                            </div>
+                            <i class="mdi mdi-calendar position-absolute text-muted" style="top: 50%; right: 15px; transform: translateY(-50%); pointer-events: none;"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row align-items-center mb-3">
+                        <div class="col-md-3 text-md-end mb-2 mb-md-0">Engineering:</div>
+                        <div class="col-md-9">
+                          <div class="form-floating form-floating-outline">
+                            <select class="form-select select2" id="engineerSelect">
+                              <option selected>Select Engineer</option>
+                              <option value="1">Engineer 1</option>
+                              <option value="2">Engineer 2</option>
+                              <option value="3">Engineer 3</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row align-items-center mb-3">
+                        <div class="col-md-3 text-md-end mb-2 mb-md-0">Vendor:</div>
+                        <div class="col-md-9">
+                          <div class="form-floating form-floating-outline">
+                            <select class="form-select select2" id="vendorSelect">
+                              <option selected>Select Vendor</option>
+                              <option value="1">Vendor 1</option>
+                              <option value="2">Vendor 2</option>
+                              <option value="3">Vendor 3</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row align-items-start mb-3">
+                        <div class="col-md-3 text-md-end mb-2 mb-md-0">Action Description:</div>
+                        <div class="col-md-9">
+                            <textarea class="form-control" id="issueDescription" rows="4">Dilakukan pergantian seal ulang pada cover engine merk Toyota Genuine Part</textarea>
+                        </div>
+                      </div>
+                      <div class="row align-items-start mb-3">
+                        <div class="col-md-3 text-md-end mb-2 mb-md-0">Documentation</div>
+                        <div class="col-md-9">
+                          <div class="d-flex gap-3">
+                            <div id="previewContainer-1" class="d-flex gap-3 flex-wrap">
+                              <div class="image-preview position-relative">
+                                <img src="https://image.sumberberkatabadi.com/s3/productimages/webp/co26696/p1323680/w600-h600/5d9804e6-8311-4c0d-b3e7-9b7d6fa129fc.jpg" class="img-thumbnail">
+                                <button class="delete-btn">DELETE</button>
+                              </div>
+                            </div>
+                            <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
+                            <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
+                              <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-end px-3">
+                        <a href="#" class="btn btn-lg btn-text-primary p-0">Save</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger">NOT RESOLVED</button>
+              <button type="button" class="btn btn-success">Resolved by engineer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Overlay -->
+      <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+    <!-- / Layout wrapper -->
+
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="./assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="./assets/vendor/libs/popper/popper.js"></script>
+    <script src="./assets/vendor/js/bootstrap.js"></script>
+    <script src="./assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="./assets/vendor/libs/node-waves/node-waves.js"></script>
+
+    <script src="./assets/vendor/libs/hammer/hammer.js"></script>
+    <script src="./assets/vendor/libs/i18n/i18n.js"></script>
+    <script src="./assets/vendor/libs/typeahead-js/typeahead.js"></script>
+    <script src="./assets/vendor/libs/flatpickr/flatpickr.js"></script>
+
+    <script src="./assets/vendor/js/menu.js"></script>
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+    <script src="./assets/vendor/libs/moment/moment.js"></script>
+    <script src="./assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
+    <script src="./assets/vendor/libs/select2/select2.js"></script>
+
+    <!-- Main JS -->
+    <script src="./assets/js/main.js"></script>
+
+    <!-- Page JS -->
+     <script src="./assets/js/schedule-task-items.js"></script>
+  </body>
+</html>
+
+<!-- beautify ignore:end -->
