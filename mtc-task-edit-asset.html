@@ -223,6 +223,35 @@
                 <div data-i18n="MTC Setting">MTC Setting</div>
               </a>
             </li>
+            <div class="d-none"> <!-- If you want to show this menu please remove <div class="d-none"> -->
+              <li class="menu-header fw-light mt-4">
+                <span class="menu-header-text">MASTER DATA MAINTENANCE</span>
+              </li>
+              <li class="menu-item">
+                <a href="./skill-set.html" class="menu-link">
+                  <i class="menu-icon tf-icons mdi mdi-briefcase-account-outline"></i>
+                  <div data-i18n="Skill Set">Skill Set</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="./engineer.html" class="menu-link">
+                  <i class="menu-icon tf-icons mdi mdi-account-hard-hat-outline"></i>
+                  <div data-i18n="Engineer">Engineer</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="./engineer.html" class="menu-link">
+                  <i class="menu-icon tf-icons mdi mdi-store-outline"></i>
+                  <div data-i18n="Vendor">Vendor</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="./root-cause-category.html" class="menu-link">
+                  <i class="menu-icon tf-icons mdi mdi-list-box-outline"></i>
+                  <div data-i18n="Root Cause Category">Root Cause Category</div>
+                </a>
+              </li>
+            </div>
           </ul>
         </aside>
         <!-- / Menu -->
@@ -403,29 +432,52 @@
                     </div>
 
                     <div class="col-md-6">
-                      <div class="form-floating form-floating-outline mb-4">
-                        <select id="colorFilter" class="form-select select2" style="width: 100%;">
-                          <option value="">Choose Category</option>
-                          <option value="red" data-color="#CA4046">Category 1</option>
-                          <option value="blue" data-color="#007BFF">Category 2</option>
-                          <option value="green" data-color="#28A745">Category 3</option>
-                          <option value="yellow" data-color="#FFC107">Category 4</option>
-                          <option value="purple" data-color="#6F42C1">Category 5</option>
-                        </select>
+                      <div class="row g-3 mb-4">
+                        <div class="col-9">
+                          <div class="form-floating form-floating-outline">
+                            <select id="categoryTask" class="form-select select2" data-placeholder="Search Task Category">
+                              <option value="cat-1">Category 1</option>
+                              <option value="cat-2">Category 2</option>
+                              <option value="cat-3">Category 3</option>
+                              <option value="cat-4">Category 4</option>
+                              <option value="cat-5">Category 5</option>
+                            </select>
+                            <label for="categoryTask">Maintenance Category</label>
+                          </div>
+                        </div>
+                        <div class="col-3">
+                          <div class="form-floating form-floating-outline">
+                            <select id="colorFilter" class="form-select select2" data-placeholder="Search Color Category">
+                              <option value="red" data-color="#CA4046">#</option>
+                              <option value="blue" data-color="#007BFF">#</option>
+                              <option value="green" data-color="#28A745" selected>#</option>
+                              <option value="yellow" data-color="#FFC107">#</option>
+                              <option value="purple" data-color="#6F42C1">#</option>
+                            </select>
+                            <label for="colorFilter">Color Category</label>
+                          </div>
+                        </div>
                       </div>
                       <div class="form-floating form-floating-outline mb-4">
                         <select
                           id="assetCategory-1"
                           class="form-select select2"
-                          style="width: 100%"
-                        ></select>
+                          style="width: 100%;"
+                          aria-label="Asset Category"
+                        >
+                        </select>
+                        <label for="assetCategory-1">Asset Category</label>
                       </div>
+
                       <div class="form-floating form-floating-outline mb-4">
                         <select
                           id="assetGroup-1"
                           class="form-select select2"
-                          style="width: 100%"
-                        ></select>
+                          style="width: 100%;"
+                          aria-label="Asset Group"
+                        >
+                        </select>
+                        <label for="assetGroup-1">Asset Group</label>
                       </div>
                     </div>
                   </div>
