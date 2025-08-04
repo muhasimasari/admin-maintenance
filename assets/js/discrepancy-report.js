@@ -390,20 +390,6 @@ function CtrlDiscrepancyReportAdd() {
       }
     });
 
-    // ===================== 8. Collapse Add Vendors =====================
-    const collapseEl = document.getElementById("vendorCollapse");
-    const iconEl = document.getElementById("vendorIcon");
-
-    collapseEl.addEventListener("show.bs.collapse", () => {
-      iconEl.classList.remove("mdi-plus");
-      iconEl.classList.add("mdi-minus");
-    });
-
-    collapseEl.addEventListener("hide.bs.collapse", () => {
-      iconEl.classList.remove("mdi-minus");
-      iconEl.classList.add("mdi-plus");
-    });
-
     // ===================== 9. Engineer List =====================
     function initSelect2() {
       $("#engineerList").select2({
@@ -1309,20 +1295,6 @@ function CtrlDiscrepancyReportDetail() {
           if (instance) instance.hide();
         });
       }
-    });
-
-    // ===================== 8. Collapse Add Vendors =====================
-    const collapseEl = document.getElementById("vendorCollapse");
-    const iconEl = document.getElementById("vendorIcon");
-
-    collapseEl.addEventListener("show.bs.collapse", () => {
-      iconEl.classList.remove("mdi-plus");
-      iconEl.classList.add("mdi-minus");
-    });
-
-    collapseEl.addEventListener("hide.bs.collapse", () => {
-      iconEl.classList.remove("mdi-minus");
-      iconEl.classList.add("mdi-plus");
     });
 
     // ===================== 9. Engineer List =====================
