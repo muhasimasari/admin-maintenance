@@ -786,7 +786,7 @@
                       <div class="col-md-6">
                         <div class="form-floating form-floating-outline form-floating-select2">
                           <select id="mtcType" class="form-select select2" data-placeholder="Select MTC Type" style="width: 100%;">
-                            <option value=""></option>
+                            <option value="">Choose MTC Task Type</option>
                             <option value="preventive">Asset</option>
                             <option value="corrective">Location</option>
                           </select>
@@ -796,7 +796,7 @@
                       <div class="col-md-6">
                         <div class="form-floating form-floating-outline form-floating-select2">
                           <select id="mtcCategory" class="form-select select2" data-placeholder="Select MTC Category" style="width: 100%;">
-                            <option value=""></option>
+                            <option value="">Choose MTC Task Category</option>
                             <option value="electrical">Electrical</option>
                             <option value="mechanical">Mechanical</option>
                             <option value="hydraulic">Hydraulic</option>
@@ -807,8 +807,13 @@
                       <div class="col-md-12">
                         <!-- Task List Select -->
                         <div class="form-floating form-floating-outline form-floating-select2 mb-2">
-                          <select id="mtcTaskList" class="form-select select2" style="width: 100%;"></select>
-                          <label for="mtcTaskList">Select Task List</label>
+                          <select id="mtcCategory" class="form-select select2" data-placeholder="Select MTC Category" style="width: 100%;">
+                            <option value="">Choose MTC Task Template</option>
+                            <option value="electrical">MTC-001 | Engine Oil</option>
+                            <option value="mechanical">MTC-002 | Break Oil</option>
+                            <option value="hydraulic">MTC-003 | Checking Oil</option>
+                          </select>
+                          <label for="mtcTaskList">MTC Task Template</label>
                         </div>
                       </div>
                     </div>
