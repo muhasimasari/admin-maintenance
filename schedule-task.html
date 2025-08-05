@@ -376,7 +376,7 @@
                     <div class="row g-3 px-4 pb-3 my-2">
                       <div class="col-md-12">
                         <div class="row align-items-center">
-                          <div class="col-md-4">
+                          <div class="col-md-3">
                             <div class="col-auto">
                               <label for="statusFilter" class="form-label mb-1">Priority</label>
                             </div>
@@ -389,7 +389,7 @@
                               </select>
                             </div>
                           </div>
-                          <div class="col-md-4">
+                          <div class="col-md-3">
                             <div class="col-auto">
                               <label for="skillSet" class="form-label mb-1">WO Status</label>
                             </div>
@@ -402,7 +402,7 @@
                               </select>
                             </div>
                           </div>
-                          <div class="col-md-4">
+                          <div class="col-md-3">
                             <div class="col-auto">
                               <label for="colorFilter" class="form-label mb-1">Inspection Status</label>
                             </div>
@@ -413,6 +413,19 @@
                                 <option value="">In Progress</option>
                                 <option value="">Done</option>
                               </select>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="col-auto">
+                              <label for="colorFilter" class="form-label mb-1">Date Range</label>
+                            </div>
+                            <div class="col">
+                              <input
+                                type="text"
+                                class="form-control"
+                                placeholder="dd/mm/yyyy to dd/mm/yyyy"
+                                id="dateRange"
+                              />
                             </div>
                           </div>
                         </div>
@@ -455,14 +468,23 @@
                       <table class="table card-table table-borderless">
                         <thead>
                           <tr>
-                            <th style="min-width: 230px; max-width: 230px;">work order number</th>
-                            <th style="min-width: 200px; max-width: 200px;">MTC task</th>
-                            <th>asset name & asset item</th>
-                            <th style="min-width: 150px; max-width: 150px;">location</th>
-                            <th class="text-center" style="min-width: 150px; max-width: 150px;">start date</th>
-                            <th class="text-center">wo status</th>
-                            <th class="text-center">inspection status</th>
-                            <th style="min-width: 90px; max-width: 90px;">Action</th>
+                            <th class="align-middle" style="min-width: 230px; max-width: 230px;">work order number</th>
+                            <th class="align-middle" style="min-width: 200px; max-width: 200px;">MTC task</th>
+                            <th class="align-middle">asset name & asset item</th>
+                            <th class="align-middle" style="min-width: 150px; max-width: 150px;">location</th>
+                            <th class="text-center align-middle" style="min-width: 150px; max-width: 150px;">start date</th>
+                            <th class="text-center align-middle">
+                              duration (days)
+                              <button 
+                                type="button" 
+                                class="btn btn-sm shadow-none p-0 m-0 d-inline-flex align-items-center sort-btn" 
+                                data-sort="duration"
+                              >
+                                <i class="mdi mdi-swap-vertical ms-1"></i> <!-- MDI sort icon -->
+                              </button>
+                            </th>
+                            <th class="text-center align-middle">inspection status</th>
+                            <th class="align-middle" style="min-width: 90px; max-width: 90px;">Action</th>
                           </tr>
                         </thead>
                         <tbody class="table-border-bottom-0">
@@ -472,7 +494,7 @@
                                 <i class="mdi mdi-24px mdi-checkbox-blank-circle text-danger"></i>
                                 <div>
                                   <span class="fw-semibold">WO-2025-05-07-0041</span><br/>
-                                  07 May 2025
+                                  <span class="badge status-warning rounded text-white">In Progress</span>
                                 </div>
                               </div>
                             </td>
@@ -492,7 +514,7 @@
                               </div>
                             </td>
                             <td class="text-center">
-                              <div class="badge status-warning w-100">In Progress</div>
+                              1
                             </td>
                             <td class="text-center">
                               <div class="badge status-pending w-100">Pending</div>
@@ -507,7 +529,7 @@
                                 <i class="mdi mdi-24px mdi-checkbox-blank-circle text-warning"></i>
                                 <div>
                                   <span class="fw-semibold">WO-2025-05-07-0042</span><br/>
-                                  07 May 2025
+                                  <span class="badge status-warning rounded text-white">In Progress</span>
                                 </div>
                               </div>
                             </td>
@@ -527,7 +549,7 @@
                               </div>
                             </td>
                             <td class="text-center">
-                              <div class="badge status-warning w-100">In Progress</div>
+                              1
                             </td>
                             <td class="text-center">
                               <div class="badge status-warning w-100">In Progress</div>
@@ -542,7 +564,7 @@
                                 <i class="mdi mdi-24px mdi-checkbox-blank-circle text-warning"></i>
                                 <div>
                                   <span class="fw-semibold">WO-2025-05-07-0042</span><br/>
-                                  07 May 2025
+                                  <span class="badge status-warning rounded text-white">In Progress</span>
                                 </div>
                               </div>
                             </td>
@@ -562,7 +584,7 @@
                               </div>
                             </td>
                             <td class="text-center">
-                              <div class="badge status-warning w-100">In Progress</div>
+                              2
                             </td>
                             <td class="text-center">
                               <div class="badge status-success w-100">Done</div>
@@ -612,7 +634,7 @@
                     <div class="row g-3 px-4 pb-3 my-2">
                       <div class="col-md-12">
                         <div class="row align-items-center">
-                          <div class="col-md-4">
+                          <div class="col-md-3">
                             <div class="col-auto">
                               <label for="statusFilter" class="form-label mb-1">Priority</label>
                             </div>
@@ -625,7 +647,7 @@
                               </select>
                             </div>
                           </div>
-                          <div class="col-md-4">
+                          <div class="col-md-3">
                             <div class="col-auto">
                               <label for="skillSet" class="form-label mb-1">WO Status</label>
                             </div>
@@ -638,7 +660,7 @@
                               </select>
                             </div>
                           </div>
-                          <div class="col-md-4">
+                          <div class="col-md-3">
                             <div class="col-auto">
                               <label for="colorFilter" class="form-label mb-1">Inspection Status</label>
                             </div>
@@ -691,13 +713,22 @@
                       <table class="table card-table table-borderless">
                         <thead>
                           <tr>
-                            <th style="min-width: 230px; max-width: 230px;">work order number</th>
-                            <th style="min-width: 200px; max-width: 200px;">MTC task</th>
-                            <th style="min-width: 200px; max-width: 200px;">location</th>
-                            <th class="text-center" style="min-width: 150px; max-width: 150px;">start date</th>
-                            <th class="text-center">wo status</th>
-                            <th class="text-center">inspection status</th>
-                            <th style="min-width: 90px; max-width: 90px;">Action</th>
+                            <th class="align-middle" style="min-width: 230px; max-width: 230px;">work order number</th>
+                            <th class="align-middle" style="min-width: 200px; max-width: 200px;">MTC task</th>
+                            <th class="align-middle" style="min-width: 210px; max-width: 210px;">location</th>
+                            <th class="text-center align-middle" style="min-width: 150px; max-width: 150px;">start date</th>
+                            <th class="text-center align-middle">
+                              duration (days)
+                              <button 
+                                type="button" 
+                                class="btn btn-sm shadow-none p-0 m-0 d-inline-flex align-items-center sort-btn" 
+                                data-sort="duration"
+                              >
+                                <i class="mdi mdi-swap-vertical ms-1"></i> <!-- MDI sort icon -->
+                              </button>
+                            </th>
+                            <th class="text-center align-middle">inspection status</th>
+                            <th class="align-middle" style="min-width: 90px; max-width: 90px;">Action</th>
                           </tr>
                         </thead>
                         <tbody class="table-border-bottom-0">
@@ -707,7 +738,7 @@
                                 <i class="mdi mdi-24px mdi-checkbox-blank-circle text-danger"></i>
                                 <div>
                                   <span class="fw-semibold">WO-2025-05-07-0041</span><br/>
-                                  07 May 2025
+                                  <span class="badge status-warning rounded text-white">In Progress</span>
                                 </div>
                               </div>
                             </td>
@@ -727,7 +758,7 @@
                               </div>
                             </td>
                             <td class="text-center">
-                              <div class="badge status-warning w-100">In Progress</div>
+                              1
                             </td>
                             <td class="text-center">
                               <div class="badge status-pending w-100">Pending</div>
@@ -742,7 +773,7 @@
                                 <i class="mdi mdi-24px mdi-checkbox-blank-circle text-warning"></i>
                                 <div>
                                   <span class="fw-semibold">WO-2025-05-07-0042</span><br/>
-                                  07 May 2025
+                                  <span class="badge status-warning rounded text-white">In Progress</span>
                                 </div>
                               </div>
                             </td>
@@ -762,7 +793,7 @@
                               </div>
                             </td>
                             <td class="text-center">
-                              <div class="badge status-warning w-100">In Progress</div>
+                              1
                             </td>
                             <td class="text-center">
                               <div class="badge status-warning w-100">In Progress</div>
@@ -777,7 +808,7 @@
                                 <i class="mdi mdi-24px mdi-checkbox-blank-circle text-warning"></i>
                                 <div>
                                   <span class="fw-semibold">WO-2025-05-07-0042</span><br/>
-                                  07 May 2025
+                                  <span class="badge status-warning rounded text-white">In Progress</span>
                                 </div>
                               </div>
                             </td>
@@ -797,7 +828,7 @@
                               </div>
                             </td>
                             <td class="text-center">
-                              <div class="badge status-warning w-100">In Progress</div>
+                              2
                             </td>
                             <td class="text-center">
                               <div class="badge status-success w-100">Done</div>
@@ -955,6 +986,15 @@
     <script src="./assets/js/main.js"></script>
 
     <!-- Page JS -->
+    <script>
+      flatpickr("#dateRange", {
+        mode: "range",
+        dateFormat: "d/m/Y",
+        locale: {
+          firstDayOfWeek: 1 // Senin sebagai hari pertama
+        },
+      });
+    </script>
   </body>
 </html>
 
