@@ -346,26 +346,6 @@ function checkFilterSelection() {
   }
 }
 
-document
-  .getElementById("mtcCategory")
-  .addEventListener("change", checkFilterSelection);
-document
-  .getElementById("mtcType")
-  .addEventListener("change", checkFilterSelection);
-
-const collapseEl = document.getElementById("anotherTrigger");
-const iconEl = document.getElementById("triggerIcon");
-
-collapseEl.addEventListener("show.bs.collapse", () => {
-  iconEl.classList.remove("mdi-plus");
-  iconEl.classList.add("mdi-minus");
-});
-
-collapseEl.addEventListener("hide.bs.collapse", () => {
-  iconEl.classList.remove("mdi-minus");
-  iconEl.classList.add("mdi-plus");
-});
-
 document.getElementById("intervalTab").addEventListener("change", () => {
   document.getElementById("intervalContent").classList.remove("d-none");
   document.getElementById("fixedContent").classList.add("d-none");
