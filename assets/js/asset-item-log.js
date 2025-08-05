@@ -23,9 +23,12 @@ function CtrlAssetLogs() {
                 if ($("#cmbType").val() == 1) {
                     $("#divTbMtc2").show();
                     $("#divTbMtc1").hide();
+                    $("#divTypeFilter").hide();
                 } else {
                     $("#divTbMtc2").hide();
                     $("#divTbMtc1").show();
+                    $("#divTypeFilter").show();
+
                 }
             });
 
