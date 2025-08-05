@@ -700,35 +700,23 @@
                         </div>
                       </div>
                       <div class="col-md-4">
-                        <div class="form-floating form-floating-outline">
+                        <div class="form-floating form-floating-outline form-floating-select2">
                           <select
-                            id="colorFilter"
-                            class="form-select"
-                            style="width: 100%"
+                            id="categoryFilter"
+                            class="form-select select2"
+                            style="width: 100%;"
+                            data-placeholder="Select Category"
                           >
-                            <option value="">All Colors</option>
-                            <option value="red" data-color="#CA4046">
-                              <span
-                                class="p-2 rounded-circle"
-                                style="background-color: #3c57a1"
-                              ></span>
-                              Red
-                            </option>
-                            <option value="blue" data-color="#007BFF">
-                              Blue
-                            </option>
-                            <option value="green" data-color="#28A745">
-                              Green
-                            </option>
-                            <option value="yellow" data-color="#FFC107">
-                              Yellow
-                            </option>
-                            <option value="purple" data-color="#6F42C1">
-                              Purple
-                            </option>
+                            <option value=""></option>
+                            <option value="vehicle" data-color="#3c57a1">Vehicle</option>
+                            <option value="electrical" data-color="#007BFF">Electrical</option>
+                            <option value="plumbing" data-color="#28A745">Plumbing</option>
+                            <option value="cleaning" data-color="#FFC107">Cleaning</option>
+                            <option value="it" data-color="#6F42C1">IT</option>
                           </select>
                         </div>
                       </div>
+
                       <div class="col-md-12 my-3">
                         Related Form:
                         <button

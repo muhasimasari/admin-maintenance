@@ -155,3 +155,28 @@ $("#assetGroupForm").select2({
     },
   },
 });
+
+function formatCategory(option) {
+  if (!option.id) return option.text;
+
+  const color = $(option.element).data("color");
+  const $option = $(`
+      <span class="d-flex align-items-center gap-2">
+        <span style="display:inline-block;width:16px;height:16px;border-radius:50%;background-color:${color};"></span>
+        <span>${option.text}</span>
+      </span>
+    `);
+  return $option;
+}
+
+// Trigger Select2 when modal is shown
+$("#addMTCCodeModal").on("shown.bs.modal", function () {
+  $("#categoryFilter").select2({
+    dropdownParent: $("#addMTCCodeModal"),
+    templateResult: formatCategory,
+    templateSelection: formatCategory,
+    allowClear: true,
+    width: "100%",
+    placeholder: "Select Category",
+  });
+});
