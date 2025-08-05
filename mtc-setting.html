@@ -558,13 +558,13 @@
                           </thead>
                           <tbody class="table-border-bottom-0">
                             <tr>
-                              <td><div class="ps-2">Engine Diagnostics </div></td>
+                              <td><div class="ps-2">Method </div></td>
                               <td>
                                 <a href="#" class="btn btn-text-danger px-0 waves-effect waves-light">Delete</a>
                               </td>
                             </tr>
                             <tr>
-                              <td><div class="ps-2">Cooling System Service</div></td>
+                              <td><div class="ps-2">Machine</div></td>
                               <td>
                                 <a href="#" class="btn btn-text-danger px-0 waves-effect waves-light">Delete</a>
                               </td>
@@ -651,18 +651,36 @@
                   </div>
 
                   <div class="modal-body">
-                    <form id="assetCategoryForm">
-                      <div id="inputContainer">
-                        <div class="form-floating form-floating-outline d-flex align-items-center gap-2 mb-4">
-                          <input type="text" name="assetCategories[]" class="form-control" value="" placeholder="Asset Category" required />
+                    <div class="text-end">
+                      <input id="searchVendors" class="form-control form-control-sm" type="text" placeholder="Search asset category">
+                      <button type="button" class="btn btn-text-primary p-0 text-right my-2 custom-btn waves-effect waves-light">Clear All</button>
+                    </div>
+                    <ul class="list-vendor">
+                      <li class="d-flex justify-content-between align-items-center">
+                        <div class="form-check mb-0">
+                          <input class="form-check-input" type="checkbox" value="" id="vendor1">
+                          <label class="form-check-label" for="vendor1">Baut size 10mm</label>
                         </div>
-                      </div>
-                      <div>
-                        <button type="button" class="btn btn-text-primary btn-sm p-0" id="addInputBtn">
-                          <i class="mdi mdi-plus"></i> Add Input
-                        </button>
-                      </div>
-                    </form>
+                      </li>
+                      <li class="d-flex justify-content-between align-items-center">
+                        <div class="form-check mb-0">
+                          <input class="form-check-input" type="checkbox" value="" id="vendor2">
+                          <label class="form-check-label" for="vendor2">Baut size 20mm</label>
+                        </div>
+                      </li>
+                      <li class="d-flex justify-content-between align-items-center">
+                        <div class="form-check mb-0">
+                          <input class="form-check-input" type="checkbox" value="" id="vendor3">
+                          <label class="form-check-label" for="vendor3">Baut size 30mm</label>
+                        </div>
+                      </li>
+                      <li class="d-flex justify-content-between align-items-center">
+                        <div class="form-check mb-0">
+                          <input class="form-check-input" type="checkbox" value="" id="vendor4">
+                          <label class="form-check-label" for="vendor4">Baut size 40mm</label>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
 
                   <div class="modal-footer">
@@ -682,18 +700,36 @@
                   </div>
 
                   <div class="modal-body">
-                    <form id="assetCategoryForm">
-                      <div id="inputContainer">
-                        <div class="form-floating form-floating-outline d-flex align-items-center gap-2 mb-4">
-                          <input type="text" name="assetCategories[]" class="form-control" value="" placeholder="Vendor Name" required />
+                    <div class="text-end">
+                      <input id="searchVendors" class="form-control form-control-sm" type="text" placeholder="Search vendor">
+                      <button type="button" class="btn btn-text-primary p-0 text-right my-2 custom-btn waves-effect waves-light">Clear All</button>
+                    </div>
+                    <ul class="list-vendor">
+                      <li class="d-flex justify-content-between align-items-center">
+                        <div class="form-check mb-0">
+                          <input class="form-check-input" type="checkbox" value="" id="vendor12">
+                          <label class="form-check-label" for="vendor12">OliMax Lubricants</label>
                         </div>
-                      </div>
-                      <div>
-                        <button type="button" class="btn btn-text-primary btn-sm p-0" id="addInputBtn">
-                          <i class="mdi mdi-plus"></i> Add Input
-                        </button>
-                      </div>
-                    </form>
+                      </li>
+                      <li class="d-flex justify-content-between align-items-center">
+                        <div class="form-check mb-0">
+                          <input class="form-check-input" type="checkbox" value="" id="vendor22">
+                          <label class="form-check-label" for="vendor22">ProEngine Works</label>
+                        </div>
+                      </li>
+                      <li class="d-flex justify-content-between align-items-center">
+                        <div class="form-check mb-0">
+                          <input class="form-check-input" type="checkbox" value="" id="vendor32">
+                          <label class="form-check-label" for="vendor32">InjectPro Garage</label>
+                        </div>
+                      </li>
+                      <li class="d-flex justify-content-between align-items-center">
+                        <div class="form-check mb-0">
+                          <input class="form-check-input" type="checkbox" value="" id="vendor42">
+                          <label class="form-check-label" for="vendor42">CoolMaster Services</label>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
 
                   <div class="modal-footer">
@@ -713,18 +749,36 @@
                   </div>
 
                   <div class="modal-body">
-                    <form id="assetCategoryForm">
-                      <div id="inputContainer">
-                        <div class="form-floating form-floating-outline d-flex align-items-center gap-2 mb-4">
-                          <input type="text" name="assetCategories[]" class="form-control" value="" placeholder="Skill" required />
+                    <div class="text-end">
+                      <input id="searchVendors" class="form-control form-control-sm" type="text" placeholder="Search skill set">
+                      <button type="button" class="btn btn-text-primary p-0 text-right my-2 custom-btn waves-effect waves-light">Clear All</button>
+                    </div>
+                    <ul class="list-vendor">
+                      <li class="d-flex justify-content-between align-items-center">
+                        <div class="form-check mb-0">
+                          <input class="form-check-input" type="checkbox" value="" id="vendor123">
+                          <label class="form-check-label" for="vendor123">Engine Diagnostics</label>
                         </div>
-                      </div>
-                      <div>
-                        <button type="button" class="btn btn-text-primary btn-sm p-0" id="addInputBtn">
-                          <i class="mdi mdi-plus"></i> Add Input
-                        </button>
-                      </div>
-                    </form>
+                      </li>
+                      <li class="d-flex justify-content-between align-items-center">
+                        <div class="form-check mb-0">
+                          <input class="form-check-input" type="checkbox" value="" id="vendor223">
+                          <label class="form-check-label" for="vendor223">Oil Change Service</label>
+                        </div>
+                      </li>
+                      <li class="d-flex justify-content-between align-items-center">
+                        <div class="form-check mb-0">
+                          <input class="form-check-input" type="checkbox" value="" id="vendor323">
+                          <label class="form-check-label" for="vendor323">Fuel Injection System Service</label>
+                        </div>
+                      </li>
+                      <li class="d-flex justify-content-between align-items-center">
+                        <div class="form-check mb-0">
+                          <input class="form-check-input" type="checkbox" value="" id="vendor423">
+                          <label class="form-check-label" for="vendor423">Cooling System Service</label>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
 
                   <div class="modal-footer">
@@ -744,18 +798,30 @@
                   </div>
 
                   <div class="modal-body">
-                    <form id="assetCategoryForm">
-                      <div id="inputContainer">
-                        <div class="form-floating form-floating-outline d-flex align-items-center gap-2 mb-4">
-                          <input type="text" name="assetCategories[]" class="form-control" value="" placeholder="Root Cause Category" required />
+                    <div class="text-end">
+                      <input id="searchVendors" class="form-control form-control-sm" type="text" placeholder="Search root cause category">
+                      <button type="button" class="btn btn-text-primary p-0 text-right my-2 custom-btn waves-effect waves-light">Clear All</button>
+                    </div>
+                    <ul class="list-vendor">
+                      <li class="d-flex justify-content-between align-items-center">
+                        <div class="form-check mb-0">
+                          <input class="form-check-input" type="checkbox" value="" id="vendor1234">
+                          <label class="form-check-label" for="vendor1234">Method</label>
                         </div>
-                      </div>
-                      <div>
-                        <button type="button" class="btn btn-text-primary btn-sm p-0" id="addInputBtn">
-                          <i class="mdi mdi-plus"></i> Add Input
-                        </button>
-                      </div>
-                    </form>
+                      </li>
+                      <li class="d-flex justify-content-between align-items-center">
+                        <div class="form-check mb-0">
+                          <input class="form-check-input" type="checkbox" value="" id="vendor2234">
+                          <label class="form-check-label" for="vendor2234">Machine</label>
+                        </div>
+                      </li>
+                      <li class="d-flex justify-content-between align-items-center">
+                        <div class="form-check mb-0">
+                          <input class="form-check-input" type="checkbox" value="" id="vendor3234">
+                          <label class="form-check-label" for="vendor3234">Man</label>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
 
                   <div class="modal-footer">
@@ -803,59 +869,6 @@
     <script src="./assets/js/main.js"></script>
 
     <!-- Page JS -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const inputContainer = document.getElementById("inputContainer");
-        const addInputBtn = document.getElementById("addInputBtn");
-
-        // Function to create input group
-        function createInputField(value = "") {
-          const div = document.createElement("div");
-          div.className = "input-group mb-4";
-
-          div.innerHTML = `
-            <div class="form-floating form-floating-outline d-flex align-items-center gap-2">
-              <input type="text" name="assetCategories[]" class="form-control" value="${value}" placeholder="Asset Category" required />
-              <button type="button" class="btn btn-text-danger p-0 remove-btn" title="Remove"><i class="mdi mdi-24px mdi-close"></i></button>
-            </div>
-          `;
-          inputContainer.appendChild(div);
-        }
-
-        // Add first input on load
-        createInputField();
-
-        addInputBtn.addEventListener("click", () => {
-          createInputField();
-        });
-
-        inputContainer.addEventListener("click", function (e) {
-          if (e.target.closest(".remove-btn")) {
-            const inputGroup = e.target.closest(".input-group");
-            if (inputGroup) inputGroup.remove();
-          }
-        });
-
-        // Submit handler
-        document.getElementById("assetCategoryForm").addEventListener("submit", function (e) {
-          e.preventDefault();
-          const inputs = Array.from(this.elements['assetCategories[]'])
-            .map(input => input.value.trim())
-            .filter(Boolean);
-          
-          console.log("Submitted:", inputs);
-
-          // Optional reset
-          this.reset();
-          inputContainer.innerHTML = "";
-          createInputField();
-
-          const modalEl = document.getElementById("assetCategory");
-          const modal = bootstrap.Modal.getInstance(modalEl);
-          modal.hide();
-        });
-      });
-    </script>
   </body>
 </html>
 
