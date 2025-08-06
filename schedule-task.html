@@ -336,7 +336,7 @@
                 </ol>
               </nav>
               <div class="nav-align-top mb-3">
-                <ul class="nav nav-tabs" role="tablist">
+                <!-- <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item">
                     <button
                       type="button"
@@ -363,7 +363,7 @@
                       Locations
                     </button>
                   </li>
-                </ul>
+                </ul> -->
               </div>
 
               <div class="tab-content p-0">
@@ -417,15 +417,14 @@
                           </div>
                           <div class="col-md-3">
                             <div class="col-auto">
-                              <label for="colorFilter" class="form-label mb-1">Date Range</label>
+                              <label for="colorFilter" class="form-label mb-1">MTC Type</label>
                             </div>
                             <div class="col">
-                              <input
-                                type="text"
-                                class="form-control"
-                                placeholder="dd/mm/yyyy to dd/mm/yyyy"
-                                id="dateRange"
-                              />
+                              <select id="colorFilter" class="form-select select2" style="width: 100%;">
+                                <option selected>All</option> <!-- Empty option for placeholder -->
+                                <option value="">Asset</option>
+                                <option value="">Location</option>
+                              </select>
                             </div>
                           </div>
                         </div>
@@ -468,20 +467,18 @@
                       <table class="table card-table table-borderless">
                         <thead>
                           <tr>
-                            <th class="align-middle" style="min-width: 230px; max-width: 230px;">work order number</th>
-                            <th class="align-middle" style="min-width: 200px; max-width: 200px;">MTC task</th>
-                            <th class="align-middle">asset name & asset item</th>
-                            <th class="align-middle" style="min-width: 150px; max-width: 150px;">location</th>
+                            <th class="align-middle" style="min-width: 270px; max-width: 270px;">work order number<br/>& MTC Task</th>
+                            <th class="align-middle" style="min-width: 200px; max-width: 200px;">asset name & asset item,<br/>location</th>
                             <th class="text-center align-middle" style="min-width: 150px; max-width: 150px;">start date</th>
                             <th class="text-center align-middle">
-                              duration (days)
-                              <button 
+                              duration
+                              <!-- <button 
                                 type="button" 
                                 class="btn btn-sm shadow-none p-0 m-0 d-inline-flex align-items-center sort-btn" 
                                 data-sort="duration"
                               >
-                                <i class="mdi mdi-swap-vertical ms-1"></i> <!-- MDI sort icon -->
-                              </button>
+                                <i class="mdi mdi-swap-vertical ms-1"></i> 
+                              </button> -->
                             </th>
                             <th class="align-middle">Assign to</th>
                             <th class="text-center align-middle">inspection status</th>
@@ -491,23 +488,20 @@
                         <tbody class="table-border-bottom-0">
                           <tr>
                             <td class="ps-3">
-                              <div class="d-flex gap-2 align-items-center">
+                              <div class="d-flex gap-2 align-items-center py-2">
                                 <i class="mdi mdi-24px mdi-checkbox-blank-circle text-danger"></i>
                                 <div>
                                   <span class="fw-semibold">WO-2025-05-07-0041</span><br/>
-                                  <span class="badge status-warning rounded text-white">In Progress</span>
+                                  <span class="badge status-warning rounded text-white">In Progress</span><br/>
+                                  <span class="d-flex align-items-center gap-1"> <i class="mdi mdi mdi-arrow-right-bottom"></i> MT-A002 - Engine Oil</span>
                                 </div>
                               </div>
                             </td>
                             <td>
-                              <span class="fw-semibold">MT-A002</span><br/>
-                              Engine Oil
-                            </td>
-                            <td>
                               <span class="fw-semibold">All New Avanza Hitam</span><br/>
-                              i-2025-05-02-0020
+                              i-2025-05-02-0020<br/>
+                              Gedung A
                             </td>
-                            <td>Gedung A</td>
                             <td class="text-center">
                               <div class="d-flex flex-column">
                                 <i class="mdi mdi-24px mdi-close-circle text-danger"></i>
@@ -515,7 +509,7 @@
                               </div>
                             </td>
                             <td class="text-center">
-                              1
+                              1 day(s)
                             </td>
                             <td>
                               <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
@@ -546,19 +540,16 @@
                                 <i class="mdi mdi-24px mdi-checkbox-blank-circle text-warning"></i>
                                 <div>
                                   <span class="fw-semibold">WO-2025-05-07-0042</span><br/>
-                                  <span class="badge status-warning rounded text-white">In Progress</span>
+                                  <span class="badge status-warning rounded text-white">In Progress</span><br/>
+                                  <span class="d-flex align-items-center gap-1"> <i class="mdi mdi mdi-arrow-right-bottom"></i> MT-A002 - Engine Oil</span>
                                 </div>
                               </div>
                             </td>
                             <td>
-                              <span class="fw-semibold">MT-A002</span><br/>
-                              Engine Oil
-                            </td>
-                            <td>
                               <span class="fw-semibold">Toyota Innova Reborn Hitam</span><br/>
-                              i-2025-05-02-02780
+                              i-2025-05-02-02780<br/>
+                              Gedung A
                             </td>
-                            <td>Gedung A</td>
                             <td class="text-center">
                               <div class="d-flex flex-column">
                                 <i class="mdi mdi-24px mdi-alert-circle text-warning"></i>
@@ -566,7 +557,7 @@
                               </div>
                             </td>
                             <td class="text-center">
-                              1
+                              1 day(s)
                             </td>
                             <td>
                               <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
@@ -597,19 +588,16 @@
                                 <i class="mdi mdi-24px mdi-checkbox-blank-circle text-warning"></i>
                                 <div>
                                   <span class="fw-semibold">WO-2025-05-07-0042</span><br/>
-                                  <span class="badge status-warning rounded text-white">In Progress</span>
+                                  <span class="badge status-warning rounded text-white">In Progress</span><br/>
+                                  <span class="d-flex align-items-center gap-1"> <i class="mdi mdi mdi-arrow-right-bottom"></i> MT-A002 - Engine Oil</span>
                                 </div>
                               </div>
                             </td>
                             <td>
-                              <span class="fw-semibold">MT-A002</span><br/>
-                              Engine Oil
-                            </td>
-                            <td>
                               <span class="fw-semibold">Pickup Grandmax</span><br/>
-                              i-2025-05-02-0111
+                              i-2025-05-02-0111<br/>
+                              Gedung A
                             </td>
-                            <td>Gedung A</td>
                             <td class="text-center">
                               <div class="d-flex flex-column">
                                 <!-- <i class="mdi mdi-24px mdi-alert-circle text-warning"></i> -->
@@ -617,7 +605,7 @@
                               </div>
                             </td>
                             <td class="text-center">
-                              2
+                              2 day(s)
                             </td>
                             <td>
                               <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
@@ -637,6 +625,48 @@
                             </td>
                             <td class="text-center">
                               <div class="badge status-success w-100">Done</div>
+                            </td>
+                            <td>
+                              <a href="./schedule-task-detail.html" class="btn btn-text-primary px-0">Start Inspection</a> 
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="ps-3">
+                              <div class="d-flex gap-2 align-items-center">
+                                <i class="mdi mdi-24px mdi-checkbox-blank-circle text-danger"></i>
+                                <div>
+                                  <span class="fw-semibold">WO-2025-05-07-0041</span><br/>
+                                  <span class="badge status-warning rounded text-white">In Progress</span><br/>
+                                  <span class="d-flex align-items-center gap-1"> <i class="mdi mdi mdi-arrow-right-bottom"></i> MT-L004 - Check Sanitary</span>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="d-flex gap-1 align-items-center">
+                                Floor 1 <span class="mdi mdi-arrow-right-box"></span> Room 101
+                              </div>
+                            </td>
+                            <td class="text-center">
+                              <div class="d-flex flex-column">
+                                <i class="mdi mdi-24px mdi-close-circle text-danger"></i>
+                                <span>10 May 2025</span>
+                              </div>
+                            </td>
+                            <td class="text-center">
+                              1 hour(s)
+                            </td>
+                            <td>
+                              <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
+                                <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up" aria-label="Vinnie Mostowy" data-bs-original-title="Vinnie Mostowy">
+                                  <img class="rounded-circle" src="./assets/img/avatars/5.png" alt="Avatar">
+                                </li>
+                                <li class="avatar">
+                                  <span class="avatar-initial rounded-circle pull-up bg-label-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Ahmad Setyawan">AS</span>
+                                </li>
+                              </ul>
+                            </td>
+                            <td class="text-center">
+                              <div class="badge status-pending w-100">Pending</div>
                             </td>
                             <td>
                               <a href="./schedule-task-detail.html" class="btn btn-text-primary px-0">Start Inspection</a> 
@@ -865,16 +895,6 @@
                                 </li>
                               </ul>
                             </td>
-                            <td>
-                              <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
-                                <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up" aria-label="Vinnie Mostowy" data-bs-original-title="Vinnie Mostowy">
-                                  <img class="rounded-circle" src="./assets/img/avatars/5.png" alt="Avatar">
-                                </li>
-                                <li class="avatar">
-                                  <span class="avatar-initial rounded-circle pull-up bg-label-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Ahmad Setyawan">AS</span>
-                                </li>
-                              </ul>
-                            </td>
                             <td class="text-center">
                               <div class="badge status-warning w-100">In Progress</div>
                             </td>
@@ -909,6 +929,16 @@
                             </td>
                             <td class="text-center">
                               2
+                            </td>
+                            <td>
+                              <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
+                                <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up" aria-label="Vinnie Mostowy" data-bs-original-title="Vinnie Mostowy">
+                                  <img class="rounded-circle" src="./assets/img/avatars/5.png" alt="Avatar">
+                                </li>
+                                <li class="avatar">
+                                  <span class="avatar-initial rounded-circle pull-up bg-label-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Ahmad Setyawan">AS</span>
+                                </li>
+                              </ul>
                             </td>
                             <td class="text-center">
                               <div class="badge status-success w-100">Done</div>

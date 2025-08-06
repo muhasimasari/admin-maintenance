@@ -356,12 +356,25 @@
                   </li>
                 </ol>
               </nav>
+              <!-- <div class="d-flex align-items-center gap-3 justify-content-end mb-4">
+                <button type="button" class="btn btn-xl btn-primary waves-effect waves-light approve-btn" data-bs-toggle="modal" data-bs-target="#confirmCloseWOModal">
+                  Close WO <i class="mdi mdi-check ms-1"></i>
+                </button>
+              </div> -->
               <div class="card mb-4">
                 <div class="card-body">
                   <div class="row justify-content-between align-items-center">
-                    <h5 class="col-md-6 mb-0">General Information</h5>
-                    <div class="col-md-6 text-end d-none d-md-block">
-                      <span class="px-4 py-2 custom-bg-warning rounded-1 text-white text-uppercase">In Progress</span>
+                    <h5 class="col-md-4 mb-0">General Information</h5>
+                    <div class="col-md-8 d-flex gap-3 align-items-center justify-content-end">
+                      <span class="d-flex gap-2 align-items-center">
+                        <span style="width: 100%;">Set Status:</span>
+                        <select id="12" class="form-select">
+                          <option value="Normal">Resolved</option>
+                          <option value="Normal">Defferred</option>
+                          <option value="High">Not Resolved</option>
+                        </select>
+                      </span>
+                      <button type="button" class="btn btn-success">update cwo</button>
                     </div>
                   </div>
                   <div class="row g-4 my-2">
@@ -421,7 +434,7 @@
                               <span class="avatar-initial rounded-3 custom-bg-primary"><i class="mdi mdi-store mdi-24px"></i></span>
                             </div>
                             <div class="flex-grow-1 col-7">
-                              <span class="fw-normal small">Engineers</span>
+                              <span class="fw-normal small">Vendors</span>
                               <h6 class="mb-0 mt-1 text-decoration-underline text-truncate text-primary cursor-pointer">Abadi Jaya Motor, Astra Spare Part Motor</h6>
                             </div>
                           </div>

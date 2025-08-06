@@ -142,23 +142,37 @@
           <div class="menu-inner-shadow"></div>
 
           <ul class="menu-inner py-1">
+            <!-- Dashboards -->
+            <!-- <li class="menu-item">
+              <a href="./dashboard.html" class="menu-link">
+                <i class="menu-icon tf-icons mdi mdi-home-outline"></i>
+                <div data-i18n="Dashboard">Dashboard</div>
+              </a>
+            </li> -->
+
+            <!-- Master Data -->
             <li class="menu-header fw-light mt-4">
-              <span class="menu-header-text">Engineering Maintenance</span>
+              <span class="menu-header-text">Engineering MTC</span>
             </li>
-            <li class="menu-item open">
-              <a href="javascript:void(0);" class="menu-link menu-toggle waves-effect">
+            <li class="menu-item active open" style="">
+              <a
+                href="javascript:void(0);"
+                class="menu-link menu-toggle waves-effect"
+              >
                 <i class="menu-icon tf-icons mdi mdi-file-document-outline"></i>
-                <div data-i18n="Maintenance Setup">Maintenance Setup</div>
+                <div data-i18n="MTC Setup">MTC Setup</div>
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
                   <a href="./mtc-task.html" class="menu-link">
-                    <div data-i18n="Maintenance Task">Maintenance Task</div>
+                    <div data-i18n="MTC Task">MTC Task</div>
                   </a>
                 </li>
                 <li class="menu-item">
                   <a href="./mtc-template.html" class="menu-link">
-                    <div data-i18n="Maintenance Template">Maintenance Template</div>
+                    <div data-i18n="MTC Template">
+                      MTC Template
+                    </div>
                   </a>
                 </li>
                 <li class="menu-item">
@@ -186,8 +200,8 @@
               </a>
             </li>
             <li class="menu-item">
-              <a href="#" class="menu-link">
-                <i class="menu-icon tf-icons mdi mdi-calendar-clock"></i>
+              <a href="./schedule-task.html" class="menu-link">
+                <i class="menu-icon tf-icons mdi mdi-calendar-badge-outline"></i>
                 <div data-i18n="Scheduled Task">Scheduled Task</div>
               </a>
             </li>
@@ -204,39 +218,46 @@
               </a>
             </li>
             <li class="menu-item">
-              <a href="#" class="menu-link">
+              <a href="./discrepancy-report.html" class="menu-link">
+                <i class="menu-icon tf-icons mdi mdi-finance"></i>
+                <div data-i18n="Discrepancy Report">Discrepancy Report</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="./mtc-setting.html" class="menu-link">
                 <i class="menu-icon tf-icons mdi mdi-cog-outline"></i>
-                <div data-i18n="Maintenance Setting">Maintenance Setting</div>
+                <div data-i18n="MTC Setting">MTC Setting</div>
               </a>
             </li>
-            
-            <li class="menu-header fw-light mt-4">
-              <span class="menu-header-text">Master Data Maintenance</span>
-            </li>
-            <li class="menu-item">
-              <a href="#" class="menu-link">
-                  <i class="menu-icon tf-icons mdi mdi-toolbox"></i>
+            <div class="d-none"> <!-- If you want to show this menu please remove <div class="d-none"> -->
+              <li class="menu-header fw-light mt-4">
+                <span class="menu-header-text">MASTER DATA MAINTENANCE</span>
+              </li>
+              <li class="menu-item">
+                <a href="./skill-set.html" class="menu-link">
+                  <i class="menu-icon tf-icons mdi mdi-briefcase-account-outline"></i>
                   <div data-i18n="Skill Set">Skill Set</div>
-              </a>
-            </li>
-            <li class="menu-item">
-              <a href="#" class="menu-link">
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="./engineer.html" class="menu-link">
                   <i class="menu-icon tf-icons mdi mdi-account-hard-hat-outline"></i>
                   <div data-i18n="Engineer">Engineer</div>
-              </a>
-            </li>
-            <li class="menu-item">
-              <a href="#" class="menu-link">
-                  <i class="menu-icon tf-icons mdi mdi-office-building-cog"></i>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="./engineer.html" class="menu-link">
+                  <i class="menu-icon tf-icons mdi mdi-store-outline"></i>
                   <div data-i18n="Vendor">Vendor</div>
-              </a>
-            </li>
-            <li class="menu-item">
-              <a href="#" class="menu-link">
-                  <i class="menu-icon tf-icons mdi mdi-book-cog"></i>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="./root-cause-category.html" class="menu-link">
+                  <i class="menu-icon tf-icons mdi mdi-list-box-outline"></i>
                   <div data-i18n="Root Cause Category">Root Cause Category</div>
-              </a>
-            </li>
+                </a>
+              </li>
+            </div>
           </ul>
         </aside>
         <!-- / Menu -->

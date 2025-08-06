@@ -392,3 +392,30 @@ function toggleInput(selectId, inputGroupId) {
 
 toggleInput("dateTypeSelect", "dateInputGroup");
 toggleInput("monthTypeSelect", "monthInputGroup");
+
+document.addEventListener("DOMContentLoaded", function () {
+    const typeSelect = document.getElementById("fixedScheduledForm");
+    const dataBased = document.getElementById("dataBased");
+    const weekBased = document.getElementById("weekBased");
+    const weekBasedInputs = weekBased.querySelectorAll("input, select");
+
+    function toggleSections(value) {
+      if (value === "week") {
+        dataBased.style.display = "none";
+        weekBased.style.display = "block";
+        weekBasedInputs.forEach(el => el.removeAttribute("disabled"));
+      } else {
+        dataBased.style.display = "block";
+        weekBased.style.display = "none";
+        weekBasedInputs.forEach(el => el.setAttribute("disabled", true));
+      }
+    }
+
+    // Inisialisasi
+    toggleSections(typeSelect.value);
+
+    // Ubah saat pilihan berubah
+    typeSelect.addEventListener("change", function () {
+      toggleSections(this.value);
+    });
+  });
