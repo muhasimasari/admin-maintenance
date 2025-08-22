@@ -1,6 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const failRadios = document.querySelectorAll('input.radio-fail[name="inspectionResult-1"]');
-  const passRadios = document.querySelectorAll('input.radio-pass[name="inspectionResult-1"]');
+  const failRadios = document.querySelectorAll(
+    'input.radio-fail[name="inspectionResult-1"]'
+  );
+  const passRadios = document.querySelectorAll(
+    'input.radio-pass[name="inspectionResult-1"]'
+  );
   const failDetails = document.getElementById("failDetails-1");
   const hideBtn = document.getElementById("hideDetailsBtn-1");
   const fileInput = document.getElementById("documentationUpload-1");
@@ -8,51 +12,54 @@ document.addEventListener("DOMContentLoaded", function () {
   const uploadBox = document.getElementById("uploadBox-1");
   const bgSuccess = document.getElementById("insp-item");
 
-  let isManuallyHidden = false;
-  const bsCollapse = new bootstrap.Collapse(failDetails, { toggle: false });
+  const failDetailsCollapse = new bootstrap.Collapse(failDetails, {
+    toggle: false,
+  });
 
   function isAnyFailChecked() {
-    return Array.from(failRadios).some(radio => radio.checked);
+    return Array.from(failRadios).some((radio) => radio.checked);
   }
 
   function toggleFailDetails() {
     if (isAnyFailChecked()) {
-      bsCollapse.show();
+      failDetailsCollapse.show();
       hideBtn.style.display = "block";
-      hideBtn.innerHTML = 'hide details <i class="mdi mdi-chevron-up"></i>';
-      isManuallyHidden = false;
       bgSuccess.classList.remove("inspect-success");
     } else {
-      bsCollapse.hide();
+      failDetailsCollapse.hide();
       hideBtn.setAttribute("style", "display: none !important");
-      isManuallyHidden = false;
       bgSuccess.classList.add("inspect-success");
     }
   }
 
-  failRadios.forEach(radio => {
-    radio.addEventListener("change", toggleFailDetails);
-  });
+  failRadios.forEach((radio) =>
+    radio.addEventListener("change", toggleFailDetails)
+  );
+  passRadios.forEach((radio) =>
+    radio.addEventListener("change", toggleFailDetails)
+  );
 
-  passRadios.forEach(radio => {
-    radio.addEventListener("change", toggleFailDetails);
+  // === Sync label tombol dengan collapse event ===
+  failDetails.addEventListener("show.bs.collapse", () => {
+    hideBtn.innerHTML = 'hide details <i class="mdi mdi-chevron-up"></i>';
+  });
+  failDetails.addEventListener("hide.bs.collapse", () => {
+    hideBtn.innerHTML = 'show details <i class="mdi mdi-chevron-down"></i>';
   });
 
   hideBtn.addEventListener("click", function () {
     if (failDetails.classList.contains("show")) {
-      bsCollapse.hide();
-      hideBtn.innerHTML = 'show details <i class="mdi mdi-chevron-down"></i>';
-      isManuallyHidden = true;
+      failDetailsCollapse.hide();
     } else {
-      bsCollapse.show();
-      hideBtn.innerHTML = 'hide details <i class="mdi mdi-chevron-up"></i>';
-      isManuallyHidden = false;
+      failDetailsCollapse.show();
     }
   });
 
+  // === file upload handler tetap sama ===
   fileInput.addEventListener("change", function () {
     const files = Array.from(fileInput.files);
-    const currentCount = previewContainer.querySelectorAll(".image-preview").length;
+    const currentCount =
+      previewContainer.querySelectorAll(".image-preview").length;
 
     if (currentCount >= 3) {
       alert("Maksimal 3 file.");
@@ -63,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const allowedCount = 3 - currentCount;
     const filesToAdd = files.slice(0, allowedCount);
 
-    filesToAdd.forEach(file => {
+    filesToAdd.forEach((file) => {
       if (file.type.startsWith("image/")) {
         const reader = new FileReader();
         reader.onload = function (e) {
@@ -99,22 +106,51 @@ document.addEventListener("DOMContentLoaded", function () {
     uploadBox.style.display = count >= 3 ? "none" : "flex";
   }
 
-  $(document).ready(function() {
-    $('#categorySelect').select2({
-      dropdownParent: $('#escalateModal')
-    });
-
-    $('#categorySelect1').select2({
-      dropdownParent: $('#escalateNotStartedModal')
-    });
-
-    $('#rootCauseSelect, #rootCauseSelect2, #engineerSelect, #vendorSelect').select2({
-      dropdownParent: $('#caModal')
-    });
+  // === select2 & flatpickr tetap sama ===
+  $("#categorySelect").select2({ dropdownParent: $("#escalateModal") });
+  $("#categorySelect1").select2({
+    dropdownParent: $("#escalateNotStartedModal"),
+  });
+  $(
+    "#rootCauseSelect, #rootCauseSelect2, #engineerSelect, #vendorSelect"
+  ).select2({
+    dropdownParent: $("#caModal"),
   });
 
   flatpickr("#startDate", {
     dateFormat: "Y-m-d",
-    allowInput: true
+    allowInput: true,
+  });
+
+  // === Universal Collapse Icon Rotator ===
+  document.querySelectorAll(".collapse").forEach((collapseEl) => {
+    const collapseInstance = new bootstrap.Collapse(collapseEl, {
+      toggle: false,
+    });
+
+    const targetId = "#" + collapseEl.id;
+    const icons = document.querySelectorAll(
+      `.custom-toggle-icon[data-bs-target="${targetId}"], 
+       [data-bs-target="${targetId}"] .custom-toggle-icon`
+    );
+
+    collapseEl.addEventListener("show.bs.collapse", () => {
+      icons.forEach((icon) => icon.classList.add("rotate"));
+    });
+    collapseEl.addEventListener("hide.bs.collapse", () => {
+      icons.forEach((icon) => icon.classList.remove("rotate"));
+    });
+  });
+});
+
+$(document).ready(function () {
+  $("#engineerSelect").select2({
+    placeholder: "Select Engineer",
+    allowClear: true,
+  });
+
+  $("#vendorSelect").select2({
+    placeholder: "Select Vendor",
+    allowClear: true,
   });
 });
