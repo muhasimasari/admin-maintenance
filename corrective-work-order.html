@@ -325,18 +325,369 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item">
-                    <a href="javascript:void(0);">Corrective Work Order</a>
-                  </li>
-                  <!-- <li class="breadcrumb-item">
-                    <a href="javascript:void(0);">Add MTC Task</a>
-                  </li> -->
-                </ol>
-              </nav>
+              <div class="row g-4">
+                <div class="row g-4 align-items-center mb-2 d-md-none">
+                  <div class="col-md-6 col-10">
+                    <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item">
+                          <a href="javascript:void(0);">Corrective Work Orders</a>
+                        </li>
+                        <!-- <li class="breadcrumb-item">
+                          <a href="javascript:void(0);">Add MTC Task</a>
+                        </li> -->
+                      </ol>
+                    </nav>
+                  </div>
+                  <div class="col-md-6 col-2 text-end">
+                    <div class="d-md-flex d-none g-3 gap-2 align-items-center justify-content-end">
+                      <label class="w-100 custom-search-input position-relative">
+                        <i class="mdi mdi-24px mdi-magnify position-absolute" style="left: 10px; top: 50%; transform: translateY(-50%); color: #999;"></i>
+                        <input
+                          type="search"
+                          class="form-control form-control-sm ps-4 mb-md-0 mb-3 ml-2"
+                          placeholder="Search work order number or asset name"
+                          aria-controls="search datatable"
+                          style="padding-left: 2.5rem!important;"
+                        >
+                      </label>
+                    </div>
+                    <div class="d-block d-md-none">
+                      <button type="button" class="btn btn-label-primary py-2 px-3"><i class="mdi mdi-magnify"></i></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="card">
+                    <div class="accordion" id="accordionFilter">
+                      <!-- Accordion Filter -->
+                      <div class="accordion-item shadow-none">
+                        <h2 class="accordion-header" id="headingPriority">
+                          <button class="accordion-button fs-5 text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePriority" aria-expanded="true" aria-controls="collapsePriority">
+                            Filters
+                          </button>
+                        </h2>
+                        <div id="collapsePriority" class="accordion-collapse collapse show" aria-labelledby="headingPriority">
+                          <div class="accordion-body pe-md-0">
+                            <div class="d-flex gap-2 align-items-center justify-content-between mb-3">
+                              <h6 class="mb-0">Overdue</h6>
+                              <label class="switch">
+                                <input type="checkbox" class="switch-input" checked>
+                                <span class="switch-toggle-slider">
+                                  <span class="switch-on"></span>
+                                  <span class="switch-off"></span>
+                                </span>
+                                <span class="switch-label">Yes</span>
+                              </label>
+                            </div>
+                            <hr>
+
+                            <div class="filter-priority mt-3">
+                              <h6>Priority</h6>
+                              <div class="form-check form-check-success mb-3">
+                                <input class="form-check-input input-filter" type="checkbox" id="lvl-normal" data-value="Normal" />
+                                <label class="form-check-label" for="lvl-normal">Normal</label>
+                              </div>
+                              <div class="form-check form-check-warning mb-3">
+                                <input class="form-check-input input-filter" type="checkbox" id="lvl-medium" data-value="medium" checked />
+                                <label class="form-check-label" for="lvl-medium">High</label>
+                              </div>
+                              <div class="form-check form-check-danger mb-3">
+                                <input class="form-check-input input-filter" type="checkbox" id="lvl-urgent" data-value="Urgent" checked />
+                                <label class="form-check-label" for="lvl-urgent">Urgent</label>
+                              </div>
+                            </div>
+                            <hr>
+                            <div class="filter-priority mt-3">
+                              <h6>Severity</h6>
+                              <div class="filter-priority">
+                                <div class="form-check form-check-success mb-3">
+                                  <input class="form-check-input input-filter" type="checkbox" id="lvl-normal" data-value="Normal" />
+                                  <label class="form-check-label" for="lvl-normal">Low</label>
+                                </div>
+                                <div class="form-check form-check-warning mb-3">
+                                  <input class="form-check-input input-filter" type="checkbox" id="lvl-medium" data-value="medium" />
+                                  <label class="form-check-label" for="lvl-medium">Medium</label>
+                                </div>
+                                <div class="form-check form-check-warning-high mb-3">
+                                  <input class="form-check-input input-filter" type="checkbox" id="lvl-high" data-value="High" checked />
+                                  <label class="form-check-label" for="lvl-high">High</label>
+                                </div>
+                                <div class="form-check form-check-danger mb-3">
+                                  <input class="form-check-input input-filter" type="checkbox" id="lvl-urgent" data-value="Urgent" checked />
+                                  <label class="form-check-label" for="lvl-urgent">Critical</label>
+                                </div>
+                              </div>
+                            </div>
+                            <hr>
+                            <div class="filter-status mt-3">
+                              <h6>Status</h6>
+                              <div class="form-check form-check-primary mb-3">
+                                <input class="form-check-input input-filter" type="checkbox" id="select-business" data-value="business" checked />
+                                <label class="form-check-label" for="select-business">Open</label>
+                              </div>
+                              <div class="form-check form-check-primary mb-3">
+                                <input class="form-check-input input-filter" type="checkbox" id="select-family" data-value="family" checked />
+                                <label class="form-check-label" for="select-family">In Progress</label>
+                              </div>
+                              <div class="form-check form-check-primary mb-3">
+                                <input class="form-check-input input-filter" type="checkbox" id="select-holiday" data-value="holiday" checked />
+                                <label class="form-check-label" for="select-holiday">Done by Engineer</label>
+                              </div>
+                              <div class="form-check form-check-primary mb-3">
+                                <input class="form-check-input input-filter" type="checkbox" id="select-etc1" data-value="etc1" />
+                                <label class="form-check-label" for="select-etc1">Closed</label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-9">
+                  <div class="d-none d-md-block">
+                    <div class="row g-4 align-items-center mb-4">
+                      <div class="col-md-6 col-8">
+                        <nav aria-label="breadcrumb">
+                          <ol class="breadcrumb mb-0">
+                            <li class="breadcrumb-item">
+                              <a href="javascript:void(0);">Corrective Work Orders</a>
+                            </li>
+                            <!-- <li class="breadcrumb-item">
+                              <a href="javascript:void(0);">Add MTC Task</a>
+                            </li> -->
+                          </ol>
+                        </nav>
+                      </div>
+                      <div class="col-md-6 col-4 text-end">
+                        <div class="d-flex g-3 gap-2 align-items-center justify-content-end">
+                          <label class="w-100 custom-search-input position-relative">
+                            <i class="mdi mdi-24px mdi-magnify position-absolute" style="left: 10px; top: 50%; transform: translateY(-50%); color: #999;"></i>
+                            <input
+                              type="search"
+                              class="form-control form-control-sm ps-4 mb-md-0 mb-3 ml-2"
+                              placeholder="Search work order number or asset name"
+                              aria-controls="search datatable"
+                              style="padding-left: 2.5rem!important;"
+                            >
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h6 class="fs-5">5 Work Orders</h6>
+                  <!-- #1 -->
+                  <div class="card mb-4">
+                    <div class="card-body">
+                      <!-- Mobile Status -->
+                      <div class="d-md-none d-block mb-2">
+                        <span class="btn btn-sm btn-success">Done by engineer</span>
+                      </div>
+                      <div class="d-flex gap-2 align-items-center justify-content-between">
+                        <span class="text-primary fw-semibold">CWO-2025-05-07-0041</span>
+                        <!-- Desktop Status -->
+                        <span class="btn btn-sm btn-success d-none d-md-block">Done by engineer</span>
+                      </div>
+                      <div class="fs-5 fw-bold">AC DAIKIN 3/4 PK</div>
+                      <div class="d-flex align-items-center gap-1 mb-3">
+                        <span class="fw-semibold text-warning">High</span>
+                        <span>&bull;</span>
+                        <span>Asset</span>
+                        <span>&bull;</span>
+                        <span class="d-flex gap-1 align-items-center"><i class="mdi mdi-calendar-month-outline"></i> 03 Jul 2025</span>
+                        <i class="mdi mdi-alert-circle text-danger"></i>
+                        <span>&bull;</span>
+                        <span class="d-flex align-items-center gap-1 text-primary"><i class="mdi mdi-link"></i>DR-A-AC-CLEAR</span>
+                      </div>
+                      <div class="bg-label-light rounded mb-3 px-3 py-2">
+                        <span class="custom-text-dark">MC-A007 - Cleaning</span>                        
+                        <span class="d-flex align-items-center gap-1 fw-semibold custom-text-dark"><i class="mdi mdi-minus"></i>INSP-0012 - Clean AC Filter</span>                        
+                      </div>
+                      <div class="demo-inline-spacing mb-3">
+                        <span class="badge bg-label-info fs-6">NG</span>
+                      </div>
+                      <hr>
+                      <div class="d-md-flex gap-3 align-items-center justify-content-between mt-3">
+                        <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
+                          <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up" aria-label="Vinnie Mostowy" data-bs-original-title="Vinnie Mostowy">
+                            <img class="rounded-circle" src="./assets/img/avatars/5.png" alt="Avatar">
+                          </li>
+                          <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up" aria-label="Allen Rieske" data-bs-original-title="Allen Rieske">
+                            <img class="rounded-circle" src="./assets/img/avatars/12.png" alt="Avatar">
+                          </li>
+                          <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up" aria-label="Julee Rossignol" data-bs-original-title="Julee Rossignol">
+                            <img class="rounded-circle" src="./assets/img/avatars/6.png" alt="Avatar">
+                          </li>
+                          <li class="avatar">
+                            <span class="avatar-initial rounded-circle pull-up bg-lightest text-body" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="3 more">+3</span>
+                          </li>
+                        </ul>
+                        <div class="d-flex gap-3 align-items-center justify-content-between mt-3 mt-md-0">
+                          <a href="././corrective-work-order-detail.html" class="btn btn-label-primary text-capitalize w-100">See Detail</a>
+                          <a href="#" class="btn btn-primary text-capitalize w-100 d-none"><i class="mdi mdi-alert-circle-outline me-1"></i>Escalated</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- #2 -->
+                  <div class="card mb-4">
+                    <div class="card-body">
+                      <!-- Mobile Status -->
+                      <div class="d-md-none d-block mb-2">
+                        <span class="btn btn-sm btn-success">Done by engineer</span>
+                      </div>
+                      <div class="d-flex gap-2 align-items-center justify-content-between">
+                        <span class="text-primary fw-semibold">WO-2025-05-07-0045</span>
+                        <!-- Desktop Status -->
+                        <span class="btn btn-sm btn-success d-none d-md-block">Done by engineer</span>
+                      </div>
+                      <div class="fs-5 fw-bold">Toyota Innova Reborn Hitam</div>
+                      <div class="d-flex align-items-center gap-1 mb-3">
+                        <span class="fw-semibold text-warning">High</span>
+                        <span>&bull;</span>
+                        <span>Asset</span>
+                        <span>&bull;</span>
+                        <span class="d-flex gap-1 align-items-center"><i class="mdi mdi-calendar-month-outline"></i> 03 Jul 2025</span>
+                        <i class="mdi mdi-alert-circle text-danger"></i>
+                        <span>&bull;</span>
+                        <span class="d-flex align-items-center gap-1 text-primary"><i class="mdi mdi-link"></i>DR-A-AC-CLEAR</span>
+                      </div>
+                      <div class="bg-label-light rounded mb-3 px-3 py-2">
+                        <span class="custom-text-dark">MC-A007 - Cleaning</span>                        
+                        <span class="d-flex align-items-center gap-1 fw-semibold custom-text-dark"><i class="mdi mdi-minus"></i>INSP-0012 - Clean AC Filter</span>                        
+                      </div>
+                      <hr>
+                      <div class="d-md-flex gap-3 align-items-center justify-content-between mt-3">
+                        <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
+                          <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up" aria-label="Vinnie Mostowy" data-bs-original-title="Vinnie Mostowy">
+                            <img class="rounded-circle" src="./assets/img/avatars/5.png" alt="Avatar">
+                          </li>
+                          <li class="avatar">
+                            <span class="avatar-initial rounded-circle pull-up bg-label-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Ahmad Setyawan">AS</span>
+                          </li>
+                        </ul>
+                        <div class="d-flex gap-3 align-items-center justify-content-between mt-3 mt-md-0">
+                          <a href="././corrective-work-order-detail.html" class="btn btn-label-primary text-capitalize w-100">See Detail</a>
+                          <a href="#" class="btn btn-success text-capitalize w-100 d-none"><i class="mdi mdi-check-circle-outline me-1"></i>Close Wo</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- #3 -->
+                  <div class="card mb-4">
+                    <div class="card-body">
+                      <!-- Mobile Status -->
+                      <div class="d-md-none d-block mb-2">
+                        <span class="btn btn-sm btn-warning">In Progress</span>
+                      </div>
+                      <div class="d-flex gap-2 align-items-center justify-content-between">
+                        <span class="text-primary fw-semibold">WO-2025-05-07-0090</span>
+                        <!-- Desktop Status -->
+                        <span class="btn btn-sm btn-warning d-none d-md-block">In Progress</span>
+                      </div>
+                      <div class="fs-5 fw-bold">Honda Beat 110cc th. 2016</div>
+                      <div class="d-flex align-items-center gap-1 mb-3">
+                        <span class="fw-semibold text-warning">High</span>
+                        <span>&bull;</span>
+                        <span>Asset</span>
+                        <span>&bull;</span>
+                        <span class="d-flex gap-1 align-items-center"><i class="mdi mdi-calendar-month-outline"></i> 05 Jul 2025</span>
+                        <span>&bull;</span>
+                        <span class="d-flex align-items-center gap-1 text-primary"><i class="mdi mdi-link"></i>DR-A-AC-CLEAR</span>
+                      </div>
+                      <div class="bg-label-light rounded mb-3 px-3 py-2">
+                        <span class="custom-text-dark">MC-A007 - Cleaning</span>                        
+                        <span class="d-flex align-items-center gap-1 fw-semibold custom-text-dark"><i class="mdi mdi-minus"></i>INSP-0012 - Clean AC Filter</span>                        
+                      </div>
+                      <hr>
+                      <div class="d-md-flex gap-3 align-items-center justify-content-between mt-3">
+                        <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
+                          <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up" aria-label="Vinnie Mostowy" data-bs-original-title="Vinnie Mostowy">
+                            <img class="rounded-circle" src="./assets/img/avatars/5.png" alt="Avatar">
+                          </li>
+                          <li class="avatar">
+                            <span class="avatar-initial rounded-circle pull-up bg-label-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Ahmad Setyawan">AS</span>
+                          </li>
+                        </ul>
+                        <div class="d-flex gap-3 align-items-center justify-content-between mt-3 mt-md-0">
+                          <a href="././corrective-work-order-detail.html" class="btn btn-label-primary text-capitalize w-100">See Detail</a>
+                          <a href="#" class="btn btn-success text-capitalize w-100 d-none"><i class="mdi mdi-check-circle-outline me-1"></i>Close Wo</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- #4 -->
+                  <div class="card mb-4">
+                    <div class="card-body">
+                      <!-- Mobile Status -->
+                      <div class="d-md-none d-block mb-2">
+                        <span class="btn btn-sm btn-dark">Open</span>
+                      </div>
+                      <div class="d-flex gap-2 align-items-center justify-content-between">
+                        <span class="text-primary fw-semibold">WO-2025-05-08-0081</span>
+                        <!-- Desktop Status -->
+                        <span class="btn btn-sm btn-dark d-none d-md-block">Open</span>
+                      </div>
+                      <div class="fs-5 fw-bold">Honda Vario 160cc th. 2019</div>
+                      <div class="d-flex align-items-center gap-1 mb-3">
+                        <span class="fw-semibold text-warning">High</span>
+                        <span>&bull;</span>
+                        <span>Asset</span>
+                        <span>&bull;</span>
+                        <span class="d-flex gap-1 align-items-center"><i class="mdi mdi-calendar-month-outline"></i> 05 Jul 2025</span>
+                        <span>&bull;</span>
+                        <span class="d-flex align-items-center gap-1 text-primary"><i class="mdi mdi-link"></i>DR-A-AC-CLEAR</span>
+                      </div>
+                      <div class="demo-inline-spacing mb-3">
+                        
+                      </div>
+                      <hr>
+                      <div class="d-md-flex gap-3 align-items-center justify-content-between mt-3">
+                        <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
+                          <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up" aria-label="Vinnie Mostowy" data-bs-original-title="Vinnie Mostowy">
+                            <img class="rounded-circle" src="./assets/img/avatars/5.png" alt="Avatar">
+                          </li>
+                          <li class="avatar">
+                            <span class="avatar-initial rounded-circle pull-up bg-label-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Ahmad Setyawan">AS</span>
+                          </li>
+                        </ul>
+                        <div class="d-flex gap-3 align-items-center justify-content-between mt-3 mt-md-0">
+                          <a href="./corrective-work-order-detail.html" class="btn btn-label-primary text-capitalize w-100">See Detail</a>
+                          <a href="#" class="btn btn-success text-capitalize w-100 d-none"><i class="mdi mdi-check-circle-outline me-1"></i>Close Wo</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-md-flex justify-content-between align-items-center py-3">
+                    <div class="d-md-block d-none">Showing 1 to 7 of 100 entries</div>
+                    <nav aria-label="Page navigation">
+                      <ul class="pagination mb-0">
+                        <li class="page-item first">
+                          <a class="page-link waves-effect" href="javascript:void(0);"><i class="tf-icon mdi mdi-skip-previous-outline mdi-20px"></i></a>
+                        </li>
+                        <li class="page-item prev">
+                          <a class="page-link waves-effect" href="javascript:void(0);"><i class="tf-icon mdi mdi-chevron-left mdi-20px"></i></a>
+                        </li>
+                        <li class="page-item active">
+                          <a class="page-link waves-effect" href="javascript:void(0);">1</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link waves-effect" href="javascript:void(0);">2</a>
+                        </li>
+                        <li class="page-item next">
+                          <a class="page-link waves-effect" href="javascript:void(0);"><i class="tf-icon mdi mdi-chevron-right mdi-20px"></i></a>
+                        </li>
+                        <li class="page-item last">
+                          <a class="page-link waves-effect" href="javascript:void(0);"><i class="tf-icon mdi mdi-skip-next-outline mdi-20px"></i></a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
               <!-- Form Template Table -->
-              <div class="card">
+              <div class="card d-none">
                 <div class="row">
                   <div class="col-md-3">
                     <div class="mt-2">
@@ -666,374 +1017,6 @@
               </div>
             </div>
             <!-- / Content -->
-
-            <div
-              class="modal fade"
-              id="deleteConfirmation"
-              tabindex="-1"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="deleteConfirmationLabel">
-                      Delete MTC : MC-A001
-                    </h5>
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div class="modal-body">
-                    Are you sure to delete this user "MC-A001"?
-                  </div>
-                  <div class="modal-footer">
-                    <button
-                      type="button"
-                      class="btn btn-secondary"
-                      data-bs-dismiss="modal"
-                    >
-                      Cancel
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-primary btn-confirm-delete"
-                    >
-                      Delete
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Modal Triggers -->
-            <div class="modal fade" id="triggerModal" tabindex="-1" aria-labelledby="triggerModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="triggerModalLabel">Trigger Setting & Initial Data</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <h6 class="mb-4">General Information</h6>
-                    <div class="row g-3 mb-4">
-                      <div class="col-md-6">
-                        <div class="d-flex align-items-center rounded-3">
-                          <div class="avatar me-3">
-                            <span class="avatar-initial rounded-3 bg-primary">
-                              <i class="mdi mdi-24px mdi-archive"></i>
-                            </span>
-                          </div>
-                          <div>
-                            <small class="text-muted d-block">Asset Name</small>
-                            <p class="mb-0 fw-bold">Innova Reborn Hitam</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="d-flex align-items-center rounded-3">
-                          <div class="avatar me-3">
-                            <span class="avatar-initial rounded-3 custom-bg-warning">
-                              <i class="mdi mdi-24px mdi-archive"></i>
-                            </span>
-                          </div>
-                          <div>
-                            <small class="text-muted d-block">Asset Category</small>
-                            <p class="mb-0 fw-bold">Vehicle</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="d-flex align-items-center rounded-3">
-                          <div class="avatar me-3">
-                            <span class="avatar-initial rounded-3 bg-success">
-                              <i class="mdi mdi-24px mdi-archive"></i>
-                            </span>
-                          </div>
-                          <div>
-                            <small class="text-muted d-block">Asset Code</small>
-                            <p class="mb-0 fw-bold">01-03-39-57-84-0V2</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="d-flex align-items-center rounded-3">
-                          <div class="avatar me-3">
-                            <span class="avatar-initial rounded-3 custom-bg-info">
-                              <i class="mdi mdi-24px mdi-archive"></i>
-                            </span>
-                          </div>
-                          <div>
-                            <small class="text-muted d-block">Asset Group</small>
-                            <p class="mb-0 fw-bold">Car</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <hr class="my-2">
-                    <h6 class="my-4">Set MTC Config 50 Asset Item</h6>
-
-                    <div class="row g-4">
-                      <div class="col-md-4">
-                        <div class="card shadow-none bg-transparent border border-dark text-dark">
-                          <div class="card-body p-3">
-                            <div class="d-flex justify-content-between mb-4 gap-3" >
-                              <div class="d-flex flex-column">
-                                <span class="text-black-custom">Time Based</span>
-                              </div>
-                              <div>
-                                <label class="switch">
-                                  <input type="checkbox" class="switch-input" checked>
-                                  <span class="switch-toggle-slider">
-                                    <span class="switch-on"></span>
-                                    <span class="switch-off"></span>
-                                  </span>
-                                  <span class="switch-label">Active</span>
-                                </label>
-                              </div>
-                            </div>
-                            <div class="form-floating form-floating-outline mb-3">
-                              <select id="12" class="form-select" style="width: 100%;">
-                                <option value="Normal">Day(s)</option>
-                                <option value="Normal">Week(s)</option>
-                                <option value="High">Month(s)</option>
-                              </select>
-                              <label for="12">Unit of Measurement</label>
-                            </div>
-                            <div class="position-relative">
-                              <div class="form-floating form-floating-outline">
-                                <input
-                                  type="text"
-                                  class="form-control pe-5"
-                                  placeholder="YYYY-MM-DD"
-                                  id="startDate"
-                                />
-                                <label for="startDate">Date Picker</label>
-                              </div>
-                              <i class="mdi mdi-calendar position-absolute text-muted" style="top: 50%; right: 15px; transform: translateY(-50%); pointer-events: none;"></i>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="card shadow-none bg-transparent border border-dark text-dark">
-                          <div class="card-body p-3">
-                            <div class="d-flex justify-content-between mb-4 gap-3" >
-                              <div class="d-flex flex-column">
-                                <span class="text-black-custom">Usage Based</span>
-                              </div>
-                              <div>
-                                <label class="switch">
-                                  <input type="checkbox" class="switch-input">
-                                  <span class="switch-toggle-slider">
-                                    <span class="switch-on"></span>
-                                    <span class="switch-off"></span>
-                                  </span>
-                                  <span class="switch-label">Active</span>
-                                </label>
-                              </div>
-                            </div>
-                            <div class="form-floating form-floating-outline mb-3">
-                              <input type="text" class="form-control" id="measurement" placeholder="e.g Hour(s), Km, etc" value="" disabled>
-                              <label for="measurement">Unit of Measurement</label>
-                            </div>
-                            <div class="form-floating form-floating-outline">
-                              <input type="text" class="form-control" id="initalData" placeholder="e.g 10" disabled>
-                              <label for="initalData">Initial Data</label>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="card shadow-none bg-transparent border border-dark text-dark">
-                          <div class="card-body p-3">
-                            <div class="d-flex justify-content-between mb-4 gap-3" >
-                              <div class="d-flex flex-column">
-                                <span class="text-black-custom">Cycle Based</span>
-                              </div>
-                              <div>
-                                <label class="switch">
-                                  <input type="checkbox" class="switch-input">
-                                  <span class="switch-toggle-slider">
-                                    <span class="switch-on"></span>
-                                    <span class="switch-off"></span>
-                                  </span>
-                                  <span class="switch-label">Active</span>
-                                </label>
-                              </div>
-                            </div>
-                            <div class="form-floating form-floating-outline mb-3">
-                              <input type="text" class="form-control" id="measurement" placeholder="e.g Hour(s), Km, etc" value="Cycle" disabled>
-                              <label for="measurement">Unit of Measurement</label>
-                            </div>
-                            <div class="form-floating form-floating-outline">
-                              <input type="text" class="form-control" id="initalData" placeholder="e.g 10" disabled>
-                              <label for="initalData">Initial Data</label>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="modal-footer">
-                      <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
-                      <button type="button" class="btn btn-primary">Save</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Modal Apply Template -->
-            <div class="modal fade" id="applyTemplate" tabindex="-1" aria-labelledby="applyTemplateLabel" aria-hidden="true">
-              <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="applyTemplateLabel">Assigning Template</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <h6 class="mb-4">General Information</h6>
-                    <div class="row g-3 mb-4">
-                      <div class="col-md-6">
-                        <div class="d-flex align-items-center rounded-3">
-                          <div class="avatar me-3">
-                            <span class="avatar-initial rounded-3 bg-primary">
-                              <i class="mdi mdi-24px mdi-archive"></i>
-                            </span>
-                          </div>
-                          <div>
-                            <small class="text-muted d-block">Asset Name</small>
-                            <p class="mb-0 fw-bold">Innova Reborn Hitam</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="d-flex align-items-center rounded-3">
-                          <div class="avatar me-3">
-                            <span class="avatar-initial rounded-3 custom-bg-warning">
-                              <i class="mdi mdi-24px mdi-archive"></i>
-                            </span>
-                          </div>
-                          <div>
-                            <small class="text-muted d-block">Asset Category</small>
-                            <p class="mb-0 fw-bold">Vehicle</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="d-flex align-items-center rounded-3">
-                          <div class="avatar me-3">
-                            <span class="avatar-initial rounded-3 bg-success">
-                              <i class="mdi mdi-24px mdi-archive"></i>
-                            </span>
-                          </div>
-                          <div>
-                            <small class="text-muted d-block">Asset Code</small>
-                            <p class="mb-0 fw-bold">01-03-39-57-84-0V2</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="d-flex align-items-center rounded-3">
-                          <div class="avatar me-3">
-                            <span class="avatar-initial rounded-3 custom-bg-info">
-                              <i class="mdi mdi-24px mdi-archive"></i>
-                            </span>
-                          </div>
-                          <div>
-                            <small class="text-muted d-block">Asset Group</small>
-                            <p class="mb-0 fw-bold">Car</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <hr class="my-2">
-                    <div class="row align-items-center">
-                      <h6 class="my-4 col-md-6">MTC Template</h6>
-                      <div class="col-md-6 text-end">
-                        <a href="mtc-template-add.html" class="btn btn-sm btn-primary text-white">
-                          <i class="mdi mdi-24px mdi-plus" style="margin-right: 5px;"></i>Add New template
-                        </a>
-                      </div>
-                    </div>
-                    <div class="card-datatable table-responsive custom-table text-nowrap">
-                      <table class="table card-table table-borderless">
-                        <thead>
-                          <tr>
-                            <th style="max-width: 200px;">MTC code</th>
-                            <th>MTC name</th>
-                            <th style="min-width: 90px; max-width: 90px;">Estimated</th>
-                            <th style="min-width: 230px;">frequency</th>
-                          </tr>
-                        </thead>
-                        <tbody class="table-border-bottom-0">
-                          <tr>
-                            <td class="text-primary position-relative">
-                              <div class="color-code" style="background-color: #3C57A1;"></div>
-                              <div class="ps-3" >
-                                <a class="fw-bold" href="./mtc-task-detail-asset.html">MC-A001</a>
-                              </div>
-                            </td>
-                            <td>Engine Oil</td>
-                            <td>1 Day(s)</td>
-                            <td>
-                              Start On : 0<br/><hr class="my-2"/>
-                              Repeat Every : 25 day(s) / 600 hour(s) / 15 cycle(s)
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td class="text-primary position-relative">
-                              <div class="color-code" style="background-color: #EA9612;"></div>
-                              <div class="ps-3" >
-                                <a class="fw-bold" href="./mtc-task-detail-location.html">MC-L002</a>
-                              </div>
-                            </td>
-                            <td>Room Deluxe</td>
-                            <td>1 Day(s)</td>
-                            <td>
-                              Repeat Every : 25 day(s)
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <hr>
-                    <div class="d-md-flex d-block justify-content-between align-items-center py-3">
-                      <div>Showing 1 to 7 of 100 entries</div>
-                      <nav aria-label="Page navigation">
-                        <ul class="pagination mb-0">
-                          <li class="page-item first">
-                            <a class="page-link waves-effect" href="javascript:void(0);"><i class="tf-icon mdi mdi-skip-previous-outline mdi-20px"></i></a>
-                          </li>
-                          <li class="page-item prev">
-                            <a class="page-link waves-effect" href="javascript:void(0);"><i class="tf-icon mdi mdi-chevron-left mdi-20px"></i></a>
-                          </li>
-                          <li class="page-item active">
-                            <a class="page-link waves-effect" href="javascript:void(0);">1</a>
-                          </li>
-                          <li class="page-item">
-                            <a class="page-link waves-effect" href="javascript:void(0);">2</a>
-                          </li>
-                          <li class="page-item next">
-                            <a class="page-link waves-effect" href="javascript:void(0);"><i class="tf-icon mdi mdi-chevron-right mdi-20px"></i></a>
-                          </li>
-                          <li class="page-item last">
-                            <a class="page-link waves-effect" href="javascript:void(0);"><i class="tf-icon mdi mdi-skip-next-outline mdi-20px"></i></a>
-                          </li>
-                        </ul>
-                      </nav>
-                    </div>
-                  </div>
-                  <div class="modal-footer">
-                      <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
-                      <button type="button" class="btn btn-primary">Save</button>
-                  </div>
-                </div>
-              </div>
-            </div>
 
           </div>
           <!-- Content wrapper -->

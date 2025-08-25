@@ -344,18 +344,21 @@
           <div class="content-wrapper">
             <!-- Content -->
             <div class="container-xxl flex-grow-1 container-p-y">
-              <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item">
-                    <a href="./corrective-work-order.html">Corrective Work Orders</a>
-                  </li>
-                  <li class="breadcrumb-item">
-                    <a href="javascript:void(0);" class="text-dark"
-                      >CWO-2025-05-07-0041</a
-                    >
-                  </li>
-                </ol>
-              </nav>
+              <div class="d-block d-md-flex gap-3 align-items-center mb-4">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item">
+                      <a href="./corrective-work-order.html">Corrective Work Orders</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                      <a href="javascript:void(0);" class="text-dark"
+                        >CWO-2025-05-07-0041</a
+                      >
+                    </li>
+                  </ol>
+                </nav>
+                <button type="button" class="btn btn-success mt-2 mt-md-0">close wo <i class="mdi mdi-check-circle-outline ms-1"></i></button>
+              </div>
               <!-- <div class="d-flex align-items-center gap-3 justify-content-end mb-4">
                 <button type="button" class="btn btn-xl btn-primary waves-effect waves-light approve-btn" data-bs-toggle="modal" data-bs-target="#confirmCloseWOModal">
                   Close WO <i class="mdi mdi-check ms-1"></i>
@@ -366,15 +369,7 @@
                   <div class="row justify-content-between align-items-center">
                     <h5 class="col-md-4 mb-0">General Information</h5>
                     <div class="col-md-8 d-flex gap-3 align-items-center justify-content-end">
-                      <span class="d-flex gap-2 align-items-center">
-                        <span style="width: 100%;">Set Status:</span>
-                        <select id="12" class="form-select">
-                          <option value="Normal">Resolved</option>
-                          <option value="Normal">Defferred</option>
-                          <option value="High">Not Resolved</option>
-                        </select>
-                      </span>
-                      <button type="button" class="btn btn-success">update cwo</button>
+                      <div class="btn btn-success">done by engineer</button>
                     </div>
                   </div>
                   <div class="row g-4 my-2">
@@ -443,6 +438,7 @@
                     </div>
                   </div>
                 </div>
+                </div>
               </div>
               <div class="nav-align-top mb-4">
                 <ul class="nav nav-tabs" role="tablist">
@@ -456,7 +452,7 @@
                       aria-controls="navs-inspections"
                       aria-selected="true"
                     >
-                      Inspections & Report
+                      Inspections
                     </button>
                   </li>
                   <li class="nav-item">
@@ -478,6 +474,19 @@
                       class="nav-link"
                       role="tab"
                       data-bs-toggle="tab"
+                      data-bs-target="#navs-cost-report"
+                      aria-controls="navs-cost-report"
+                      aria-selected="false"
+                    >
+                      Cost Report
+                    </button>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      type="button fw-semibold"
+                      class="nav-link"
+                      role="tab"
+                      data-bs-toggle="tab"
                       data-bs-target="#navs-update-last-done"
                       aria-controls="navs-update-last-done"
                       aria-selected="false"
@@ -487,8 +496,8 @@
                   </li>
                 </ul>
               </div>
-
               <div class="tab-content p-0">
+                <!-- Inspection -->
                 <div
                   class="tab-pane fade show active"
                   id="navs-inspections"
@@ -499,18 +508,12 @@
                     <div class="card-body">
                       <div class="row align-items-center">
                         <div class="col-md-6 mb-3 mb-md-0">
-                          <div class="d-flex gap-2 align-items-center justify-content-between justify-content-md-start mb-1">
-                            <div class="flex gap-2">
-                              <span>INSP-0001</span>
-                              <span>(0/1)</span>
-                            </div>
-                          </div>
-                          <div class="fs-6">Check Oil Volume</div>
+                          <h5 class="mb-0">INSP-0001 : Check Engine Cover Seal (1/1)</h5>
                         </div>
                         <div class="col-md-6">
                           <div class="d-flex gap-1 justify-content-md-end">
-                            <button class="btn btn-outline-primary text-truncate waves-effect" data-bs-toggle="modal" data-bs-target="#caModal">
-                              <i class="mdi mdi-hammer-wrench me-1"></i> corrective action (2)
+                            <button class="btn btn-primary text-truncate waves-effect text-capitalize" data-bs-toggle="modal" data-bs-target="#caModal">
+                              <i class="mdi mdi-hammer-wrench me-1"></i> corrective action
                             </button>
                           </div>
                         </div>
@@ -553,11 +556,250 @@
                     </div>
                   </div>
                 </div>
+                <!-- Service Report -->
                 <div
                   class="tab-pane fade"
                   id="navs-service-report"
                   role="tabpanel"
                 >
+                  <h5>Corrective Action (2)</h5>
+                  <div class="d-grid gap-3">
+                    <!-- CA Card 1 -->
+                    <div class="card inspection-card shadow-sm">
+                      <div
+                        class="card-header p-3 collapsed"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="false"
+                        aria-controls="collapseOne"
+                      >
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="d-flex align-items-center">
+                            <div class="avatar me-3">
+                              <span class="avatar-initial rounded-3 bg-label-primary"><i class="mdi mdi-wrench-outline mdi-24px"></i></span>
+                            </div>
+                            <div>
+                              <span class="text-muted small">CA - INSP-0005</span>
+                              <h5 class="mb-0 fw-bold">Check Oil Volume</h5>
+                              <small class="text-muted"
+                                >Issue Description: Volume oli lama terlalu sedikit</small
+                              >
+                            </div>
+                          </div>
+                          <i class="mdi mdi-chevron-down mdi-24px text-muted inspection-arrow-icon"></i>
+                        </div>
+                      </div>
+                      <div id="collapseOne" class="collapse">
+                        <div class="card-body bg-label-light">
+                          <p class="text-muted mb-0">No action details for this item.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- CA Card 2 -->
+                    <div class="card inspection-card shadow-sm">
+                      <div
+                        class="card-header p-3"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo"
+                        aria-expanded="true"
+                        aria-controls="collapseTwo"
+                      >
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="d-flex align-items-center">
+                            <div class="avatar me-3">
+                              <span class="avatar-initial rounded-3 bg-label-warning"><i class="mdi mdi-shield-alert-outline mdi-24px"></i></span>
+                            </div>
+                            <div>
+                              <span class="text-muted small">CA - INSP-0003</span>
+                              <h5 class="mb-0 fw-bold">Check for Oil Leaks</h5>
+                              <small class="text-muted"
+                                >Issue Description: Ada kebocoran oli dari area mesin</small
+                              >
+                            </div>
+                          </div>
+                          <i class="mdi mdi-chevron-down mdi-24px text-muted inspection-arrow-icon"></i>
+                        </div>
+                      </div>
+                      <div id="collapseTwo" class="collapse show">
+                        <div class="card-body">
+                          <!-- Timeline -->
+                          <h6 class="fw-bold mb-4">Action Timeline</h6>
+                          <div class="inspection-timeline">
+                            <!-- Timeline Item 1 - Edit Mode -->
+                            <div class="inspection-timeline-item">
+                              <div class="inspection-timeline-number"><i class="mdi mdi-calendar-outline"></i></div>
+                              <p class="fw-semibold mb-md-0 fs-6">1. Wednesday, 02 Jul 2025 - 14:00</p>
+                              <div class="p-3 bg-label-light rounded-3 border mt-3 custom-content-wrapper">
+                                <div class="mb-3">
+                                  <span class="custom-text-dark">Set Status:</span>
+                                  <div class="form-floating form-floating-outline mt-2 mb-3">
+                                    <div class="btn-group" role="group" aria-label="Time based radio group">
+                                      <input type="radio" class="btn-check btn-severity" name="btnradio" id="low" />
+                                      <label class="btn btn-outline-secondary px-3" for="low">Resolved by Engineer</label>
+
+                                      <input type="radio" class="btn-check btn-severity" name="btnradio" id="critical" checked />
+                                      <label class="btn btn-outline-secondary px-3" for="critical">Not Resolved</label>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <span class="custom-text-dark">Engineer:</span>
+                                  <div class="form-floating form-floating-outline mt-2 mb-3">
+                                    <select class="form-select" id="engineerSelect" style="width:100%">
+                                      <option value="">Select Engineer</option>
+                                      <option value="eng1" selected>John Doe</option>
+                                      <option value="eng2">Jane Smith</option>
+                                      <option value="eng3">Michael Johnson</option>
+                                      <option value="eng4">Emily Davis</option>
+                                    </select>
+                                  </div>
+                                </div>
+
+                                <div class="mb-3">
+                                  <span class="custom-text-dark">Vendor:</span>
+                                  <div class="form-floating form-floating-outline mt-2 mb-3">
+                                    <select class="form-select" id="vendorSelect" style="width:100%">
+                                      <option value="">Select Vendor</option>
+                                      <option value="ven1" selected>PT. Oilindo Sejahtera</option>
+                                      <option value="ven2">CV. Mekanika Jaya</option>
+                                      <option value="ven3">PT. Teknologi Nusantara</option>
+                                      <option value="ven4">Global Engineering Ltd</option>
+                                    </select>
+                                  </div>
+                                </div>
+
+                                <div class="mb-3">
+                                  <span class="custom-text-dark">Root Cause Category:</span>
+                                  <div class="d-flex gap-2 align-items-center text-wrap my-2">
+                                    <div class="col-md-4">
+                                      <select class="form-select select2 col-md-3 col-12" id="rootCauseSelect">
+                                        <option selected>Machine</option>
+                                        <option value="1">Electrical</option>
+                                        <option value="2">Safety</option>
+                                        <option value="3">Other</option>
+                                      </select>
+                                    </div>
+                                    <input type="text" class="form-control" id="defaultFormControlInput" value="Lubrication System" placeholder="e.g Lubrication System" aria-describedby="defaultFormControlHelp">
+                                    <button class="btn btn-sm btn-text-danger text-capitalize px-md-4"><i class="mdi mdi-minus me-2"></i><span class="d-none d-md-block">Remove</span></button>
+                                  </div>
+                                  <div class="d-flex gap-2 align-items-center text-wrap my-2">
+                                    <div class="col-md-4">
+                                      <select class="form-select select2 col-md-3 col-12" id="rootCauseSelect2">
+                                        <option selected>Machine</option>
+                                        <option value="1">Electrical</option>
+                                        <option value="2">Safety</option>
+                                        <option value="3">Other</option>
+                                      </select>
+                                    </div>
+                                    <input type="text" class="form-control" id="defaultFormControlInput" value="Coolant Machines" placeholder="e.g Lubrication System" aria-describedby="defaultFormControlHelp">
+                                    <button class="btn btn-sm btn-text-danger text-capitalize px-md-4"><i class="mdi mdi-minus me-2"></i><span class="d-none d-md-block">Remove</span></button>
+                                  </div>
+                                  <button class="btn btn-text-primary p-0"><i class="mdi mdi-plus"></i>Add root cause</button>
+                                </div>
+
+                                <div class="mb-3">
+                                  <span class="custom-text-dark">Action:</span>
+                                  <textarea class="form-control w-md-50 w-100 mt-2 mb-3" rows="5">Dilakukan pergantian seal ulang pada cover engine merk Toyota Genuine Part</textarea>
+                                </div>
+
+                                <div class="mb-3">
+                                  <span class="custom-text-dark">Documentation (audio, photo, video or file): (audio, photo, video or file):</span>
+                                  <div class="row align-items-start mt-2">
+                                    <div class="d-flex gap-3">
+                                      <div id="previewContainer-1" class="d-flex gap-3 flex-wrap">
+                                        <div class="image-preview position-relative">
+                                          <img src="https://image.sumberberkatabadi.com/s3/productimages/webp/co26696/p1323680/w600-h600/5d9804e6-8311-4c0d-b3e7-9b7d6fa129fc.jpg" class="img-thumbnail">
+                                          <button class="delete-btn">DELETE</button>
+                                        </div>
+                                      </div>
+                                      <input type="file" id="Documentation (audio, photo, video or file):Upload-1" class="d-none" accept="image/*" multiple>
+                                      <label for="Documentation (audio, photo, video or file):Upload-1" class="upload-box" id="uploadBox-1">
+                                        <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="d-flex justify-content-end">
+                                  <button class="btn btn-primary">
+                                    <i class="mdi mdi-content-save me-1"></i>Save
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- Timeline Item 2 - Display Mode -->
+                            <div class="inspection-timeline-item">
+                              <div class="inspection-timeline-number"><i class="mdi mdi-calendar-outline"></i></div>
+                              <p class="fw-semibold mb-md-0 fs-6">2. Thursday, 03 Jul 2025 - 10:00</p>
+                              <div class="p-3 bg-label-light rounded-3 border mt-3 custom-content-wrapper">
+                                <div class="text-end mb-3">
+                                  <span class="custom-bg-danger text-uppercase px-2 py-1 rounded-1 order-1 order-md-0">Not Resolved</span>
+                                </div>
+                                <div class="d-md-flex align-items-center justify-content-between">
+                                  <div class="mb-3 custom-text-dark">
+                                    <i class="mdi mdi-account-hard-hat-outline text-muted me-2"></i
+                                    >Engineer: <strong>Ahmad Kurniawan</strong>
+                                  </div>
+                                  <div class="mb-3 custom-text-dark">
+                                    <i class="mdi mdi-store-outline text-muted me-2"></i
+                                    >Vendor: <strong>Nasmoco Motor</strong>
+                                  </div>
+                                </div>
+                                <!-- Root Cause -->
+                                <div class="mb-3">
+                                  <div class="row g-3">
+                                    <div class="col-md-4">
+                                      <div class="bg-label-primary border px-3 py-2 rounded-3">
+                                        <span class="small text-muted">Machine</span>
+                                        <p class="fw-semibold mb-0 text-dark">Lubrication System</p>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                      <div class="bg-label-primary border px-3 py-2 rounded-3">
+                                        <span class="small text-muted">Component</span>
+                                        <p class="fw-semibold mb-0 text-dark">Colant Mechines</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <p class="mb-3 custom-text-dark">
+                                  Action: Dilakukan pergantian seal pada cover engine merk after market.
+                                </p>
+                                <div class="mb-3">
+                                  <span class="custom-text-dark">Documentation (audio, photo, video or file):</span>
+                                  <div class="row align-items-start mt-2">
+                                    <div class="d-flex gap-3">
+                                      <div id="previewContainer-1" class="d-flex gap-3 flex-wrap">
+                                        <div class="image-preview position-relative">
+                                          <img src="https://image.sumberberkatabadi.com/s3/productimages/webp/co26696/p1323680/w600-h600/5d9804e6-8311-4c0d-b3e7-9b7d6fa129fc.jpg" class="img-thumbnail">
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="d-flex justify-content-end gap-2 mt-3">
+                                  <button class="btn btn-outline-secondary">
+                                    <i class="mdi mdi-pencil me-1"></i>Edit
+                                  </button>
+                                  <button class="btn btn-outline-danger">
+                                    <i class="mdi mdi-delete-outline me-1"></i>Remove
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Cost Report -->
+                <div
+                  class="tab-pane fade"
+                  id="navs-cost-report"
+                  role="tabpanel">
                   <div class="card mb-3">
                     <div class="card-body">
                       <div class="d-flex gap-2 align-items-center mb-3">
@@ -652,6 +894,103 @@
                             <i class="mdi mdi-plus"></i> ADD
                           </button>
                         </div>
+
+                        <div class="row g-2 align-items-center mb-3">
+                          <!-- Dropdown Selects -->
+                          <div class="col-md-7 col-7">
+                            <div class="row g-2">
+                              <div class="col-md-6 col-6">
+                                <div class="form-floating form-floating-outline">
+                                  <select class="form-select select" id="assetName">
+                                    <option>Select Asset Name</option>
+                                    <option selected>Oil Filter</option>
+                                    <option value="1">Asset Name 1</option>
+                                    <option value="2">Asset Name 2</option>
+                                    <option value="3">Asset Name 3</option>
+                                  </select>
+                                  <label for="assetName">Asset Name</label>
+                                </div>
+                              </div>
+                              <div class="col-md-6 col-6">
+                                <div class="form-floating form-floating-outline">
+                                  <select class="form-select select" id="itemNumber">
+                                    <option>Select Item Number</option>
+                                    <option selected>i-2024-01-11-0001</option>
+                                    <option value="1">Item Number 1</option>
+                                    <option value="2">Item Number 2</option>
+                                    <option value="3">Item Number 3</option>
+                                  </select>
+                                  <label for="itemNumber">Item Number</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Cost Input -->
+                          <div class="col-md-3 col-3">
+                            <div class="form-floating form-floating-outline">
+                              <input type="number" class="form-control" id="floatingInput" value="50.000" placeholder="Cost" disabled>
+                              <label for="floatingInput">Cost</label>
+                            </div>
+                          </div>
+
+                          <!-- Remove Button -->
+                          <div class="col-md-2 col-2 d-flex align-items-center">
+                            <button class="btn btn-text-danger text-capitalize p-0">
+                              <i class="mdi mdi-minus me-2"></i>
+                              <span class="d-none d-md-block">Remove</span>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="row g-2 align-items-center mb-3">
+                          <!-- Dropdown Selects -->
+                          <div class="col-md-7 col-7">
+                            <div class="row g-2">
+                              <div class="col-md-6 col-6">
+                                <div class="form-floating form-floating-outline">
+                                  <select class="form-select select" id="assetName">
+                                    <option>Select Asset Name</option>
+                                    <option selected>Oil Filter</option>
+                                    <option value="1">Asset Name 1</option>
+                                    <option value="2">Asset Name 2</option>
+                                    <option value="3">Asset Name 3</option>
+                                  </select>
+                                  <label for="assetName">Asset Name</label>
+                                </div>
+                              </div>
+                              <div class="col-md-3 col-3">
+                                <div class="form-floating form-floating-outline">
+                                  <input type="number" class="form-control" id="floatingInput" value="10" placeholder="John Doe" aria-describedby="floatingInputHelp" disabled>
+                                  <label for="floatingInput">Available</label>
+                                </div>
+                              </div>
+                              <div class="col-md-3 col-3">
+                                <div class="form-floating form-floating-outline">
+                                  <input type="number" class="form-control" id="floatingInput" value="40" placeholder="John Doe" aria-describedby="floatingInputHelp">
+                                  <label for="floatingInput">Qty Used</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Cost Input -->
+                          <div class="col-md-3 col-3">
+                            <div class="form-floating form-floating-outline">
+                              <input type="number" class="form-control" id="floatingInput" value="5000" placeholder="Cost" disabled>
+                              <label for="floatingInput">Cost</label>
+                            </div>
+                          </div>
+
+                          <!-- Remove Button -->
+                          <div class="col-md-2 col-2 d-flex align-items-center">
+                            <button class="btn btn-text-danger text-capitalize p-0">
+                              <i class="mdi mdi-minus me-2"></i>
+                              <span class="d-none d-md-block">Remove</span>
+                            </button>
+                          </div>
+                        </div>
+
                         <div class="row g-2 align-items-center mb-3">
                           <!-- Dropdown Selects -->
                           <div class="col-md-7 col-7">
@@ -692,21 +1031,21 @@
                       <div class="text-end fs-3 text-primary fw-semibold">Total : 755.000</div>
                       <hr class="my-2">
                       <div class="row align-items-start mt-4">
-                        <div class="col-md-2 text-md-end mb-2 mb-md-0">Documentation</div>
-                          <div class="col-md-10">
-                            <div class="d-flex gap-3">
-                              <div id="previewContainer-1" class="d-flex gap-3 flex-wrap">
-                                <div class="image-preview position-relative">
-                                  <img src="https://image.sumberberkatabadi.com/s3/productimages/webp/co26696/p1323680/w600-h600/5d9804e6-8311-4c0d-b3e7-9b7d6fa129fc.jpg" class="img-thumbnail">
-                                  <button class="delete-btn">DELETE</button>
-                                </div>
+                        <div class="col-md-2 text-md-end mb-2 mb-md-0">Documentation (audio, photo, video or file):</div>
+                        <div class="col-md-10">
+                          <div class="d-flex gap-3">
+                            <div id="previewContainer-1" class="d-flex gap-3 flex-wrap">
+                              <div class="image-preview position-relative">
+                                <img src="https://image.sumberberkatabadi.com/s3/productimages/webp/co26696/p1323680/w600-h600/5d9804e6-8311-4c0d-b3e7-9b7d6fa129fc.jpg" class="img-thumbnail">
+                                <button class="delete-btn">DELETE</button>
                               </div>
-                              <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
-                              <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
-                                <i class="mdi mdi-24px mdi-plus text-primary"></i>
-                              </label>
                             </div>
+                            <input type="file" id="Documentation (audio, photo, video or file):Upload-1" class="d-none" accept="image/*" multiple>
+                            <label for="Documentation (audio, photo, video or file):Upload-1" class="upload-box" id="uploadBox-1">
+                              <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                            </label>
                           </div>
+                        </div>
                       </div>
                     </div>
                     <div class="card-footer">
@@ -719,84 +1058,8 @@
                       </div>
                     </div>
                   </div>
-                  <h5>Corrective Action</h5>
-                  <div class="card mb-3">
-                    <div class="card-body">
-                      <div class="row align-items-center" role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0002" aria-expanded="false" aria-controls="detailINSP-0002">
-                        <div class="col-md-6 mb-3 mb-md-0">
-                          <div class="d-flex gap-2 align-items-center justify-content-between justify-content-md-start mb-1">
-                            <div class="flex gap-2">
-                              <span>INSP-0001</span>
-                              <span>(0/1)</span>
-                            </div>
-                          </div>
-                          <div class="fs-6">Check Oil Volume</div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="d-flex gap-1 justify-content-md-end">
-                            <i class="mdi mdi-36px mdi-chevron-down text-dark d-none d-md-block"></i>
-                          </div>
-                        </div>
-                        <i class="mdi mdi-36px mdi-chevron-down text-dark d-block d-md-none text-center mt-1"></i>
-                      </div>
-
-                      <div class="collapse mt-2" id="detailINSP-0002">
-                        <hr class="my-3"/>
-                        <div class="row align-items-start mb-3">
-                          <div class="col-md-2 text-md-end mb-2 mb-md-0">Root Cause:</div>
-                          <div class="col-md-10">
-                            <ol>
-                              <li >Machine > Lubrication System</li>
-                              <li >Machine > Colant Mechines </li>
-                            </ol>
-                          </div>
-                        </div>
-                        <div class="row align-items-start mb-3">
-                          <div class="col-md-2 text-md-end mb-2 mb-md-0">Issue Description:</div>
-                          <div class="col-md-10">
-                            Ada kebocoran oli dari area mesin
-                          </div>
-                        </div>
-                        <!-- 1 -->
-                        <div class="accordion border rounded-2 shadow-none mb-3" id="accordionExample">
-                          <div class="accordion-item bordered-box">
-                            <h2 class="accordion-header" id="headingOne">
-                              <button class="accordion-button text-dark collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="background-color: #3c57a110;">
-                                01. Wednesday, 02 Jul 2025
-                              </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                <div class="row align-items-start mb-3">
-                                  <div class="col-md-3 text-md-end mb-2 mb-md-0">Engineering:</div>
-                                  <div class="col-md-9">Ahmad Kurniawan</div>
-                                </div>
-                                <div class="row align-items-start mb-3">
-                                  <div class="col-md-3 text-md-end mb-2 mb-md-0">Vendor:</div>
-                                  <div class="col-md-9">-</div>
-                                </div>
-                                <div class="row align-items-start mb-3">
-                                  <div class="col-md-3 text-md-end mb-2 mb-md-0">Action Description:</div>
-                                  <div class="col-md-9">Dilakukan pergantian seal pada cover engine merk after market</div>
-                                </div>
-                                <div class="row align-items-start mb-3">
-                                  <div class="col-md-3 text-md-end mb-2 mb-md-0">Documentation</div>
-                                    <div class="col-md-9">
-                                      <div id="previewContainer-1" class="d-flex gap-3 flex-wrap">
-                                        <div class="image-preview position-relative">
-                                          <img src="https://image.sumberberkatabadi.com/s3/productimages/webp/co26696/p1323680/w600-h600/5d9804e6-8311-4c0d-b3e7-9b7d6fa129fc.jpg" class="img-thumbnail">
-                                        </div>
-                                      </div>
-                                    </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
+                <!-- Update Last Done -->
                 <div
                   class="tab-pane fade"
                   id="navs-update-last-done"
@@ -820,7 +1083,6 @@
                                     class="form-control pe-5"
                                     placeholder="YYYY-MM-DD"
                                     id="startDate"
-                                    value="2025/07/25"
                                   />
                                   <label for="startDate">Start On</label>
                                 </div>
@@ -839,7 +1101,7 @@
                                 </div>
                               </div>
                               <div class="form-floating form-floating-outline mb-3">
-                                <input type="number" class="form-control" id="initalData" placeholder="e.g 10" value="450">
+                                <input type="text" class="form-control" id="initalData" placeholder="e.g 10">
                                 <label for="initalData">Start on</label>
                               </div>
                               <div>Next Due : 16 Des 2025</div>
@@ -855,7 +1117,7 @@
                                 </div>
                               </div>
                               <div class="form-floating form-floating-outline mb-3">
-                                <input type="text" class="form-control" id="initalData" placeholder="e.g 10" value="100">
+                                <input type="text" class="form-control" id="initalData" placeholder="e.g 10">
                                 <label for="initalData">Start On</label>
                               </div>
                               <div>Next Due : 16 Des 2025</div>
@@ -864,7 +1126,7 @@
                         </div>
                       </div>
                       <div class="row mb-2">
-                        <div class="col-md-2 text-md-end mb-2 mb-md-0">Documentation (Optional)</div>
+                        <div class="col-md-2 text-md-end mb-2 mb-md-0">Documentation (audio, photo, video or file): (Optional)</div>
                         <div class="col-md-10">
                           <div class="d-flex gap-3">
                             <div id="previewContainer-1" class="d-flex gap-3 flex-wrap">
@@ -877,8 +1139,8 @@
                                 <button class="delete-btn">DELETE</button>
                               </div>
                             </div>
-                            <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
-                            <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
+                            <input type="file" id="Documentation (audio, photo, video or file):Upload-1" class="d-none" accept="image/*" multiple>
+                            <label for="Documentation (audio, photo, video or file):Upload-1" class="upload-box" id="uploadBox-1">
                               <i class="mdi mdi-24px mdi-plus text-primary"></i>
                             </label>
                           </div>
@@ -897,7 +1159,6 @@
                   </div>
                 </div>
               </div>
-            </div>
             <!-- / Content -->
           </div>
           <!-- Content wrapper -->
@@ -929,138 +1190,94 @@
                     <input type="text" class="form-control" id="defaultFormControlInput" value="Lubrication System" placeholder="e.g Lubrication System" aria-describedby="defaultFormControlHelp">
                     <button class="btn btn-sm btn-text-danger text-capitalize px-md-4"><i class="mdi mdi-minus me-2"></i><span class="d-none d-md-block">Remove</span></button>
                   </div>
+                  <div class="d-flex gap-2 align-items-center text-wrap mb-2">
+                    <div class="col-md-4">
+                      <select class="form-select select2 col-md-3 col-12" id="rootCauseSelect2">
+                        <option selected>Machine</option>
+                        <option value="1">Electrical</option>
+                        <option value="2">Safety</option>
+                        <option value="3">Other</option>
+                      </select>
+                    </div>
+                    <input type="text" class="form-control" id="defaultFormControlInput" value="Coolant Machines" placeholder="e.g Lubrication System" aria-describedby="defaultFormControlHelp">
+                    <button class="btn btn-sm btn-text-danger text-capitalize px-md-4"><i class="mdi mdi-minus me-2"></i><span class="d-none d-md-block">Remove</span></button>
+                  </div>
                   <button class="btn btn-text-primary p-0"><i class="mdi mdi-plus"></i>Add root cause</button>
                 </div>
               </div>
               <div class="row align-items-start mb-3">
                 <div class="col-md-2 text-md-end mb-2 mb-md-0">Issue Description</div>
                 <div class="col-md-10">
-                  <textarea class="form-control disabled" id="issueDescription" rows="4" disabled>Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
+                  <textarea class="form-control" id="issueDescription" rows="4">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
                 </div>
               </div>
               <hr class="my-3">
               <div class="d-flex gap-2 align-items-center mb-3">
                 <h5 class="mb-0">Actions:</h5>
-                <button class="btn btn-text-primary p-0"><i class="mdi mdi-plus"></i>ADD</button>
               </div>
-              <!-- 1 -->
-              <div class="accordion border rounded-2 shadow-none mb-3" id="accordionExample">
-                <div class="accordion-item bordered-box">
-                  <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button text-dark collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="background-color: #3c57a110;">
-                      01. Wednesday, 02 Jul 2025
-                    </button>
-                  </h2>
-                  <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                    <div class="d-flex justify-content-end px-3 py-3">
-                      <a href="#" class="me-3 text-decoration-none">Edit</a>
-                      <a href="#" class="text-danger text-decoration-none">Remove</a>
-                    </div>
-                    <div class="accordion-body">
-                      <div class="row align-items-start mb-3">
-                        <div class="col-md-3 text-md-end mb-2 mb-md-0">Engineering:</div>
-                        <div class="col-md-9">Ahmad Kurniawan</div>
+              <div class="">
+                <div class="row align-items-center mb-3">
+                  <div class="col-md-2 mb-2 mb-md-0">Date:</div>
+                  <div class="col-md-10">
+                    <div class="position-relative">
+                      <div class="form-floating form-floating-outline">
+                        <input
+                          type="text"
+                          class="form-control pe-5"
+                          placeholder="YYYY-MM-DD"
+                          id="startDate"
+                        />
                       </div>
-                      <div class="row align-items-start mb-3">
-                        <div class="col-md-3 text-md-end mb-2 mb-md-0">Vendor:</div>
-                        <div class="col-md-9">-</div>
-                      </div>
-                      <div class="row align-items-start mb-3">
-                        <div class="col-md-3 text-md-end mb-2 mb-md-0">Action Description:</div>
-                        <div class="col-md-9">Dilakukan pergantian seal pada cover engine merk after market</div>
-                      </div>
-                      <div class="row align-items-start mb-3">
-                        <div class="col-md-3 text-md-end mb-2 mb-md-0">Documentation</div>
-                          <div class="col-md-9">
-                            <div id="previewContainer-1" class="d-flex gap-3 flex-wrap">
-                              <div class="image-preview position-relative">
-                                <img src="https://image.sumberberkatabadi.com/s3/productimages/webp/co26696/p1323680/w600-h600/5d9804e6-8311-4c0d-b3e7-9b7d6fa129fc.jpg" class="img-thumbnail">
-                              </div>
-                            </div>
-                          </div>
-                      </div>
+                      <i class="mdi mdi-calendar position-absolute text-muted" style="top: 50%; right: 15px; transform: translateY(-50%); pointer-events: none;"></i>
                     </div>
                   </div>
                 </div>
-              </div>
-              <!-- 2 -->
-              <div class="accordion border rounded-2 shadow-none mb-3" id="accordionExample">
-                <div class="accordion-item bordered-box">
-                  <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button text-dark collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseOne" style="background-color: #3c57a110;">
-                      02. -
-                    </button>
-                  </h2>
-                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <div class="d-flex justify-content-end px-3 py-3">
-                        <a href="#" class="text-decoration-none">Save</a>
-                      </div>
-                      <div class="row align-items-center mb-3">
-                        <div class="col-md-3 text-md-end mb-2 mb-md-0">Date:</div>
-                        <div class="col-md-9">
-                          <div class="position-relative">
-                            <div class="form-floating form-floating-outline">
-                              <input
-                                type="text"
-                                class="form-control pe-5"
-                                placeholder="YYYY-MM-DD"
-                                id="startDate"
-                              />
-                            </div>
-                            <i class="mdi mdi-calendar position-absolute text-muted" style="top: 50%; right: 15px; transform: translateY(-50%); pointer-events: none;"></i>
-                          </div>
+                <div class="row align-items-center mb-3">
+                  <div class="col-md-2 mb-2 mb-md-0">Engineer:</div>
+                  <div class="col-md-10">
+                    <div class="form-floating form-floating-outline">
+                      <select class="form-select select2" id="engineerSelect">
+                        <option selected>Select Engineer</option>
+                        <option value="1">Engineer 1</option>
+                        <option value="2">Engineer 2</option>
+                        <option value="3">Engineer 3</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <div class="col-md-2 mb-2 mb-md-0">Vendor:</div>
+                  <div class="col-md-10">
+                    <div class="form-floating form-floating-outline">
+                      <select class="form-select select2" id="vendorSelect">
+                        <option selected>Select Vendor</option>
+                        <option value="1">Vendor 1</option>
+                        <option value="2">Vendor 2</option>
+                        <option value="3">Vendor 3</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row align-items-start mb-3">
+                  <div class="col-md-2 mb-2 mb-md-0">Action Description:</div>
+                  <div class="col-md-10">
+                      <textarea class="form-control" id="issueDescription" rows="4">Dilakukan pergantian seal ulang pada cover engine merk Toyota Genuine Part</textarea>
+                  </div>
+                </div>
+                <div class="row align-items-start mb-3">
+                  <div class="col-md-2 mb-2 mb-md-0">Documentation (audio, photo, video or file):</div>
+                  <div class="col-md-10">
+                    <div class="d-flex gap-3">
+                      <div id="previewContainer-1" class="d-flex gap-3 flex-wrap">
+                        <div class="image-preview position-relative">
+                          <img src="https://image.sumberberkatabadi.com/s3/productimages/webp/co26696/p1323680/w600-h600/5d9804e6-8311-4c0d-b3e7-9b7d6fa129fc.jpg" class="img-thumbnail">
+                          <button class="delete-btn">DELETE</button>
                         </div>
                       </div>
-                      <div class="row align-items-center mb-3">
-                        <div class="col-md-3 text-md-end mb-2 mb-md-0">Engineering:</div>
-                        <div class="col-md-9">
-                          <div class="form-floating form-floating-outline">
-                            <select class="form-select select2" id="engineerSelect">
-                              <option selected>Select Engineer</option>
-                              <option value="1">Engineer 1</option>
-                              <option value="2">Engineer 2</option>
-                              <option value="3">Engineer 3</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row align-items-center mb-3">
-                        <div class="col-md-3 text-md-end mb-2 mb-md-0">Vendor:</div>
-                        <div class="col-md-9">
-                          <div class="form-floating form-floating-outline">
-                            <select class="form-select select2" id="vendorSelect">
-                              <option selected>Select Vendor</option>
-                              <option value="1">Vendor 1</option>
-                              <option value="2">Vendor 2</option>
-                              <option value="3">Vendor 3</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row align-items-start mb-3">
-                        <div class="col-md-3 text-md-end mb-2 mb-md-0">Action Description:</div>
-                        <div class="col-md-9">
-                            <textarea class="form-control" id="issueDescription" rows="4">Dilakukan pergantian seal ulang pada cover engine merk Toyota Genuine Part</textarea>
-                        </div>
-                      </div>
-                      <div class="row align-items-start mb-3">
-                        <div class="col-md-3 text-md-end mb-2 mb-md-0">Documentation</div>
-                          <div class="col-md-9">
-                            <div class="d-flex gap-3">
-                              <div id="previewContainer-1" class="d-flex gap-3 flex-wrap">
-                                <div class="image-preview position-relative">
-                                  <img src="https://image.sumberberkatabadi.com/s3/productimages/webp/co26696/p1323680/w600-h600/5d9804e6-8311-4c0d-b3e7-9b7d6fa129fc.jpg" class="img-thumbnail">
-                                  <button class="delete-btn">DELETE</button>
-                                </div>
-                              </div>
-                              <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
-                              <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
-                                <i class="mdi mdi-24px mdi-plus text-primary"></i>
-                              </label>
-                            </div>
-                          </div>
-                      </div>
+                      <input type="file" id="Documentation (audio, photo, video or file):Upload-1" class="d-none" accept="image/*" multiple>
+                      <label for="Documentation (audio, photo, video or file):Upload-1" class="upload-box" id="uploadBox-1">
+                        <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                      </label>
                     </div>
                   </div>
                 </div>

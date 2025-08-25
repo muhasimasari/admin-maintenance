@@ -202,7 +202,7 @@
             <li class="menu-item active">
               <a href="./schedule-task.html" class="menu-link">
                 <i class="menu-icon tf-icons mdi mdi-calendar-badge-outline"></i>
-                <div data-i18n="Scheduled Task">Scheduled Task</div>
+                <div data-i18n="Work List">Work List</div>
               </a>
             </li>
             <li class="menu-item">
@@ -357,6 +357,112 @@
                 </ol>
               </nav>
               
+              <div class="card mb-4">
+                <div class="card-body">
+                  <div class="row justify-content-between align-items-center">
+                    <h5 class="col-md-6 mb-0">General Information</h5>
+                    <div class="col-md-6 text-end d-none d-md-block">
+                      <span class="px-4 py-2 custom-bg-warning rounded-1 text-white text-uppercase">In Progress</span>
+                    </div>
+                  </div>
+                  <div class="row g-4 my-2">
+                    <div class="col-12 d-block d-md-none">
+                      <span class="px-4 py-2 custom-bg-warning rounded-1 text-white text-uppercase">In Progress</span>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card shadow-none">
+                        <div class="card-body p-0">
+                          <div class="d-flex align-items-center">
+                            <div class="avatar me-3">
+                              <span class="avatar-initial rounded-3 bg-primary"><i class="mdi mdi-cog mdi-24px"></i></span>
+                            </div>
+                            <div class="flex-grow-1">
+                              <span class="fw-normal small">MTC Task</span>
+                              <h6 class="mb-0 mt-1">MC-A001 - Engine Oil</h6>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card shadow-none">
+                        <div class="card-body p-0">
+                          <div class="d-flex align-items-center">
+                            <div class="avatar me-3">
+                              <span class="avatar-initial rounded-3 custom-bg-success"><i class="mdi mdi-archive mdi-24px"></i></span>
+                            </div>
+                            <div class="flex-grow-1">
+                              <span class="fw-normal small">Asset Name</span>
+                              <h6 class="mb-0 mt-1">Innova Reborn Hitam</h6>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card shadow-none">
+                        <div class="card-body p-0">
+                          <div class="d-flex align-items-center">
+                            <div class="avatar me-3">
+                              <span class="avatar-initial rounded-3 custom-bg-success"><i class="mdi mdi-code-not-equal-variant mdi-24px"></i></span>
+                            </div>
+                            <div class="flex-grow-1">
+                              <span class="fw-normal small">Asset Code</span>
+                              <h6 class="mb-0 mt-1">01-03-39-57-84-0V2</h6>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card shadow-none">
+                        <div class="card-body p-0">
+                          <div class="d-flex align-items-center">
+                            <div class="avatar me-3">
+                              <span class="avatar-initial rounded-3 custom-bg-warning"><i class="mdi mdi-calendar-month mdi-24px"></i></span>
+                            </div>
+                            <div class="flex-grow-1">
+                              <span class="fw-normal small">Elapsed Time</span>
+                              <h6 class="mb-0 mt-1">2 day(s), Since 30 Jun 2025</h6>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card shadow-none">
+                        <div class="card-body p-0">
+                          <div class="d-flex align-items-center">
+                            <div class="avatar me-3">
+                              <span class="avatar-initial rounded-3 custom-bg-danger"><i class="mdi mdi-account-hard-hat mdi-24px"></i></span>
+                            </div>
+                            <div class="flex-grow-1 col-7">
+                              <span class="fw-normal small">Engineers</span>
+                              <h6 class="mb-0 mt-1 text-decoration-underline text-truncate text-primary cursor-pointer">Antoni Setyawan, Budi Kuncoro</h6>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card shadow-none">
+                        <div class="card-body p-0">
+                          <div class="d-flex align-items-center">
+                            <div class="avatar me-3">
+                              <span class="avatar-initial rounded-3 custom-bg-primary"><i class="mdi mdi-store mdi-24px"></i></span>
+                            </div>
+                            <div class="flex-grow-1 col-7">
+                              <span class="fw-normal small">Vendors</span>
+                              <h6 class="mb-0 mt-1 text-decoration-underline text-truncate text-primary cursor-pointer">Abadi Jaya Motor, Astra Spare Part Motor</h6>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
               <div class="nav-align-top mb-4">
                 <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item">
@@ -369,7 +475,7 @@
                       aria-controls="navs-inspections"
                       aria-selected="true"
                     >
-                      Inspections
+                      Inspections <span class="ms-1 fw-bold">(6)</span>
                     </button>
                   </li>
                   <li class="nav-item">
@@ -391,6 +497,19 @@
                       class="nav-link"
                       role="tab"
                       data-bs-toggle="tab"
+                      data-bs-target="#navs-cost-report"
+                      aria-controls="navs-cost-report"
+                      aria-selected="false"
+                    >
+                      Cost Report
+                    </button>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      type="button fw-semibold"
+                      class="nav-link"
+                      role="tab"
+                      data-bs-toggle="tab"
                       data-bs-target="#navs-update-last-done"
                       aria-controls="navs-update-last-done"
                       aria-selected="false"
@@ -402,88 +521,172 @@
               </div>
 
               <div class="tab-content p-0">
+                <!-- Inspection -->
                 <div
                   class="tab-pane fade show active"
                   id="navs-inspections"
                   role="tabpanel"
                 >
+                  <!-- Filter -->
+                  <div class="row g-3 mb-4">
+                    <div class="col-md-2 col-4">
+                      <button type="button" class="btn btn-success d-flex flex-column w-100">
+                        <span class="fs-4 fw-semibold">1</span>
+                        <span class="fw-normal small">OK & RV</span>
+                      </button>
+                    </div>
+                    <div class="col-md-2 col-4">
+                      <button type="button" class="btn btn-info d-flex flex-column w-100">
+                        <span class="fs-4 fw-semibold">1</span>
+                        <span class="fw-normal small">NG</span>
+                      </button>
+                    </div>
+                    <div class="col-md-2 col-4">
+                      <button type="button" class="btn btn-danger d-flex flex-column w-100">
+                        <span class="fs-4 fw-semibold">1</span>
+                        <span class="fw-normal small">DF & NA</span>
+                      </button>
+                    </div>
+                    <div class="col-md-2 col-4">
+                      <button type="button" class="btn btn-warning custom-text-dark d-flex flex-column w-100 px-0">
+                        <span class="fs-4 fw-semibold">0</span>
+                        <span class="fw-normal small">In Progress</span>
+                      </button>
+                    </div>
+                    <div class="col-md-2 col-4">
+                      <button type="button" class="btn btn-dark d-flex flex-column w-100">
+                        <span class="fs-4 fw-semibold">1</span>
+                        <span class="fw-normal small">Pending</span>
+                      </button>
+                    </div>
+                  </div>
                   <!-- 1 -->
                   <div class="card mb-3">
                     <div class="card-body">
                       <div class="row align-items-center">
-                        <div class="col-md-6 mb-3 mb-md-0" role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0002" aria-expanded="false" aria-controls="detailINSP-0002">
-                          <div class="d-flex gap-2 align-items-center justify-content-between justify-content-md-start mb-1">
-                            <div class="flex gap-2">
-                              <span>INSP-0001</span>
-                              <span>(0/1)</span>
-                            </div>
-                            <span class="custom-bg-secondary text-uppercase px-2 py-1 rounded-1">Pending</span>
+                        <div class="col-md-6 mb-3 mb-md-0"  role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0002" aria-expanded="false" aria-controls="detailINSP-0002">
+                          <div class="d-flex gap-2 align-items-center justify-content-between justify-content-md-start mb-1 mb-md-0">
+                            <span class="custom-bg-secondary text-uppercase px-2 py-1 rounded-1 order-1 order-md-0">Pending</span>
+                            <h5 class="mb-0 order-0 order-md-1 d-flex">INSP-0001<span class="d-md-block d-none"> : Check Engine Cover Seal (0/1)</span></h5>
                           </div>
-                          <div class="fs-6">Check Oil Volume</div>
+                          <span class="d-md-none d-block">Check Engine Cover Seal (0/1)</span>
                         </div>
                         <div class="col-md-6">
                           <div class="d-flex gap-1 justify-content-md-end">
-                            <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#escalateNotStartedModal">
-                              <i class="mdi mdi-information-variant"></i> ESCALATE
-                            </button>
-                            <button class="btn btn-text-dark p-0" role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0002" aria-expanded="false" aria-controls="detailINSP-0002">
-                              <i class="mdi mdi-36px mdi-chevron-down text-dark d-none d-md-block"></i>
+                            <button type="button" class="btn btn-text-dark p-0"  role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0002" aria-expanded="false" aria-controls="detailINSP-0002">
+                              <i class="mdi mdi-24px mdi-chevron-down text-dark d-none d-md-block custom-toggle-icon"></i>
                             </button>
                           </div>
                         </div>
-                        <i class="mdi mdi-36px mdi-chevron-down text-dark d-block d-md-none text-center mt-1"></i>
+                        <button type="button" class="btn btn-text-dark p-0 d-block d-md-none"  role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0002" aria-expanded="false" aria-controls="detailINSP-0002">
+                          <i class="mdi mdi-24px mdi-chevron-down text-dark text-center mt-1 custom-toggle-icon"></i>
+                        </button>
                       </div>
 
-                      <div class="collapse" id="detailINSP-0002">
-                        <div class="">
-                          <hr class="mt-3">
+                      <div class="collapse custom-collapse mt-2" id="detailINSP-0002">
+                        <div class="d-block d-md-none">
+                          <hr>
+                          <div class="d-block align-items-center justify-content-between my-3">
+                            <a class="btn btn-text-primary p-0 text-capitalize" data-bs-toggle="collapse" href="#collapseDocuments" role="button" aria-expanded="false" aria-controls="collapseDocuments">
+                              View Documents <i class="mdi mdi-chevron-double-down ms-1"></i>
+                            </a>
+                            <div class="collapse mb-3" id="collapseDocuments">
+                              <div class="row g-3 align-items-center">
+                                <div class="col-md-3">
+                                  <div class="border rounded-2 p-3 text-center">
+                                    SOP Penggantian Oli All New Avanza.pdf<br/>
+                                    <a href="#" target="_blank">View</a>
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="border rounded-2 p-3 text-center">
+                                    SOP Check Sensor Oli All New Avanza.pdf<br/>
+                                    <a href="#" target="_blank">View</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center mt-3">
+                              <button class="btn btn-danger">deferred</button>
+                              <button class="btn btn-outline-danger">not available</button>
+                            </div>
+                          </div>
+                        </div>
+                        <hr>
+                        <div class="mt-2">
                           <!-- Insp 1 -->
-                          <div class="d-flex gap-2 mt-3">
-                            <span>01</span>
-                            <div class="border px-3 py-3 rounded-2 w-100">
-                              <div class="row align-items-center justify-content-between">
-                                <div class="col-md-8">
-                                  <div class="d-flex flex-column mb-3 mb-md-0">
-                                    <span>Read oil dipstick</span>
+                          <div class="d-block gap-2 my-3">
+                            <div class="d-block d-md-flex align-items-center justify-content-between w-100 mb-2">
+                              <div class="col-md-8">
+                                <div class="d-flex mb-3 mb-md-0">
+                                  <div class="me-2">01</div>
+                                  <div class="d-flex flex-column">
+                                    <span class="fs-6">Read oil dipstick</span>
                                     <span class="text-muted">Memeriksa kondisi volume oli setelah pergantian oli</span>
                                   </div>
                                 </div>
-                                <div class="col-md-4">
-                                  <div class="radio-group choose-radio-button justify-content-end">
-                                    <input type="radio" id="tireFail" name="inspectionResult-1" class="radio-button-input radio-fail" value="fail">
-                                    <label for="tireFail" class="radio-button-label">
-                                      <i class="mdi mdi-close me-1"></i>
-                                      FAIL
-                                    </label>
-
-                                    <input type="radio" id="tirePass" name="inspectionResult-1" class="radio-button-input radio-pass" value="pass">
-                                    <label for="tirePass" class="radio-button-label">
-                                      <i class="mdi mdi-check me-1"></i>
-                                      PASS
-                                    </label>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="radio-group choose-radio-button justify-content-end">
+                                  <input type="radio" id="tireFail" name="inspectionResult-1" class="radio-button-input radio-fail" value="fail">
+                                  <label for="tireFail" class="radio-button-label">
+                                    <i class="mdi mdi-close me-1"></i>
+                                    FAIL
+                                  </label>
+                                  <input type="radio" id="tirePass" name="inspectionResult-1" class="radio-button-input radio-pass" value="pass">
+                                  <label for="tirePass" class="radio-button-label">
+                                    <i class="mdi mdi-check me-1"></i>
+                                    PASS
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div id="failDetails-1" class="collapse">
+                              <div class="gap-2 text-wrap ms-4">
+                                <label class="form-label me-2">Documentation (audio, photo, video or file):</label>
+                                <div class="d-flex gap-2">
+                                  <div id="previewContainer-1" class="d-flex gap-3 flex-wrap"></div>
+                                  <input type="file" id="Documentation (audio, photo, video or file):Upload-1" class="d-none" accept="image/*" multiple>
+                                  <label for="Documentation (audio, photo, video or file):Upload-1" class="upload-box" id="uploadBox-1">
+                                    <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="mt-4 gap-2 text-wrap ms-4">
+                                <label class="form-label" style="margin-right: 4rem;">Remarks</label>
+                                <textarea class="form-control w-md-50 w-100" rows="5">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
+                              </div>
+                            </div>
+                            <!-- <button id="hideDetailsBtn-1" class="btn btn-outline-secondary mt-4 w-100" style="display: none!important;">
+                              hide details <i class="mdi mdi-chevron-up"></i>
+                            </button> -->
+                          </div>
+                          <div class="d-none d-md-block mt-3">
+                            <hr>
+                            <div class="d-flex align-items-center justify-content-between mt-3">
+                              <a class="btn btn-text-primary p-0 text-capitalize" data-bs-toggle="collapse" href="#collapseDocuments" role="button" aria-expanded="false" aria-controls="collapseDocuments">
+                                View Documents <i class="mdi mdi-chevron-double-down ms-1"></i>
+                              </a>
+                              <div class="d-flex gap-2 align-items-center">
+                                <button class="btn btn-danger">deferred</button>
+                                <button class="btn btn-outline-danger">not available</button>
+                              </div>
+                            </div>
+                            <div class="collapse mt-3 " id="collapseDocuments">
+                              <div class="row g-3 align-items-center">
+                                <div class="col-md-3">
+                                  <div class="border rounded-2 p-3 text-center">
+                                    SOP Penggantian Oli All New Avanza.pdf<br/>
+                                    <a href="#" target="_blank">View</a>
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="border rounded-2 p-3 text-center">
+                                    SOP Check Sensor Oli All New Avanza.pdf<br/>
+                                    <a href="#" target="_blank">View</a>
                                   </div>
                                 </div>
                               </div>
-                              <div id="failDetails-1" class="collapse mt-3">
-                                <hr class="my-2">
-                                <div class="mt-3 d-md-flex  gap-2 text-wrap">
-                                  <label class="form-label me-2">Documentation</label>
-                                  <div class="d-flex gap-2">
-                                    <div id="previewContainer-1" class="d-flex gap-3 flex-wrap"></div>
-                                    <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
-                                    <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
-                                      <i class="mdi mdi-24px mdi-plus text-primary"></i>
-                                    </label>
-                                  </div>
-                                </div>
-                                <div class="mt-4 d-md-flex gap-2 text-wrap">
-                                  <label class="form-label" style="margin-right: 4rem;">Remarks</label>
-                                  <textarea class="form-control" rows="5">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
-                                </div>
-                              </div>
-                              <button id="hideDetailsBtn-1" class="btn btn-outline-secondary mt-4 w-100" style="display: none!important;">
-                                hide details <i class="mdi mdi-chevron-up"></i>
-                              </button>
                             </div>
                           </div>
                         </div>
@@ -495,41 +698,83 @@
                   <div class="card mb-3">
                     <div class="card-body">
                       <div class="row align-items-center">
-                        <div class="col-md-6 mb-3 mb-md-0" role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0001" aria-expanded="false" aria-controls="detailINSP-0001">
-                          <div class="d-flex gap-2 align-items-center justify-content-between justify-content-md-start mb-1">
-                            <div class="flex gap-2">
-                              <span>INSP-0002</span>
-                              <span>(0/1)</span>
-                            </div>
-                            <span class="custom-bg-danger text-uppercase px-2 py-1 rounded-1">DEFFERED</span>
+                        <div class="col-md-6 mb-3 mb-md-0"  role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0001" aria-expanded="false" aria-controls="detailINSP-0001">
+                          <div class="d-flex gap-2 align-items-center justify-content-between justify-content-md-start mb-1 mb-md-0">
+                            <span class="custom-bg-danger text-uppercase px-2 py-1 rounded-1 order-1 order-md-0">DF</span>
+                            <h5 class="mb-0 order-0 order-md-1 d-flex">INSP-0002<span class="d-md-block d-none"> : Check Engine Cover Seal (0/1)</span></h5>
                           </div>
-                          <div class="fs-6">Check Seal Engine Cover</div>
+                          <span class="d-md-none d-block">Check Engine Cover Seal (1/1)</span>
                         </div>
                         <div class="col-md-6">
                           <div class="d-flex gap-1 justify-content-md-end">
-                            <button class="d-none btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#escalateModal">
-                              <i class="mdi mdi-information-variant"></i> ESCALATE
+                            <button type="button" class="btn btn-text-dark p-0 d-none d-md-block"  role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0001" aria-expanded="false" aria-controls="detailINSP-0001">
+                              <i class="mdi mdi-24px mdi-chevron-down text-dark custom-toggle-icon"></i>
                             </button>
-                            <i class="mdi mdi-36px mdi-chevron-down text-dark d-none d-md-block"></i>
                           </div>
                         </div>
-                        <i class="mdi mdi-36px mdi-chevron-down text-dark d-block d-md-none text-center mt-1"></i>
+                        <button type="button" class="btn btn-text-dark p-0 d-block d-md-none"  role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0001" aria-expanded="false" aria-controls="detailINSP-0001">
+                          <i class="mdi mdi-24px mdi-chevron-down text-dark d-block d-md-none text-center mt-1 custom-toggle-icon"></i>
+                        </button>
                       </div>
 
-                      <div class="collapse mt-2" id="detailINSP-0001">
-                        <div class="mt-2">
+                      <div class="collapse custom-collapse mt-2" id="detailINSP-0001">
+                        <div class="d-block d-md-none">
                           <hr>
-                          <div class="d-flex gap-2 mt-3">
-                            <div class="row align-items-center justify-content-between">
-                              <div class="col-md-12">
-                                <div class="d-flex flex-column">
-                                  <div class="d-md-flex gap-2 mb-2">
-                                    <span class="small text-muted" style="min-width: 160px; max-height: 160px;">Discrepancy ID:</span>
-                                    <a href="./discprepancy-report-detail.html" class="text-decoration-underline fw-semibold">DR-A-AVANZ-KABEL</a>
+                          <div class="d-block align-items-center justify-content-between my-3">
+                            <a class="btn btn-text-primary p-0 text-capitalize" data-bs-toggle="collapse" href="#collapseDocuments-2" role="button" aria-expanded="false" aria-controls="collapseDocuments">
+                              View Documents <i class="mdi mdi-chevron-double-down ms-1"></i>
+                            </a>
+                            <div class="collapse mb-3" id="collapseDocuments-2">
+                              <div class="row g-3 align-items-center">
+                                <div class="col-md-3">
+                                  <div class="border rounded-2 p-3 text-center">
+                                    SOP Penggantian Oli All New Avanza.pdf<br/>
+                                    <a href="#" target="_blank">View</a>
                                   </div>
-                                  <div class="d-md-flex gap-1">
-                                    <span class="small text-muted" style="min-width: 160px; max-height: 160px;">Reason/ Notes:</span>
-                                    <p class="mb-0">Inspection tidak bisa dilakukan karena parts yang digunakan tidak sesuai dengan spesifikasi/ membutuhkan parts yang dijual khusus di luar negeri</p>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="border rounded-2 p-3 text-center">
+                                    SOP Check Sensor Oli All New Avanza.pdf<br/>
+                                    <a href="#" target="_blank">View</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center mt-3">
+                              <button class="btn btn-danger">deferred</button>
+                              <button class="btn btn-outline-danger">not available</button>
+                            </div>
+                          </div>
+                        </div>
+                        <hr>
+                        <div class="mt-3">
+                          <div class="custom-bg-light-warning p-2 rounded-2">
+                            <p class="mb-1">Reason/ Notes</p>
+                            <p class="mb-0">Inspection tidak bisa dilakukan karena parts yang digunakan tidak sesuai dengan spesifikasi/ membutuhkan parts yang dijual khusus di luar negeri</p>
+                          </div>
+                          <div class="d-none d-md-block mt-3">
+                            <hr>
+                            <div class="d-flex align-items-center justify-content-between mt-3">
+                              <a class="btn btn-text-primary p-0 text-capitalize" data-bs-toggle="collapse" href="#collapseDocuments" role="button" aria-expanded="false" aria-controls="collapseDocuments">
+                                View Documents <i class="mdi mdi-chevron-double-down ms-1"></i>
+                              </a>
+                              <div class="d-flex gap-2 align-items-center">
+                                <button class="btn btn-dark">cancel deferred</button>
+                                <!-- <button class="btn btn-outline-danger">not available</button> -->
+                              </div>
+                            </div>
+                            <div class="collapse mt-3 " id="collapseDocuments">
+                              <div class="row g-3 align-items-center">
+                                <div class="col-md-3">
+                                  <div class="border rounded-2 p-3 text-center">
+                                    SOP Penggantian Oli All New Avanza.pdf<br/>
+                                    <a href="#" target="_blank">View</a>
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="border rounded-2 p-3 text-center">
+                                    SOP Check Sensor Oli All New Avanza.pdf<br/>
+                                    <a href="#" target="_blank">View</a>
                                   </div>
                                 </div>
                               </div>
@@ -543,81 +788,240 @@
                   <!-- 3 -->
                   <div class="card mb-3">
                     <div class="card-body">
-                      <div class="row align-items-center" role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0003" aria-expanded="false" aria-controls="detailINSP-0003">
-                        <div class="col-md-6 mb-3 mb-md-0">
-                          <div class="d-flex gap-2 align-items-center justify-content-between justify-content-md-start mb-1">
-                            <div class="flex gap-2">
-                              <span>INSP-0003</span>
-                              <span>(3/3)</span>
-                            </div>
-                            <span class="custom-bg-danger text-uppercase px-2 py-1 rounded-1">NG</span>
+                      <div class="row align-items-center">
+                        <div class="col-md-6 mb-3 mb-md-0"  role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0003" aria-expanded="false" aria-controls="detailINSP-0003">
+                          <div class="d-flex gap-2 align-items-center justify-content-between justify-content-md-start mb-1 mb-md-0">
+                            <span class="custom-bg-info text-uppercase px-2 py-1 rounded-1 order-1 order-md-0">NG</span>
+                            <h5 class="mb-0 order-0 order-md-1 d-flex">INSP-0003<span class="d-md-block d-none"> : Check for Oil Leaks (3/3)</span></h5>
                           </div>
-                          <div class="fs-6">Check Kebocoran Oli</div>
+                          <span class="d-md-none d-block">Check for Oil Leaks (3/3)</span>
                         </div>
                         <div class="col-md-6">
-                          <div class="d-flex gap-3 justify-content-md-end">
-                            <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#escalateModal">
-                              <i class="mdi mdi-information-variant me-1"></i> ESCALATE
+                          <div class="d-flex gap-1 justify-content-md-end">
+                            <button type="button" class="btn btn-primary text-capitalize d-md-block d-none" data-bs-toggle="modal" data-bs-target="#caModal">
+                              <i class="mdi mdi-tools"></i>
+                              Corrective Action
                             </button>
-                            <button class="btn btn-outline-primary text-truncate" data-bs-toggle="modal" data-bs-target="#caModal">
-                              <i class="mdi mdi-hammer-wrench me-1"></i> correct. action
+                            <button type="button" class="btn btn-text-dark p-0"  role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0003" aria-expanded="false" aria-controls="detailINSP-0003">
+                              <i class="mdi mdi-24px mdi-chevron-down text-dark d-none d-md-block custom-toggle-icon"></i>
                             </button>
-                            <i class="mdi mdi-36px mdi-chevron-down text-dark d-none d-md-block"></i>
                           </div>
                         </div>
-                        <i class="mdi mdi-36px mdi-chevron-down text-dark d-block d-md-none text-center mt-1"></i>
+                        <button type="button" class="btn btn-text-dark p-0 d-block d-md-none"  role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0003" aria-expanded="false" aria-controls="detailINSP-0003">
+                          <i class="mdi mdi-24px mdi-chevron-down text-dark text-center mt-1 custom-toggle-icon"></i>
+                        </button>
                       </div>
 
-                      <div class="collapse mt-2" id="detailINSP-0003">
-                        <div class="mt-2">
+                      <div class="collapse custom-collapse mt-2" id="detailINSP-0003">
+                        <hr>
+                        <div class="d-block d-md-none">
+                          <div class="d-block my-3">
+                            <button type="button" class="btn btn-primary text-capitalize w-100" data-bs-toggle="modal" data-bs-target="#caModal">
+                              <i class="mdi mdi-tools"></i>
+                              Corrective Action
+                            </button>
+                          </div>
                           <hr>
+                          <div class="d-block align-items-center justify-content-between my-3">
+                            <a class="btn btn-text-primary p-0 text-capitalize" data-bs-toggle="collapse" href="#collapseDocuments" role="button" aria-expanded="false" aria-controls="collapseDocuments">
+                              View Documents <i class="mdi mdi-chevron-double-down ms-1"></i>
+                            </a>
+                            <div class="collapse mb-3" id="collapseDocuments">
+                              <div class="row g-3 align-items-center">
+                                <div class="col-md-3">
+                                  <div class="border rounded-2 p-3 text-center">
+                                    SOP Penggantian Oli All New Avanza.pdf<br/>
+                                    <a href="#" target="_blank">View</a>
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="border rounded-2 p-3 text-center">
+                                    SOP Check Sensor Oli All New Avanza.pdf<br/>
+                                    <a href="#" target="_blank">View</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="d-none gap-2 align-items-center mt-3">
+                              <button class="btn btn-danger">deferred</button>
+                              <button class="btn btn-outline-danger">not available</button>
+                            </div>
+                          </div>
+                        </div>
+                        <hr>
+                        <div class="mt-2">
                           <!-- Insp 1 -->
-                          <div class="d-flex gap-2 mt-3">
-                            <span>01</span>
-                            <div id="insp-item" class="border px-3 py-3 rounded-2 w-100">
-                              <div class="row align-items-center justify-content-between">
-                                <div class="col-md-8">
-                                  <div class="d-flex flex-column mb-3 mb-md-0">
-                                    <span>Read oil dipstick</span>
+                          <div class="d-block gap-2 my-3">
+                            <div class="d-block d-md-flex align-items-center justify-content-between w-100 mb-2">
+                              <div class="col-md-8">
+                                <div class="d-flex mb-3 mb-md-0">
+                                  <div class="me-2">01</div>
+                                  <div class="d-flex flex-column">
+                                    <span class="fs-6">Read oil dipstick</span>
                                     <span class="text-muted">Memeriksa kondisi volume oli setelah pergantian oli</span>
                                   </div>
                                 </div>
-                                <div class="col-md-4">
-                                  <div class="radio-group choose-radio-button justify-content-end">
-                                    <input type="radio" id="tireFail-13" name="inspectionResult-13" class="radio-button-input radio-fail" value="fail" checked>
-                                    <label for="tireFail-13" class="radio-button-label">
-                                      <i class="mdi mdi-close me-1"></i>
-                                      FAIL
-                                    </label>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="radio-group choose-radio-button justify-content-end">
+                                  <input type="radio" id="tireFail-13" name="inspectionResult-13" class="radio-button-input radio-fail" value="fail" checked>
+                                  <label for="tireFail-13" class="radio-button-label">
+                                    <i class="mdi mdi-close me-1"></i>
+                                    FAIL
+                                  </label>
 
-                                    <input type="radio" id="tirePass-13" name="inspectionResult-13" class="radio-button-input radio-pass" value="pass">
-                                    <label for="tirePass-13" class="radio-button-label">
-                                      <i class="mdi mdi-check me-1"></i>
-                                      PASS
-                                    </label>
+                                  <input type="radio" id="tirePass-13" name="inspectionResult-13" class="radio-button-input radio-pass" value="pass">
+                                  <label for="tirePass-13" class="radio-button-label">
+                                    <i class="mdi mdi-check me-1"></i>
+                                    PASS
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div id="failDetails-1" class="collapse">
+                              <div class="gap-2 text-wrap ms-4">
+                                <label class="form-label me-2">Documentation (audio, photo, video or file):</label>
+                                <div class="d-flex gap-2">
+                                  <div id="previewContainer-1" class="d-flex gap-3 flex-wrap"></div>
+                                  <input type="file" id="Documentation (audio, photo, video or file):Upload-1" class="d-none" accept="image/*" multiple>
+                                  <label for="Documentation (audio, photo, video or file):Upload-1" class="upload-box" id="uploadBox-1">
+                                    <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="mt-4 gap-2 text-wrap ms-4">
+                                <label class="form-label" style="margin-right: 4rem;">Remarks</label>
+                                <textarea class="form-control w-md-50 w-100" rows="5">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
+                              </div>
+                            </div>
+                            <!-- <button id="hideDetailsBtn-1" class="btn btn-outline-secondary mt-4 w-100" style="display: none!important;">
+                              hide details <i class="mdi mdi-chevron-up"></i>
+                            </button> -->
+                          </div>
+                          <hr>
+                          <!-- Insp 2 -->
+                          <div class="d-block gap-2 my-3">
+                            <div class="d-block d-md-flex align-items-center justify-content-between w-100 mb-2">
+                              <div class="col-md-8">
+                                <div class="d-flex mb-3 mb-md-0">
+                                  <div class="me-2">02</div>
+                                  <div class="d-flex flex-column">
+                                    <span class="fs-6">Read oil dipstick</span>
+                                    <span class="text-muted">Memeriksa kondisi volume oli setelah pergantian oli</span>
                                   </div>
                                 </div>
                               </div>
-                              <div id="failDetails-1" class="collapse mt-3 show">
-                                <hr class="my-2">
-                                <div class="mt-3 d-md-flex  gap-2 text-wrap">
-                                  <label class="form-label me-2">Documentation</label>
-                                  <div class="d-flex gap-2">
-                                    <div id="previewContainer-1" class="d-flex gap-3 flex-wrap"></div>
-                                    <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
-                                    <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
-                                      <i class="mdi mdi-24px mdi-plus text-primary"></i>
-                                    </label>
-                                  </div>
-                                </div>
-                                <div class="mt-4 d-md-flex gap-2 text-wrap">
-                                  <label class="form-label" style="margin-right: 4rem;">Remarks</label>
-                                  <textarea class="form-control" rows="5">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
+                              <div class="col-md-4">
+                                <div class="radio-group choose-radio-button justify-content-end">
+                                  <input type="radio" id="tireFail-131" name="inspectionResult-131" class="radio-button-input radio-fail" value="fail">
+                                  <label for="tireFail-131" class="radio-button-label">
+                                    <i class="mdi mdi-close me-1"></i>
+                                    FAIL
+                                  </label>
+
+                                  <input type="radio" id="tirePass-131" name="inspectionResult-131" class="radio-button-input radio-pass" value="pass" checked>
+                                  <label for="tirePass-131" class="radio-button-label">
+                                    <i class="mdi mdi-check me-1"></i>
+                                    PASS
+                                  </label>
                                 </div>
                               </div>
-                              <button id="hideDetailsBtn-1" class="btn btn-outline-secondary mt-4 w-100" style="display: none!important;">
-                                hide details <i class="mdi mdi-chevron-up"></i>
-                              </button>
+                            </div>
+                            <div id="failDetails-1" class="collapse">
+                              <div class="gap-2 text-wrap ms-4">
+                                <label class="form-label me-2">Documentation (audio, photo, video or file):</label>
+                                <div class="d-flex gap-2">
+                                  <div id="previewContainer-1" class="d-flex gap-3 flex-wrap"></div>
+                                  <input type="file" id="Documentation (audio, photo, video or file):Upload-1" class="d-none" accept="image/*" multiple>
+                                  <label for="Documentation (audio, photo, video or file):Upload-1" class="upload-box" id="uploadBox-1">
+                                    <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="mt-4 gap-2 text-wrap ms-4">
+                                <label class="form-label" style="margin-right: 4rem;">Remarks</label>
+                                <textarea class="form-control w-md-50 w-100" rows="5">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
+                              </div>
+                            </div>
+                            <!-- <button id="hideDetailsBtn-1" class="btn btn-outline-secondary mt-4 w-100" style="display: none!important;">
+                              hide details <i class="mdi mdi-chevron-up"></i>
+                            </button> -->
+                          </div>
+                          <hr>
+                          <!-- Insp 3 -->
+                          <div class="d-block gap-2 my-3">
+                            <div class="d-block d-md-flex align-items-center justify-content-between w-100 mb-2">
+                              <div class="col-md-8">
+                                <div class="d-flex mb-3 mb-md-0">
+                                  <div class="me-2">03</div>
+                                  <div class="d-flex flex-column">
+                                    <span class="fs-6">Read oil dipstick</span>
+                                    <span class="text-muted">Memeriksa kondisi volume oli setelah pergantian oli</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="radio-group choose-radio-button justify-content-end">
+                                  <input type="radio" id="tireFail-1311" name="inspectionResult-1311" class="radio-button-input radio-fail" value="fail">
+                                  <label for="tireFail-1311" class="radio-button-label">
+                                    <i class="mdi mdi-close me-1"></i>
+                                    FAIL
+                                  </label>
+
+                                  <input type="radio" id="tirePass-1311" name="inspectionResult-1311" class="radio-button-input radio-pass" value="pass" checked>
+                                  <label for="tirePass-1311" class="radio-button-label">
+                                    <i class="mdi mdi-check me-1"></i>
+                                    PASS
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div id="failDetails-1" class="collapse">
+                              <div class="gap-2 text-wrap ms-4">
+                                <label class="form-label me-2">Documentation (audio, photo, video or file):</label>
+                                <div class="d-flex gap-2">
+                                  <div id="previewContainer-1" class="d-flex gap-3 flex-wrap"></div>
+                                  <input type="file" id="Documentation (audio, photo, video or file):Upload-1" class="d-none" accept="image/*" multiple>
+                                  <label for="Documentation (audio, photo, video or file):Upload-1" class="upload-box" id="uploadBox-1">
+                                    <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="mt-4 gap-2 text-wrap ms-4">
+                                <label class="form-label" style="margin-right: 4rem;">Remarks</label>
+                                <textarea class="form-control w-md-50 w-100" rows="5">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
+                              </div>
+                            </div>
+                            <!-- <button id="hideDetailsBtn-1" class="btn btn-outline-secondary mt-4 w-100" style="display: none!important;">
+                              hide details <i class="mdi mdi-chevron-up"></i>
+                            </button> -->
+                          </div>
+                          <div class="d-none d-md-block mt-3">
+                            <hr>
+                            <div class="d-flex align-items-center justify-content-between mt-3">
+                              <a class="btn btn-text-primary p-0 text-capitalize" data-bs-toggle="collapse" href="#collapseDocuments" role="button" aria-expanded="false" aria-controls="collapseDocuments">
+                                View Documents <i class="mdi mdi-chevron-double-down ms-1"></i>
+                              </a>
+                              <div class="d-none gap-2 align-items-center">
+                                <button class="btn btn-danger">deferred</button>
+                                <button class="btn btn-outline-danger">not available</button>
+                              </div>
+                            </div>
+                            <div class="collapse mt-3 " id="collapseDocuments">
+                              <div class="row g-3 align-items-center">
+                                <div class="col-md-3">
+                                  <div class="border rounded-2 p-3 text-center">
+                                    SOP Penggantian Oli All New Avanza.pdf<br/>
+                                    <a href="#" target="_blank">View</a>
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="border rounded-2 p-3 text-center">
+                                    SOP Check Sensor Oli All New Avanza.pdf<br/>
+                                    <a href="#" target="_blank">View</a>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -626,347 +1030,144 @@
                   </div>
 
                   <!-- 4 -->
-                  <div class="card mb-3">
+                   <div class="card mb-3">
                     <div class="card-body">
-                      <div class="row align-items-center" role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0004" aria-expanded="false" aria-controls="detailINSP-0004">
-                        <div class="col-md-6 mb-3 mb-md-0">
-                          <div class="d-flex gap-2 align-items-center justify-content-between justify-content-md-start mb-1">
-                            <div class="flex gap-2">
-                              <span>INSP-0004</span>
-                              <span>(1/1)</span>
-                            </div>
-                            <span class="custom-bg-success text-uppercase px-2 py-1 rounded-1">Resolved</span>
+                      <div class="row align-items-center">
+                        <div class="col-md-6 mb-3 mb-md-0"  role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0004" aria-expanded="false" aria-controls="detailINSP-0004">
+                          <div class="d-flex gap-2 align-items-center justify-content-between justify-content-md-start mb-1 mb-md-0">
+                            <span class="custom-bg-success text-uppercase px-2 py-1 rounded-1 order-1 order-md-0">RV</span>
+                            <h5 class="mb-0 order-0 order-md-1 d-flex">INSP-0004<span class="d-md-block d-none"> : Check Oil Seal (1/1)</span></h5>
                           </div>
-                          <div class="fs-6">Check Oil Seal</div>
+                          <span class="d-md-none d-block">Check Oil Seal (1/1)</span>
                         </div>
                         <div class="col-md-6">
-                          <div class="d-flex gap-3 justify-content-md-end">
-                            <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#escalateModal">
-                              <i class="mdi mdi-information-variant me-1"></i> ESCALATE
+                          <div class="d-flex gap-1 justify-content-md-end">
+                            <button type="button" class="btn btn-primary text-capitalize d-md-block d-none" data-bs-toggle="modal" data-bs-target="#caModal">
+                              <i class="mdi mdi-tools"></i>
+                              Corrective Action
                             </button>
-                            <button class="btn btn-outline-primary text-truncate" data-bs-toggle="modal" data-bs-target="#caModal">
-                              <i class="mdi mdi-hammer-wrench me-1"></i> correct. action (2)
+                            <button type="button" class="btn btn-text-dark p-0"  role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0004" aria-expanded="false" aria-controls="detailINSP-0004">
+                              <i class="mdi mdi-24px mdi-chevron-down text-dark d-none d-md-block custom-toggle-icon"></i>
                             </button>
-                            <i class="mdi mdi-36px mdi-chevron-down text-dark d-none d-md-block"></i>
                           </div>
                         </div>
-                        <i class="mdi mdi-36px mdi-chevron-down text-dark d-block d-md-none text-center mt-1"></i>
+                        <button type="button" class="btn btn-text-dark p-0 d-block d-md-none"  role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0004" aria-expanded="false" aria-controls="detailINSP-0004">
+                          <i class="mdi mdi-24px mdi-chevron-down text-dark text-center mt-1 custom-toggle-icon"></i>
+                        </button>
                       </div>
 
-                      <div class="collapse mt-2" id="detailINSP-0004">
-                        <div class="mt-2">
+                      <div class="collapse custom-collapse mt-2" id="detailINSP-0004">
+                        <hr>
+                        <div class="d-block d-md-none">
+                          <div class="d-block my-3">
+                            <button type="button" class="btn btn-primary text-capitalize w-100" data-bs-toggle="modal" data-bs-target="#caModal">
+                              <i class="mdi mdi-tools"></i>
+                              Corrective Action
+                            </button>
+                          </div>
                           <hr>
-                          <!-- Insp 1 -->
-                          <div class="d-flex gap-2 mt-3">
-                            <span>01</span>
-                            <div id="insp-item" class="border px-3 py-3 rounded-2 w-100">
-                              <div class="row align-items-center justify-content-between">
-                                <div class="col-md-8">
-                                  <div class="d-flex flex-column mb-3 mb-md-0">
-                                    <span>Read oil dipstick</span>
-                                    <span class="text-muted">Memeriksa kondisi volume oli setelah pergantian oli</span>
+                          <div class="d-block align-items-center justify-content-between my-3">
+                            <a class="btn btn-text-primary p-0 text-capitalize" data-bs-toggle="collapse" href="#collapseDocuments" role="button" aria-expanded="false" aria-controls="collapseDocuments">
+                              View Documents <i class="mdi mdi-chevron-double-down ms-1"></i>
+                            </a>
+                            <div class="collapse mb-3" id="collapseDocuments">
+                              <div class="row g-3 align-items-center">
+                                <div class="col-md-3">
+                                  <div class="border rounded-2 p-3 text-center">
+                                    SOP Penggantian Oli All New Avanza.pdf<br/>
+                                    <a href="#" target="_blank">View</a>
                                   </div>
                                 </div>
-                                <div class="col-md-4">
-                                  <div class="radio-group choose-radio-button justify-content-end">
-                                    <input type="radio" id="tireFail-14" name="inspectionResult-14" class="radio-button-input radio-fail" value="fail" checked>
-                                    <label for="tireFail-14" class="radio-button-label">
-                                      <i class="mdi mdi-close me-1"></i>
-                                      FAIL
-                                    </label>
-
-                                    <input type="radio" id="tirePass-14" name="inspectionResult-14" class="radio-button-input radio-pass" value="pass">
-                                    <label for="tirePass-14" class="radio-button-label">
-                                      <i class="mdi mdi-check me-1"></i>
-                                      PASS
-                                    </label>
+                                <div class="col-md-3">
+                                  <div class="border rounded-2 p-3 text-center">
+                                    SOP Check Sensor Oli All New Avanza.pdf<br/>
+                                    <a href="#" target="_blank">View</a>
                                   </div>
                                 </div>
                               </div>
-                              <div id="failDetails-1" class="collapse mt-3">
-                                <hr class="my-2">
-                                <div class="mt-3 d-md-flex  gap-2 text-wrap">
-                                  <label class="form-label me-2">Documentation</label>
-                                  <div class="d-flex gap-2">
-                                    <div id="previewContainer-1" class="d-flex gap-3 flex-wrap"></div>
-                                    <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
-                                    <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
-                                      <i class="mdi mdi-24px mdi-plus text-primary"></i>
-                                    </label>
-                                  </div>
-                                </div>
-                                <div class="mt-4 d-md-flex gap-2 text-wrap">
-                                  <label class="form-label" style="margin-right: 4rem;">Remarks</label>
-                                  <textarea class="form-control" rows="5">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
-                                </div>
-                              </div>
-                              <button id="hideDetailsBtn-1" class="btn btn-outline-secondary mt-4 w-100" style="display: none!important;">
-                                hide details <i class="mdi mdi-chevron-up"></i>
-                              </button>
+                            </div>
+                            <div class="d-none gap-2 align-items-center mt-3">
+                              <button class="btn btn-danger">deferred</button>
+                              <button class="btn btn-outline-danger">not available</button>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- 5 -->
-                  <div class="card mb-3">
-                    <div class="card-body">
-                      <div class="row align-items-center" role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0005" aria-expanded="false" aria-controls="detailINSP-0005">
-                        <div class="col-md-6 mb-3 mb-md-0">
-                          <div class="d-flex gap-2 align-items-center justify-content-between justify-content-md-start mb-1">
-                            <div class="flex gap-2">
-                              <span>INSP-0005</span>
-                              <span>(3/3)</span>
-                            </div>
-                            <span class="custom-bg-success text-uppercase px-2 py-1 rounded-1">OK</span>
-                          </div>
-                          <div class="fs-6">Check Sensor after Oil Cange</div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="d-flex gap-3 justify-content-md-end">
-                            <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#escalateModal">
-                              <i class="mdi mdi-information-variant me-1"></i> ESCALATE
-                            </button>
-                            <button class="btn btn-outline-primary text-truncate" data-bs-toggle="modal" data-bs-target="#caModal">
-                              <i class="mdi mdi-hammer-wrench me-1"></i> correct. action
-                            </button>
-                            <i class="mdi mdi-36px mdi-chevron-down text-dark d-none d-md-block"></i>
-                          </div>
-                        </div>
-                        <i class="mdi mdi-36px mdi-chevron-down text-dark d-block d-md-none text-center mt-1"></i>
-                      </div>
-
-                      <div class="collapse mt-2" id="detailINSP-0005">
+                        <hr>
                         <div class="mt-2">
-                          <hr>
                           <!-- Insp 1 -->
-                          <div class="d-flex gap-2 mt-3">
-                            <span>01</span>
-                            <div id="insp-item" class="border px-3 py-3 rounded-2 w-100 inspect-success">
-                              <div class="row align-items-center justify-content-between">
-                                <div class="col-md-8">
-                                  <div class="d-flex flex-column mb-3 mb-md-0">
-                                    <span>Read oil dipstick</span>
+                          <div class="d-block gap-2 my-3">
+                            <div class="d-block d-md-flex align-items-center justify-content-between w-100 mb-2">
+                              <div class="col-md-8">
+                                <div class="d-flex mb-3 mb-md-0">
+                                  <div class="me-2">01</div>
+                                  <div class="d-flex flex-column">
+                                    <span class="fs-6">Read oil dipstick</span>
                                     <span class="text-muted">Memeriksa kondisi volume oli setelah pergantian oli</span>
                                   </div>
                                 </div>
-                                <div class="col-md-4">
-                                  <div class="radio-group choose-radio-button justify-content-end">
-                                    <input type="radio" id="tireFail-15" name="inspectionResult-15" class="radio-button-input radio-fail" value="fail">
-                                    <label for="tireFail-15" class="radio-button-label">
-                                      <i class="mdi mdi-close me-1"></i>
-                                      FAIL
-                                    </label>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="radio-group choose-radio-button justify-content-end">
+                                  <input type="radio" id="tireFail-14" name="inspectionResult-14" class="radio-button-input radio-fail" value="fail" checked>
+                                  <label for="tireFail-14" class="radio-button-label">
+                                    <i class="mdi mdi-close me-1"></i>
+                                    FAIL
+                                  </label>
 
-                                    <input type="radio" id="tirePass-15" name="inspectionResult-15" class="radio-button-input radio-pass" value="pass" checked>
-                                    <label for="tirePass-15" class="radio-button-label">
-                                      <i class="mdi mdi-check me-1"></i>
-                                      PASS
-                                    </label>
-                                  </div>
+                                  <input type="radio" id="tirePass-14" name="inspectionResult-14" class="radio-button-input radio-pass" value="pass">
+                                  <label for="tirePass-14" class="radio-button-label">
+                                    <i class="mdi mdi-check me-1"></i>
+                                    PASS
+                                  </label>
                                 </div>
                               </div>
-                              <div id="failDetails-1" class="collapse mt-3">
-                                <hr class="my-2">
-                                <div class="mt-3 d-md-flex  gap-2 text-wrap">
-                                  <label class="form-label me-2">Documentation</label>
-                                  <div class="d-flex gap-2">
-                                    <div id="previewContainer-1" class="d-flex gap-3 flex-wrap"></div>
-                                    <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
-                                    <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
-                                      <i class="mdi mdi-24px mdi-plus text-primary"></i>
-                                    </label>
-                                  </div>
-                                </div>
-                                <div class="mt-4 d-md-flex gap-2 text-wrap">
-                                  <label class="form-label" style="margin-right: 4rem;">Remarks</label>
-                                  <textarea class="form-control" rows="5">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
-                                </div>
-                              </div>
-                              <button id="hideDetailsBtn-1" class="btn btn-outline-secondary mt-4 w-100" style="display: none!important;">
-                                hide details <i class="mdi mdi-chevron-up"></i>
-                              </button>
                             </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- 6 -->
-                  <div class="card mb-3">
-                    <div class="card-body">
-                      <div class="row align-items-center" role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0006" aria-expanded="false" aria-controls="detailINSP-0006">
-                        <div class="col-md-6 mb-3 mb-md-0">
-                          <div class="d-flex gap-2 align-items-center justify-content-between justify-content-md-start mb-1">
-                            <div class="flex gap-2">
-                              <span>INSP-0006</span>
-                              <span>(2/3)</span>
+                            <div id="failDetails-1" class="collapse">
+                              <div class="gap-2 text-wrap ms-4">
+                                <label class="form-label me-2">Documentation (audio, photo, video or file):</label>
+                                <div class="d-flex gap-2">
+                                  <div id="previewContainer-1" class="d-flex gap-3 flex-wrap"></div>
+                                  <input type="file" id="Documentation (audio, photo, video or file):Upload-1" class="d-none" accept="image/*" multiple>
+                                  <label for="Documentation (audio, photo, video or file):Upload-1" class="upload-box" id="uploadBox-1">
+                                    <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="mt-4 gap-2 text-wrap ms-4">
+                                <label class="form-label" style="margin-right: 4rem;">Remarks</label>
+                                <textarea class="form-control w-md-50 w-100" rows="5">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
+                              </div>
                             </div>
-                            <span class="custom-bg-warning text-uppercase px-2 py-1 rounded-1">In Progress</span>
+                            <!-- <button id="hideDetailsBtn-1" class="btn btn-outline-secondary mt-4 w-100" style="display: none!important;">
+                              hide details <i class="mdi mdi-chevron-up"></i>
+                            </button> -->
                           </div>
-                          <div class="fs-6">Check Sensor after Oil Cange</div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="d-flex gap-3 justify-content-md-end">
-                            <i class="mdi mdi-36px mdi-chevron-down text-dark d-none d-md-block"></i>
-                          </div>
-                        </div>
-                        <i class="mdi mdi-36px mdi-chevron-down text-dark d-block d-md-none text-center mt-1"></i>
-                      </div>
-
-                      <div class="collapse mt-2" id="detailINSP-0006">
-                        <div class="mt-2">
-                          <hr>
-                          <!-- Insp 1 -->
-                          <div class="d-flex gap-2 mt-3">
-                            <span>01</span>
-                            <div id="insp-item" class="border px-3 py-3 rounded-2 w-100 inspect-success">
-                              <div class="row align-items-center justify-content-between">
-                                <div class="col-md-8">
-                                  <div class="d-flex flex-column mb-3 mb-md-0">
-                                    <span>Read oil dipstick</span>
-                                    <span class="text-muted">Memeriksa kondisi volume oli setelah pergantian oli</span>
-                                  </div>
-                                </div>
-                                <div class="col-md-4">
-                                  <div class="radio-group choose-radio-button justify-content-end">
-                                    <input type="radio" id="tireFail-16" name="inspectionResult-16" class="radio-button-input radio-fail" value="fail">
-                                    <label for="tireFail-16" class="radio-button-label">
-                                      <i class="mdi mdi-close me-1"></i>
-                                      FAIL
-                                    </label>
-
-                                    <input type="radio" id="tirePass-16" name="inspectionResult-16" class="radio-button-input radio-pass" value="pass" checked>
-                                    <label for="tirePass-16" class="radio-button-label">
-                                      <i class="mdi mdi-check me-1"></i>
-                                      PASS
-                                    </label>
-                                  </div>
-                                </div>
+                          <div class="d-none d-md-block mt-3">
+                            <hr>
+                            <div class="d-flex align-items-center justify-content-between mt-3">
+                              <a class="btn btn-text-primary p-0 text-capitalize" data-bs-toggle="collapse" href="#collapseDocuments" role="button" aria-expanded="false" aria-controls="collapseDocuments">
+                                View Documents <i class="mdi mdi-chevron-double-down ms-1"></i>
+                              </a>
+                              <div class="d-none gap-2 align-items-center">
+                                <button class="btn btn-danger">deferred</button>
+                                <button class="btn btn-outline-danger">not available</button>
                               </div>
-                              <div id="failDetails-1" class="collapse mt-3">
-                                <hr class="my-2">
-                                <div class="mt-3 d-md-flex  gap-2 text-wrap">
-                                  <label class="form-label me-2">Documentation</label>
-                                  <div class="d-flex gap-2">
-                                    <div id="previewContainer-1" class="d-flex gap-3 flex-wrap"></div>
-                                    <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
-                                    <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
-                                      <i class="mdi mdi-24px mdi-plus text-primary"></i>
-                                    </label>
-                                  </div>
-                                </div>
-                                <div class="mt-4 d-md-flex gap-2 text-wrap">
-                                  <label class="form-label" style="margin-right: 4rem;">Remarks</label>
-                                  <textarea class="form-control" rows="5">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
-                                </div>
-                              </div>
-                              <button id="hideDetailsBtn-1" class="btn btn-outline-secondary mt-4 w-100" style="display: none!important;">
-                                hide details <i class="mdi mdi-chevron-up"></i>
-                              </button>
                             </div>
-                          </div>
-
-                          <!-- Insp 2 -->
-                          <div class="d-flex gap-2 mt-3">
-                            <span>02</span>
-                            <div id="insp-item" class="border px-3 py-3 rounded-2 w-100">
-                              <div class="row align-items-center justify-content-between">
-                                <div class="col-md-8">
-                                  <div class="d-flex flex-column mb-3 mb-md-0">
-                                    <span>Read oil dipstick</span>
-                                    <span class="text-muted">Memeriksa kondisi volume oli setelah pergantian oli</span>
+                            <div class="collapse mt-3 " id="collapseDocuments">
+                              <div class="row g-3 align-items-center">
+                                <div class="col-md-3">
+                                  <div class="border rounded-2 p-3 text-center">
+                                    SOP Penggantian Oli All New Avanza.pdf<br/>
+                                    <a href="#" target="_blank">View</a>
                                   </div>
                                 </div>
-                                <div class="col-md-4">
-                                  <div class="radio-group choose-radio-button justify-content-end">
-                                    <input type="radio" id="tireFail-26" name="inspectionResult-26" class="radio-button-input radio-fail" value="fail" checked>
-                                    <label for="tireFail-26" class="radio-button-label">
-                                      <i class="mdi mdi-close me-1"></i>
-                                      FAIL
-                                    </label>
-
-                                    <input type="radio" id="tirePass-26" name="inspectionResult-26" class="radio-button-input radio-pass" value="pass">
-                                    <label for="tirePass-26" class="radio-button-label">
-                                      <i class="mdi mdi-check me-1"></i>
-                                      PASS
-                                    </label>
+                                <div class="col-md-3">
+                                  <div class="border rounded-2 p-3 text-center">
+                                    SOP Check Sensor Oli All New Avanza.pdf<br/>
+                                    <a href="#" target="_blank">View</a>
                                   </div>
                                 </div>
                               </div>
-                              <div id="failDetails-1" class="collapse show mt-3">
-                                <hr class="my-2">
-                                <div class="mt-3 d-md-flex  gap-2 text-wrap">
-                                  <label class="form-label me-2">Documentation</label>
-                                  <div class="d-flex gap-2">
-                                    <div id="previewContainer-1" class="d-flex gap-3 flex-wrap"></div>
-                                    <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
-                                    <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
-                                      <i class="mdi mdi-24px mdi-plus text-primary"></i>
-                                    </label>
-                                  </div>
-                                </div>
-                                <div class="mt-4 d-md-flex gap-2 text-wrap">
-                                  <label class="form-label" style="margin-right: 4rem;">Remarks</label>
-                                  <textarea class="form-control" rows="5">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
-                                </div>
-                              </div>
-                              <button id="hideDetailsBtn-1" class="btn btn-outline-secondary mt-4 w-100" style="display: none!important;">
-                                hide details <i class="mdi mdi-chevron-up"></i>
-                              </button>
-                            </div>
-                          </div>
-
-                          <!-- Insp 3 -->
-                          <div class="d-flex gap-2 mt-3">
-                            <span>03</span>
-                            <div id="insp-item" class="border px-3 py-3 rounded-2 w-100">
-                              <div class="row align-items-center justify-content-between">
-                                <div class="col-md-8">
-                                  <div class="d-flex flex-column mb-3 mb-md-0">
-                                    <span>Read oil dipstick</span>
-                                    <span class="text-muted">Memeriksa kondisi volume oli setelah pergantian oli</span>
-                                  </div>
-                                </div>
-                                <div class="col-md-4">
-                                  <div class="radio-group choose-radio-button justify-content-end">
-                                    <input type="radio" id="tireFail-36" name="inspectionResult-36" class="radio-button-input radio-fail" value="fail">
-                                    <label for="tireFail-36" class="radio-button-label">
-                                      <i class="mdi mdi-close me-1"></i>
-                                      FAIL
-                                    </label>
-
-                                    <input type="radio" id="tirePass-36" name="inspectionResult-36" class="radio-button-input radio-pass" value="pass">
-                                    <label for="tirePass-36" class="radio-button-label">
-                                      <i class="mdi mdi-check me-1"></i>
-                                      PASS
-                                    </label>
-                                  </div>
-                                </div>
-                              </div>
-                              <div id="failDetails-1" class="collapse mt-3">
-                                <hr class="my-2">
-                                <div class="mt-3 d-md-flex  gap-2 text-wrap">
-                                  <label class="form-label me-2">Documentation</label>
-                                  <div class="d-flex gap-2">
-                                    <div id="previewContainer-1" class="d-flex gap-3 flex-wrap"></div>
-                                    <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
-                                    <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
-                                      <i class="mdi mdi-24px mdi-plus text-primary"></i>
-                                    </label>
-                                  </div>
-                                </div>
-                                <div class="mt-4 d-md-flex gap-2 text-wrap">
-                                  <label class="form-label" style="margin-right: 4rem;">Remarks</label>
-                                  <textarea class="form-control" rows="5">Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea>
-                                </div>
-                              </div>
-                              <button id="hideDetailsBtn-1" class="btn btn-outline-secondary mt-4 w-100" style="display: none!important;">
-                                hide details <i class="mdi mdi-chevron-up"></i>
-                              </button>
                             </div>
                           </div>
                         </div>
@@ -974,11 +1175,250 @@
                     </div>
                   </div>
                 </div>
+                <!-- Service Report -->
                 <div
                   class="tab-pane fade"
                   id="navs-service-report"
                   role="tabpanel"
                 >
+                  <h5>Corrective Action (2)</h5>
+                  <div class="d-grid gap-3">
+                    <!-- CA Card 1 -->
+                    <div class="card inspection-card shadow-sm">
+                      <div
+                        class="card-header p-3 collapsed"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="false"
+                        aria-controls="collapseOne"
+                      >
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="d-flex align-items-center">
+                            <div class="avatar me-3">
+                              <span class="avatar-initial rounded-3 bg-label-primary"><i class="mdi mdi-wrench-outline mdi-24px"></i></span>
+                            </div>
+                            <div>
+                              <span class="text-muted small">CA - INSP-0005</span>
+                              <h5 class="mb-0 fw-bold">Check Oil Volume</h5>
+                              <small class="text-muted"
+                                >Issue Description: Volume oli lama terlalu sedikit</small
+                              >
+                            </div>
+                          </div>
+                          <i class="mdi mdi-chevron-down mdi-24px text-muted inspection-arrow-icon"></i>
+                        </div>
+                      </div>
+                      <div id="collapseOne" class="collapse">
+                        <div class="card-body bg-label-light">
+                          <p class="text-muted mb-0">No action details for this item.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- CA Card 2 -->
+                    <div class="card inspection-card shadow-sm">
+                      <div
+                        class="card-header p-3"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo"
+                        aria-expanded="true"
+                        aria-controls="collapseTwo"
+                      >
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="d-flex align-items-center">
+                            <div class="avatar me-3">
+                              <span class="avatar-initial rounded-3 bg-label-warning"><i class="mdi mdi-shield-alert-outline mdi-24px"></i></span>
+                            </div>
+                            <div>
+                              <span class="text-muted small">CA - INSP-0003</span>
+                              <h5 class="mb-0 fw-bold">Check for Oil Leaks</h5>
+                              <small class="text-muted"
+                                >Issue Description: Ada kebocoran oli dari area mesin</small
+                              >
+                            </div>
+                          </div>
+                          <i class="mdi mdi-chevron-down mdi-24px text-muted inspection-arrow-icon"></i>
+                        </div>
+                      </div>
+                      <div id="collapseTwo" class="collapse show">
+                        <div class="card-body">
+                          <!-- Timeline -->
+                          <h6 class="fw-bold mb-4">Action Timeline</h6>
+                          <div class="inspection-timeline">
+                            <!-- Timeline Item 1 - Edit Mode -->
+                            <div class="inspection-timeline-item">
+                              <div class="inspection-timeline-number"><i class="mdi mdi-calendar-outline"></i></div>
+                              <p class="fw-semibold mb-md-0 fs-6">1. Wednesday, 02 Jul 2025 - 14:00</p>
+                              <div class="p-3 bg-label-light rounded-3 border mt-3 custom-content-wrapper">
+                                <div class="mb-3">
+                                  <span class="custom-text-dark">Set Status:</span>
+                                  <div class="form-floating form-floating-outline mt-2 mb-3">
+                                    <div class="btn-group" role="group" aria-label="Time based radio group">
+                                      <input type="radio" class="btn-check btn-severity" name="btnradio" id="low" />
+                                      <label class="btn btn-outline-secondary px-3" for="low">Resolved by Engineer</label>
+
+                                      <input type="radio" class="btn-check btn-severity" name="btnradio" id="critical" checked />
+                                      <label class="btn btn-outline-secondary px-3" for="critical">Not Resolved</label>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mb-3">
+                                  <span class="custom-text-dark">Engineer:</span>
+                                  <div class="form-floating form-floating-outline mt-2 mb-3">
+                                    <select class="form-select" id="engineerSelect" style="width:100%">
+                                      <option value="">Select Engineer</option>
+                                      <option value="eng1" selected>John Doe</option>
+                                      <option value="eng2">Jane Smith</option>
+                                      <option value="eng3">Michael Johnson</option>
+                                      <option value="eng4">Emily Davis</option>
+                                    </select>
+                                  </div>
+                                </div>
+
+                                <div class="mb-3">
+                                  <span class="custom-text-dark">Vendor:</span>
+                                  <div class="form-floating form-floating-outline mt-2 mb-3">
+                                    <select class="form-select" id="vendorSelect" style="width:100%">
+                                      <option value="">Select Vendor</option>
+                                      <option value="ven1" selected>PT. Oilindo Sejahtera</option>
+                                      <option value="ven2">CV. Mekanika Jaya</option>
+                                      <option value="ven3">PT. Teknologi Nusantara</option>
+                                      <option value="ven4">Global Engineering Ltd</option>
+                                    </select>
+                                  </div>
+                                </div>
+
+                                <div class="mb-3">
+                                  <span class="custom-text-dark">Root Cause Category:</span>
+                                  <div class="d-flex gap-2 align-items-center text-wrap my-2">
+                                    <div class="col-md-4">
+                                      <select class="form-select select2 col-md-3 col-12" id="rootCauseSelect">
+                                        <option selected>Machine</option>
+                                        <option value="1">Electrical</option>
+                                        <option value="2">Safety</option>
+                                        <option value="3">Other</option>
+                                      </select>
+                                    </div>
+                                    <input type="text" class="form-control" id="defaultFormControlInput" value="Lubrication System" placeholder="e.g Lubrication System" aria-describedby="defaultFormControlHelp">
+                                    <button class="btn btn-sm btn-text-danger text-capitalize px-md-4"><i class="mdi mdi-minus me-2"></i><span class="d-none d-md-block">Remove</span></button>
+                                  </div>
+                                  <div class="d-flex gap-2 align-items-center text-wrap my-2">
+                                    <div class="col-md-4">
+                                      <select class="form-select select2 col-md-3 col-12" id="rootCauseSelect2">
+                                        <option selected>Machine</option>
+                                        <option value="1">Electrical</option>
+                                        <option value="2">Safety</option>
+                                        <option value="3">Other</option>
+                                      </select>
+                                    </div>
+                                    <input type="text" class="form-control" id="defaultFormControlInput" value="Coolant Machines" placeholder="e.g Lubrication System" aria-describedby="defaultFormControlHelp">
+                                    <button class="btn btn-sm btn-text-danger text-capitalize px-md-4"><i class="mdi mdi-minus me-2"></i><span class="d-none d-md-block">Remove</span></button>
+                                  </div>
+                                  <button class="btn btn-text-primary p-0"><i class="mdi mdi-plus"></i>Add root cause</button>
+                                </div>
+
+                                <div class="mb-3">
+                                  <span class="custom-text-dark">Action:</span>
+                                  <textarea class="form-control w-md-50 w-100 mt-2 mb-3" rows="5">Dilakukan pergantian seal ulang pada cover engine merk Toyota Genuine Part</textarea>
+                                </div>
+
+                                <div class="mb-3">
+                                  <span class="custom-text-dark">Documentation (audio, photo, video or file): (audio, photo, video or file):</span>
+                                  <div class="row align-items-start mt-2">
+                                    <div class="d-flex gap-3">
+                                      <div id="previewContainer-1" class="d-flex gap-3 flex-wrap">
+                                        <div class="image-preview position-relative">
+                                          <img src="https://image.sumberberkatabadi.com/s3/productimages/webp/co26696/p1323680/w600-h600/5d9804e6-8311-4c0d-b3e7-9b7d6fa129fc.jpg" class="img-thumbnail">
+                                          <button class="delete-btn">DELETE</button>
+                                        </div>
+                                      </div>
+                                      <input type="file" id="Documentation (audio, photo, video or file):Upload-1" class="d-none" accept="image/*" multiple>
+                                      <label for="Documentation (audio, photo, video or file):Upload-1" class="upload-box" id="uploadBox-1">
+                                        <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="d-flex justify-content-end">
+                                  <button class="btn btn-primary">
+                                    <i class="mdi mdi-content-save me-1"></i>Save
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- Timeline Item 2 - Display Mode -->
+                            <div class="inspection-timeline-item">
+                              <div class="inspection-timeline-number"><i class="mdi mdi-calendar-outline"></i></div>
+                              <p class="fw-semibold mb-md-0 fs-6">2. Thursday, 03 Jul 2025 - 10:00</p>
+                              <div class="p-3 bg-label-light rounded-3 border mt-3 custom-content-wrapper">
+                                <div class="text-end mb-3">
+                                  <span class="custom-bg-danger text-uppercase px-2 py-1 rounded-1 order-1 order-md-0">Not Resolved</span>
+                                </div>
+                                <div class="d-md-flex align-items-center justify-content-between">
+                                  <div class="mb-3 custom-text-dark">
+                                    <i class="mdi mdi-account-hard-hat-outline text-muted me-2"></i
+                                    >Engineer: <strong>Ahmad Kurniawan</strong>
+                                  </div>
+                                  <div class="mb-3 custom-text-dark">
+                                    <i class="mdi mdi-store-outline text-muted me-2"></i
+                                    >Vendor: <strong>Nasmoco Motor</strong>
+                                  </div>
+                                </div>
+                                <!-- Root Cause -->
+                                <div class="mb-3">
+                                  <div class="row g-3">
+                                    <div class="col-md-4">
+                                      <div class="bg-label-primary border px-3 py-2 rounded-3">
+                                        <span class="small text-muted">Machine</span>
+                                        <p class="fw-semibold mb-0 text-dark">Lubrication System</p>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                      <div class="bg-label-primary border px-3 py-2 rounded-3">
+                                        <span class="small text-muted">Component</span>
+                                        <p class="fw-semibold mb-0 text-dark">Colant Mechines</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <p class="mb-3 custom-text-dark">
+                                  Action: Dilakukan pergantian seal pada cover engine merk after market.
+                                </p>
+                                <div class="mb-3">
+                                  <span class="custom-text-dark">Documentation (audio, photo, video or file):</span>
+                                  <div class="row align-items-start mt-2">
+                                    <div class="d-flex gap-3">
+                                      <div id="previewContainer-1" class="d-flex gap-3 flex-wrap">
+                                        <div class="image-preview position-relative">
+                                          <img src="https://image.sumberberkatabadi.com/s3/productimages/webp/co26696/p1323680/w600-h600/5d9804e6-8311-4c0d-b3e7-9b7d6fa129fc.jpg" class="img-thumbnail">
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="d-flex justify-content-end gap-2 mt-3">
+                                  <button class="btn btn-outline-secondary">
+                                    <i class="mdi mdi-pencil me-1"></i>Edit
+                                  </button>
+                                  <button class="btn btn-outline-danger">
+                                    <i class="mdi mdi-delete-outline me-1"></i>Remove
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Cost Report -->
+                <div
+                  class="tab-pane fade"
+                  id="navs-cost-report"
+                  role="tabpanel">
                   <div class="card mb-3">
                     <div class="card-body">
                       <div class="d-flex gap-2 align-items-center mb-3">
@@ -1210,21 +1650,21 @@
                       <div class="text-end fs-3 text-primary fw-semibold">Total : 755.000</div>
                       <hr class="my-2">
                       <div class="row align-items-start mt-4">
-                        <div class="col-md-2 text-md-end mb-2 mb-md-0">Documentation</div>
-                          <div class="col-md-10">
-                            <div class="d-flex gap-3">
-                              <div id="previewContainer-1" class="d-flex gap-3 flex-wrap">
-                                <div class="image-preview position-relative">
-                                  <img src="https://image.sumberberkatabadi.com/s3/productimages/webp/co26696/p1323680/w600-h600/5d9804e6-8311-4c0d-b3e7-9b7d6fa129fc.jpg" class="img-thumbnail">
-                                  <button class="delete-btn">DELETE</button>
-                                </div>
+                        <div class="col-md-2 text-md-end mb-2 mb-md-0">Documentation (audio, photo, video or file):</div>
+                        <div class="col-md-10">
+                          <div class="d-flex gap-3">
+                            <div id="previewContainer-1" class="d-flex gap-3 flex-wrap">
+                              <div class="image-preview position-relative">
+                                <img src="https://image.sumberberkatabadi.com/s3/productimages/webp/co26696/p1323680/w600-h600/5d9804e6-8311-4c0d-b3e7-9b7d6fa129fc.jpg" class="img-thumbnail">
+                                <button class="delete-btn">DELETE</button>
                               </div>
-                              <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
-                              <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
-                                <i class="mdi mdi-24px mdi-plus text-primary"></i>
-                              </label>
                             </div>
+                            <input type="file" id="Documentation (audio, photo, video or file):Upload-1" class="d-none" accept="image/*" multiple>
+                            <label for="Documentation (audio, photo, video or file):Upload-1" class="upload-box" id="uploadBox-1">
+                              <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                            </label>
                           </div>
+                        </div>
                       </div>
                     </div>
                     <div class="card-footer">
@@ -1237,84 +1677,8 @@
                       </div>
                     </div>
                   </div>
-                  <h5>Corrective Action</h5>
-                  <div class="card mb-3">
-                    <div class="card-body">
-                      <div class="row align-items-center" role="button" data-bs-toggle="collapse" data-bs-target="#detailINSP-0002" aria-expanded="false" aria-controls="detailINSP-0002">
-                        <div class="col-md-6 mb-3 mb-md-0">
-                          <div class="d-flex gap-2 align-items-center justify-content-between justify-content-md-start mb-1">
-                            <div class="flex gap-2">
-                              <span>INSP-0001</span>
-                              <span>(0/1)</span>
-                            </div>
-                          </div>
-                          <div class="fs-6">Check Oil Volume</div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="d-flex gap-1 justify-content-md-end">
-                            <i class="mdi mdi-36px mdi-chevron-down text-dark d-none d-md-block"></i>
-                          </div>
-                        </div>
-                        <i class="mdi mdi-36px mdi-chevron-down text-dark d-block d-md-none text-center mt-1"></i>
-                      </div>
-
-                      <div class="collapse mt-2" id="detailINSP-0002">
-                        <hr class="my-3"/>
-                        <div class="row align-items-start mb-3">
-                          <div class="col-md-2 text-md-end mb-2 mb-md-0">Root Cause:</div>
-                          <div class="col-md-10">
-                            <ol>
-                              <li >Machine > Lubrication System</li>
-                              <li >Machine > Colant Mechines </li>
-                            </ol>
-                          </div>
-                        </div>
-                        <div class="row align-items-start mb-3">
-                          <div class="col-md-2 text-md-end mb-2 mb-md-0">Issue Description:</div>
-                          <div class="col-md-10">
-                            Ada kebocoran oli dari area mesin
-                          </div>
-                        </div>
-                        <!-- 1 -->
-                        <div class="accordion border rounded-2 shadow-none mb-3" id="accordionExample">
-                          <div class="accordion-item bordered-box">
-                            <h2 class="accordion-header" id="headingOne">
-                              <button class="accordion-button text-dark collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="background-color: #3c57a110;">
-                                01. Wednesday, 02 Jul 2025
-                              </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                <div class="row align-items-start mb-3">
-                                  <div class="col-md-3 text-md-end mb-2 mb-md-0">Engineering:</div>
-                                  <div class="col-md-9">Ahmad Kurniawan</div>
-                                </div>
-                                <div class="row align-items-start mb-3">
-                                  <div class="col-md-3 text-md-end mb-2 mb-md-0">Vendor:</div>
-                                  <div class="col-md-9">-</div>
-                                </div>
-                                <div class="row align-items-start mb-3">
-                                  <div class="col-md-3 text-md-end mb-2 mb-md-0">Action Description:</div>
-                                  <div class="col-md-9">Dilakukan pergantian seal pada cover engine merk after market</div>
-                                </div>
-                                <div class="row align-items-start mb-3">
-                                  <div class="col-md-3 text-md-end mb-2 mb-md-0">Documentation</div>
-                                    <div class="col-md-9">
-                                      <div id="previewContainer-1" class="d-flex gap-3 flex-wrap">
-                                        <div class="image-preview position-relative">
-                                          <img src="https://image.sumberberkatabadi.com/s3/productimages/webp/co26696/p1323680/w600-h600/5d9804e6-8311-4c0d-b3e7-9b7d6fa129fc.jpg" class="img-thumbnail">
-                                        </div>
-                                      </div>
-                                    </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
+                <!-- Update Last Done -->
                 <div
                   class="tab-pane fade"
                   id="navs-update-last-done"
@@ -1381,7 +1745,7 @@
                         </div>
                       </div>
                       <div class="row mb-2">
-                        <div class="col-md-2 text-md-end mb-2 mb-md-0">Documentation (Optional)</div>
+                        <div class="col-md-2 text-md-end mb-2 mb-md-0">Documentation (audio, photo, video or file): (Optional)</div>
                         <div class="col-md-10">
                           <div class="d-flex gap-3">
                             <div id="previewContainer-1" class="d-flex gap-3 flex-wrap">
@@ -1394,8 +1758,8 @@
                                 <button class="delete-btn">DELETE</button>
                               </div>
                             </div>
-                            <input type="file" id="documentationUpload-1" class="d-none" accept="image/*" multiple>
-                            <label for="documentationUpload-1" class="upload-box" id="uploadBox-1">
+                            <input type="file" id="Documentation (audio, photo, video or file):Upload-1" class="d-none" accept="image/*" multiple>
+                            <label for="Documentation (audio, photo, video or file):Upload-1" class="upload-box" id="uploadBox-1">
                               <i class="mdi mdi-24px mdi-plus text-primary"></i>
                             </label>
                           </div>
