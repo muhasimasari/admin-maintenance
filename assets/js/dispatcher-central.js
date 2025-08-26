@@ -1,79 +1,79 @@
 document.addEventListener("DOMContentLoaded", function () {
   // ===================== 1. Static Popover with Slider =====================
-  const popoverTriggerEl = document.querySelector('[data-bs-toggle="popover"]');
-  if (popoverTriggerEl && typeof bootstrap.Popover !== "undefined") {
-    const popoverContent = `
-        <div class="popover-content-custom">
-          <div class="mb-3">
-            <label class="form-label fs-6 fw-semibold text-dark">Time Based</label>
-            <div class="btn-group" role="group" aria-label="Time based radio group">
-              <input type="radio" class="btn-check btn-check-custom" name="btnradio" id="btnradio1" checked autocomplete="off" />
-              <label class="btn btn-sm btn-outline-primary btn-custom-primary" for="btnradio1">Next month</label>
-              <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" />
-              <label class="btn btn-sm btn-outline-primary" for="btnradio2">3 Months</label>
-              <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" />
-              <label class="btn btn-sm btn-outline-primary" for="btnradio3">6 Months</label>
-              <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off" />
-              <label class="btn btn-sm btn-outline-primary" for="btnradio4">12 Months</label>
-            </div>
-          </div>
-          <div class="mb-4">
-            <label class="form-label fs-6 fw-semibold text-dark">Usage/Cycle Based</label>
-            <div class="d-flex align-items-center gap-2">
-              <span class="fw-bold text-dark fs-6">0</span>
-              <div id="slider-usage" class="flex-grow-1"></div>
-            </div>
-          </div>
-          <div class="text-end">
-            <button id="applyConfigBtn" type="button" class="btn btn-sm btn-dark px-4 py-2">APPLY CONFIG</button>
-          </div>
-        </div>`;
+  // const popoverTriggerEl = document.querySelector('[data-bs-toggle="popover"]');
+  // if (popoverTriggerEl && typeof bootstrap.Popover !== "undefined") {
+  //   const popoverContent = `
+  //       <div class="popover-content-custom">
+  //         <div class="mb-3">
+  //           <label class="form-label fs-6 fw-semibold text-dark">Time Based</label>
+  //           <div class="btn-group" role="group" aria-label="Time based radio group">
+  //             <input type="radio" class="btn-check btn-check-custom" name="btnradio" id="btnradio1" checked autocomplete="off" />
+  //             <label class="btn btn-sm btn-outline-primary btn-custom-primary" for="btnradio1">Next month</label>
+  //             <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" />
+  //             <label class="btn btn-sm btn-outline-primary" for="btnradio2">3 Months</label>
+  //             <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" />
+  //             <label class="btn btn-sm btn-outline-primary" for="btnradio3">6 Months</label>
+  //             <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off" />
+  //             <label class="btn btn-sm btn-outline-primary" for="btnradio4">12 Months</label>
+  //           </div>
+  //         </div>
+  // <div class="mb-4">
+  //   <label class="form-label fs-6 fw-semibold text-dark">Usage/Cycle Based</label>
+  //   <div class="d-flex align-items-center gap-2">
+  //     <span class="fw-bold text-dark fs-6">0</span>
+  //     <div id="slider-usage" class="flex-grow-1"></div>
+  //   </div>
+  // </div>
+  //         <div class="text-end">
+  //           <button id="applyConfigBtn" type="button" class="btn btn-sm btn-dark px-4 py-2">APPLY CONFIG</button>
+  //         </div>
+  //       </div>`;
 
-    const popover = new bootstrap.Popover(popoverTriggerEl, {
-      html: true,
-      content: popoverContent,
-      placement: "bottom",
-      customClass: "projection-popover",
-      sanitize: false,
-    });
+  //   const popover = new bootstrap.Popover(popoverTriggerEl, {
+  //     html: true,
+  //     content: popoverContent,
+  //     placement: "bottom",
+  //     customClass: "projection-popover",
+  //     sanitize: false,
+  //   });
 
-    popoverTriggerEl.addEventListener("shown.bs.popover", function () {
-      const sliderBasic = document.getElementById("slider-usage");
+  //   popoverTriggerEl.addEventListener("shown.bs.popover", function () {
+  //     const sliderBasic = document.getElementById("slider-usage");
 
-      if (sliderBasic && typeof noUiSlider !== "undefined") {
-        noUiSlider.create(sliderBasic, {
-          start: [50],
-          connect: [true, false],
-          tooltips: [wNumb({ decimals: 0, suffix: "%" })],
-          range: {
-            min: 0,
-            max: 100,
-          },
-        });
-      }
+  //     if (sliderBasic && typeof noUiSlider !== "undefined") {
+  // noUiSlider.create(sliderBasic, {
+  //   start: [50],
+  //   connect: [true, false],
+  //   tooltips: [wNumb({ decimals: 0, suffix: "%" })],
+  //   range: {
+  //     min: 0,
+  //     max: 100,
+  //   },
+  // });
+  //     }
 
-      const applyBtn = document.getElementById("applyConfigBtn");
-      if (applyBtn) {
-        applyBtn.addEventListener("click", function () {
-          const popoverInstance =
-            bootstrap.Popover.getInstance(popoverTriggerEl);
-          if (popoverInstance) popoverInstance.hide();
-        });
-      }
-    });
+  //     const applyBtn = document.getElementById("applyConfigBtn");
+  //     if (applyBtn) {
+  //       applyBtn.addEventListener("click", function () {
+  //         const popoverInstance =
+  //           bootstrap.Popover.getInstance(popoverTriggerEl);
+  //         if (popoverInstance) popoverInstance.hide();
+  //       });
+  //     }
+  //   });
 
-    document.addEventListener("click", function (event) {
-      const popoverEl = document.querySelector(".popover");
-      const isClickInsidePopover =
-        popoverEl && popoverEl.contains(event.target);
-      const isClickOnTrigger = popoverTriggerEl.contains(event.target);
+  //   document.addEventListener("click", function (event) {
+  //     const popoverEl = document.querySelector(".popover");
+  //     const isClickInsidePopover =
+  //       popoverEl && popoverEl.contains(event.target);
+  //     const isClickOnTrigger = popoverTriggerEl.contains(event.target);
 
-      if (!isClickInsidePopover && !isClickOnTrigger) {
-        const popoverInstance = bootstrap.Popover.getInstance(popoverTriggerEl);
-        if (popoverInstance) popoverInstance.hide();
-      }
-    });
-  }
+  //     if (!isClickInsidePopover && !isClickOnTrigger) {
+  //       const popoverInstance = bootstrap.Popover.getInstance(popoverTriggerEl);
+  //       if (popoverInstance) popoverInstance.hide();
+  //     }
+  //   });
+  // }
 
   // ===================== 2. Select2 Initialization =====================
   $(document).ready(function () {
@@ -165,11 +165,11 @@ document.addEventListener("DOMContentLoaded", function () {
       <i class="mdi mdi-20px mdi-trash-can-outline"></i>
     `;
 
-    const editTask =`
+    const editTask = `
       <button class="btn btn-sm btn-text-primary delete-task p-0" data-id="${id}">
         <i class="mdi mdi-20px mdi-pencil-outline"></i>
       </button>
-    `
+    `;
 
     const content = `
         <div class="d-flex align-items-center justify-content-between mb-2">
@@ -224,11 +224,11 @@ document.addEventListener("DOMContentLoaded", function () {
       </button>
     `;
 
-    const editTask =`
+    const editTask = `
       <button class="btn btn-sm btn-text-primary delete-task p-0" data-id="${taskId}">
         <i class="mdi mdi-20px mdi-pencil-outline"></i>
       </button>
-    `
+    `;
 
     const content = `
       <div class="d-flex align-items-center justify-content-between mb-2">
@@ -348,10 +348,30 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   $(document).ready(function () {
-    $('#skillSetForm').select2({
-      placeholder: $('#skillSetForm').data('placeholder'),
+    $("#skillSetForm").select2({
+      placeholder: $("#skillSetForm").data("placeholder"),
       allowClear: true,
-      minimumResultsForSearch: 0 // selalu tampilkan search box
+      minimumResultsForSearch: 0, // selalu tampilkan search box
     });
   });
+});
+
+const slider = document.getElementById("slider-usage");
+const valueDisplay = document.getElementById("usage-value");
+
+noUiSlider.create(slider, {
+  start: 400, // Start at 40% of 1000
+  connect: "lower",
+  range: {
+    min: 0,
+    max: 1000,
+  },
+  // Configure the tooltip to show percentage
+  tooltips: {
+    to: function (value) {
+      // Calculate percentage based on max range
+      const percentage = (value / 1000) * 100;
+      return Math.round(percentage) + "%";
+    },
+  },
 });

@@ -87,709 +87,6 @@
     <script src="./assets/vendor/js/helpers.js"></script>
     <script src="./assets/vendor/js/template-customizer.js"></script>
     <script src="./assets/js/config.js"></script>
-
-    <style>
-      .assign-modal .modal-content {
-        border-radius: 12px;
-      }
-      .assign-modal .modal-body {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-      }
-
-      /* Modifikasi untuk Roster di dalam Modal */
-      .modal-body .table-responsive {
-        border: 1px solid #eceff3;
-        border-radius: 12px;
-        overflow: auto;
-      }
-
-      .modal-body .roster-table thead th {
-        background-color: #f8fafc;
-        border-bottom: 1px solid #eceff3;
-        border-left: 1px solid #eceff3;
-      }
-
-      .modal-body .roster-table thead th:first-child {
-        border-left: none;
-      }
-
-      .modal-body .roster-table thead tr th {
-        padding: 10px 15px;
-        font-weight: 700;
-        color: #6b7280;
-      }
-
-      .modal-body .roster-table tbody tr:nth-child(odd) {
-        background-color: #fcfcfe;
-      }
-
-      .modal-body .roster-table tbody td:first-child {
-        border-right: 1px solid #eceff3;
-        background-color: #fff;
-      }
-
-      .modal-body .roster-table tbody td {
-        border-right: 1px solid #eceff3;
-      }
-
-      .modal-body .roster-table tbody td:last-child {
-        border-right: none;
-      }
-      .modal-body .roster-table tbody tr:last-child td {
-        border-bottom: none;
-      }
-
-      /* Style untuk tombol select date */
-      .modal-body .roster-table .btn-outline-primary {
-        border-radius: 6px;
-        border: 1px solid #eaf1ff;
-        color: #4d4da0;
-        background-color: #f1f5fe;
-        font-weight: 600;
-        text-transform: capitalize;
-        font-size: 0.85rem;
-        padding: 4px 8px;
-        display: block;
-        width: 100%;
-      }
-      .modal-body .roster-table .btn-outline-primary:hover {
-        background-color: #e3ecff;
-      }
-
-      .modal-body .roster-table .custom-bg-warning {
-        background-color: #fff1d6 !important;
-        color: #7a4e00;
-      }
-
-      .modal-body .roster-table .custom-bg-primary {
-        background-color: #eae9ff !important;
-        color: #4d4da0;
-      }
-
-      .modal-body .roster-table .badge.bg-label-primary {
-        background-color: #eaf1ff !important;
-        color: #1d4ed8 !important;
-        font-weight: 600;
-        padding: 4px 10px;
-      }
-
-      /* Pager */
-      .assign-modal .pagination .page-link {
-        border-radius: 8px;
-        border: 1px solid #e7eaf0;
-      }
-      .assign-modal .pagination .page-item.active .page-link {
-        background-color: #eaf1ff;
-        color: #1d4ed8;
-        border-color: #e7eaf0;
-      }
-      :root {
-        --soft-r: 14px;
-        --border: #e7e9ef;
-        --muted: #6b7280;
-        --ink: #111827;
-        --search-bg: #e9effa;
-        --panel: #eceff3;
-        --lavender: #eae9ff;
-        --lavender-text: #4d4da0;
-        --amber-soft: #fff1d6;
-        --amber-text: #7a4e00;
-      }
-      body {
-        font-family: "Poppins", system-ui, Segoe UI, Roboto, Arial, sans-serif;
-      }
-
-      /* KPI */
-      .kpi {
-        border: 1px solid var(--border);
-        border-radius: var(--soft-r);
-        padding: 22px;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        gap: 18px;
-      }
-      .kpi .num {
-        font-size: 56px;
-        font-weight: 800;
-        line-height: 1;
-      }
-      .kpi .title {
-        font-weight: 700;
-        color: var(--ink);
-      }
-      .kpi-left {
-        background: #fff;
-      }
-      .kpi-mid {
-        background: #f0f2ff;
-      }
-      .kpi-right {
-        background: #fff6e7;
-      }
-      .kpi .legend {
-        margin-left: auto;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-      .chip {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-        border-radius: 12px;
-        padding: 8px 14px;
-        font-weight: 700;
-        min-width: 140px;
-      }
-      .chip .dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 999px;
-        background: #fff;
-        opacity: 0.85;
-      }
-      .chip-urgent {
-        background: #d14949;
-        color: #fff;
-      }
-      .chip-high {
-        background: #e39a16;
-        color: #fff;
-      }
-      .chip-normal {
-        background: #1e8d60;
-        color: #fff;
-      }
-
-      /* Search + toolbar */
-      .search-pill {
-        background: var(--search-bg);
-        border: 1px solid var(--border);
-        border-radius: 10px;
-        padding: 8px 12px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-      .search-pill input {
-        border: 0;
-        background: transparent;
-        outline: 0;
-        width: 100%;
-        height: 36px;
-      }
-      .bulk-toolbar {
-        background: var(--panel);
-        border: 1px solid var(--border);
-        border-radius: 10px;
-        padding: 10px 14px;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-      .bulk-toolbar .btn {
-        padding: 0.35rem 0.75rem;
-      }
-
-      /* CUSTOM CHECKBOX (kotak, biru saat checked) */
-      .wo-card .form-check-input {
-        width: 18px;
-        height: 18px;
-        border-radius: 4px;
-        border: 2px solid #cbd5e1;
-        box-shadow: none;
-        margin-right: 6px;
-      }
-      .wo-card .form-check-input:focus {
-        box-shadow: none;
-      }
-      .wo-card .form-check-input:checked {
-        background-color: #3c57a1;
-        border-color: #3c57a1;
-      }
-
-      .kpi-group {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-        padding: 22px;
-        border: 1px solid var(--border);
-        border-radius: var(--soft-r);
-        background: #fff;
-      }
-      .kpi-group .kpi-block {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background: #f9fafb;
-        padding: 16px;
-        border-radius: var(--soft-r);
-      }
-      .kpi-group .kpi-block:first-child {
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        background: #fff;
-      }
-
-      /* WO card */
-      .wo-card {
-        border: 1px solid var(--border);
-        border-radius: 14px;
-        padding: 16px 18px;
-        background: #fff;
-        box-shadow: 0 2px 8px rgba(17, 24, 39, 0.06);
-      }
-
-      /* Baris ID: checkbox + WO code */
-      .wo-id {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
-      .wo-id .form-check-input {
-        margin: 0;
-        transform: scale(1.1);
-      }
-
-      .wo-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-      }
-      .wo-left {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-      .wo-code {
-        color: #3F3F40;
-        font-weight: 700;
-      }
-      .pill-overdue {
-        background: #cf4b4b;
-        color: #fff;
-        font-weight: 700;
-        border-radius: 999px;
-        padding: 6px 12px;
-        font-size: 0.9rem;
-      }
-      .tag {
-        background: #eff1f5;
-        border-radius: 10px;
-        padding: 4px 10px;
-        font-weight: 700;
-        font-size: 0.9rem;
-        color: #111827;
-      }
-      .severity-high {
-        color: #e39a16;
-        font-weight: 700;
-      }
-      .severity-urgent {
-        color: #c0392b;
-        font-weight: 700;
-      }
-      .middot {
-        color: #aeb6c2;
-        padding: 0 4px;
-      }
-
-      .wo-title {
-        font-size: 20px;
-        font-weight: 800;
-        margin-top: 4px;
-        margin-left: 28px;
-      }
-      .meta {
-        display: flex;
-        gap: 8px;
-        align-items: center;
-        margin-top: 2px;
-        margin-left: 28px;
-      }
-
-      /* Repeat To + Edit */
-      .repeat-row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 12px;
-      }
-      .repeat-left {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        color: #6b7280;
-        font-weight: 600;
-      }
-      .user-pill {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 28px;
-        height: 28px;
-        border-radius: 999px;
-        background: #e3ecff;
-        color: #1d4ed8;
-        font-weight: 800;
-        font-size: 0.8rem;
-      }
-      .btn-edit {
-        border: 1px solid var(--border);
-        border-radius: 10px;
-        padding: 0.45rem 0.9rem;
-        font-weight: 700;
-      }
-      .btn-edit:hover {
-        filter: brightness(0.98);
-      }
-
-      .wo-sep {
-        border-top: 1px solid #eceff5;
-        margin: 12px 0 14px 0;
-      }
-
-      .section-title {
-        color: #6b7280;
-        font-weight: 700;
-        margin-bottom: 6px;
-      }
-      .asset-row i,
-      .nextdue-row i {
-        width: 28px;
-        height: 28px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid var(--border);
-        border-radius: 8px;
-        color: #7c8597;
-        background: #fff;
-      }
-      .next-date {
-        font-weight: 800;
-      }
-      .next-hint {
-        color: #6b7280;
-      }
-      .danger-dot {
-        color: #d14949;
-      }
-
-      /* ASSIGN bars */
-      .assign-bar {
-        margin-top: 14px;
-        border-radius: 10px;
-        text-align: center;
-        padding: 10px;
-        font-weight: 800;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        cursor: pointer;
-        user-select: none;
-        border: 1px solid transparent;
-      }
-      .assign-bar-primary {
-        background: var(--lavender);
-        color: var(--lavender-text);
-      }
-      .assign-bar-primary:hover {
-        filter: brightness(0.98);
-      }
-      .assign-bar-warning {
-        background: var(--amber-soft);
-        color: var(--amber-text);
-      }
-      .assign-bar-warning:hover {
-        filter: brightness(0.98);
-      }
-
-      .content-gap {
-        row-gap: 1.25rem;
-      }
-
-      /* Filter card */
-      .filter-card {
-        border-radius: 14px;
-      }
-      .filter-card .accordion-button {
-        font-weight: 700;
-      }
-      .filter-line {
-        border-top: 1px solid var(--border);
-        margin: 12px 0;
-      }
-      .form-check {
-        margin-bottom: 0.4rem;
-      }
-
-      /* Projection block */
-      .proj {
-        border-top: 1px solid var(--border);
-        margin-top: 12px;
-        padding-top: 12px;
-      }
-      .proj h6 {
-        margin-bottom: 0.5rem;
-      }
-      .seg {
-        display: flex;
-        gap: 8px;
-      }
-      .seg .btn-seg {
-        border: 1px solid var(--border);
-        background: #f2f4f7;
-        padding: 0.35rem 0.6rem;
-        border-radius: 8px;
-        font-weight: 600;
-        font-size: 0.85rem;
-      }
-      .seg .btn-seg.active {
-        background: #e9effa;
-        border-color: #bfd0f2;
-        color: #1d4ed8;
-      }
-      .range-wrap {
-        margin-top: 0.35rem;
-      }
-      .range-wrap .small {
-        color: #6b7280;
-      }
-      .range-outer {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-      .range-outer input[type="range"] {
-        width: 100%;
-        accent-color: #f59e0b;
-      }
-      .badge-amber-soft {
-        background: #fff7e6;
-        color: #b45309;
-        border-radius: 10px;
-        padding: 2px 8px;
-        font-weight: 700;
-      }
-
-      .chk-normal:checked {
-        background: #fff;
-        border-color: #6b7280;
-      }
-      .chk-high:checked {
-        background: #f59e0b;
-        border-color: #f59e0b;
-      }
-      .chk-urgent:checked {
-        background: #dc2626;
-        border-color: #dc2626;
-      }
-
-      .bg-warning-subtle {
-        background: #fff6e5;
-      }
-      .bg-primary-subtle {
-        background: #eaf1ff;
-      }
-
-      /* ===== Assign Modal Polishing ===== */
-      .assign-modal {
-        --am-border: #e7eaf0;
-        --am-muted: #6b7280;
-        --am-head: #f8fafc;
-      }
-
-      /* Toolbar - 2 baris: search full width, lalu Skill Set & Set Date */
-      .assign-modal .am-toolbar {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 14px;
-        padding: 6px 0 12px 0;
-      }
-      .assign-modal .am-field {
-        display: flex;
-        flex-direction: column;
-      }
-      .assign-modal .am-field-search {
-        grid-column: 1 / -1;
-      }
-      .assign-modal .am-label {
-        color: #6b7280;
-        font-size: 0.88rem;
-      }
-
-      /* Search pill look */
-      .assign-modal .am-search .input-group-text {
-        background: #eef3ff;
-        border-color: var(--am-border);
-      }
-      .assign-modal .am-search input {
-        background: #f6f8ff;
-        border-color: var(--am-border);
-        height: 44px;
-      }
-
-      /* Date input */
-      .assign-modal .am-date .input-group-text {
-        background: #fff;
-        border-color: var(--am-border);
-      }
-      .assign-modal .am-date .form-control {
-        border-color: var(--am-border);
-        height: 44px;
-      }
-
-      /* Select2: multi tags -> badge pill */
-      .select2-container--default .select2-selection--multiple {
-        min-height: 44px;
-        border-color: #e7eaf0;
-        border-radius: 12px;
-        padding: 6px 6px;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
-      .select2-container--default
-        .select2-search--inline
-        .select2-search__field {
-        margin-top: 0;
-        line-height: 28px;
-        height: 28px;
-      }
-      .select2-container--default
-        .select2-selection--multiple
-        .select2-selection__choice {
-        border: 1px solid #e7eaf0;
-        border-radius: 999px;
-        padding: 4px 10px;
-        margin: 0 6px 0 0;
-        background: #f1f5fe;
-        color: #111827;
-        font-weight: 600;
-      }
-      .select2-container--default
-        .select2-selection--multiple
-        .select2-selection__choice__remove {
-        border: none;
-        margin-right: 6px;
-        color: #475569;
-      }
-      .select2-container--default
-        .select2-selection--multiple
-        .select2-selection__rendered {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-        padding: 0 6px;
-      }
-
-      /* Grid block */
-      .assign-modal .am-grid {
-        background: #fff;
-        border: 1px solid var(--am-border);
-        border-radius: 12px;
-      }
-      .assign-modal .am-grid-top,
-      .assign-modal .am-grid-foot {
-        padding: 10px 12px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .assign-modal .am-grid-scroll {
-        overflow: auto;
-        padding-bottom: 8px;
-      }
-      .assign-modal .am-grid-head {
-        position: sticky;
-        top: 0;
-        background: var(--am-head);
-        border-top: 1px solid var(--am-border);
-        border-bottom: 1px solid var(--am-border);
-      }
-      .assign-modal .am-grid-head .col {
-        padding: 8px 6px;
-      }
-      .assign-modal .am-grid-row .col {
-        padding: 10px 8px;
-      }
-      .assign-modal .am-grid-row:nth-child(even) {
-        background: #fcfcfe;
-      }
-      .assign-modal .am-colname {
-        min-width: 220px;
-      }
-      .assign-modal .am-colday {
-        min-width: 180px;
-      }
-
-      .assign-modal .am-pill {
-        border: 1px solid var(--am-border);
-        border-radius: 8px;
-        padding: 6px 8px;
-        font-weight: 600;
-        margin-bottom: 6px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-      .assign-modal .am-pill .am-sub {
-        display: block;
-        font-weight: 500;
-        color: #6b7280;
-        font-size: 0.75rem;
-      }
-      .assign-modal .am-pill-warn {
-        background: #fff6e5;
-      }
-      .assign-modal .am-pill-info {
-        background: #eaf1ff;
-      }
-      .assign-modal .am-pill-dark {
-        background: #2f3136;
-        color: #fff;
-      }
-      .assign-modal .am-slotplus {
-        text-align: center;
-        color: #9aa2b1;
-      }
-      .assign-modal .am-link {
-        background: none;
-        border: 0;
-        padding: 0;
-        color: #3b82f6;
-        font-weight: 600;
-        text-decoration: none;
-      }
-      .assign-modal .am-link:hover {
-        text-decoration: underline;
-      }
-
-      .assign-modal .am-pager .badge {
-        border: 1px solid var(--am-border);
-      }
-
-      /* Assignment block */
-      .assign-modal .am-assign .am-label {
-        color: var(--am-muted);
-        font-size: 0.88rem;
-      }
-      .assign-modal .am-assign .am-value {
-        font-weight: 600;
-      }
-
-      /* Accordion */
-      .assign-modal .am-acc-btn {
-        background: #f8fafc;
-        border-radius: 8px;
-      }
-    </style>
   </head>
 
   <body>
@@ -970,66 +267,150 @@
           <div class="content-wrapper">
             <div class="container-xxl flex-grow-1 container-p-y">
               <!-- KPI Row -->
-              <div class="row g-3 mb-3">
-                <div class="col-12">
-                  <div class="kpi kpi-group w-100">
-                    <div class="kpi-block text-center">
-                      <div class="num">17</div>
-                      <div class="mt-1 fs-5">Not Assigned</div>
-                    </div>
-                    <div class="kpi-block">
-                      <div>
-                        <div class="d-flex align-items-center gap-2 mb-1">
-                          <i
-                            class="mdi mdi-clipboard-text-outline mdi-24px text-primary"
-                          ></i
-                          ><span class="title">Asset Item</span>
-                        </div>
-                        <div class="num">12</div>
-                      </div>
-                      <div class="legend">
-                        <div class="chip chip-urgent">
-                          <span>Urgent</span><span>3</span>
-                        </div>
-                        <div class="chip chip-high">
-                          <span>High</span><span>3</span>
-                        </div>
-                        <div class="chip chip-normal">
-                          <span>Normal</span><span>3</span>
-                        </div>
+               <div class="card mb-4">
+                <div class="card-body">
+                  <div class="row g-3">
+                    <div class="col-md-4">
+                      <div class="d-flex flex-column align-items-center justify-content-center h-100">
+                        <h2 class="fw-bold mb-1 fs-1">17</h2>
+                        <div>Not Assigned</div>
                       </div>
                     </div>
-                    <div class="kpi-block">
-                      <div>
-                        <div class="d-flex align-items-center gap-2 mb-1">
-                          <i
-                            class="mdi mdi-map-marker-outline mdi-24px text-warning"
-                          ></i
-                          ><span class="title">Location</span>
+                    <div class="col-md-4">
+                      <div class="bg-label-primary p-3 rounded-2">
+                        <div class="row g-2 align-items-center">
+                          <div class="col-md-6">
+                            <div class="d-flex gap-2 mb-1">
+                              <i class="mdi mdi-clipboard-text-outline mdi-24px text-primary"></i>
+                              <div class="custom-text-dark d-flex flex-column justify-content-center">
+                                <span>Asset Item</span>
+                                <span class="fw-semibold fs-2">12</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="d-flex flex-column">
+                              <div class="custom-bg-danger p-2 rounded-2 text-white mb-2">
+                                <div class="d-flex justify-content-between w-100">
+                                  <span>Urgent</span>
+                                  <span>3</span>
+                                </div>
+                              </div>
+                              <div class="custom-bg-warning p-2 rounded-2 text-white mb-2">
+                                <div class="d-flex justify-content-between w-100">
+                                  <span>High</span>
+                                  <span>3</span>
+                                </div>
+                              </div>
+                              <div class="custom-bg-success p-2 rounded-2 text-white">
+                                <div class="d-flex justify-content-between w-100">
+                                  <span>Normal</span>
+                                  <span>3</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div class="num">5</div>
                       </div>
-                      <div class="legend">
-                        <div class="chip chip-urgent">
-                          <span>Urgent</span><span>3</span>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="bg-label-warning p-3 rounded-2">
+                        <div class="row g-2 align-items-center">
+                          <div class="col-md-6">
+                            <div class="d-flex gap-2 mb-1">
+                              <i class="mdi mdi-store-marker-outline mdi-24px text-warning"></i>
+                              <div class="custom-text-dark d-flex flex-column justify-content-center">
+                                <span>Location</span>
+                                <span class="fw-semibold fs-2">5</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="d-flex flex-column">
+                              <div class="custom-bg-danger p-2 rounded-2 text-white mb-2">
+                                <div class="d-flex justify-content-between w-100">
+                                  <span>Urgent</span>
+                                  <span>3</span>
+                                </div>
+                              </div>
+                              <div class="custom-bg-warning p-2 rounded-2 text-white mb-2">
+                                <div class="d-flex justify-content-between w-100">
+                                  <span>High</span>
+                                  <span>3</span>
+                                </div>
+                              </div>
+                              <div class="custom-bg-success p-2 rounded-2 text-white">
+                                <div class="d-flex justify-content-between w-100">
+                                  <span>Normal</span>
+                                  <span>3</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div class="chip chip-high">
-                          <span>High</span><span>3</span>
+                      </div>
+                    </div>
+                    <div class="col-12 d-none">
+                      <div class="kpi kpi-group w-100">
+                        <div class="kpi-block text-center">
+                          <div class="num">17</div>
+                          <div class="mt-1 fs-5">Not Assigned</div>
                         </div>
-                        <div class="chip chip-normal">
-                          <span>Normal</span><span>3</span>
+                        <div class="kpi-block">
+                          <div>
+                            <div class="d-flex align-items-center gap-2 mb-1">
+                              <i
+                                class="mdi mdi-clipboard-text-outline mdi-24px text-primary"
+                              ></i
+                              ><span class="title">Asset Item</span>
+                            </div>
+                            <div class="num">12</div>
+                          </div>
+                          <div class="legend">
+                            <div class="chip chip-urgent">
+                              <span>Urgent</span><span>3</span>
+                            </div>
+                            <div class="chip chip-high">
+                              <span>High</span><span>3</span>
+                            </div>
+                            <div class="chip chip-normal">
+                              <span>Normal</span><span>3</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="kpi-block">
+                          <div>
+                            <div class="d-flex align-items-center gap-2 mb-1">
+                              <i
+                                class="mdi mdi-map-marker-outline mdi-24px text-warning"
+                              ></i
+                              ><span class="title">Location</span>
+                            </div>
+                            <div class="num">5</div>
+                          </div>
+                          <div class="legend">
+                            <div class="chip chip-urgent">
+                              <span>Urgent</span><span>3</span>
+                            </div>
+                            <div class="chip chip-high">
+                              <span>High</span><span>3</span>
+                            </div>
+                            <div class="chip chip-normal">
+                              <span>Normal</span><span>3</span>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+               </div>
               <!-- /KPI Row -->
 
               <div class="row g-4">
                 <!-- Left: Filters -->
-                <div class="col-md-4">
-                  <div class="card filter-card">
+                <div class="col-md-3">
+                  <div class="card">
                     <div class="accordion" id="accordionFilter">
                       <div class="accordion-item shadow-none">
                         <h2 class="accordion-header" id="headingF">
@@ -1069,7 +450,7 @@
                             </div>
 
                             <div
-                              class="d-flex justify-content-between align-items-center"
+                              class="d-flex justify-content-between align-items-center mb-2"
                             >
                               <span>Repeat</span>
                               <label class="switch mb-0">
@@ -1086,9 +467,9 @@
                               </label>
                             </div>
 
-                            <div class="filter-line"></div>
+                            <hr class="my-3">
 
-                            <h6 class="mb-1">Priority</h6>
+                            <h6 class="mb-2">Priority</h6>
                             <div class="form-check">
                               <input
                                 class="form-check-input"
@@ -1119,9 +500,9 @@
                               >
                             </div>
 
-                            <div class="filter-line"></div>
+                            <hr class="my-3">
 
-                            <h6 class="mb-1">MTC Type</h6>
+                            <h6 class="mb-2">MTC Type</h6>
                             <div class="form-check">
                               <input
                                 class="form-check-input"
@@ -1151,9 +532,9 @@
                               >
                             </div>
 
-                            <div class="filter-line"></div>
+                            <hr class="my-3">
 
-                            <h6 class="mb-1">Assigned Status</h6>
+                            <h6 class="mb-2">Assigned Status</h6>
                             <div class="form-check">
                               <input
                                 class="form-check-input"
@@ -1182,61 +563,36 @@
                                 >Not Assigned</label
                               >
                             </div>
-
+                            <hr class="my-3">
                             <!-- Set Projection Due Soon -->
                             <div class="proj">
-                              <h6 class="mb-2">Set Projection Due Soon</h6>
-                              <div class="mb-1 small text-muted">
+                              <h6 class="mb-3">Set Projection Due Soon</h6>
+                              <div class="mb-2 small text-muted">
                                 Time Based
                               </div>
-                              <div class="seg mb-2">
-                                <button
-                                  type="button"
-                                  class="btn-seg active"
-                                  id="seg-next"
-                                >
-                                  NEXT MONTH
-                                </button>
-                                <button
-                                  type="button"
-                                  class="btn-seg"
-                                  id="seg-1m"
-                                >
-                                  1 MONTHS
-                                </button>
-                                <button
-                                  type="button"
-                                  class="btn-seg"
-                                  id="seg-3m"
-                                >
-                                  3 MONTHS
-                                </button>
+                              <div class="btn-group" role="group" aria-label="Time based radio group">
+                                <input type="radio" class="btn-check btn-check-custom" name="btnradio" id="btnradio1" checked autocomplete="off" />
+                                <label class="btn btn-sm btn-outline-primary btn-custom-primary text-capitalize p-1" for="btnradio1">Next month</label>
+                                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" />
+                                <label class="btn btn-sm btn-outline-primary text-capitalize p-1" for="btnradio2">1 Months</label>
+                                <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" />
+                                <label class="btn btn-sm btn-outline-primary text-capitalize p-1" for="btnradio3">3 Months</label>
                               </div>
 
-                              <div class="mb-1 small text-muted">
-                                Usage/Cycle Based
-                              </div>
-                              <div class="range-wrap">
-                                <div class="range-outer">
-                                  <input
-                                    type="range"
-                                    id="usagePct"
-                                    min="0"
-                                    max="100"
-                                    value="40"
-                                  />
-                                  <span
-                                    id="usagePctLabel"
-                                    class="badge-amber-soft"
-                                    >40%</span
-                                  >
+                              <hr class="my-3">
+
+                              <div class="mb-5">
+                                <label class="form-label">Usage/Cycle Based</label>
+                                <div class="d-flex align-items-center gap-3 mt-2">
+                                  <span class="fw-bold fs-5 text-dark">0</span>
+                                  <div id="slider-usage" class="flex-grow-1"></div>
                                 </div>
                               </div>
 
-                              <div class="d-grid mt-3">
+                              <div class="mt-3 text-end">
                                 <button
                                   type="button"
-                                  class="btn btn-sm btn-secondary"
+                                  class="btn btn-sm btn-dark"
                                 >
                                   SAVE CONFIG
                                 </button>
@@ -1251,331 +607,342 @@
                 </div>
 
                 <!-- Right: List -->
-                <div class="col-md-8">
+                <div class="col-md-9">
                   <!-- Search -->
-                  <div class="search-pill mb-2">
-                    <i class="mdi mdi-magnify mdi-20px"></i>
-                    <input
-                      type="search"
-                      placeholder="Search mtc task or mtc code or asset name or asset item"
-                    />
+                  <div class="d-flex gap-2 align-items-center justify-content-end mb-3">
+                    <label class="w-100 custom-search-input position-relative">
+                      <i class="mdi mdi-24px mdi-magnify position-absolute" style="left: 10px; top: 50%; transform: translateY(-50%); color: #999;"></i>
+                      <input type="search" class="form-control form-control-sm ps-4 mb-md-0 mb-3 ml-2" placeholder="Search work order number or asset name" aria-controls="search datatable" style="padding-left: 2.5rem!important;">
+                    </label>
                   </div>
 
                   <!-- Bulk toolbar -->
-                  <div class="bulk-toolbar mb-3">
-                    <span class="info">2 Work Order Selected</span>
-                    <button class="btn btn-sm btn-secondary">
+                  <div class="bg-label-secondary p-3 mb-3 rounded-2 d-flex align-items-center gap-4">
+                    <span class="custom-text-dark">2 Work Order Selected</span>
+                    <button class="btn btn-sm btn-dark">
                       Bulk Assign
                     </button>
                   </div>
 
-                  <!-- CARD 1 -->
-                  <div class="wo-card mb-3">
-                    <div class="wo-header">
-                      <div class="w-100">
-                        <!-- Baris ID -->
-                        <div class="wo-id">
-                          <label class="d-flex align-items-center gap-2 mb-1">
-                            <input
-                              class="form-check-input"
-                              type="checkbox"
-                              checked
-                            />
-                            <a
-                              href="#"
-                              class="wo-code link-primary text-decoration-none"
-                              data-bs-toggle="modal"
-                              data-bs-target="#assignModal"
-                              data-wo="WO-2025-05-07-0041"
-                            >
-                              WO-2025-05-07-0041
-                            </a>
-                          </label>
-                        </div>
-                        <!-- Judul -->
-                        <div class="wo-title">MT-A002 - Engine Oil</div>
-                        <!-- Meta -->
-                        <div class="meta">
-                          <span class="severity-high">High</span>
-                          <span class="middot">•</span>
-                          <span class="tag">Interval</span>
-                        </div>
+                  <!-- Card 1 -->
+                  <div class="card mb-4">
+                    <div class="card-body">
+                      <!-- Mobile Status -->
+                      <div class="d-md-none d-block mb-2">
+                        <span class="btn btn-sm btn-danger">overdue</span>
                       </div>
-                      <span class="pill-overdue">Overdue</span>
-                    </div>
-
-                    <div class="wo-sep"></div>
-
-                    <div class="row content-gap">
-                      <div class="col-lg-7">
-                        <div class="section-title">Asset</div>
-                        <div class="d-flex align-items-start gap-2 asset-row">
-                          <i class="mdi mdi-connection"></i>
-                          <div>
-                            <div class="fw-semibold">All New Avanza Hitam</div>
-                            <div class="text-muted small">Gedung A</div>
-                            <div class="text-muted small">
-                              i-2025-05-02-0020
+                      <div class="d-flex gap-2 align-items-center justify-content-between">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="wo-id" checked="">
+                          <label class="form-check-label text-primary fw-semibold" for="wo-id">WO-2025-05-07-0041</label>
+                        </div>
+                        <!-- Desktop Status -->
+                        <span class="btn btn-sm btn-danger d-none d-md-block">overdue</span>
+                      </div>
+                      <div class="fs-5 fw-bold">MT-A002 - Engine Oil</div>
+                      <div class="d-flex align-items-center gap-1 mb-2">
+                        <span class="fw-semibold text-warning">High</span>
+                        <span>&bull;</span>
+                        <span class="bg-label-dark px-2 py-1 rounded-2">Interval</span>
+                      </div>
+                      <hr class="my-3">
+                      <div class="row g-3 mb-3">
+                        <div class="col-lg-6">
+                          <div class="fw-medium mb-2">Asset</div>
+                          <div class="d-flex align-items-start gap-2">
+                            <span class="badge bg-label-dark fs-6">
+                              <i class="mdi mdi-archive-outline mdi-24px"></i>
+                            </span>
+                            <div>
+                              <div class="fw-semibold">All New Avanza Hitam</div>
+                              <div class="text-muted small">Gedung A</div>
+                              <div class="text-muted small">
+                                i-2025-05-02-0020
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-6">
+                          <div class="fw-medium mb-2">Next Due</div>
+                          <div class="d-flex align-items-start gap-2 nextdue-row">
+                            <span class="badge bg-label-dark fs-6">
+                              <i class="mdi mdi-calendar-month-outline mdi-24px"></i>
+                            </span>
+                            <div>
+                              <div class="next-date">
+                                01 Jan 2025
+                                <i
+                                  class="mdi mdi-alert-circle text-warning"
+                                ></i>
+                              </div>
+                              <div class="next-hint small">
+                                or 10.000 Km
+                                <i class="mdi mdi-alert-circle text-danger"></i> or
+                                20.000 Cycle
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="col-lg-5">
-                        <div class="section-title">Next Due</div>
-                        <div class="d-flex align-items-start gap-2 nextdue-row">
-                          <i class="mdi mdi-calendar-month-outline"></i>
-                          <div>
-                            <div class="next-date">
-                              01 Jan 2025
-                              <i
-                                class="mdi mdi-information-outline text-warning"
-                              ></i>
-                            </div>
-                            <div class="next-hint small">
-                              or 10.000 Km
-                              <i class="mdi mdi-alert-circle danger-dot"></i> or
-                              20.000 Cycle
-                            </div>
-                          </div>
-                        </div>
+                      <div class="d-flex gap-3 align-items-center justify-content-between mt-3 mt-md-0">
+                        <a href="#" class="btn btn-label-primary text-capitalize w-100" data-bs-toggle="modal" data-bs-target="#assignModal" data-wo="WO-2025-05-07-0041">Assign To</a>
                       </div>
                     </div>
-
-                    <div class="assign-bar assign-bar-primary">ASSIGN TO</div>
                   </div>
-
-                  <!-- CARD 2 -->
-                  <div class="wo-card mb-3">
-                    <div class="wo-header">
-                      <div class="w-100">
-                        <div class="wo-id">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            checked
-                          />
-                          <span class="wo-code">WO-2025-05-07-0042</span>
-                        </div>
-                        <div class="wo-title">MT-A002 - Engine Oil</div>
-                        <div class="meta">
-                          <span class="severity-high">High</span>
-                          <span class="middot">•</span>
-                          <span class="tag">Interval</span>
-                        </div>
+                  
+                  <!-- Card 2 -->
+                  <div class="card mb-4">
+                    <div class="card-body">
+                      <!-- Mobile Status -->
+                      <div class="d-md-none d-block mb-2">
+                        <!-- <span class="btn btn-sm btn-danger">overdue</span> -->
                       </div>
-                    </div>
-
-                    <div class="wo-sep"></div>
-
-                    <div class="row content-gap">
-                      <div class="col-lg-7">
-                        <div class="section-title">Asset</div>
-                        <div class="d-flex align-items-start gap-2 asset-row">
-                          <i class="mdi mdi-connection"></i>
-                          <div>
-                            <div class="fw-semibold">
-                              Toyota Innova Reborn Hitam
+                      <div class="d-flex gap-2 align-items-center justify-content-between">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="wo-id-1" checked="">
+                          <label class="form-check-label text-primary fw-semibold" for="wo-id-1">WO-2025-05-07-0042</label>
+                        </div>
+                        <!-- Desktop Status -->
+                        <!-- <span class="btn btn-sm btn-danger d-none d-md-block">overdue</span> -->
+                      </div>
+                      <div class="fs-5 fw-bold">MT-A002 - Engine Oil</div>
+                      <div class="d-flex align-items-center gap-1 mb-2">
+                        <span class="fw-semibold text-warning">High</span>
+                        <span>&bull;</span>
+                        <span class="bg-label-dark px-2 py-1 rounded-2">Interval</span>
+                      </div>
+                      <hr class="my-3">
+                      <div class="row g-3 mb-3">
+                        <div class="col-lg-6">
+                          <div class="fw-medium mb-2">Asset</div>
+                          <div class="d-flex align-items-start gap-2">
+                            <span class="badge bg-label-dark fs-6">
+                              <i class="mdi mdi-archive-outline mdi-24px"></i>
+                            </span>
+                            <div>
+                              <div class="fw-semibold">Toyota Innova Reborn Hitam</div>
+                              <div class="text-muted small">Gedung A</div>
+                              <div class="text-muted small">
+                                i-2025-05-02-0020
+                              </div>
                             </div>
-                            <div class="text-muted small">
-                              Gedung A • Basement Area
-                            </div>
-                            <div class="text-muted small">
-                              i-2025-05-02-0278
+                          </div>
+                        </div>
+                        <div class="col-lg-6">
+                          <div class="fw-medium mb-2">Next Due</div>
+                          <div class="d-flex align-items-start gap-2 nextdue-row">
+                            <span class="badge bg-label-dark fs-6">
+                              <i class="mdi mdi-calendar-month-outline mdi-24px"></i>
+                            </span>
+                            <div>
+                              <div class="next-date">
+                                01 Jan 2025
+                                <i
+                                  class="mdi mdi-alert-circle text-warning"
+                                ></i>
+                              </div>
+                              <div class="next-hint small">
+                                or 10.000 Km
+                                <i class="mdi mdi-alert-circle text-danger"></i> or
+                                20.000 Cycle
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="col-lg-5">
-                        <div class="section-title">Next Due</div>
-                        <div class="d-flex align-items-start gap-2 nextdue-row">
-                          <i class="mdi mdi-calendar-month-outline"></i>
-                          <div>
-                            <div class="next-date">01 Jan 2026</div>
-                            <div class="next-hint small">
-                              or 15.000 Km
-                              <i class="mdi mdi-alert-circle danger-dot"></i> or
-                              20.000 Cycle
-                            </div>
-                          </div>
-                        </div>
+                      <div class="d-flex gap-3 align-items-center justify-content-between mt-3 mt-md-0">
+                        <a href="#" class="btn btn-label-primary text-capitalize w-100" data-bs-toggle="modal" data-bs-target="#assignModal" data-wo="WO-2025-05-07-0041">Assign To</a>
                       </div>
-                    </div>
-
-                    <div class="assign-bar assign-bar-primary">ASSIGN TO</div>
-                  </div>
-
-                  <!-- CARD: MT-L002 - Check Sanitary -->
-                  <div class="wo-card mb-3">
-                    <div class="wo-header">
-                      <div class="w-100">
-                        <div class="wo-id">
-                          <label class="d-flex align-items-center gap-2 mb-1">
-                            <input class="form-check-input" type="checkbox" />
-                            <span class="wo-code">WO-2025-05-07-0123</span>
-                          </label>
-                        </div>
-                        <div class="wo-title">MT-L002 - Check Sanitary</div>
-                        <div class="meta">
-                          <span class="severity-urgent">Urgent</span>
-                          <span class="middot">•</span>
-                          <span class="tag">Scheduled Repeat</span>
-                        </div>
-                      </div>
-                      <span class="pill-overdue">Overdue</span>
-                    </div>
-
-                    <div class="wo-sep"></div>
-
-                    <div class="row content-gap">
-                      <div class="col-lg-7">
-                        <div class="section-title">Location</div>
-                        <div class="d-flex align-items-start gap-2 asset-row">
-                          <i class="mdi mdi-map-marker-outline"></i>
-                          <div class="fw-semibold">
-                            Floor 1 <i class="mdi mdi-stairs"></i> Room 101
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-5">
-                        <div class="section-title">Next Due</div>
-                        <div class="d-flex align-items-start gap-2 nextdue-row">
-                          <i class="mdi mdi-calendar-month-outline"></i>
-                          <div>
-                            <div class="next-date">
-                              01 Jun 2025
-                              <i class="mdi mdi-alert-circle text-danger"></i>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="assign-bar assign-bar-warning">ASSIGN TO</div>
-                  </div>
-
-                  <!-- CARD: MT-L003 - Deep Clean Ballroom -->
-                  <div class="wo-card mb-3">
-                    <div class="wo-header">
-                      <div class="w-100">
-                        <div class="wo-id">
-                          <label class="d-flex align-items-center gap-2 mb-1">
-                            <input class="form-check-input" type="checkbox" />
-                            <span class="wo-code">WO-2025-05-07-0123</span>
-                          </label>
-                        </div>
-                        <div class="wo-title">
-                          MT-L003 - Deep Clean Ballroom
-                        </div>
-                        <div class="meta">
-                          <span class="severity-urgent">Urgent</span>
-                          <span class="middot">•</span>
-                          <span class="tag">Scheduled One Time</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="wo-sep"></div>
-
-                    <div class="row content-gap">
-                      <div class="col-lg-7">
-                        <div class="section-title">Location</div>
-                        <div class="d-flex align-items-start gap-2 asset-row">
-                          <i class="mdi mdi-map-marker-outline"></i>
-                          <div class="fw-semibold">
-                            Floor 1 <i class="mdi mdi-stairs"></i> Ballroom A
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-5">
-                        <div class="section-title">Next Due</div>
-                        <div class="d-flex align-items-start gap-2 nextdue-row">
-                          <i class="mdi mdi-calendar-month-outline"></i>
-                          <div>
-                            <div class="next-date">
-                              01 Sep 2025
-                              <i
-                                class="mdi mdi-information-outline text-warning"
-                              ></i>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="assign-bar assign-bar-warning">ASSIGN TO</div>
-                  </div>
-
-                  <!-- CARD: MT-A002 - Engine Oil (dengan Repeat To + EDIT) -->
-                  <div class="wo-card mb-3">
-                    <div class="wo-header">
-                      <div class="w-100">
-                        <div class="wo-id">
-                          <label class="d-flex align-items-center gap-2 mb-1">
-                            <input class="form-check-input" type="checkbox" />
-                            <span class="wo-code">WO-2025-05-07-0042</span>
-                          </label>
-                        </div>
-                        <div class="wo-title">MT-A002 - Engine Oil</div>
-                        <div class="meta">
-                          <span class="severity-high">High</span>
-                          <span class="middot">•</span>
-                          <span class="tag">Interval</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="wo-sep"></div>
-
-                    <div class="row content-gap">
-                      <div class="col-lg-7">
-                        <div class="section-title">Asset</div>
-                        <div class="d-flex align-items-start gap-2 asset-row">
-                          <i class="mdi mdi-connection"></i>
-                          <div>
-                            <div class="fw-semibold">
-                              Toyota Innova Reborn Hitam
-                            </div>
-                            <div class="text-muted small">
-                              Gedung A
-                              <i class="mdi mdi-circle-small"></i> Basement Area
-                            </div>
-                            <div class="text-muted small">
-                              i-2025-05-02-0278
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-5">
-                        <div class="section-title">Next Due</div>
-                        <div class="d-flex align-items-start gap-2 nextdue-row">
-                          <i class="mdi mdi-calendar-month-outline"></i>
-                          <div>
-                            <div class="next-date">01 Jan 2026</div>
-                            <div class="next-hint small">
-                              or 15.000 Km
-                              <i class="mdi mdi-alert-circle danger-dot"></i> or
-                              20.000 Cycle
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Repeat To + EDIT -->
-                    <div class="repeat-row">
-                      <div class="repeat-left">
-                        <span>Repeat To :</span>
-                        <span class="user-pill">BL</span>
-                      </div>
-                      <button
-                        type="button"
-                        class="btn btn-light btn-sm btn-edit"
-                      >
-                        EDIT
-                      </button>
                     </div>
                   </div>
 
+                  <!-- Card 3 -->
+                  <div class="card mb-4">
+                    <div class="card-body">
+                      <!-- Mobile Status -->
+                      <div class="d-md-none d-block mb-2">
+                        <span class="btn btn-sm btn-danger">overdue</span>
+                      </div>
+                      <div class="d-flex gap-2 align-items-center justify-content-between">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="wo-id-2">
+                          <label class="form-check-label text-primary fw-semibold" for="wo-id-2">WO-2025-05-07-0123</label>
+                        </div>
+                        <!-- Desktop Status -->
+                        <span class="btn btn-sm btn-danger d-none d-md-block">overdue</span>
+                      </div>
+                      <div class="fs-5 fw-bold">MT-L002 - Check Sanitary</div>
+                      <div class="d-flex align-items-center gap-1 mb-2">
+                        <span class="fw-semibold text-danger">Urgent</span>
+                        <span>&bull;</span>
+                        <span class="bg-label-dark px-2 py-1 rounded-2">Scheduled Repeat</span>
+                      </div>
+                      <hr class="my-3">
+                      <div class="row g-3 mb-3">
+                        <div class="col-lg-6">
+                          <div class="fw-medium mb-2">Location</div>
+                          <div class="d-flex align-items-center gap-1">
+                            <span class="badge bg-label-dark fs-6">
+                              <i class="mdi mdi-map-marker-outline mdi-24px"></i>
+                            </span>
+                            <div class="d-flex align-items-center gap-2">
+                              <div class="fw-semibold">Floor 1</div>
+                              <i class="mdi mdi-chevron-right"></i>
+                              <div class="fw-semibold">Room 101</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-6">
+                          <div class="fw-medium mb-2">Next Due</div>
+                          <div class="d-flex align-items-center gap-1">
+                            <span class="badge bg-label-dark fs-6">
+                              <i class="mdi mdi-calendar-month-outline mdi-24px"></i>
+                            </span>
+                            <div>
+                              <div class="next-date">
+                                01 Jan 2025
+                                <i class="mdi mdi-alert-circle text-danger"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-flex gap-3 align-items-center justify-content-between mt-3 mt-md-0">
+                        <a href="#" class="btn btn-label-warning text-capitalize w-100" data-bs-toggle="modal" data-bs-target="#assignModal" data-wo="WO-2025-05-07-0041">Assign To</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card mb-4">
+                    <div class="card-body">
+                      <!-- Mobile Status -->
+                      <div class="d-md-none d-block mb-2">
+                        <!-- <span class="btn btn-sm btn-danger">overdue</span> -->
+                      </div>
+                      <div class="d-flex gap-2 align-items-center justify-content-between">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="wo-id-3">
+                          <label class="form-check-label text-primary fw-semibold" for="wo-id-3">WO-2025-05-07-0123</label>
+                        </div>
+                        <!-- Desktop Status -->
+                        <!-- <span class="btn btn-sm btn-danger d-none d-md-block">overdue</span> -->
+                      </div>
+                      <div class="fs-5 fw-bold">MT-L003 - Deep Clean Ballroom</div>
+                      <div class="d-flex align-items-center gap-1 mb-2">
+                        <span class="fw-semibold text-danger">Urgent</span>
+                        <span>&bull;</span>
+                        <span class="bg-label-dark px-2 py-1 rounded-2">Scheduled One Time</span>
+                      </div>
+                      <hr class="my-3">
+                      <div class="row g-3 mb-3">
+                        <div class="col-lg-6">
+                          <div class="fw-medium mb-2">Location</div>
+                          <div class="d-flex align-items-center gap-1">
+                            <span class="badge bg-label-dark fs-6">
+                              <i class="mdi mdi-map-marker-outline mdi-24px"></i>
+                            </span>
+                            <div class="d-flex align-items-center gap-2">
+                              <div class="fw-semibold">Floor 1</div>
+                              <i class="mdi mdi-chevron-right"></i>
+                              <div class="fw-semibold">Ballroom</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-6">
+                          <div class="fw-medium mb-2">Next Due</div>
+                          <div class="d-flex align-items-center gap-1">
+                            <span class="badge bg-label-dark fs-6">
+                              <i class="mdi mdi-calendar-month-outline mdi-24px"></i>
+                            </span>
+                            <div>
+                              <div class="next-date">
+                                01 Sep 2025
+                                <i class="mdi mdi-alert-circle text-warning"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-flex gap-3 align-items-center justify-content-between mt-3 mt-md-0">
+                        <a href="#" class="btn btn-label-warning text-capitalize w-100" data-bs-toggle="modal" data-bs-target="#assignModal" data-wo="WO-2025-05-07-0041">Assign To</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 2 -->
+                  <div class="card mb-4">
+                    <div class="card-body">
+                      <!-- Mobile Status -->
+                      <div class="d-md-none d-block mb-2">
+                        <!-- <span class="btn btn-sm btn-danger">overdue</span> -->
+                      </div>
+                      <div class="d-flex gap-2 align-items-center justify-content-between">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="wo-id-4">
+                          <label class="form-check-label text-primary fw-semibold" for="wo-id-4">WO-2025-05-07-0042</label>
+                        </div>
+                        <!-- Desktop Status -->
+                        <!-- <span class="btn btn-sm btn-danger d-none d-md-block">overdue</span> -->
+                      </div>
+                      <div class="fs-5 fw-bold">MT-A002 - Engine Oil</div>
+                      <div class="d-flex align-items-center gap-1 mb-2">
+                        <span class="fw-semibold text-warning">High</span>
+                        <span>&bull;</span>
+                        <span class="bg-label-dark px-2 py-1 rounded-2">Interval</span>
+                      </div>
+                      <hr class="my-3">
+                      <div class="row g-3 mb-3">
+                        <div class="col-lg-6">
+                          <div class="fw-medium mb-2">Asset</div>
+                          <div class="d-flex align-items-start gap-2">
+                            <span class="badge bg-label-dark fs-6">
+                              <i class="mdi mdi-archive-outline mdi-24px"></i>
+                            </span>
+                            <div>
+                              <div class="fw-semibold">Toyota Innova Reborn Hitam</div>
+                              <div class="text-muted small d-flex gap-1 align-items-center">Gedung A <i class="mdi mdi-chevron-right"></i>Basement Area</div>
+                              <div class="text-muted small">
+                                i-2025-05-02-0020
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-6">
+                          <div class="fw-medium mb-2">Next Due</div>
+                          <div class="d-flex align-items-start gap-2 nextdue-row">
+                            <span class="badge bg-label-dark fs-6">
+                              <i class="mdi mdi-calendar-month-outline mdi-24px"></i>
+                            </span>
+                            <div>
+                              <div class="next-date">
+                                01 Jan 2025
+                                <!-- <i class="mdi mdi-alert-circle text-warning"></i> -->
+                              </div>
+                              <div class="next-hint small">
+                                or 10.000 Km
+                                <!-- <i class="mdi mdi-alert-circle text-danger"></i> -->
+                                or
+                                20.000 Cycle
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-md-flex gap-3 align-items-center justify-content-between mt-3">
+                        <div class="d-flex gap-2 align-items-center">
+                          Repeat to:
+                          <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
+                            <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up" aria-label="Vinnie Mostowy" data-bs-original-title="Vinnie Mostowy">
+                              <img class="rounded-circle" src="./assets/img/avatars/5.png" alt="Avatar">
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="d-flex gap-3 align-items-center justify-content-between mt-3 mt-md-0">
+                          <a href="#" class="btn btn-label-primary text-capitalize w-100" data-bs-toggle="modal" data-bs-target="#assignRepeatModal" data-wo="WO-2025-05-07-0041">Edit</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <div
                     class="d-md-flex justify-content-between align-items-center py-3"
                   >
@@ -1759,9 +1126,8 @@
                               "
                             >
                               <select class="form-select" style="border: none">
-                                <option selected>MONTHLY</option>
-                                <option selected>WEEKLY</option>
-                                <option selected>DAILY</option>
+                                <option>Month</option>
+                                <option selected>Week</option>
                               </select>
                             </th>
                             <th style="min-width: 180px">
@@ -2895,101 +2261,5 @@
 
     <!-- Page JS -->
     <script src="./assets/js/dispatcher-central.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // 1) Matikan trigger lama di link WO code (kalau masih ada)
-        document
-          .querySelectorAll('.wo-code[data-bs-toggle="modal"]')
-          .forEach((el) => {
-            el.removeAttribute("data-bs-toggle");
-            el.removeAttribute("data-bs-target");
-          });
-
-        // 2) Pasang trigger di tombol ASSIGN TO
-        document.querySelectorAll(".wo-card").forEach((card) => {
-          const tagText = (card.querySelector(".meta .tag")?.textContent || "")
-            .trim()
-            .toLowerCase();
-          const assignBar = card.querySelector(".assign-bar");
-          const woCode = (
-            card.querySelector(".wo-code")?.textContent || ""
-          ).trim();
-
-          if (!assignBar) return;
-
-          // reset
-          assignBar.removeAttribute("data-bs-toggle");
-          assignBar.removeAttribute("data-bs-target");
-          assignBar.removeAttribute("data-wo");
-
-          if (tagText.includes("interval")) {
-            assignBar.setAttribute("data-bs-toggle", "modal");
-            assignBar.setAttribute("data-bs-target", "#assignModal");
-            if (woCode) assignBar.setAttribute("data-wo", woCode);
-            assignBar.style.cursor = "pointer";
-          } else if (tagText.includes("scheduled repeat")) {
-            assignBar.setAttribute("data-bs-toggle", "modal");
-            assignBar.setAttribute("data-bs-target", "#assignRepeatModal");
-            if (woCode) assignBar.setAttribute("data-wo", woCode);
-            assignBar.style.cursor = "pointer";
-          } else {
-            // type lain: non-trigger
-            assignBar.style.cursor = "default";
-          }
-        });
-
-        // 3) Isi WO code saat masing-masing modal dibuka
-        const intervalModal = document.getElementById("assignModal");
-        if (intervalModal) {
-          // sisipkan label kecil bila belum ada
-          const mTitle = intervalModal.querySelector(".modal-title");
-          if (mTitle && !document.getElementById("assignWoCode")) {
-            const small = document.createElement("small");
-            small.id = "assignWoCode";
-            small.className = "text-muted ms-2";
-            mTitle.appendChild(small);
-          }
-          intervalModal.addEventListener("show.bs.modal", (e) => {
-            const trigger = e.relatedTarget;
-            const wo = trigger?.getAttribute("data-wo") || "";
-            const label = document.getElementById("assignWoCode");
-            if (label) label.textContent = wo ? "• " + wo : "";
-          });
-        }
-
-        const repeatModal = document.getElementById("assignRepeatModal");
-        if (repeatModal) {
-          repeatModal.addEventListener("show.bs.modal", (e) => {
-            const trigger = e.relatedTarget;
-            const wo = trigger?.getAttribute("data-wo") || "";
-            const span = document.getElementById("assignRepeatWo");
-            if (span) span.textContent = wo;
-          });
-        }
-
-        // 4) Init widget untuk kedua modal
-        if (window.jQuery && $.fn.select2) {
-          $("#skillSetForm").select2({
-            // dari modal Interval
-            width: "100%",
-            closeOnSelect: false,
-            tags: false,
-            placeholder: "Select skill sets",
-            minimumResultsForSearch: -1,
-          });
-          $("#skillSetRepeat").select2({
-            // dari modal Scheduled Repeat
-            width: "100%",
-            closeOnSelect: false,
-            tags: false,
-            placeholder: "Select skill sets",
-            minimumResultsForSearch: -1,
-          });
-        }
-        if (window.flatpickr) {
-          flatpickr("#assignmentDate", { dateFormat: "d-M-Y" }); // interval modal
-        }
-      });
-    </script>
   </body>
 </html>
