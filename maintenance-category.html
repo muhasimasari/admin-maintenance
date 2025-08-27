@@ -229,41 +229,40 @@
                 <div data-i18n="MTC Setting">MTC Setting</div>
               </a>
             </li>
-
-            <div class=""> <!-- If you want to show this menu please remove <div class="d-none"> -->
-                <li class="menu-header fw-light mt-4">
-                    <span class="menu-header-text">MASTER DATA MAINTENANCE</span>
-                </li>
-                <li class="menu-item active">
-                    <a href="./skill-set.html" class="menu-link">
-                    <i class="menu-icon tf-icons mdi mdi-briefcase-account-outline"></i>
-                    <div data-i18n="Skill Set">Skill Set</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="./engineer.html" class="menu-link">
-                    <i class="menu-icon tf-icons mdi mdi-account-hard-hat-outline"></i>
-                    <div data-i18n="Engineer">Engineer</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="./vendor.html" class="menu-link">
-                    <i class="menu-icon tf-icons mdi mdi-store-outline"></i>
-                    <div data-i18n="Vendor">Vendor</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="./maintenance-category.html" class="menu-link">
-                    <i class="menu-icon tf-icons mdi mdi-list-box-outline"></i>
-                    <div data-i18n="Maintenance Category">MTC Category</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="./root-cause-category.html" class="menu-link">
-                    <i class="menu-icon tf-icons mdi mdi-list-box-outline"></i>
-                    <div data-i18n="Root Cause Category">Root Cause Category</div>
-                    </a>
-                </li>
+            <div class="">             
+              <li class="menu-header fw-light mt-4">
+                <span class="menu-header-text">MASTER DATA MAINTENANCE</span>
+              </li>
+              <li class="menu-item">
+                <a href="./skill-set.html" class="menu-link">
+                  <i class="menu-icon tf-icons mdi mdi-briefcase-account-outline"></i>
+                  <div data-i18n="Skill Set">Skill Set</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="./engineer.html" class="menu-link">
+                  <i class="menu-icon tf-icons mdi mdi-account-hard-hat-outline"></i>
+                  <div data-i18n="Engineer">Engineer</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="./vendor.html" class="menu-link">
+                  <i class="menu-icon tf-icons mdi mdi-store-outline"></i>
+                  <div data-i18n="Vendor">Vendor</div>
+                </a>
+              </li>
+              <li class="menu-item active">
+                <a href="./maintenance-category.html" class="menu-link">
+                  <i class="menu-icon tf-icons mdi mdi-list-box-outline"></i>
+                  <div data-i18n="MTC Category">MTC Category</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="./root-cause-category.html" class="menu-link">
+                  <i class="menu-icon tf-icons mdi mdi-list-box-outline"></i>
+                  <div data-i18n="Root Cause Category">Root Cause Category</div>
+                </a>
+              </li>
             </div>
           </ul>
         </aside>
@@ -329,7 +328,7 @@
           <div class="content-wrapper">
             <div class="container-xxl flex-grow-1 container-p-y">
               <div class="d-flex justify-content-between align-items-center mb-4">
-                <h4 class="fw-bold mb-0">Skill Set</h4>
+                <h4 class="fw-bold mb-0">MTC Category</h4>
               </div>
               
               <div class="card mt-4">
@@ -350,9 +349,9 @@
                       </label>
                     </div>
                   </div>
-                  <div class="col-md-2">
-                    <button type="button" class="btn btn-primary waves-effect waves-light w-100 text-white" data-bs-toggle="modal" data-bs-target="#addSkillModal">
-                      + ADD SKILL
+                  <div class="col-md-4">
+                    <button type="button" class="btn btn-primary waves-effect waves-light w-100 text-white" data-bs-toggle="modal" data-bs-target="#addRootCauseCategoryModal">
+                      + ADD MTC CATEGORY
                     </button>
                   </div>
                 </div>
@@ -361,59 +360,74 @@
                   <table class="table card-table table-borderless">
                     <thead>
                       <tr>
-                        <th style="min-width: 260px;">SKILL NAME</th>
+                        <th style="min-width: 260px;">MTC CATEGORY</th>
                         <th class="text-center">ACTIONS</th>
                       </tr>
                     </thead>
                       <tbody class="table-border-bottom-0">
                         <tr>
                           <td class="pt-3 pb-3">
-                            <div class="ps-3">Engine Diagnostics</div>
+                            <div class="ps-3">Manusia</div>
                           </td>
                           <td class="pt-3 pb-3 text-center">
-                            <a href="#" style="color: #3C57A1; text-decoration: none;" data-bs-toggle="modal" data-bs-target="#editSkillModal" data-skill-name="Engine Diagnostics"><strong>Edit</strong></a>
+                            <a href="#" style="color: #3C57A1; text-decoration: none;" 
+                              data-bs-toggle="modal" data-bs-target="#editRootCauseCategoryModal" 
+                              class="edit-modal-btn"
+                              data-category="Manusia" 
+                              data-root-causes='["Kurangnya pelatihan SOP pengiriman", "Kurang koordinasi"]'>
+                              <strong>Edit</strong>
+                            </a>
                             /
-                            <a href="#" style="color: #CA4046; text-decoration: none;" data-bs-toggle="modal" data-bs-target="#deleteSkillModal" data-skill-name="Engine Diagnostics"><strong>Delete</strong></a>
+                            <a href="#" style="color: #CA4046; text-decoration: none;"
+                              data-bs-toggle="modal" data-bs-target="#deleteRootCauseCategoryModal" 
+                              data-category-name="Manusia"
+                              class="delete-modal-btn">
+                              <strong>Delete</strong>
+                            </a>
                           </td>
                         </tr>
-                        <tr style="border-top: 1px solid #f2f2f2;">
+
+                        <tr>
                           <td class="pt-3 pb-3">
-                            <div class="ps-3">Cooling System</div>
+                            <div class="ps-3">Metode</div>
                           </td>
                           <td class="pt-3 pb-3 text-center">
-                            <a href="#" style="color: #3C57A1; text-decoration: none;" data-bs-toggle="modal" data-bs-target="#editSkillModal" data-skill-name="Cooling System"><strong>Edit</strong></a>
+                            <a href="#" style="color: #3C57A1; text-decoration: none;" 
+                              data-bs-toggle="modal" data-bs-target="#editRootCauseCategoryModal" 
+                              class="edit-modal-btn"
+                              data-category="Metode" 
+                              data-root-causes='["Tidak ada standar waktu", "Salah urutan proses"]'>
+                              <strong>Edit</strong>
+                            </a>
                             /
-                            <a href="#" style="color: #CA4046; text-decoration: none;" data-bs-toggle="modal" data-bs-target="#deleteSkillModal" data-skill-name="Cooling System"><strong>Delete</strong></a>
+                            <a href="#" style="color: #CA4046; text-decoration: none;"
+                              data-bs-toggle="modal" data-bs-target="#deleteRootCauseCategoryModal" 
+                              data-category-name="Metode"
+                              class="delete-modal-btn">
+                              <strong>Delete</strong>
+                            </a>
                           </td>
                         </tr>
-                        <tr style="border-top: 1px solid #f2f2f2;">
+
+                                                <tr>
                           <td class="pt-3 pb-3">
-                            <div class="ps-3">Understell Specialist</div>
+                            <div class="ps-3">Metode</div>
                           </td>
                           <td class="pt-3 pb-3 text-center">
-                            <a href="#" style="color: #3C57A1; text-decoration: none;" data-bs-toggle="modal" data-bs-target="#editSkillModal" data-skill-name="Understell Specialist"><strong>Edit</strong></a>
+                            <a href="#" style="color: #3C57A1; text-decoration: none;" 
+                              data-bs-toggle="modal" data-bs-target="#editRootCauseCategoryModal" 
+                              class="edit-modal-btn"
+                              data-category="Metode" 
+                              data-root-causes='["Tidak ada standar waktu", "Salah urutan proses"]'>
+                              <strong>Edit</strong>
+                            </a>
                             /
-                            <a href="#" style="color: #CA4046; text-decoration: none;" data-bs-toggle="modal" data-bs-target="#deleteSkillModal" data-skill-name="Understell Specialist"><strong>Delete</strong></a>
-                          </td>
-                        </tr>
-                        <tr style="border-top: 1px solid #f2f2f2;">
-                          <td class="pt-3 pb-3">
-                            <div class="ps-3">Electronic</div>
-                          </td>
-                          <td class="pt-3 pb-3 text-center">
-                            <a href="#" style="color: #3C57A1; text-decoration: none;" data-bs-toggle="modal" data-bs-target="#editSkillModal" data-skill-name="Electronic"><strong>Edit</strong></a>
-                            /
-                            <a href="#" style="color: #CA4046; text-decoration: none;" data-bs-toggle="modal" data-bs-target="#deleteSkillModal" data-skill-name="Electricity"><strong>Delete</strong></a>
-                          </td>
-                        </tr>
-                        <tr style="border-top: 1px solid #f2f2f2;">
-                          <td class="pt-3 pb-3">
-                            <div class="ps-3">Electricity</div>
-                          </td>
-                          <td class="pt-3 pb-3 text-center">
-                            <a href="#" style="color: #3C57A1; text-decoration: none;" data-bs-toggle="modal" data-bs-target="#editSkillModal" data-skill-name="Electricity"><strong>Edit</strong></a>
-                            /
-                            <a href="#" style="color: #CA4046; text-decoration: none;"><strong>Delete</strong></a>
+                            <a href="#" style="color: #CA4046; text-decoration: none;"
+                              data-bs-toggle="modal" data-bs-target="#deleteRootCauseCategoryModal" 
+                              data-category-name="Metode"
+                              class="delete-modal-btn">
+                              <strong>Delete</strong>
+                            </a>
                           </td>
                         </tr>
                       </tbody>
@@ -455,68 +469,84 @@
       <!-- Overlay -->
       <div class="layout-overlay layout-menu-toggle"></div>
 
-       <!-- addSkillModal Modal -->
-      <div class="modal fade" id="addSkillModal" tabindex="-1" aria-labelledby="addSkillModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-md modal-dialog-centered">
-          <div class="modal-content">
+      <div class="modal fade" id="addRootCauseCategoryModal" tabindex="-1" aria-labelledby="addRootCauseCategoryModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content border-0">
             <div class="modal-header">
-              <h5 class="modal-title" id="addSkillModalLabel">Add Skill</h5>
+              <h5 class="modal-title" id="addRootCauseCategoryModalLabel">Add MTC Category</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            <hr class="mt-3"/>
             <div class="modal-body">
-              <div class="form-floating form-floating-outline mb-3">
-                <input type="text" class="form-control" id="skillNameInput" placeholder="Skill Name" />
-                <label for="skillNameInput">Skill Name</label>
+              <div class="row g-3 mb-4">
+                <div class="col-12">
+                  <div class="form-floating form-floating-outline">
+                    <input type="text" class="form-control" id="categoryName" placeholder="Category" />
+                    <label for="categoryName">Category *</label>
+                  </div>
+                </div>
               </div>
+
+              <hr class="mt-3"/>
             </div>
+              
             <div class="modal-footer">
-              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">CANCEL</button>
+              <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">CANCEL</button>
               <button type="button" class="btn btn-primary">SAVE</button>
             </div>
           </div>
         </div>
       </div>
 
-       <!-- editSkillModal Modal -->
-      <div class="modal fade" id="editSkillModal" tabindex="-1" aria-labelledby="editSkillModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-md modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="editSkillModalLabel">Edit Skill</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <div class="form-floating form-floating-outline mb-3">
-                <input type="text" class="form-control" id="editSkillNameInput" placeholder="Name" value="Electricity" />
-                <label for="editSkillNameInput">Name</label>
+
+    <div class="modal fade" id="editRootCauseCategoryModal" tabindex="-1" aria-labelledby="editRootCauseCategoryModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content border-0">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editRootCauseCategoryModalLabel">Edit MTC Category</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <hr class="mt-3"/>
+          <div class="modal-body">
+            <div class="row g-3 mb-4">
+              <div class="col-12">
+                <div class="form-floating form-floating-outline">
+                  <input type="text" class="form-control" id="editCategoryName" placeholder="Category" />
+                  <label for="editCategoryName">Category <span class="text-danger">*</span></label>
+                </div>
               </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">CANCEL</button>
-              <button type="button" class="btn btn-primary">SAVE</button>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Delete Confirmation Skill Modal -->
-      <div class="modal fade" id="deleteSkillModal" tabindex="-1" aria-labelledby="deleteSkillModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-md modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="deleteSkillModalLabel">Confirmation</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <p class="mb-0">Are you sure you want to delete this skill name "<strong id="itemNameToDelete"></strong>"?</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCEL</button>
-              <button type="button" class="btn btn-danger">DELETE</button>
-            </div>
+            <hr class="mt-3"/>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">CANCEL</button>
+            <button type="button" class="btn btn-primary">SAVE</button>
           </div>
         </div>
       </div>
+    </div>
+
+
+    <div class="modal fade" id="deleteRootCauseCategoryModal" tabindex="-1" aria-labelledby="deleteRootCauseCategoryModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-md modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteRootCauseCategoryModalLabel">Delete Confirmation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="mb-0">Are you sure you want to delete the mtc category "<strong id="categoryNameToDelete"></strong>" ?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCEL</button>
+            <button type="button" class="btn btn-danger">DELETE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     </div>
     <!-- / Layout wrapper -->
@@ -556,26 +586,129 @@
 
     
         
-        var editSkillModal = document.getElementById('editSkillModal');
-        editSkillModal.addEventListener('show.bs.modal', function (event) {
-          var button = event.relatedTarget;
-          var skillName = button.getAttribute('data-skill-name');
-          var modalInput = editSkillModal.querySelector('.modal-body #editSkillNameInput');
+       document.addEventListener('DOMContentLoaded', function () {
+          const addModal = document.getElementById('addRootCauseCategoryModal');
+          const editModal = document.getElementById('editRootCauseCategoryModal');
 
-          modalInput.value = skillName;
+          // --- Functions to create/remove root cause inputs ---
+          
+          // Fungsi untuk modal ADD
+          function createAddRootCauseInput() {
+            const div = document.createElement('div');
+            div.classList.add('row', 'g-3', 'align-items-center', 'root-cause-item', 'mb-2');
+            div.innerHTML = `
+              <div class="col-md-11">
+                <div class="form-floating form-floating-outline">
+                  <input type="text" class="form-control" placeholder="Root Cause" />
+                  <label for="newRootCause">Root Cause</label>
+                </div>
+              </div>
+              <div class="col-md-1 text-start">
+                <button type="button" class="btn btn-text-danger remove-root-cause px-0">
+                  <i class="mdi mdi-24px mdi-trash-can-outline"></i>
+                </button>
+              </div>
+            `;
+            div.querySelector('.remove-root-cause').addEventListener('click', function() {
+              div.remove();
+            });
+            return div;
+          }
+
+          // FUNGSI UNTUK MODAL EDIT (sekarang benar-benar sama persis dengan Add)
+          function createEditRootCauseInput(value = '') {
+            const div = document.createElement('div');
+            div.classList.add('row', 'g-3', 'align-items-center', 'root-cause-item', 'mb-2');
+            div.innerHTML = `
+              <div class="col-md-11">
+                <div class="form-floating form-floating-outline">
+                  <input type="text" class="form-control" placeholder="Root Cause" value="${value}" />
+                  <label for="editRootCause">Root Cause</label>
+                </div>
+              </div>
+              <div class="col-md-1 text-start">
+                <button type="button" class="btn btn-text-danger remove-root-cause px-0">
+                  <i class="mdi mdi-24px mdi-trash-can-outline"></i>
+                </button>
+              </div>
+            `;
+            div.querySelector('.remove-root-cause').addEventListener('click', function() {
+              div.remove();
+            });
+            return div;
+          }
+          
+          // --- Event listeners for the ADD modal ---
+          if (addModal) {
+            const addRootCauseBtn = addModal.querySelector('#addRootCauseBtn');
+            const rootCausesContainer = addModal.querySelector('#root-causes-container');
+            
+            addModal.addEventListener('show.bs.modal', function () {
+              // Logic to clear form if needed
+            });
+            
+            if (addRootCauseBtn && rootCausesContainer) {
+              addRootCauseBtn.addEventListener('click', function() {
+                rootCausesContainer.appendChild(createAddRootCauseInput());
+              });
+            }
+          }
+
+          // --- Event listeners for the EDIT modal ---
+          if (editModal) {
+            const addEditRootCauseBtn = editModal.querySelector('#addEditRootCauseBtn');
+            const editRootCausesContainer = editModal.querySelector('#edit-root-causes-container');
+            
+            editModal.addEventListener('show.bs.modal', function (event) {
+              const button = event.relatedTarget; 
+              const category = button.getAttribute('data-category');
+              const rootCausesString = button.getAttribute('data-root-causes');
+              const rootCauses = JSON.parse(rootCausesString);
+
+              const modalCategoryInput = editModal.querySelector('#editCategoryName');
+              
+              editRootCausesContainer.innerHTML = '';
+              
+              modalCategoryInput.value = category;
+
+              rootCauses.forEach(rc => {
+                const div = createEditRootCauseInput(rc);
+                editRootCausesContainer.appendChild(div);
+              });
+            });
+            
+            if (addEditRootCauseBtn && editRootCausesContainer) {
+              addEditRootCauseBtn.addEventListener('click', function() {
+                editRootCausesContainer.appendChild(createEditRootCauseInput());
+              });
+            }
+          }
+          
+          // Event listener for initial delete buttons on the page (if any)
+          document.querySelectorAll('.remove-root-cause').forEach(btn => {
+            btn.addEventListener('click', function() {
+              btn.closest('.root-cause-item').remove();
+            });
+          });
         });
 
-        var deleteSkillModal = document.getElementById('deleteSkillModal');
-        deleteSkillModal.addEventListener('show.bs.modal', function (event) {
-          // Button that triggered the modal
-          var button = event.relatedTarget;
-          // Extract info from data-bs-* attributes
-          var itemName = button.getAttribute('data-skill-name');
-          // Update the modal's body
-          var modalBodyStrong = deleteSkillModal.querySelector('.modal-body #itemNameToDelete');
 
-          modalBodyStrong.textContent = itemName;
-        });
+      document.addEventListener('DOMContentLoaded', function () {
+        const deleteModal = document.getElementById('deleteRootCauseCategoryModal');
+
+        if (deleteModal) {
+          deleteModal.addEventListener('show.bs.modal', function (event) {
+            // Tombol yang memicu modal
+            const button = event.relatedTarget;
+            // Ambil nama kategori dari atribut data-*
+            const categoryName = button.getAttribute('data-category-name');
+            // Dapatkan elemen strong di dalam modal
+            const modalText = deleteModal.querySelector('#categoryNameToDelete');
+            // Update teks di dalam modal
+            modalText.textContent = categoryName;
+          });
+        }
+      });
 
 
       document.addEventListener("DOMContentLoaded", function () {

@@ -95,6 +95,46 @@
 
     <script src="./assets/vendor/js/template-customizer.js"></script>
     <script src="./assets/js/config.js"></script>
+
+    <style>
+    .modal-divider {
+      border: 0;
+      height: 1px;
+      background: #e6e6ef;
+      margin: 0 0 12px 0;
+    }
+
+    .skill-clear {
+      font-weight: 600;
+      color: #3c57a1;
+      text-decoration: none;
+    }
+
+    .skill-scroll {
+      max-height: 180px;     
+      overflow-y: auto;
+      border: 1px solid #e6e6ef;
+      border-radius: 12px;
+      padding: 14px 18px;
+    }
+
+    .skill-row {
+      display: flex;
+      align-items: center;
+      gap: .65rem;
+      padding: 10px 0;
+      margin: 0;
+    }
+
+    .skill-label { font-size: 1.05rem; }
+    .skill-row .form-check-input {
+      width: 20px;
+      height: 20px;
+      margin-top: 0;
+    }
+
+  </style>
+
   </head>
 
   <body>
@@ -229,18 +269,17 @@
                 <div data-i18n="MTC Setting">MTC Setting</div>
               </a>
             </li>
-
             <div class=""> <!-- If you want to show this menu please remove <div class="d-none"> -->
                 <li class="menu-header fw-light mt-4">
                     <span class="menu-header-text">MASTER DATA MAINTENANCE</span>
                 </li>
-                <li class="menu-item active">
+                <li class="menu-item">
                     <a href="./skill-set.html" class="menu-link">
                     <i class="menu-icon tf-icons mdi mdi-briefcase-account-outline"></i>
                     <div data-i18n="Skill Set">Skill Set</div>
                     </a>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item active">
                     <a href="./engineer.html" class="menu-link">
                     <i class="menu-icon tf-icons mdi mdi-account-hard-hat-outline"></i>
                     <div data-i18n="Engineer">Engineer</div>
@@ -328,120 +367,108 @@
           <!-- Content wrapper -->
           <div class="content-wrapper">
             <div class="container-xxl flex-grow-1 container-p-y">
-              <div class="d-flex justify-content-between align-items-center mb-4">
-                <h4 class="fw-bold mb-0">Skill Set</h4>
-              </div>
-              
-              <div class="card mt-4">
-                <div class="row g-3 px-4 py-3 align-items-center">
-                  <hr />
-                  <div class="col">
-                    <div class="d-md-flex d-block g-3 gap-2 align-items-center justify-content-end">
-                      <label class="w-100 custom-search-input position-relative">
-                        <i class="mdi mdi-24px mdi-magnify position-absolute" style="
-                              left: 10px;
-                              top: 50%;
-                              transform: translateY(-50%);
-                              color: #999;
-                            "></i>
-                        <input type="search" class="form-control form-control-sm ps-4 mb-md-0 mb-3 ml-2"
-                          placeholder="Search by name"
-                          aria-controls="search datatable" style="padding-left: 2.5rem !important" />
-                      </label>
-                    </div>
+              <h4 class="fw-bold py-3 mb-4" style="color: #4B4B9F;">Engineer Management</h4>
+
+              <div class="card">
+                <div class="card-body">
+                  <div class="w-100 mb-3" style="max-width: 250px;">
+                    <label for="skillSetDropdown" class="form-label" style="font-weight: bold;">Skill Set</label>
+                    <select id="skillSetDropdown" class="form-select">
+                      <option selected>All Skill Set</option>
+                      <option value="1">Engine Diagnostics</option>
+                      <option value="2">Cooling System</option>
+                      <option value="1">Understell Specialist</option>
+                      <option value="2">Electronic</option>
+                    </select>
                   </div>
-                  <div class="col-md-2">
-                    <button type="button" class="btn btn-primary waves-effect waves-light w-100 text-white" data-bs-toggle="modal" data-bs-target="#addSkillModal">
-                      + ADD SKILL
-                    </button>
-                  </div>
-                </div>
-                <hr />
-                <div class="card-datatable table-responsive custom-table text-nowrap px-4 pt-3 mb-4">
-                  <table class="table card-table table-borderless">
-                    <thead>
-                      <tr>
-                        <th style="min-width: 260px;">SKILL NAME</th>
-                        <th class="text-center">ACTIONS</th>
-                      </tr>
-                    </thead>
-                      <tbody class="table-border-bottom-0">
-                        <tr>
+
+                      <div class="row g-3 py-3 align-items-center">
+                        <hr />
+                        <div class="col">
+                          <div class="d-md-flex d-block g-3 gap-2 align-items-center justify-content-end">
+                            <label class="w-100 custom-search-input position-relative">
+                              <i class="mdi mdi-24px mdi-magnify position-absolute" style="
+                                    left: 10px;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    color: #999;
+                                  "></i>
+                              <input type="search" class="form-control form-control-sm ps-4 mb-md-0 mb-3 ml-2"
+                                placeholder="Search by name"
+                                aria-controls="search datatable" style="padding-left: 2.5rem !important" />
+                            </label>
+                          </div>
+                        </div>
+                        
+                       
+                      </div>
+
+                  <div class="card-datatable table-responsive custom-table text-nowrap">
+                    <table class="table card-table table-borderless">
+                      <thead>
+                        <tr style="border-bottom: 1px solid #dee2e6;">
+                          <th class="pb-3" style="color: #6C757D;">NAME</th>
+                          <th class="pb-3" style="color: #6C757D;">SKILL SET</th>
+                          <th class="pb-3 text-center" style="color: #6C757D;">ACTIONS</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr style="border-top: 1px solid #f2f2f2;">
+                          <td class="pl-3 pt-3 pb-3">Adi Kuncoro</td>
                           <td class="pt-3 pb-3">
-                            <div class="ps-3">Engine Diagnostics</div>
+                            
                           </td>
                           <td class="pt-3 pb-3 text-center">
-                            <a href="#" style="color: #3C57A1; text-decoration: none;" data-bs-toggle="modal" data-bs-target="#editSkillModal" data-skill-name="Engine Diagnostics"><strong>Edit</strong></a>
-                            /
-                            <a href="#" style="color: #CA4046; text-decoration: none;" data-bs-toggle="modal" data-bs-target="#deleteSkillModal" data-skill-name="Engine Diagnostics"><strong>Delete</strong></a>
+                            <a href="#" class="text-primary" data-bs-toggle="modal" data-bs-target="#addSkillSetModal">
+                              <strong>Add Skill Set</strong>
+                            </a>
                           </td>
                         </tr>
-                        <tr style="border-top: 1px solid #f2f2f2;">
+                        <tr style="border-top: 1px #f2f2f2 solid;">
+                          <td class="pt-3 pb-3">Hendri Susanto</td>
                           <td class="pt-3 pb-3">
-                            <div class="ps-3">Cooling System</div>
+                            Engine Diagnostics, Oil Change Service, Fuel Injection System Service, Cooling System Service...
+                            <br>
+                            <a href="#" style="color: #4B4B9F; text-decoration: none;"><strong>more skills</strong></a>
                           </td>
                           <td class="pt-3 pb-3 text-center">
-                            <a href="#" style="color: #3C57A1; text-decoration: none;" data-bs-toggle="modal" data-bs-target="#editSkillModal" data-skill-name="Cooling System"><strong>Edit</strong></a>
-                            /
-                            <a href="#" style="color: #CA4046; text-decoration: none;" data-bs-toggle="modal" data-bs-target="#deleteSkillModal" data-skill-name="Cooling System"><strong>Delete</strong></a>
+                            <a href="#" class="text-primary" data-bs-toggle="modal" data-bs-target="#editSkillSetModal">
+                              <strong>Edit Skill Set</strong>
+                            </a>
                           </td>
                         </tr>
-                        <tr style="border-top: 1px solid #f2f2f2;">
+                        <tr style="border-top: 1px #f2f2f2 solid;">
+                          <td class="pt-3 pb-3">Doni Asmara</td>
                           <td class="pt-3 pb-3">
-                            <div class="ps-3">Understell Specialist</div>
+                            Engine Diagnostics, Oil Change Service, Fuel Injection System Service, Cooling System Service...
+                            <br>
+                            <a href="#" style="color: #4B4B9F; text-decoration: none;"><strong>2 more skills</strong></a>
                           </td>
                           <td class="pt-3 pb-3 text-center">
-                            <a href="#" style="color: #3C57A1; text-decoration: none;" data-bs-toggle="modal" data-bs-target="#editSkillModal" data-skill-name="Understell Specialist"><strong>Edit</strong></a>
-                            /
-                            <a href="#" style="color: #CA4046; text-decoration: none;" data-bs-toggle="modal" data-bs-target="#deleteSkillModal" data-skill-name="Understell Specialist"><strong>Delete</strong></a>
-                          </td>
-                        </tr>
-                        <tr style="border-top: 1px solid #f2f2f2;">
-                          <td class="pt-3 pb-3">
-                            <div class="ps-3">Electronic</div>
-                          </td>
-                          <td class="pt-3 pb-3 text-center">
-                            <a href="#" style="color: #3C57A1; text-decoration: none;" data-bs-toggle="modal" data-bs-target="#editSkillModal" data-skill-name="Electronic"><strong>Edit</strong></a>
-                            /
-                            <a href="#" style="color: #CA4046; text-decoration: none;" data-bs-toggle="modal" data-bs-target="#deleteSkillModal" data-skill-name="Electricity"><strong>Delete</strong></a>
-                          </td>
-                        </tr>
-                        <tr style="border-top: 1px solid #f2f2f2;">
-                          <td class="pt-3 pb-3">
-                            <div class="ps-3">Electricity</div>
-                          </td>
-                          <td class="pt-3 pb-3 text-center">
-                            <a href="#" style="color: #3C57A1; text-decoration: none;" data-bs-toggle="modal" data-bs-target="#editSkillModal" data-skill-name="Electricity"><strong>Edit</strong></a>
-                            /
-                            <a href="#" style="color: #CA4046; text-decoration: none;"><strong>Delete</strong></a>
+                            <a href="#" class="text-primary" data-bs-toggle="modal" data-bs-target="#editSkillSetModal">
+                              <strong>Edit Skill Set</strong>
+                            </a>
                           </td>
                         </tr>
                       </tbody>
-                  </table>
-                </div>
+                    </table>
+                  </div>
 
-                <hr>
-                <div class="d-md-flex d-block justify-content-between align-items-center px-4 py-4">
-                  <div>Showing 1 to 5 of 5 entries</div>
-                  <nav aria-label="Page navigation">
-                    <ul class="pagination mb-0">
-                      <li class="page-item first">
-                        <a class="page-link waves-effect" href="#"><i class="tf-icon mdi mdi-skip-previous-outline mdi-20px"></i></a>
-                      </li>
-                      <li class="page-item prev">
-                        <a class="page-link waves-effect" href="#"><i class="tf-icon mdi mdi-chevron-left mdi-20px"></i></a>
-                      </li>
-                      <li class="page-item active">
-                        <a class="page-link waves-effect" href="#">1</a>
-                      </li>
-                      <li class="page-item next">
-                        <a class="page-link waves-effect" href="#"><i class="tf-icon mdi mdi-chevron-right mdi-20px"></i></a>
-                      </li>
-                      <li class="page-item last">
-                        <a class="page-link waves-effect" href="#"><i class="tf-icon mdi mdi-skip-next-outline mdi-20px"></i></a>
-                      </li>
-                    </ul>
-                  </nav>
+                  <hr />
+
+                  <div class="d-md-flex d-block justify-content-between align-items-center px-4 py-4">
+                    <div>Showing 1 to 2 of 2 entries</div>
+                    <nav aria-label="Page navigation">
+                      <ul class="pagination pagination-sm mb-0">
+                        <li class="page-item disabled">
+                          <a class="page-link" href="#"><i class="mdi mdi-chevron-left"></i></a>
+                        </li>
+                        <li class="page-item disabled">
+                          <a class="page-link" href="#"><i class="mdi mdi-chevron-right"></i></a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
                 </div>
               </div>
             </div>
@@ -455,45 +482,125 @@
       <!-- Overlay -->
       <div class="layout-overlay layout-menu-toggle"></div>
 
-       <!-- addSkillModal Modal -->
-      <div class="modal fade" id="addSkillModal" tabindex="-1" aria-labelledby="addSkillModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-md modal-dialog-centered">
-          <div class="modal-content">
+      <!-- Add Skill Set Modal -->
+      <div class="modal fade" id="addSkillSetModal" tabindex="-1" aria-labelledby="addSkillSetModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content" style="border-radius: 14px;">
             <div class="modal-header">
-              <h5 class="modal-title" id="addSkillModalLabel">Add Skill</h5>
+              <h5 class="modal-title fw-semibold" id="addSkillSetModalLabel">Add Skill Set</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+
             <div class="modal-body">
-              <div class="form-floating form-floating-outline mb-3">
-                <input type="text" class="form-control" id="skillNameInput" placeholder="Skill Name" />
-                <label for="skillNameInput">Skill Name</label>
+              <!-- Garis pertama -->
+              <hr class="modal-divider">
+
+              <!-- Input Search -->
+              <div class="mb-2">
+                <input id="skillSearchInput" type="text" class="form-control form-control-lg"
+                      placeholder="Search skill name">
+              </div>
+
+              <!-- Clear All (di bawah search, kanan) -->
+              <div class="d-flex justify-content-end mb-2">
+                <a href="#" id="clearAllSkills" class="skill-clear">Clear All</a>
+              </div>
+
+              <!-- Garis kedua -->
+              <hr class="modal-divider">
+
+              <!-- List skill scrollable -->
+              <div id="skillList" class="skill-scroll">
+                <label class="skill-row">
+                  <input class="form-check-input skill-checkbox" type="checkbox" value="Engine Diagnostics" checked>
+                  <span class="skill-label">Engine Diagnostics</span>
+                </label>
+                <label class="skill-row">
+                  <input class="form-check-input skill-checkbox" type="checkbox" value="Cooling System Service">
+                  <span class="skill-label">Cooling System Service</span>
+                </label>
+                <label class="skill-row">
+                  <input class="form-check-input skill-checkbox" type="checkbox" value="Understeel">
+                  <span class="skill-label">Understeel</span>
+                </label>
+                <label class="skill-row">
+                  <input class="form-check-input skill-checkbox" type="checkbox" value="Electrical">
+                  <span class="skill-label">Electrical</span>
+                </label>
+                <label class="skill-row">
+                  <input class="form-check-input skill-checkbox" type="checkbox" value="Woodworking">
+                  <span class="skill-label">Woodworking</span>
+                </label>
+
+                <!-- Tambah skill lain sesuai kebutuhan -->
               </div>
             </div>
+
             <div class="modal-footer">
               <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">CANCEL</button>
-              <button type="button" class="btn btn-primary">SAVE</button>
+              <button type="button" class="btn btn-primary" id="saveSkillSetBtn">SAVE</button>
             </div>
           </div>
         </div>
       </div>
 
        <!-- editSkillModal Modal -->
-      <div class="modal fade" id="editSkillModal" tabindex="-1" aria-labelledby="editSkillModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-md modal-dialog-centered">
-          <div class="modal-content">
+      <div class="modal fade" id="editSkillSetModal" tabindex="-1" aria-labelledby="editSkillSetModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content" style="border-radius: 14px;">
             <div class="modal-header">
-              <h5 class="modal-title" id="editSkillModalLabel">Edit Skill</h5>
+              <h5 class="modal-title fw-semibold" id="addSkillSetModalLabel">Edit Skill Set</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+
             <div class="modal-body">
-              <div class="form-floating form-floating-outline mb-3">
-                <input type="text" class="form-control" id="editSkillNameInput" placeholder="Name" value="Electricity" />
-                <label for="editSkillNameInput">Name</label>
+              <!-- Garis pertama -->
+              <hr class="modal-divider">
+
+              <!-- Input Search -->
+              <div class="mb-2">
+                <input id="skillSearchInput" type="text" class="form-control form-control-lg"
+                      placeholder="Search skill name">
+              </div>
+
+              <!-- Clear All (di bawah search, kanan) -->
+              <div class="d-flex justify-content-end mb-2">
+                <a href="#" id="clearAllSkills" class="skill-clear">Clear All</a>
+              </div>
+
+              <!-- Garis kedua -->
+              <hr class="modal-divider">
+
+              <!-- List skill scrollable -->
+              <div id="skillList" class="skill-scroll">
+                <label class="skill-row">
+                  <input class="form-check-input skill-checkbox" type="checkbox" value="Engine Diagnostics" checked>
+                  <span class="skill-label">Engine Diagnostics</span>
+                </label>
+                <label class="skill-row">
+                  <input class="form-check-input skill-checkbox" type="checkbox" value="Cooling System Service">
+                  <span class="skill-label">Cooling System Service</span>
+                </label>
+                <label class="skill-row">
+                  <input class="form-check-input skill-checkbox" type="checkbox" value="Understeel">
+                  <span class="skill-label">Understeel</span>
+                </label>
+                <label class="skill-row">
+                  <input class="form-check-input skill-checkbox" type="checkbox" value="Electrical">
+                  <span class="skill-label">Electrical</span>
+                </label>
+                <label class="skill-row">
+                  <input class="form-check-input skill-checkbox" type="checkbox" value="Woodworking">
+                  <span class="skill-label">Woodworking</span>
+                </label>
+
+                <!-- Tambah skill lain sesuai kebutuhan -->
               </div>
             </div>
+
             <div class="modal-footer">
               <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">CANCEL</button>
-              <button type="button" class="btn btn-primary">SAVE</button>
+              <button type="button" class="btn btn-primary" id="saveSkillSetBtn">SAVE</button>
             </div>
           </div>
         </div>
