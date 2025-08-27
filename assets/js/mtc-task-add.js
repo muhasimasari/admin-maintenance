@@ -330,8 +330,7 @@ $("#colorFilter").select2({
 
 $("#categoryTask").select2({
   placeholder: $("#categoryTask").data("placeholder"),
-  allowClear: true,
-  width: "100%",
+  allowClear: false,
 });
 
 function checkFilterSelection() {
@@ -372,50 +371,207 @@ document.getElementById("scheduling").addEventListener("change", () => {
   document.getElementById("schedulingDates").classList.remove("d-none");
 });
 
-function toggleInput(selectId, inputGroupId) {
-  const select = document.getElementById(selectId);
-  const inputGroup = document.getElementById(inputGroupId);
+// --- DOM Element References ---
+const cronInputs = document.querySelectorAll(".cron-input");
+const descriptionText = document.getElementById("description-text");
+const scheduleButtons = document.querySelectorAll(".common-schedule-btn");
 
-  function updateVisibility() {
-    if (select.value === "every") {
-      inputGroup.style.display = "none";
-    } else {
-      inputGroup.style.display = "block";
+const DAY_NAMES = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+const MONTH_NAMES = [
+  "",
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+// --- Main Cron Parsing Logic ---
+function cronToText() {
+  const parts = Array.from(cronInputs).map((input) => input.value.trim());
+  // We only care about day-of-month, month, and day-of-week for this implementation
+  const [dayOfMonth, month, dayOfWeek] = parts;
+
+  // Combine into a string for simple hardcoded checks
+  const cronString = parts.join(" ");
+  if (cronString === "* * *") return "Every day";
+  if (cronString === "* * 0") return "Every Sunday";
+  if (cronString === "1 * *") return "On the first day of every month";
+
+  // Parse each part of the cron string individually
+  const dayOfMonthDesc = parsePart(dayOfMonth, "day-of-month");
+  const monthDesc = parsePart(month, "month", { names: MONTH_NAMES });
+  const dayOfWeekDesc = parsePart(dayOfWeek, "day-of-week", {
+    names: DAY_NAMES,
+  });
+
+  // Build the descriptive sentence from the parsed parts
+  let conditions = [];
+  if (dayOfMonthDesc) conditions.push(dayOfMonthDesc);
+  if (dayOfWeekDesc) conditions.push(dayOfWeekDesc);
+  if (monthDesc) {
+    // Change "on" to "in" for months for better grammar (e.g., "in January")
+    conditions.push(monthDesc.replace(/^on\s/, "in "));
+  }
+
+  if (conditions.length === 0) return "Every day";
+
+  // Join the conditions and capitalize the first letter
+  let sentence = conditions.join(" ");
+  sentence = sentence.charAt(0).toUpperCase() + sentence.slice(1);
+  return sentence;
+}
+
+/**
+ * Parses a single part of a cron string (e.g., "1-5" or "* /2") into a human-readable string.
+ * @param {string} part - The cron part string.
+ * @param {string} unit - The unit of time (e.g., 'day-of-month', 'month').
+ * @param {object} [options={}] - Additional options, like a map of names.
+ * @returns {string} A human-readable description of the part.
+ */
+function parsePart(part, unit, options = {}) {
+  // An asterisk means "every", so we return an empty string to ignore it in the final sentence.
+  if (part === "*") return "";
+
+  // Helper to format a list of items into a natural language list (e.g., "A, B, and C")
+  const formatList = (items) => {
+    if (items.length === 1) return items[0];
+    if (items.length === 2) return items.join(" and ");
+    return items.slice(0, -1).join(", ") + ", and " + items.slice(-1);
+  };
+
+  // Helper to get the name of a value if a name map is provided (e.g., 1 -> "Monday")
+  const getName = (val) => {
+    const num = parseInt(val, 10);
+    if (options.names && options.names[num]) {
+      return options.names[num];
+    }
+    return val;
+  };
+
+  const unitName = unit.replace(/-/g, " ");
+
+  // Handle comma-separated values (e.g., "1,3,5")
+  if (part.includes(",")) {
+    const values = part
+      .split(",")
+      .map((v) => v.trim())
+      .filter(Boolean)
+      .map(getName);
+
+    const prefix = unit === "day-of-month" ? `${unitName} ` : "";
+    return `on ${prefix}${formatList(values)}`;
+  }
+  // Handle ranges (e.g., "1-5")
+  if (part.includes("-")) {
+    const [start, end] = part.split("-").map((v) => v.trim());
+    return `from ${unitName} ${getName(start)} through ${getName(end)}`;
+  }
+  // Handle step values (e.g., "*/2")
+  if (part.includes("/")) {
+    const [, step] = part.split("/").map((v) => v.trim());
+    return `every ${step} ${unitName}s`;
+  }
+
+  // Handle a single value (e.g., "1")
+  let singleValueText = getName(part);
+
+  // If getName returned the same value, a name was not found.
+  // In that case, we add the unit for clarity.
+  if (singleValueText === part.trim()) {
+    switch (unit) {
+      case "day-of-month":
+        singleValueText = `day ${part}`;
+        break;
+      case "month":
+        singleValueText = `month ${part}`;
+        break;
+      case "day-of-week":
+        singleValueText = `day ${part}`;
+        break;
+      default:
+        // singleValueText is already `part`
+        break;
     }
   }
 
-  // Run on load
-  updateVisibility();
-  // Update on change
-  select.addEventListener("change", updateVisibility);
+  return `on ${singleValueText}`;
 }
 
-toggleInput("dateTypeSelect", "dateInputGroup");
-toggleInput("monthTypeSelect", "monthInputGroup");
+// --- UI Update Function ---
+function updateDescription() {
+  try {
+    const text = cronToText();
+    descriptionText.textContent = text;
+  } catch (e) {
+    descriptionText.textContent = "Invalid expression";
+    console.error(e);
+  }
+}
 
-document.addEventListener("DOMContentLoaded", function () {
-    const typeSelect = document.getElementById("fixedScheduledForm");
-    const dataBased = document.getElementById("dataBased");
-    const weekBased = document.getElementById("weekBased");
-    const weekBasedInputs = weekBased.querySelectorAll("input, select");
+// --- Event Listeners ---
+cronInputs.forEach((input) => {
+  input.addEventListener("input", updateDescription);
+});
 
-    function toggleSections(value) {
-      if (value === "week") {
-        dataBased.style.display = "none";
-        weekBased.style.display = "block";
-        weekBasedInputs.forEach(el => el.removeAttribute("disabled"));
-      } else {
-        dataBased.style.display = "block";
-        weekBased.style.display = "none";
-        weekBasedInputs.forEach(el => el.setAttribute("disabled", true));
-      }
-    }
-
-    // Inisialisasi
-    toggleSections(typeSelect.value);
-
-    // Ubah saat pilihan berubah
-    typeSelect.addEventListener("change", function () {
-      toggleSections(this.value);
+scheduleButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const values = button.dataset.value.split(" ");
+    cronInputs.forEach((input, index) => {
+      input.value = values[index];
     });
+    updateDescription();
   });
+});
+
+// --- Initial Call ---
+updateDescription();
+
+("use strict");
+(function () {
+  var t = document.querySelector("#color-picker-monolith");
+
+  t &&
+    pickr.create({
+      el: t,
+      theme: "monolith",
+      default: "rgba(40, 208, 148, 1)",
+      swatches: [
+        "rgba(102, 108, 232, 1)",
+        "rgba(40, 208, 148, 1)",
+        "rgba(255, 73, 97, 1)",
+        "rgba(255, 145, 73, 1)",
+        "rgba(30, 159, 242, 1)",
+      ],
+      components: {
+        preview: !0,
+        opacity: !0,
+        hue: !0,
+        interaction: {
+          hex: !0,
+          rgba: !0,
+          hsla: !0,
+          hsva: !0,
+          cmyk: !0,
+          input: !0,
+          clear: !0,
+          save: !0,
+        },
+      },
+    });
+})();

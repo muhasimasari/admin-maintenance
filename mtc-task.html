@@ -411,14 +411,12 @@
                   <table class="table card-table table-borderless">
                     <thead>
                       <tr>
-                        <th style="min-width: 200px; max-width: 200px;">MTC code</th>
-                        <th style="min-width: 200px; max-width: 200px;">MTC name</th>
+                        <th style="min-width: 200px; max-width: 200px;">MTC code, name & type</th>
                         <th class="text-center">required parts</th>
-                        <th class="text-center">MTC Type</th>
                         <th class="text-center">required vendors</th>
                         <th class="text-center">priority</th>
-                        <th style="min-width: 90px; max-width: 90px;">Estimated</th>
-                        <th class="text-center" style="min-width: 230px;">frequency</th>
+                        <th style="min-width: 100px; max-width: 100px;">Duration</th>
+                        <th class="text-center" style="min-width: 270px;max-width: 270px;">frequency</th>
                         <th style="min-width: 90px; max-width: 90px;">Action</th>
                       </tr>
                     </thead>
@@ -426,23 +424,31 @@
                       <tr>
                         <td class="text-primary position-relative">
                           <div class="color-code" style="background-color: #3C57A1;"></div>
-                          <div class="ps-3" >
+                          <div class="ps-3 py-2 d-flex flex-column gap-2">
                             <a class="fw-bold" href="./mtc-task-detail-asset.html">MC-A001</a>
+                            <span class="custom-text-dark">Engine Oil Change</span>
+                            <span class="custom-text-dark mt-3">Asset</span>
                           </div>
                         </td>
-                        <td>Engine Oil</td>
                         <td class="text-center">
                           <i class="mdi mdi-24px mdi-minus text-dark"></i>
                         </td>
-                        <td>Asset</td>
                         <td class="text-center">
                           <i class="mdi mdi-24px mdi-minus text-dark"></i>
                         </td>
                         <td><div class="badge status-success">Normal</div></td>
                         <td>1 Day(s)</td>
                         <td>
-                          Start On : 0<br/><hr class="my-2"/>
-                          Repeat Every : 25 day(s) / 600 hour(s) / 15 cycle(s)
+                          <div class="d-flex flex-column gap-2">
+                            <div class="bg-label-dark justify-content-start px-2 py-2 text-dark rounded-3">
+                              <i class="mdi mdi-repeat-once mdi-24px"></i>
+                              3000 KM
+                            </div>
+                            <div class="bg-label-dark justify-content-start px-2 py-2 text-danger rounded-3">
+                              <i class="mdi mdi-repeat mdi-24px"></i>
+                              6M(s) / 10.000 KM / 1.000C
+                            </div>
+                          </div>
                         </td>
                         <td>
                           <div class="d-flex gap-2 align-items-center">
@@ -454,23 +460,29 @@
 
                       <tr>
                         <td class="text-primary position-relative">
-                          <div class="color-code" style="background-color: #EA9612;"></div>
-                          <div class="ps-3" >
-                            <a class="fw-bold" href="./mtc-task-detail-location.html">MC-L002</a>
+                          <div class="color-code" style="background-color: #3C57A1;"></div>
+                          <div class="ps-3 py-2 d-flex flex-column gap-2">
+                            <a class="fw-bold" href="./mtc-task-detail-location.html">MC-L0002</a>
+                            <span class="custom-text-dark">Room Deluxe</span>
+                            <span class="custom-text-dark mt-3">Location</span>
                           </div>
                         </td>
-                        <td>Room Deluxe</td>
                         <td class="text-center">
                           <i class="mdi mdi-24px mdi-check text-success"></i>
                         </td>
-                        <td>Location</td>
                         <td class="text-center">
                           <i class="mdi mdi-24px mdi-check text-success"></i>
                         </td>
                         <td><div class="badge status-warning w-100">High</div></td>
                         <td>1 Day(s)</td>
                         <td>
-                          Repeat Every : 25 day(s)
+                          <div class="d-flex flex-column gap-2">
+                            <div class="d-flex align-items-center gap-2 text-info">
+                              <i class="mdi mdi-calendar-sync-outline mdi-24px"></i>
+                              <div class="text-uppercase">SCHEDULED - REPEAT</div>
+                            </div>
+                            Tue, Wed
+                          </div>
                         </td>
                         <td>
                           <div class="d-flex gap-2 align-items-center">
@@ -483,22 +495,28 @@
                       <tr>
                         <td class="text-primary position-relative">
                           <div class="color-code" style="background-color: #3C57A1;"></div>
-                          <div class="ps-3" >
+                          <div class="ps-3 py-2 d-flex flex-column gap-2">
                             <a class="fw-bold" href="./mtc-task-detail-asset.html">MC-A002</a>
+                            <span class="custom-text-dark">Brake Fluid</span>
+                            <span class="custom-text-dark mt-3">Asset</span>
                           </div>
                         </td>
-                        <td>Brake Fluid</td>
                         <td class="text-center">
                           <i class="mdi mdi-24px mdi-minus text-dark"></i>
                         </td>
-                        <td>Asset</td>
                         <td class="text-center">
                           <i class="mdi mdi-24px mdi-check text-success"></i>
                         </td>
                         <td><div class="badge status-danger w-100">Urgent</div></td>
                         <td>1 Hour(s)</td>
                         <td>
-                          Repeat Every : 60 day(s)
+                          <div class="d-flex flex-column gap-2">
+                            <div class="d-flex align-items-center gap-2 custom-text-dark">
+                              <i class="mdi mdi-calendar-sync-outline mdi-24px"></i>
+                              <div class="text-uppercase">SCHEDULED - ONE TIME</div>
+                            </div>
+                            25-Dec-2025
+                          </div>
                         </td>
                         <td>
                           <div class="d-flex gap-2 align-items-center">

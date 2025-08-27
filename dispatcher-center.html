@@ -267,13 +267,104 @@
           <div class="content-wrapper">
             <div class="container-xxl flex-grow-1 container-p-y">
               <!-- KPI Row -->
-               <div class="card mb-4">
+               <div class="row g-4 mb-4">
+                <div class="col-md-4">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <div class="d-flex flex-column align-items-center justify-content-center h-100">
+                        <h2 class="fw-bold mb-1 display-1">17</h2>
+                        <div class="fs-6">Unassigned Items</div>
+                        <small class="text-muted">Summary of all items that need attention.</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card bg-label-primary">
+                    <div class="card-body">
+                      <div class="row g-2 align-items-center">
+                        <div class="col-md-6">
+                          <div class="d-flex gap-2 mb-1">
+                            <!-- <i class="mdi mdi-clipboard-text-outline mdi-24px text-primary"></i> -->
+                            <div class="custom-text-dark d-flex flex-column justify-content-center">
+                              <span>By Asset</span>
+                              <span class="fw-semibold fs-2">12</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="d-flex flex-column">
+                            <div class="custom-bg-danger p-2 rounded-2 text-white mb-2">
+                              <div class="d-flex justify-content-between w-100">
+                                <span>Urgent</span>
+                                <span>3</span>
+                              </div>
+                            </div>
+                            <div class="custom-bg-warning p-2 rounded-2 text-white mb-2">
+                              <div class="d-flex justify-content-between w-100">
+                                <span>High</span>
+                                <span>3</span>
+                              </div>
+                            </div>
+                            <div class="custom-bg-success p-2 rounded-2 text-white">
+                              <div class="d-flex justify-content-between w-100">
+                                <span>Normal</span>
+                                <span>3</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card bg-label-warning">
+                    <div class="card-body">
+                      <div class="row g-2 align-items-center">
+                        <div class="col-md-6">
+                          <div class="d-flex gap-2 mb-1">
+                            <i class="mdi mdi-store-marker-outline mdi-24px text-warning"></i>
+                            <div class="custom-text-dark d-flex flex-column justify-content-center">
+                              <span>By Location</span>
+                              <span class="fw-semibold fs-2">5</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="d-flex flex-column">
+                            <div class="custom-bg-danger p-2 rounded-2 text-white mb-2">
+                              <div class="d-flex justify-content-between w-100">
+                                <span>Urgent</span>
+                                <span>3</span>
+                              </div>
+                            </div>
+                            <div class="custom-bg-warning p-2 rounded-2 text-white mb-2">
+                              <div class="d-flex justify-content-between w-100">
+                                <span>High</span>
+                                <span>3</span>
+                              </div>
+                            </div>
+                            <div class="custom-bg-success p-2 rounded-2 text-white">
+                              <div class="d-flex justify-content-between w-100">
+                                <span>Normal</span>
+                                <span>3</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               </div>
+              <div class="card mb-4 d-none">
                 <div class="card-body">
                   <div class="row g-3">
                     <div class="col-md-4">
                       <div class="d-flex flex-column align-items-center justify-content-center h-100">
                         <h2 class="fw-bold mb-1 fs-1">17</h2>
-                        <div>Not Assigned</div>
+                        <div>Total Not Assigned</div>
                       </div>
                     </div>
                     <div class="col-md-4">
@@ -281,9 +372,9 @@
                         <div class="row g-2 align-items-center">
                           <div class="col-md-6">
                             <div class="d-flex gap-2 mb-1">
-                              <i class="mdi mdi-clipboard-text-outline mdi-24px text-primary"></i>
+                              <!-- <i class="mdi mdi-clipboard-text-outline mdi-24px text-primary"></i> -->
                               <div class="custom-text-dark d-flex flex-column justify-content-center">
-                                <span>Asset Item</span>
+                                <span>Asset Not Assigned</span>
                                 <span class="fw-semibold fs-2">12</span>
                               </div>
                             </div>
@@ -354,7 +445,7 @@
                       <div class="kpi kpi-group w-100">
                         <div class="kpi-block text-center">
                           <div class="num">17</div>
-                          <div class="mt-1 fs-5">Not Assigned</div>
+                          <div class="mt-1 fs-5">Total Not Assigned</div>
                         </div>
                         <div class="kpi-block">
                           <div>
@@ -362,7 +453,7 @@
                               <i
                                 class="mdi mdi-clipboard-text-outline mdi-24px text-primary"
                               ></i
-                              ><span class="title">Asset Item</span>
+                              ><span class="title">Asset Not Assigned</span>
                             </div>
                             <div class="num">12</div>
                           </div>
@@ -384,7 +475,7 @@
                               <i
                                 class="mdi mdi-map-marker-outline mdi-24px text-warning"
                               ></i
-                              ><span class="title">Location</span>
+                              ><span class="title">Location Not Assigned</span>
                             </div>
                             <div class="num">5</div>
                           </div>
@@ -404,7 +495,7 @@
                     </div>
                   </div>
                 </div>
-               </div>
+              </div>
               <!-- /KPI Row -->
 
               <div class="row g-4">
@@ -943,6 +1034,7 @@
                       </div>
                     </div>
                   </div>
+
                   <div
                     class="d-md-flex justify-content-between align-items-center py-3"
                   >
@@ -2223,6 +2315,7 @@
                 </div>
               </div>
             </div>
+            
           </div>
           <!-- /content-wrapper -->
         </div>
