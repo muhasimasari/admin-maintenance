@@ -1231,8 +1231,8 @@
                     </nav>
                   </div>
 
-                  <div class="card border-0 mt-3">
-                    <div class="card-body p-3">
+                  <div class="card mt-4">
+                    <div class="card-body">
                       <h6 class="fw-bold mb-3">Assignment</h6>
 
                       <div class="mb-3">
@@ -1264,19 +1264,13 @@
                         />
                       </div>
 
-                      <div class="d-flex align-items-center gap-2 mb-3">
+                      <div class="d-flex align-items-center gap-2">
                         <div class="text-muted m-0">Repeat:</div>
-                        <div class="form-check form-switch m-0">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            id="assignRepeat"
-                            checked
-                          />
-                        </div>
-                        <label class="small mb-0" for="assignRepeat"
-                          >Yes</label
-                        >
+                        <label class="switch mb-0">
+                          <input class="switch-input" type="checkbox"/>
+                          <span class="switch-toggle-slider"><span class="switch-on"></span><span class="switch-off"></span></span>
+                          <span class="switch-label">Yes</span>
+                        </label>
                       </div>
                     </div>
                   </div>
@@ -1307,7 +1301,7 @@
                     </div>
                   </div>
 
-                  <div class="card mb-4">
+                  <div class="card">
                     <div class="card-body">
                       <span
                         class="add-vendor-btn"
@@ -1327,7 +1321,7 @@
                       </span>
                       <div class="collapse" id="vendorCollapse">
                         <div
-                          class="row justify-content-between align-items-center"
+                          class="row justify-content-between align-items-center my-3"
                         >
                           <div class="col">
                             <div
@@ -1348,7 +1342,7 @@
                                 <input
                                   type="search"
                                   class="form-control form-control-sm ps-4 mb-md-0 mb-3 ml-2"
-                                  placeholder="Search Item number, MTC template"
+                                  placeholder="Search vendor name or skill set"
                                   aria-controls="search datatable"
                                   style="padding-left: 2.5rem !important"
                                 />
@@ -1384,13 +1378,12 @@
                                   class="align-middle"
                                   style="min-width: 200px"
                                 >
-                                  categories
+                                  Skill Set
                                 </th>
                               </tr>
                             </thead>
                             <tbody class="table-border-bottom-0">
-                              <!-- Oilmax (contoh: terpilih + tanggal/km seperti di gambar) -->
-                              <tr class="table-active">
+                              <tr class="">
                                 <td>
                                   <div
                                     class="form-check mb-0 d-flex justify-content-center"
@@ -1400,18 +1393,16 @@
                                       type="checkbox"
                                       value=""
                                       id="checkbox-1"
-                                      checked
                                     />
                                   </div>
                                 </td>
                                 <td>
-                                  <div class="ps-2">Oilmax Lubricants</div>
+                                  <div class="ps-2">CV. Auto Garage Motor</div>
                                 </td>
-                                <td>01 May 2024/3,000 Km</td>
+                                <td>Engine Service</td>
                               </tr>
 
-                              <!-- INNOVA REBORN HITAM (BARU) -->
-                              <tr>
+                              <tr class="">
                                 <td>
                                   <div
                                     class="form-check mb-0 d-flex justify-content-center"
@@ -1426,15 +1417,10 @@
                                 </td>
                                 <td>
                                   <div class="ps-2">
-                                    <div class="fw-semibold">
-                                      INNOVA REBORN HITAM
-                                    </div>
-                                    <div class="text-muted small">
-                                      01-88-02-13-31-G73
-                                    </div>
+                                    PT. Nasmoco Indonesia
                                   </div>
                                 </td>
-                                <td>01 May 2026/20,000 Km</td>
+                                <td>Engine DIasnostics, Oil Change</td>
                               </tr>
                             </tbody>
                           </table>

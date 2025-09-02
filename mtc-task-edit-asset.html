@@ -456,16 +456,6 @@
                         </select>
                         <label for="categoryTask">Maintenance Category</label>
                       </div> -->
-                      <div class="input-group mb-4">
-                        <select class="form-select py-2 select2" iid="categoryTask" aria-label="Example select with button addon">
-                          <option value="cat-1" data-color="#0d6efd">Category 1</option>
-                          <option value="cat-2" data-color="#198754">Category 2</option>
-                          <option value="cat-3" data-color="#ffc107">Category 3</option>
-                          <option value="cat-4" data-color="#dc3545">Category 4</option>
-                          <option value="cat-5" data-color="#6f42c1">Category 5</option>
-                        </select>
-                        <input type="color" value="#0d6efd" id="colorPicker" class="rounded-end" style="width: 70px; height: 50px; background-color: white; padding: 10px;">
-                      </div>
                       <div class="form-floating form-floating-outline mb-4">
                         <select
                           id="assetCategory-1"
@@ -477,7 +467,7 @@
                         <label for="assetCategory-1">Asset Category</label>
                       </div>
 
-                      <div class="form-floating form-floating-outline mb-4">
+                      <div class="form-floating form-floating-outline mb-3">
                         <select
                           id="assetGroup-1"
                           class="form-select select2"
@@ -486,6 +476,18 @@
                         >
                         </select>
                         <label for="assetGroup-1">Asset Group</label>
+                      </div>
+
+                      <label for="categoryTask">MTC Category</label>
+                      <div class="input-group my-1">
+                        <select class="form-select py-2 select2" aria-label="Example select with button addon">
+                          <option value="cat-1" data-color="#0d6efd">Category 1</option>
+                          <option value="cat-2" data-color="#198754">Category 2</option>
+                          <option value="cat-3" data-color="#ffc107">Category 3</option>
+                          <option value="cat-4" data-color="#dc3545">Category 4</option>
+                          <option value="cat-5" data-color="#6f42c1">Category 5</option>
+                        </select>
+                        <input type="color" value="#0d6efd" id="colorPicker" class="rounded-end" style="width: 70px; height: 50px; background-color: white; padding: 10px;">
                       </div>
                     </div>
                   </div>
@@ -1199,105 +1201,121 @@
       </div>
 
       <!-- Modal Add Inspection -->
-      <div class="modal fade" id="cloneInspectionModal" tabindex="-1" aria-labelledby="cloneInspectionModalLabel" aria-hidden="true">
+      <div class="modal fade" id="addInspectionModal" tabindex="-1" aria-labelledby="addInspectionModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
-          <div class="modal-content shadow-lg">
-            <!-- Modal Header -->
-            <div class="modal-header border-b border-gray-200">
-              <h5 class="modal-title" id="cloneInspectionModalLabel">Clone Inspection From another MTC Task</h5>
+          <div class="modal-content border-0">
+            <div class="modal-header">
+              <h5 class="modal-title" id="addInspectionModalLabel">Add Inspection</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <!-- Modal Body -->
             <div class="modal-body">
-              <div class="card-datatable table-responsive custom-table text-nowrap">
-                <div class="form-floating form-floating-outline form-floating-select2 mt-2 mb-3">
-                  <select id="mtcTaskList" class="form-select select2" style="width: 100%;"></select>
-                </div>
-                <table class="min-w-full divide-y divide-gray-200">
-                  <thead>
-                    <tr>
-                      <th>
-                        <div class="form-check mb-0 d-flex justify-content-center">
-                          <input class="form-check-input" type="checkbox" value="" id="allCheckbox">
-                        </div>
-                      </th>
-                      <th class="px-6 py-3">Step</th>
-                      <th class="px-6 py-3">Inspection ID</th>
-                      <th class="px-6 py-3">Description</th>
-                      <th class="px-6 py-3">Checklist / Task</th>
-                      <th class="px-6 py-3">SOP Document</th>
-                    </tr>
-                  </thead>
-                  <tbody id="tableBody" class="bg-white divide-y divide-gray-200">
-                    <tr>
-                      <td>
-                        <div class="form-check mb-0 d-flex justify-content-center">
-                          <input class="form-check-input" type="checkbox" value="" id="checkbox-1">
-                        </div>
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">1</td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">INSP-001</td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Visual Check</td>
-                      <td class="px-6 py-4 text-sm text-gray-900">
-                        1. Check oil filter condition<br/>
-                        2. Check for leaks
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        <ul class="mb-0 list-none">
-                            <li><a href="#" class="btn-text-primary">SOP A001.pdf</a></li>
-                            <li><a href="#" class="btn-text-primary">SOP A002.pdf</a></li>
-                        </ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="form-check mb-0 d-flex justify-content-center">
-                          <input class="form-check-input" type="checkbox" value="" id="checkbox-2">
-                        </div>
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">2</td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">INSP-002</td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Fluid Level Check</td>
-                      <td class="px-6 py-4 text-sm text-gray-900">
-                        1. Check engine oil level<br/>
-                        2. Check brake fluid level
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        <ul class="mb-0 list-none">
-                          <li><a href="#" class="btn-text-primary">SOP B001.pdf</a></li>
-                          <li><a href="#" class="btn-text-primary">SOP B002.pdf</a></li>
-                        </ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="form-check mb-0 d-flex justify-content-center">
-                          <input class="form-check-input" type="checkbox" value="" id="checkbox-3">
-                        </div>
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">3</td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">INSP-003</td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Tire Pressure</td>
-                      <td class="px-6 py-4 text-sm text-gray-900">
-                        1. Check all tire pressures<br/>
-                        2. Inspect tire tread
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        <ul class="mb-0 list-none">
-                            <span class="italic">no file</span>
-                        </ul>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+              <div class="nav-align-top mb-4">
+                <ul class="nav nav-tabs" role="tablist">
+                  <li class="nav-item">
+                    <button
+                      type="button fw-semibold"
+                      class="nav-link active"
+                      role="tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#navs-description"
+                      aria-controls="navs-description"
+                      aria-selected="true"
+                    >
+                      Description
+                    </button>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      type="button fw-semibold"
+                      class="nav-link"
+                      role="tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#navs-sop"
+                      aria-controls="navs-sop"
+                      aria-selected="false"
+                    >
+                      SOP Document
+                    </button>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      type="button fw-semibold"
+                      class="nav-link"
+                      role="tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#navs-checklist"
+                      aria-controls="navs-checklist"
+                      aria-selected="false"
+                    >
+                      Checklist
+                    </button>
+                  </li>
+                </ul>
               </div>
+
+              <div class="tab-content p-0">
+                <div
+                  class="tab-pane fade show active"
+                  id="navs-description"
+                  role="tabpanel"
+                >
+                  <div class="form-floating form-floating-outline">
+                    <textarea class="form-control h-px-200" id="exampleFormControlTextarea1" placeholder="Comments here..."></textarea>
+                    <label for="exampleFormControlTextarea1">Description</label>
+                  </div>
+                </div>
+
+                <div
+                  class="tab-pane fade"
+                  id="navs-sop"
+                  role="tabpanel"
+                >
+                  <div style="border: 1px solid #13131320; border-radius: 8px; padding: 10px;">
+                    <label class="form-label">Format File pdf, jpg, png with max size 5 MB</label>
+                    <input class="form-control my-3" type="file" id="sopFile" />
+                    <ul class="list-unstyled">
+                      <li class="d-flex gap-2 justify-content-between mb-1">1. SOP nomer 1.pdf <div><a href="#" class="text-danger ms-2">Delete</a></div></li>
+                      <li class="d-flex gap-2 justify-content-between  mb-1">2. SOP nomer 1.pdf <div><a href="#" class="text-danger ms-2">Delete</a></div></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div
+                  class="tab-pane fade"
+                  id="navs-checklist"
+                  role="tabpanel"
+                >
+                  <div id="checklist-container">
+                    <div class="row g-3 align-items-center checklist-item mb-2">
+                      <div class="col-md-4">
+                        <div class="form-floating form-floating-outline">
+                          <input type="text" class="form-control" id="821" placeholder="eg. Check Wastafel" />
+                          <label for="821">Name</label>
+                        </div>
+                      </div>
+                      <div class="col-md-7">
+                        <div class="form-floating form-floating-outline">
+                          <input type="text" class="form-control" id="21" placeholder="Notes" />
+                          <label for="21">Notes</label>
+                        </div>
+                      </div>
+                      <div class="col-md-1 text-start">
+                        <button type="button" class="btn btn-text-danger remove-checklist px-0">
+                          <i class="mdi mdi-24px mdi-trash-can-outline"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-text-primary mt-2 px-0" id="addChecklistBtn"><i class="mdi mdi-24px mdi-plus"></i> ADD CHECKLIST</button>
+                </div>
+              </div>
+              <!-- Form Top -->
             </div>
 
-            <!-- Modal Footer -->
             <div class="modal-footer">
               <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">CANCEL</button>
-              <button type="button" class="btn btn-primary">Clone INSPECTION</button>
+              <button type="button" class="btn btn-primary">ADD INSPECTION</button>
             </div>
           </div>
         </div>
