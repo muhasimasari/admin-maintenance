@@ -1,9 +1,15 @@
 $(document).ready(function () {
   // Inisialisasi Select2 dengan placeholder dinamis
-  $("#assetGroup, #assetCategory, #engineeringSkills").select2({
+  $("#assetGroup, #assetCategory, #engineeringSkills, #vendorByName").select2({
     placeholder: function () {
       return $(this).data("placeholder");
     },
+  });
+
+  $('#categoryTask').select2({
+    templateResult: formatOption,
+    templateSelection: formatOption,
+    width: '100%'
   });
 
   // Toggle form berdasarkan pilihan partType
@@ -44,7 +50,60 @@ $(document).ready(function () {
 
   $engineeringSelect.on("change", renderSelectedChips);
   renderSelectedChips(); // Initial render
+
+  
+  // Vendor by Select2 with custom chip display
+  const $vendorSelect = $("#vendorByName");
+  const $selectedVendorContainer = $("#selectedVendorContainer");
+
+  $vendorSelect.select2({
+    placeholder: $vendorSelect.data("placeholder"),
+    templateSelection: () => null,
+  });
+
+  function renderSelectedChipsVendor() {
+    const selected = $vendorSelect.val() || [];
+    $selectedVendorContainer.empty();
+
+    selected.forEach((val) => {
+      const chip = $(`
+        <div class="badge rounded-pill bg-label-primary small" data-value="${val}">
+          ${val} <span class="remove-btn">&times;</span>
+        </div>
+      `);
+
+      chip.find(".remove-btn").on("click", function () {
+        const updated = $vendorSelect.val().filter((v) => v !== val);
+        $vendorSelect.val(updated).trigger("change");
+      });
+
+      $selectedVendorContainer.append(chip);
+    });
+  }
+
+  function formatOption (opt) {
+    if (!opt.id) return opt.text;
+
+    var color = $(opt.element).data("color");
+    if (!color) return opt.text;
+
+    var $opt = $(
+      '<span><span style="display:inline-block;width:15px;height:15px;border-radius:50%;background:' 
+      + color + ';margin-right:8px;"></span>' + opt.text + '</span>'
+    );
+    return $opt;
+  };
+
+  $vendorSelect.on("change", renderSelectedChipsVendor);
+  renderSelectedChipsVendor(); // Initial render
 });
+
+  // sinkronisasi input color dengan option yang dipilih
+  $('#categoryTask').on('change', function() {
+    var color = $(this).find(':selected').data('color');
+    $('#colorPicker').val(color);
+  });
+
 
 // Hapus baris checklist
 $(document).on("click", ".remove-checklist", function () {

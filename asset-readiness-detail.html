@@ -671,14 +671,6 @@
 
             <div class="modal-body">
               <div class="row g-3 pb-2 align-items-center">
-                <div class="col-12">
-                  <div class="d-md-flex d-block g-3 gap-2 align-items-center justify-content-end">
-                    <label class="w-100 custom-search-input position-relative">
-                      <i class="mdi mdi-24px mdi-magnify position-absolute" style="left: 10px; top: 50%; transform: translateY(-50%); color: #999;"></i>
-                      <input type="search" class="form-control form-control-sm ps-4 mb-md-0 mb-3 ml-2" placeholder="Search MTC Task Template" aria-controls="search datatable" style="padding-left: 2.5rem!important;">
-                    </label>
-                  </div>
-                </div>
               </div>
               <div class="card-datatable table-responsive custom-table text-nowrap pb-0 mb-4">
                 <table class="table card-table table-borderless mb-0">
@@ -688,6 +680,7 @@
                       <th>MTC name</th>
                       <th style="min-width: 90px; max-width: 90px;">Estimated</th>
                       <th style="min-width: 230px;">frequency</th>
+                      <th style="min-width: 230px;">Action</th>
                     </tr>
                   </thead>
                   <tbody class="table-border-bottom-0">
@@ -704,6 +697,9 @@
                         Start On : 0<br/><hr class="my-2"/>
                         Repeat Every : 25 day(s) / 600 hour(s) / 15 cycle(s)
                       </td>
+                       <td>
+                        <a href="#" style="color: #CA4046; text-decoration: none;" data-bs-toggle="modal" data-bs-target="#" ><strong>Delete</strong></a>
+                      </td>
                     </tr>
 
                     <tr>
@@ -717,6 +713,9 @@
                       <td>1 Day(s)</td>
                       <td>
                         Repeat Every : 25 day(s)
+                      </td>
+                      <td>
+                        <a href="#" style="color: #CA4046; text-decoration: none;" data-bs-toggle="modal" data-bs-target="#" ><strong>Delete</strong></a>
                       </td>
                     </tr>
                   </tbody>

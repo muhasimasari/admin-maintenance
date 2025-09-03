@@ -264,7 +264,7 @@
                     <div data-i18n="Root Cause Category">Root Cause Category</div>
                     </a>
                 </li>
-            </div>
+            </div>-->
           </ul>
         </aside>
         <!-- / Menu -->
@@ -479,15 +479,15 @@
                       </div>
 
                       <label for="categoryTask">MTC Category</label>
-                      <div class="input-group my-1">
-                        <select class="form-select py-2 select2" aria-label="Example select with button addon">
+                      <div class="form-floating form-floating-outline mb-4">
+                        <select class="form-select select2 py-2" id="categoryTask" style="width: 300px;">
                           <option value="cat-1" data-color="#0d6efd">Category 1</option>
                           <option value="cat-2" data-color="#198754">Category 2</option>
                           <option value="cat-3" data-color="#ffc107">Category 3</option>
                           <option value="cat-4" data-color="#dc3545">Category 4</option>
                           <option value="cat-5" data-color="#6f42c1">Category 5</option>
                         </select>
-                        <input type="color" value="#0d6efd" id="colorPicker" class="rounded-end" style="width: 70px; height: 50px; background-color: white; padding: 10px;">
+                        
                       </div>
                     </div>
                   </div>
@@ -696,7 +696,7 @@
                     </div>
                     <!-- Scheduling -->
                     <div id="schedulingDates" class="mb-4">
-                      <p class="text-gray-500 mb-6">Set the schedule for your task using a cron expression.</p>
+                      <p class="text-gray-500 mb-6">Set the schedule for your task using expression.</p>
                       <div class="col-md-8">
                         <div class="mb-4">
                           <!-- Human-readable Description -->
@@ -852,41 +852,19 @@
                   <div class="card mb-4">
                     <div class="card-body">
                       <h5>Vendors</h5>
+                      <div class="form-floating form-floating-outline">
+                        <select id="vendorByName" class="form-select select2" multiple="" data-placeholder="Search vendor by name">
+                          <option></option>
+                          <option value="OliMax Lubricants">OliMax Lubricants </option>
+                          <option value="ProEngine Works">ProEngine Works</option>
+                          <option value="InjectPro Garage">InjectPro Garage</option>
+                          <option value="CoolMaster Services">CoolMaster Services</option>
+                        </select>
+                      </div>
                       <div class="text-end">
-                        <input id="searchVendors" class="form-control form-control-sm" type="text" placeholder="Search vendor by name">
                         <button type="button" class="btn btn-text-primary p-0 text-right my-2 custom-btn">Clear All</button>
                       </div>
-                      <ul class="list-vendor">
-                        <li class="d-flex justify-content-between align-items-center">
-                          <div class="form-check mb-0">
-                            <input class="form-check-input" type="checkbox" value="" id="vendor1" checked>
-                            <label class="form-check-label" for="vendor1">OliMax Lubricants</label>
-                          </div>
-                          <span class="small">Oil Change Service</span>
-                        </li>
-                        <li class="d-flex justify-content-between align-items-center">
-                          <div class="form-check mb-0">
-                            <input class="form-check-input" type="checkbox" value="" id="vendor2">
-                            <label class="form-check-label" for="vendor2">ProEngine Works</label>
-                          </div>
-                          <span class="small">Engine Diagnostics</span>
-                        </li>
-                        <li class="d-flex justify-content-between align-items-center">
-                          <div class="form-check mb-0">
-                            <input class="form-check-input" type="checkbox" value="" id="vendor3">
-                            <label class="form-check-label" for="vendor3">InjectPro Garage</label>
-                          </div>
-                          <span class="small">Fuel Injection System Service</span>
-                        </li>
-                        <li class="d-flex justify-content-between align-items-center">
-                          <div class="form-check mb-0">
-                            <input class="form-check-input" type="checkbox" value="" id="vendor4">
-                            <label class="form-check-label" for="vendor4">CoolMaster Services</label>
-                          </div>
-                          <span class="small">Cooling System Service</span>
-                        </li>
-                      </ul>
-
+                      <div id="selectedVendorContainer" class="d-flex flex-wrap gap-2 skill-height"></div>
                     </div>
                   </div>
                 </div>
