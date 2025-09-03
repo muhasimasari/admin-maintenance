@@ -708,11 +708,18 @@
                   </div>
 
                   <!-- Bulk toolbar -->
-                  <div class="bg-label-secondary p-3 mb-3 rounded-2 d-flex align-items-center gap-4">
-                    <span class="custom-text-dark">2 Work Order Selected</span>
+                  <div id="bulk-toolbar" class="bg-label-secondary p-3 mb-3 rounded-2 align-items-center gap-4" style="display:none !important;">
+                     <span id="bulk-count" class="custom-text-dark">
+                      <span id="bulk-number">0</span> Work Order Selected
+                    </span>
                     <button class="btn btn-sm btn-dark">
                       Bulk Assign
                     </button>
+                  </div>
+
+                 <div style="padding-left: 50px;" class="form-check pt-2 pb-3">
+                          <input class="form-check-input" type="checkbox" id="check-all" >
+                          <label class="form-check-label" for="check-all">Select All</label>
                   </div>
 
                   <!-- Card 1 -->
@@ -724,7 +731,7 @@
                       </div>
                       <div class="d-flex gap-2 align-items-center justify-content-between">
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="wo-id" checked="">
+                          <input class="form-check-input checked-all" type="checkbox" id="wo-id">
                           <label class="form-check-label text-primary fw-semibold" for="wo-id">WO-2025-05-07-0041</label>
                         </div>
                         <!-- Desktop Status -->
@@ -790,7 +797,7 @@
                       </div>
                       <div class="d-flex gap-2 align-items-center justify-content-between">
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="wo-id-1" checked="">
+                          <input class="form-check-input checked-all" type="checkbox" id="wo-id-1">
                           <label class="form-check-label text-primary fw-semibold" for="wo-id-1">WO-2025-05-07-0042</label>
                         </div>
                         <!-- Desktop Status -->
@@ -856,7 +863,7 @@
                       </div>
                       <div class="d-flex gap-2 align-items-center justify-content-between">
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="wo-id-2">
+                          <input class="form-check-input checked-all" type="checkbox" id="wo-id-2">
                           <label class="form-check-label text-primary fw-semibold" for="wo-id-2">WO-2025-05-07-0123</label>
                         </div>
                         <!-- Desktop Status -->
@@ -912,7 +919,7 @@
                       </div>
                       <div class="d-flex gap-2 align-items-center justify-content-between">
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="wo-id-3">
+                          <input class="form-check-input checked-all" type="checkbox" id="wo-id-3">
                           <label class="form-check-label text-primary fw-semibold" for="wo-id-3">WO-2025-05-07-0123</label>
                         </div>
                         <!-- Desktop Status -->
@@ -969,7 +976,7 @@
                       </div>
                       <div class="d-flex gap-2 align-items-center justify-content-between">
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="wo-id-4">
+                          <input class="form-check-input checked-all" type="checkbox" id="wo-id-4">
                           <label class="form-check-label text-primary fw-semibold" for="wo-id-4">WO-2025-05-07-0042</label>
                         </div>
                         <!-- Desktop Status -->

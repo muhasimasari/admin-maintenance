@@ -75,6 +75,43 @@ document.addEventListener("DOMContentLoaded", function () {
   //   });
   // }
 
+  const checkAll = document.getElementById("check-all");
+  const checkedAllClass = document.querySelectorAll(".checked-all");
+  const bulkToolbar = document.getElementById("bulk-toolbar");
+  const bulkCount = document.getElementById("bulk-count");
+
+  // fungsi update toolbar
+  function updateToolbar() {
+    const selected = document.querySelectorAll(".checked-all:checked").length;
+
+    if (selected > 0) {
+      bulkToolbar.style.display = "flex";
+
+      // isi angka otomatis ke dalam span
+      document.getElementById("bulk-number").textContent = selected;
+    } else {
+      bulkToolbar.style.display = "none";
+    }
+  }
+
+  // check/uncheck all
+  checkAll.addEventListener("change", function () {
+    checkedAllClass.forEach(cb => cb.checked = checkAll.checked);
+    updateToolbar();
+  });
+
+  // kalau ada yang diubah manual
+  checkedAllClass.forEach(cb => {
+    cb.addEventListener("change", function () {
+      // kalau semua dicentang manual, centang juga "check all"
+      checkAll.checked = document.querySelectorAll(".checked-all:checked").length === checkboxes.length;
+      updateToolbar();
+    });
+  });
+
+  // init awal
+  updateToolbar();
+
   // ===================== 2. Select2 Initialization =====================
   $(document).ready(function () {
     $("#skillSet").select2({
