@@ -490,11 +490,16 @@
                             </div>
                             <div class="flex-grow-1 col-7">
                               <span class="fw-normal small">Engineers</span>
-                              <h6
-                                class="mb-0 mt-1 text-decoration-underline text-truncate text-primary cursor-pointer"
-                              >
-                                Antoni Setyawan, Budi Kuncoro
-                              </h6>
+                              <div class="d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#engineersModal">
+                                <h6
+                                  class="mb-0 mt-1 text-decoration-underline text-truncate text-primary cursor-pointer"
+                                >
+                                  Antoni Setyawan, Budi Kuncoro
+                                </h6>
+                                <button class="btn btn-text-primary p-0"><i class="mdi mdi-pencil"></i></button>
+                              </div>
+                            </div>
+                            <div>
                             </div>
                           </div>
                         </div>
@@ -512,11 +517,14 @@
                             </div>
                             <div class="flex-grow-1 col-7">
                               <span class="fw-normal small">Vendors</span>
-                              <h6
-                                class="mb-0 mt-1 text-decoration-underline text-truncate text-primary cursor-pointer"
-                              >
-                                Abadi Jaya Motor, Astra Spare Part Motor
-                              </h6>
+                              <div class="d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#vendorModal">
+                                <h6
+                                  class="mb-0 mt-1 text-decoration-underline text-truncate text-primary cursor-pointer"
+                                >
+                                  Abadi Jaya Motor, Astra Spare Part Motor
+                                </h6>
+                                <button class="btn btn-text-primary p-0"><i class="mdi mdi-pencil"></i></button>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -2320,7 +2328,7 @@ Dilakukan pergantian seal ulang pada cover engine merk Toyota Genuine Part</text
                                 placeholder="John Doe"
                                 aria-describedby="floatingInputHelp"
                               />
-                              <label for="floatingInput">Item</label>
+                              <label for="floatingInput">Vendor</label>
                             </div>
                           </div>
                           <div class="col-md-3 col-3">
@@ -2342,6 +2350,45 @@ Dilakukan pergantian seal ulang pada cover engine merk Toyota Genuine Part</text
                               <i class="mdi mdi-minus me-2"></i>
                               <span class="d-none d-md-block">Remove</span>
                             </button>
+                          </div>
+                        </div>
+                        <div class="row g-2 align-items-center text-wrap mb-2">
+                          <div class="col-md-7 col-7">
+                            <div class="form-floating form-floating-outline">
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="floatingInput"
+                                placeholder="John Doe"
+                                value="PT Nasmoco Solo Baru"
+                                aria-describedby="floatingInputHelp"
+                              />
+                              <label for="floatingInput">Vendor</label>
+                            </div>
+                          </div>
+                          <div class="col-md-3 col-3">
+                            <div class="form-floating form-floating-outline">
+                              <input
+                                type="number"
+                                class="form-control"
+                                id="floatingInput"
+                                placeholder="John Doe"
+                                aria-describedby="floatingInputHelp"
+                                value="230000"
+                              />
+                              <label for="floatingInput">Cost</label>
+                            </div>
+                          </div>
+                          <div class="col-md-2 col-2 d-flex align-items-center">
+                            <button
+                              class="btn btn-text-danger text-capitalize p-0"
+                            >
+                              <i class="mdi mdi-minus me-2"></i>
+                              <span class="d-none d-md-block">Remove</span>
+                            </button>
+                          </div>
+                          <div class="small text-secondary fst-italic">
+                            by Admin Super | Wed, 20 Sept 2025 13:00
                           </div>
                         </div>
                       </div>
@@ -2467,6 +2514,10 @@ Dilakukan pergantian seal ulang pada cover engine merk Toyota Genuine Part</text
                               <span class="d-none d-md-block">Remove</span>
                             </button>
                           </div>
+
+                          <div class="small text-secondary fst-italic">
+                            by Admin Super | Wed, 20 Sept 2025 13:00
+                          </div>
                         </div>
 
                         <div class="row g-2 align-items-center mb-3">
@@ -2548,6 +2599,10 @@ Dilakukan pergantian seal ulang pada cover engine merk Toyota Genuine Part</text
                               <span class="d-none d-md-block">Remove</span>
                             </button>
                           </div>
+
+                          <div class="small text-secondary fst-italic">
+                            by Admin Super | Wed, 20 Sept 2025 13:00
+                          </div>
                         </div>
 
                         <div class="row g-2 align-items-center mb-3">
@@ -2606,10 +2661,13 @@ Dilakukan pergantian seal ulang pada cover engine merk Toyota Genuine Part</text
                       </div>
                       <hr class="my-2" />
                       <div class="row align-items-start mt-4">
-                        <div class="col-md-2 text-md-end mb-2 mb-md-0">
-                          Documentation (audio, photo, video or file):
+                        <div class="col-md-3 mb-2 mb-md-0">
+                          Documentation (audio, photo, video or file):<br/>
+                          <div class="small text-secondary fst-italic">
+                            by Admin Super | Wed, 20 Sept 2025 13:00
+                          </div>
                         </div>
-                        <div class="col-md-10">
+                        <div class="col-md-8">
                           <div class="d-flex gap-3">
                             <div
                               id="previewContainer-1"
@@ -2645,7 +2703,7 @@ Dilakukan pergantian seal ulang pada cover engine merk Toyota Genuine Part</text
                       <div class="pt-1 row g-2">
                         <div class="col-md-12 col-12 text-end">
                           <button type="submit" class="btn btn-primary">
-                            Save Cost
+                            Save Cost Report
                           </button>
                         </div>
                       </div>
@@ -3443,6 +3501,139 @@ Dilakukan pergantian seal ulang pada cover engine merk Toyota Genuine Part</text
         </div>
       </div>
 
+      <!--Vendor Edit -->
+      <div
+        class="modal fade"
+        id="vendorModal"
+        tabindex="-1"
+        aria-labelledby="vendorModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="vendorModalLabel">List Vendors</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="row align-items-center mb-3">
+                <div class="col-md-10">
+                  <div class="form-floating form-floating-outline">
+                    <select class="form-select select2" id="vendorSelect" style="width: 100%;">
+                      <option selected>PT Nasmoco Solo Baru</option>
+                      <option value="1">PT Abadi Jaya Motor</option>
+                      <option value="2">PT Astra Spare Part</option>
+                      <option value="3">PT Mandiri Motor</option>
+                    </select>
+                    <label for="vendorSelect">Vendor</label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <button class="btn btn-text-danger text-capitalize p-0 waves-effect waves-light">
+                    <i class="mdi mdi-minus me-2"></i>
+                    <span class="d-none d-md-block">Remove</span>
+                  </button>
+                </div>
+
+              </div>
+              <button class="btn btn-text-primary p-0"><i class="mdi mdi-plus"></i> Add Vendor</button>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cancel
+              </button>
+              <button type="button" class="btn btn-primary">Save Vendor</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Engineer Edit -->
+      <div
+        class="modal fade"
+        id="engineersModal"
+        tabindex="-1"
+        aria-labelledby="vendorModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="vendorModalLabel">List Engineers</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="row align-items-center mb-3">
+                <div class="col-md-10">
+                  <div class="form-floating form-floating-outline">
+                    <select class="form-select select2" id="vendorSelect" style="width: 100%;">
+                      <option selected>Andi Setyawan</option>
+                      <option value="1">Budi Kuncoro</option>
+                      <option value="2">Ilham Baharudin</option>
+                      <option value="3">Muhammad Rafli</option>
+                    </select>
+                    <label for="vendorSelect">Engineer</label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <button class="btn btn-text-danger text-capitalize p-0 waves-effect waves-light">
+                    <i class="mdi mdi-minus me-2"></i>
+                    <span class="d-none d-md-block">Remove</span>
+                  </button>
+                </div>
+
+              </div>
+              <div class="row align-items-center mb-3">
+                <div class="col-md-10">
+                  <div class="form-floating form-floating-outline">
+                    <select class="form-select select2" id="vendorSelect" style="width: 100%;">
+                      <option >Andi Setyawan</option>
+                      <option value="1"selected>Budi Kuncoro</option>
+                      <option value="2">Ilham Baharudin</option>
+                      <option value="3">Muhammad Rafli</option>
+                    </select>
+                    <label for="vendorSelect">Engineer</label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <button class="btn btn-text-danger text-capitalize p-0 waves-effect waves-light">
+                    <i class="mdi mdi-minus me-2"></i>
+                    <span class="d-none d-md-block">Remove</span>
+                  </button>
+                </div>
+
+              </div>
+
+              <button class="btn btn-text-primary p-0"><i class="mdi mdi-plus"></i> Add Engineer</button>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cancel
+              </button>
+              <button type="button" class="btn btn-primary">Save Engineers</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Overlay -->
       <div class="layout-overlay layout-menu-toggle"></div>
     </div>
@@ -3514,6 +3705,15 @@ Dilakukan pergantian seal ulang pada cover engine merk Toyota Genuine Part</text
             // Move to the previous step
             stepper.previous();
           });
+        });
+      });
+
+      $(document).ready(function () {
+        $("#vendorSelect").select2({
+          dropdownParent: $("#vendorModal"),
+          placeholder: "Select Vendor",
+          allowClear: true,
+          width: "100%"
         });
       });
     </script>

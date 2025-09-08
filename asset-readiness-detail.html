@@ -538,6 +538,7 @@
                           <th>po number<br/>& acquisition date</th>
                           <th>pic</th>
                           <th>#MTC</th>
+                          <th style="min-width: 160px;">Action</th>
                         </tr>
                       </thead>
                       <tbody class="table-border-bottom-0">
@@ -566,30 +567,9 @@
                               5
                             </button>
                           </td>
-                        </tr>
-                        <tr>
-                          <td><div class="ps-2">i-2025-05-23-402001</div></td>
-                          <td>
-                            <div class="d-flex gap-2 align-items-center justify-content-between" id="start-date-cell">
-                              <span class="value-display">01 May 2025</span>
-                              <button class="btn btn-text-primary px-0 py-0 ms-2 edit-button" data-field="start-date">
-                                <i class="mdi mdi-20px mdi-pencil"></i>
-                              </button>
-                            </div>
-                          </td>
-                          <td>
-                            <div class="d-flex gap-2 align-items-center justify-content-between" id="usage-km-cell">
-                              <span class="value-display">1.000</span>
-                              <button class="btn btn-text-primary px-0 py-0 ms-2 edit-button" data-field="usage-km">
-                                <i class="mdi mdi-20px mdi-pencil"></i>
-                              </button>
-                            </div>
-                          </td>
-                          <td>PO-00001<br/>01 May 2025</td>
-                          <td>Daniel Sinanta</td>
                           <td class="text-center">
-                            <button type="button" class="btn btn-text-primary p-0 text-center text-decoration-underline" data-bs-toggle="modal" data-bs-target="#MTCTask">
-                              5
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addMTCTask">
+                              Add MTC
                             </button>
                           </td>
                         </tr>
@@ -616,6 +596,42 @@
                           <td class="text-center">
                             <button type="button" class="btn btn-text-primary p-0 text-center text-decoration-underline" data-bs-toggle="modal" data-bs-target="#MTCTask">
                               5
+                            </button>
+                          </td>
+                          <td class="text-center">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addMTCTask">
+                              Add MTC
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><div class="ps-2">i-2025-05-23-402001</div></td>
+                          <td>
+                            <div class="d-flex gap-2 align-items-center justify-content-between" id="start-date-cell">
+                              <span class="value-display">01 May 2025</span>
+                              <button class="btn btn-text-primary px-0 py-0 ms-2 edit-button" data-field="start-date">
+                                <i class="mdi mdi-20px mdi-pencil"></i>
+                              </button>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-flex gap-2 align-items-center justify-content-between" id="usage-km-cell">
+                              <span class="value-display">1.000</span>
+                              <button class="btn btn-text-primary px-0 py-0 ms-2 edit-button" data-field="usage-km">
+                                <i class="mdi mdi-20px mdi-pencil"></i>
+                              </button>
+                            </div>
+                          </td>
+                          <td>PO-00001<br/>01 May 2025</td>
+                          <td>Daniel Sinanta</td>
+                          <td class="text-center">
+                            <button type="button" class="btn btn-text-primary p-0 text-center text-decoration-underline" data-bs-toggle="modal" data-bs-target="#MTCTask">
+                              5
+                            </button>
+                          </td>
+                          <td class="text-center">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addMTCTask">
+                              Add MTC
                             </button>
                           </td>
                         </tr>
@@ -660,7 +676,7 @@
       <!-- Overlay -->
       <div class="layout-overlay layout-menu-toggle"></div>
 
-      <!-- Modal Add Inspection -->
+      <!-- List MTC -->
       <div class="modal fade" id="MTCTask" tabindex="-1" aria-labelledby="MTCTasklabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
           <div class="modal-content border-0">
@@ -747,8 +763,28 @@
                   </ul>
                 </nav>
               </div>
-              <!-- Form Top -->
-              <hr/>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">CANCEL</button>
+              <button type="button" class="btn btn-primary">SAVE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add MTC Pop Up -->
+       <div class="modal fade" id="addMTCTask" tabindex="-1" aria-labelledby="MTCTasklabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content border-0">
+            <div class="modal-header">
+              <h5 class="modal-title" id="MTCTasklabel">MTC Task</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+              <div class="row g-3 pb-2 align-items-center">
+              </div>
               <!-- Checklist Section -->
               <div class="pt-3">
                 <h6 class="mb-3">Additional MTC Task</h6>

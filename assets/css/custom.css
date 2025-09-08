@@ -1668,3 +1668,8 @@ div.badge {
   left: -20px;
   right: -32px;
 }
+
+.bg-label-info-custom {
+  background-color: #c6e8ff !important;
+  color: #2F8FCF !important;
+}
