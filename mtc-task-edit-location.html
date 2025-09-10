@@ -202,7 +202,7 @@
             <li class="menu-item">
               <a href="./schedule-task.html" class="menu-link">
                 <i class="menu-icon tf-icons mdi mdi-calendar-badge-outline"></i>
-                <div data-i18n="Scheduled Task">Scheduled Task</div>
+                <div data-i18n="Work List">Work List</div>
               </a>
             </li>
             <li class="menu-item">
@@ -765,37 +765,78 @@
                         data-bs-parent="#accordionExample"
                       >
                         <div class="accordion-body">
-                          <strong>Start On</strong>
-                          <ul>
-                            <li>This is the first date MTC is due.</li>
-                            <li>It’s used when the task happens only once (e.g., initial setup inspection).</li>
-                          </ul>
-                          <p><strong>Example:</strong><br>
-                            Inspection starts on Jan 1, 2025 → next due = Jan 1, 2025
-                          </p>
+                          <div id="intervalExample">
+                            <strong>Start On</strong><br/>
+                            <ul>
+                              <li>This is the first date MTC is due.</li>
+                              <li>It’s used when the task happens only once (e.g., initial setup inspection).</li>
+                            </ul>
+                            <p><strong>Example:</strong><br>
+                              Inspection starts on Jan 1, 2025 → next due = Jan 1, 2025
+                            </p>
 
-                          <hr>
+                            <hr class="pb-3">
 
-                          <strong>Repeat Every</strong>
-                          <ul>
-                            <li>This is used when you want MTC to happen repeatedly.</li>
-                            <li>Based on the last inspection date or "Start On" date if it’s the first one.</li>
-                          </ul>
-                          <p><strong>Example:</strong><br>
-                            Repeat every 90 days → Jan 1, Apr 1, Jul 1...
-                          </p>
+                            <strong>Repeat Every</strong><br/>
+                            <ul>
+                              <li>This is used when you want MTC to happen repeatedly.</li>
+                              <li>Based on the last inspection date or "Start On" date if it’s the first one.</li>
+                            </ul>
+                            <p><strong>Example:</strong><br>
+                              Repeat every 90 days → Jan 1, Apr 1, Jul 1...
+                            </p>
 
-                          <hr>
+                            <hr class="pb-3">
 
-                          <strong>First-Time On + Repeat Every</strong>
-                          <ul>
-                            <li>Use this if you want the first MTC to start on a specific date, and then repeat regularly.</li>
-                            <li>It will calculate all next dates based on that first date + repeat.</li>
-                          </ul>
-                          <p><strong>Example:</strong><br>
-                            First Time On: Feb 15, 2025<br>
-                            Repeat Every: 6 months → next: Aug 15, 2025, then Feb 15, 2026...
-                          </p>
+                            <strong>First-Time On + Repeat Every</strong><br/>
+                            <ul>
+                              <li>Use this if you want the first MTC to start on a specific date, and then repeat regularly.</li>
+                              <li>It will calculate all next dates based on that first date + repeat.</li>
+                            </ul>
+
+                            <p><strong>Example:</strong><br>
+                              First Time On: Feb 15, 2025<br>
+                              Repeat Every: 6 months → next: Aug 15, 2025, then Feb 15, 2026...
+                            </p>
+
+                            <hr class="pb-3">
+
+                            <strong>Unit</strong><br/>
+                            <ul>
+                              <li>For time based, select one of day, week, or month</li>
+                              <li>For usage based, input the unit according to the maintenance task. For example, oil change is measured in KM.</li>
+                              <li>For cycle based, it is definitely with cycle</li>
+                            </ul>
+                          </div>
+                          
+                          <div id="fixedExample" class="d-none">
+                            <strong>Repeat</strong><br/>
+                            <p>Purpose: To execute repetitive tasks</p>
+
+                            <strong>Day(Month)</strong>
+                            <ul>
+                              <li>Numeric input, range from 1 to 31</li>
+                              <li>By default it is filled with * which means "Every"</li>
+                            </ul>
+
+                            <strong>Month(s)</strong>
+                            <ul>
+                              <li>Numeric input, range from 1 (January) to 12 (December)</li>
+                              <li>Example: 1, 4, 12 → Triggers in January, April, and December</li>
+                              <li>By default it is filled with * which means "Every"</li>
+                            </ul>
+
+                            <strong>Day(Week)</strong><br/>
+                            <ul>
+                              <li>Numeric input, range from 1 (Monday ) to 7 (Sunday)</li>
+                              <li>By default it is filled with * which means "Every"</li>
+                            </ul>
+
+                            <hr class="pb-3">
+
+                            <strong>One Time</strong><br/>
+                            <p>Purpose: To execute tasks on specific date</p>
+                          </div>
                         </div>
                       </div>
                     </div>

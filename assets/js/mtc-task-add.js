@@ -6,10 +6,10 @@ $(document).ready(function () {
     },
   });
 
-  $('#categoryTask').select2({
+  $("#categoryTask").select2({
     templateResult: formatOption,
     templateSelection: formatOption,
-    width: '100%'
+    width: "100%",
   });
 
   // Toggle form berdasarkan pilihan partType
@@ -51,7 +51,6 @@ $(document).ready(function () {
   $engineeringSelect.on("change", renderSelectedChips);
   renderSelectedChips(); // Initial render
 
-  
   // Vendor by Select2 with custom chip display
   const $vendorSelect = $("#vendorByName");
   const $selectedVendorContainer = $("#selectedVendorContainer");
@@ -81,29 +80,31 @@ $(document).ready(function () {
     });
   }
 
-  function formatOption (opt) {
+  function formatOption(opt) {
     if (!opt.id) return opt.text;
 
     var color = $(opt.element).data("color");
     if (!color) return opt.text;
 
     var $opt = $(
-      '<span><span style="display:inline-block;width:15px;height:15px;border-radius:50%;background:' 
-      + color + ';margin-right:8px;"></span>' + opt.text + '</span>'
+      '<span><span style="display:inline-block;width:15px;height:15px;border-radius:50%;background:' +
+        color +
+        ';margin-right:8px;"></span>' +
+        opt.text +
+        "</span>"
     );
     return $opt;
-  };
+  }
 
   $vendorSelect.on("change", renderSelectedChipsVendor);
   renderSelectedChipsVendor(); // Initial render
 });
 
-  // sinkronisasi input color dengan option yang dipilih
-  $('#categoryTask').on('change', function() {
-    var color = $(this).find(':selected').data('color');
-    $('#colorPicker').val(color);
-  });
-
+// sinkronisasi input color dengan option yang dipilih
+$("#categoryTask").on("change", function () {
+  var color = $(this).find(":selected").data("color");
+  $("#colorPicker").val(color);
+});
 
 // Hapus baris checklist
 $(document).on("click", ".remove-checklist", function () {
@@ -407,11 +408,15 @@ function checkFilterSelection() {
 document.getElementById("intervalTab").addEventListener("change", () => {
   document.getElementById("intervalContent").classList.remove("d-none");
   document.getElementById("fixedContent").classList.add("d-none");
+  document.getElementById("intervalExample").classList.remove("d-none");
+  document.getElementById("fixedExample").classList.add("d-none");
 });
 
 document.getElementById("fixedTab").addEventListener("change", () => {
   document.getElementById("intervalContent").classList.add("d-none");
   document.getElementById("fixedContent").classList.remove("d-none");
+  document.getElementById("intervalExample").classList.add("d-none");
+  document.getElementById("fixedExample").classList.remove("d-none");
 });
 
 flatpickr("#assignmentDate", {
