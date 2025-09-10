@@ -231,39 +231,39 @@
             </li>
 
             <div class=""> <!-- If you want to show this menu please remove <div class="d-none"> -->
-                <li class="menu-header fw-light mt-4">
-                    <span class="menu-header-text">MASTER DATA MAINTENANCE</span>
-                </li>
-                <li class="menu-item">
-                    <a href="./skill-set.html" class="menu-link">
-                    <i class="menu-icon tf-icons mdi mdi-briefcase-account-outline"></i>
-                    <div data-i18n="Skill Set">Skill Set</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="./engineer.html" class="menu-link">
-                    <i class="menu-icon tf-icons mdi mdi-account-hard-hat-outline"></i>
-                    <div data-i18n="Engineer">Engineer</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="./vendor.html" class="menu-link">
-                    <i class="menu-icon tf-icons mdi mdi-store-outline"></i>
-                    <div data-i18n="Vendor">Vendor</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="./maintenance-category.html" class="menu-link">
-                    <i class="menu-icon tf-icons mdi mdi-list-box-outline"></i>
-                    <div data-i18n="Maintenance Category">MTC Category</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="./root-cause-category.html" class="menu-link">
-                    <i class="menu-icon tf-icons mdi mdi-list-box-outline"></i>
-                    <div data-i18n="Root Cause Category">Root Cause Category</div>
-                    </a>
-                </li>
+              <li class="menu-header fw-light mt-4">
+                <span class="menu-header-text">MASTER DATA MAINTENANCE</span>
+              </li>
+              <li class="menu-item">
+                <a href="./skill-set.html" class="menu-link">
+                  <i class="menu-icon tf-icons mdi mdi-briefcase-account-outline"></i>
+                  <div data-i18n="Skill Set">Skill Set</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="./engineer.html" class="menu-link">
+                  <i class="menu-icon tf-icons mdi mdi-account-hard-hat-outline"></i>
+                  <div data-i18n="Engineer">Engineer</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="./vendor.html" class="menu-link">
+                  <i class="menu-icon tf-icons mdi mdi-store-outline"></i>
+                  <div data-i18n="Vendor">Vendor</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="./maintenance-category.html" class="menu-link">
+                  <i class="menu-icon tf-icons mdi mdi-list-box-outline"></i>
+                  <div data-i18n="Maintenance Category">MTC Category</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="./root-cause-category.html" class="menu-link">
+                  <i class="menu-icon tf-icons mdi mdi-list-box-outline"></i>
+                  <div data-i18n="Root Cause Category">Root Cause Category</div>
+                </a>
+              </li>
             </div>
           </ul>
         </aside>
@@ -459,7 +459,10 @@
 
                         <td>
                             <div class="d-flex gap-2 align-items-center justify-content-center">
-                                <a href="#" class="btn btn-text-danger px-0 text-capitalize" data-bs-toggle="modal" data-bs-target="#deleteModal">Remove Template</a>
+                              <a href="#" class="btn btn-text-danger px-0 text-capitalize" data-bs-toggle="modal" data-bs-target="#deleteModal">Remove Template</a> /
+                              <button type="button" class="btn btn-text-secondary text-capitalize p-0" data-bs-toggle="modal" data-bs-target="#addMTCTask">
+                                Add MTC Task
+                              </button>
                             </div>
                         </td>
                       </tr>
@@ -478,7 +481,10 @@
                         <td class="text-center">0</td>
                         <td>
                           <div class="d-flex gap-2 align-items-center justify-content-center">
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#applyTemplateModal" class="btn btn-text-primary px-0 text-capitalize">Apply Template</a>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#applyTemplateModal" class="btn btn-text-primary px-0 text-capitalize">Apply Template</a> / 
+                            <button type="button" class="btn btn-text-secondary text-capitalize p-0" data-bs-toggle="modal" data-bs-target="#addMTCTask">
+                              Add MTC Task
+                            </button>
                           </div>
                         </td>
                       </tr>
@@ -497,7 +503,10 @@
                         <td class="text-center">0</td>
                         <td>
                           <div class="d-flex gap-2 align-items-center justify-content-center">
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#applyTemplate" class="btn btn-text-primary px-0 text-capitalize">Apply Template</a>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#applyTemplate" class="btn btn-text-primary px-0 text-capitalize">Apply Template</a> / 
+                            <button type="button" class="btn btn-text-secondary text-capitalize p-0" data-bs-toggle="modal" data-bs-target="#addMTCTask">
+                              Add MTC Task
+                            </button>
                           </div>
                         </td>
                       </tr>
@@ -516,7 +525,10 @@
                         <td class="text-center">0</td>
                         <td>
                           <div class="d-flex gap-2 align-items-center justify-content-center">
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#applyTemplate" class="btn btn-text-primary px-0 text-capitalize">Apply Template</a>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#applyTemplate" class="btn btn-text-primary px-0 text-capitalize">Apply Template</a> / 
+                            <button type="button" class="btn btn-text-secondary text-capitalize p-0" data-bs-toggle="modal" data-bs-target="#addMTCTask">
+                              Add MTC Task
+                            </button>
                           </div>
                         </td>
                       </tr>
@@ -908,8 +920,7 @@
 
                   <div class="modal-body">
                     <div class="row justify-content-between align-items-center mb-2">
-
-              </div>
+                  </div>
 
                     <div class="card-datatable table-responsive custom-table text-nowrap">
                       <table class="table card-table table-borderless">
@@ -978,7 +989,33 @@
                    
                     <h6 class="mb-3">Additional MTC</h6>
 
-                    <div class="mb-3 d-flex align-items-center gap-2">
+                  </div>
+
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Add MTC Pop Up -->
+            <div class="modal fade" id="addMTCTask" tabindex="-1" aria-labelledby="MTCTasklabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content border-0">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="MTCTasklabel">MTC Task</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+
+                  <div class="modal-body">
+                    <div class="row g-3 pb-2 align-items-center">
+                    </div>
+                    <!-- Checklist Section -->
+                    <div class="pt-3">
+                      <h6 class="mb-3">Additional MTC Task</h6>
+                      <div class="mb-3 d-flex align-items-center gap-2">
                         <select class="form-select flex-grow-1">
                             <option selected>Check Lighting</option>
                             <option>Check HVAC</option>
@@ -1012,14 +1049,12 @@
                     <a href="#" class="text-primary fw-semibold d-inline-flex align-items-center mt-2">
                         <i class="mdi mdi-plus me-1"></i> Add MTC Task
                     </a>
-
                   </div>
 
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">CANCEL</button>
+                    <button type="button" class="btn btn-primary">SAVE</button>
                   </div>
-
                 </div>
               </div>
             </div>
