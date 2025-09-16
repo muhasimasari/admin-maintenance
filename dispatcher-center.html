@@ -747,7 +747,7 @@
                      <span id="bulk-count" class="custom-text-dark">
                       <span id="bulk-number">0</span> Work Order Selected
                     </span>
-                    <button class="btn btn-sm btn-dark">
+                    <button class="btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#assignModal" data-wo="WO-2025-05-07-0041">
                       Bulk Assign
                     </button>
                   </div>
@@ -1756,6 +1756,16 @@
                           />
                         </div>
 
+                        <div class="mb-3">
+                          <div class="d-flex gap-3 align-items-center mb-2">
+                              <span>Repeat:</span>
+                              <label class="switch mb-0">
+                                <input class="switch-input" type="checkbox" checked="">
+                                <span class="switch-toggle-slider"><span class="switch-on"></span><span class="switch-off"></span></span>
+                                <span class="switch-label">Yes</span>
+                              </label>
+                            </div>
+                        </div>
                       </div>
                     </div>
 
