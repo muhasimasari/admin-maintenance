@@ -807,264 +807,455 @@
                   class="tab-pane fade"
                   id="navs-cost-report"
                   role="tabpanel">
-                  <div class="card mb-3">
-                    <div class="card-body">
-                      <div class="d-flex gap-2 align-items-center mb-3">
-                        <h5 class="mb-0">Labor</h5>
-                        <button class="btn btn-text-primary p-0"><i class="mdi mdi-plus"></i>ADD</button>
-                      </div>
-                      <div class="row g-2 align-items-start mb-3">
-                        <div class="row g-2 align-items-center text-wrap mb-2">
-                          <div class="col-md-7 col-7">
-                            <div class="form-floating form-floating-outline">
-                              <input type="text" class="form-control" id="floatingInput" placeholder="John Doe" aria-describedby="floatingInputHelp">
-                              <label for="floatingInput">Item</label>
-                            </div>
-                          </div>
-                          <div class="col-md-3 col-3">
-                            <div class="form-floating form-floating-outline">
-                              <input type="number" class="form-control" id="floatingInput" placeholder="John Doe" aria-describedby="floatingInputHelp">
-                              <label for="floatingInput">Cost</label>
-                            </div>
-                          </div>
-                          <div class="col-md-2 col-2 d-flex align-items-center">
-                            <button class="btn btn-text-danger text-capitalize p-0">
-                              <i class="mdi mdi-minus me-2"></i>
-                              <span class="d-none d-md-block">Remove</span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                      <hr class="my-2"/>
-                      <div class="d-flex gap-2 align-items-center mb-3">
-                        <h5 class="mb-0">Vendor</h5>
-                        <button class="btn btn-text-primary p-0"><i class="mdi mdi-plus"></i>ADD</button>
-                      </div>
-                      <div class="row g-2 align-items-start mb-3">
-                        <div class="row g-2 align-items-center text-wrap mb-2">
-                          <div class="col-md-7 col-7">
-                            <div class="form-floating form-floating-outline">
-                              <input type="text" class="form-control" id="floatingInput" placeholder="John Doe" aria-describedby="floatingInputHelp">
-                              <label for="floatingInput">Item</label>
-                            </div>
-                          </div>
-                          <div class="col-md-3 col-3">
-                            <div class="form-floating form-floating-outline">
-                              <input type="number" class="form-control" id="floatingInput" placeholder="John Doe" aria-describedby="floatingInputHelp">
-                              <label for="floatingInput">Cost</label>
-                            </div>
-                          </div>
-                          <div class="col-md-2 col-2 d-flex align-items-center">
-                            <button class="btn btn-text-danger text-capitalize p-0">
-                              <i class="mdi mdi-minus me-2"></i>
-                              <span class="d-none d-md-block">Remove</span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                      <hr class="my-2"/>
-                      <h5>Part</h5>
-                      <div class="px-md-3">
+                    <div class="card mb-3">
+                      <div class="card-body">
                         <div class="d-flex gap-2 align-items-center mb-3">
-                          <h6 class="mb-0">Ad-Hoc Consumable</h6>
-                          <button class="btn btn-text-primary p-0"><i class="mdi mdi-plus"></i>ADD</button>
-                        </div>
-                        <div class="row g-2 align-items-center mb-3">
-                          <div class="col-md-7 col-7">
-                            <div class="form-floating form-floating-outline">
-                              <input type="text" class="form-control" id="floatingInput" placeholder="John Doe" aria-describedby="floatingInputHelp">
-                              <label for="floatingInput">Item</label>
-                            </div>
-                          </div>
-
-                          <!-- Cost Input -->
-                          <div class="col-md-3 col-3">
-                            <div class="form-floating form-floating-outline">
-                              <input type="number" class="form-control" id="floatingInput" value="50.000" placeholder="Cost" disabled>
-                              <label for="floatingInput">Cost</label>
-                            </div>
-                          </div>
-
-                          <!-- Remove Button -->
-                          <div class="col-md-2 col-2 d-flex align-items-center">
-                            <button class="btn btn-text-danger text-capitalize p-0">
-                              <i class="mdi mdi-minus me-2"></i>
-                              <span class="d-none d-md-block">Remove</span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="px-md-3">
-                        <div class="d-flex gap-2 align-items-center mb-3">
-                          <h6 class="mb-0">Registered Part</h6>
+                          <h5 class="mb-0">Labor</h5>
                           <button class="btn btn-text-primary p-0">
-                            <i class="mdi mdi-plus"></i> ADD
+                            <i class="mdi mdi-plus"></i>ADD
                           </button>
                         </div>
-
-                        <div class="row g-2 align-items-center mb-3">
-                          <!-- Dropdown Selects -->
-                          <div class="col-md-7 col-7">
-                            <div class="row g-2">
-                              <div class="col-md-6 col-6">
-                                <div class="form-floating form-floating-outline">
-                                  <select class="form-select select" id="assetName">
-                                    <option>Select Asset Name</option>
-                                    <option selected>Oil Filter</option>
-                                    <option value="1">Asset Name 1</option>
-                                    <option value="2">Asset Name 2</option>
-                                    <option value="3">Asset Name 3</option>
-                                  </select>
-                                  <label for="assetName">Asset Name</label>
-                                </div>
-                              </div>
-                              <div class="col-md-6 col-6">
-                                <div class="form-floating form-floating-outline">
-                                  <select class="form-select select" id="itemNumber">
-                                    <option>Select Item Number</option>
-                                    <option selected>i-2024-01-11-0001</option>
-                                    <option value="1">Item Number 1</option>
-                                    <option value="2">Item Number 2</option>
-                                    <option value="3">Item Number 3</option>
-                                  </select>
-                                  <label for="itemNumber">Item Number</label>
-                                </div>
+                        <div class="row g-2 align-items-start mb-3">
+                          <div class="row g-2 align-items-center text-wrap mb-2">
+                            <div class="col-md-7">
+                              <div class="form-floating form-floating-outline">
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="floatingInput"
+                                  placeholder="John Doe"
+                                  aria-describedby="floatingInputHelp"
+                                />
+                                <label for="floatingInput">Item</label>
                               </div>
                             </div>
-                          </div>
-
-                          <!-- Cost Input -->
-                          <div class="col-md-3 col-3">
-                            <div class="form-floating form-floating-outline">
-                              <input type="number" class="form-control" id="floatingInput" value="50.000" placeholder="Cost" disabled>
-                              <label for="floatingInput">Cost</label>
+                            <div class="col-md-3">
+                              <div class="form-floating form-floating-outline">
+                                <input
+                                  type="number"
+                                  class="form-control"
+                                  id="floatingInput"
+                                  placeholder="John Doe"
+                                  aria-describedby="floatingInputHelp"
+                                />
+                                <label for="floatingInput">Cost</label>
+                              </div>
                             </div>
-                          </div>
-
-                          <!-- Remove Button -->
-                          <div class="col-md-2 col-2 d-flex align-items-center">
-                            <button class="btn btn-text-danger text-capitalize p-0">
-                              <i class="mdi mdi-minus me-2"></i>
-                              <span class="d-none d-md-block">Remove</span>
-                            </button>
+                            <div class="col-md-2 d-flex align-items-center justify-content-end">
+                              <button
+                                class="btn btn-text-danger bg-label-danger text-capitalize px-2"
+                              >
+                                <i class="mdi mdi-minus me-2"></i>
+                                <span class="">Remove</span>
+                              </button>
+                            </div>
                           </div>
                         </div>
-
-                        <div class="row g-2 align-items-center mb-3">
-                          <!-- Dropdown Selects -->
-                          <div class="col-md-7 col-7">
-                            <div class="row g-2">
-                              <div class="col-md-6 col-6">
-                                <div class="form-floating form-floating-outline">
-                                  <select class="form-select select" id="assetName">
-                                    <option>Select Asset Name</option>
-                                    <option selected>Oil Filter</option>
-                                    <option value="1">Asset Name 1</option>
-                                    <option value="2">Asset Name 2</option>
-                                    <option value="3">Asset Name 3</option>
-                                  </select>
-                                  <label for="assetName">Asset Name</label>
-                                </div>
-                              </div>
-                              <div class="col-md-3 col-3">
-                                <div class="form-floating form-floating-outline">
-                                  <input type="number" class="form-control" id="floatingInput" value="10" placeholder="John Doe" aria-describedby="floatingInputHelp" disabled>
-                                  <label for="floatingInput">Available</label>
-                                </div>
-                              </div>
-                              <div class="col-md-3 col-3">
-                                <div class="form-floating form-floating-outline">
-                                  <input type="number" class="form-control" id="floatingInput" value="40" placeholder="John Doe" aria-describedby="floatingInputHelp">
-                                  <label for="floatingInput">Qty Used</label>
-                                </div>
+                        <!-- <hr class="my-2" /> -->
+                        <div class="d-flex gap-2 align-items-center mb-3">
+                          <h5 class="mb-0">Vendor</h5>
+                          <button class="btn btn-text-primary p-0">
+                            <i class="mdi mdi-plus"></i>ADD
+                          </button>
+                        </div>
+                        <div class="row g-2 align-items-start mb-3">
+                          <div class="row g-2 align-items-center text-wrap mb-2">
+                            <div class="col-md-7">
+                              <div class="form-floating form-floating-outline">
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="floatingInput"
+                                  placeholder="John Doe"
+                                  aria-describedby="floatingInputHelp"
+                                />
+                                <label for="floatingInput">Vendor</label>
                               </div>
                             </div>
-                          </div>
-
-                          <!-- Cost Input -->
-                          <div class="col-md-3 col-3">
-                            <div class="form-floating form-floating-outline">
-                              <input type="number" class="form-control" id="floatingInput" value="5000" placeholder="Cost" disabled>
-                              <label for="floatingInput">Cost</label>
+                            <div class="col-md-3">
+                              <div class="form-floating form-floating-outline">
+                                <input
+                                  type="number"
+                                  class="form-control"
+                                  id="floatingInput"
+                                  placeholder="John Doe"
+                                  aria-describedby="floatingInputHelp"
+                                />
+                                <label for="floatingInput">Cost</label>
+                              </div>
+                            </div>
+                            <div class="col-md-2 d-flex align-items-center justify-content-end">
+                              <button
+                                class="btn btn-text-danger bg-label-danger text-capitalize px-2"
+                              >
+                                <i class="mdi mdi-minus me-2"></i>
+                                <span class="">Remove</span>
+                              </button>
                             </div>
                           </div>
-
-                          <!-- Remove Button -->
-                          <div class="col-md-2 col-2 d-flex align-items-center">
-                            <button class="btn btn-text-danger text-capitalize p-0">
-                              <i class="mdi mdi-minus me-2"></i>
-                              <span class="d-none d-md-block">Remove</span>
-                            </button>
+                          <hr class="my-2" />
+                          <div class="row g-2 align-items-center text-wrap mb-2">
+                            <div class="col-md-7">
+                              <div class="form-floating form-floating-outline">
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="floatingInput"
+                                  placeholder="John Doe"
+                                  value="PT Nasmoco Solo Baru"
+                                  aria-describedby="floatingInputHelp"
+                                />
+                                <label for="floatingInput">Vendor</label>
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="form-floating form-floating-outline">
+                                <input
+                                  type="number"
+                                  class="form-control"
+                                  id="floatingInput"
+                                  placeholder="John Doe"
+                                  aria-describedby="floatingInputHelp"
+                                  value="230000"
+                                />
+                                <label for="floatingInput">Cost</label>
+                              </div>
+                            </div>
+                            <div class="col-md-2 d-flex align-items-center justify-content-end">
+                              <button
+                                class="btn btn-text-danger bg-label-danger text-capitalize px-2"
+                              >
+                                <i class="mdi mdi-minus me-2"></i>
+                                <span class="">Remove</span>
+                              </button>
+                            </div>
+                            <div class="small text-secondary fst-italic">
+                              by Admin Super | Wed, 20 Sept 2025 13:00
+                            </div>
                           </div>
                         </div>
+                        <!-- <hr class="my-2" /> -->
+                        <h5>Part</h5>
+                        <div class="px-md-3">
+                          <div class="d-flex gap-2 align-items-center mb-3">
+                            <h6 class="mb-0">Ad-Hoc Consumable</h6>
+                            <button class="btn btn-text-primary p-0">
+                              <i class="mdi mdi-plus"></i>ADD
+                            </button>
+                          </div>
+                          <div class="row g-2 align-items-center mb-3">
+                            <div class="col-md-7">
+                              <div class="form-floating form-floating-outline">
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="floatingInput"
+                                  placeholder="John Doe"
+                                  aria-describedby="floatingInputHelp"
+                                />
+                                <label for="floatingInput">Item</label>
+                              </div>
+                            </div>
 
-                        <div class="row g-2 align-items-center mb-3">
-                          <!-- Dropdown Selects -->
-                          <div class="col-md-7 col-7">
-                            <div class="row g-2">
-                              <div class="col-md-12">
-                                <div class="form-floating form-floating-outline">
-                                  <select class="form-select select" id="assetName">
-                                    <option>Select Asset Name</option>
-                                    <option selected>Oil Filter</option>
-                                    <option value="1">Asset Name 1</option>
-                                    <option value="2">Asset Name 2</option>
-                                    <option value="3">Asset Name 3</option>
-                                  </select>
-                                  <label for="assetName">Asset Name</label>
+                            <!-- Cost Input -->
+                            <div class="col-md-3">
+                              <div class="form-floating form-floating-outline">
+                                <input
+                                  type="number"
+                                  class="form-control"
+                                  id="floatingInput"
+                                  value="50.000"
+                                  placeholder="Cost"
+                                  disabled
+                                />
+                                <label for="floatingInput">Cost</label>
+                              </div>
+                            </div>
+
+                            <!-- Remove Button -->
+                            <div class="col-md-2 d-flex align-items-center justify-content-end">
+                              <button
+                                class="btn btn-text-danger bg-label-danger text-capitalize px-2"
+                              >
+                                <i class="mdi mdi-minus me-2"></i>
+                                <span class="">Remove</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="px-md-3">
+                          <div class="d-flex gap-2 align-items-center mb-3">
+                            <h6 class="mb-0">Registered Part</h6>
+                            <button class="btn btn-text-primary p-0">
+                              <i class="mdi mdi-plus"></i> ADD
+                            </button>
+                          </div>
+
+                          <div class="row g-2 align-items-center mb-3">
+                            <!-- Dropdown Selects -->
+                            <div class="col-md-7">
+                              <div class="row g-2">
+                                <div class="col-md-6">
+                                  <div
+                                    class="form-floating form-floating-outline"
+                                  >
+                                    <select
+                                      class="form-select select"
+                                      id="assetName"
+                                    >
+                                      <option>Select Asset Name</option>
+                                      <option selected>Oil Filter</option>
+                                      <option value="1">Asset Name 1</option>
+                                      <option value="2">Asset Name 2</option>
+                                      <option value="3">Asset Name 3</option>
+                                    </select>
+                                    <label for="assetName">Asset Name</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div
+                                    class="form-floating form-floating-outline"
+                                  >
+                                    <select
+                                      class="form-select select"
+                                      id="itemNumber"
+                                    >
+                                      <option>Select Item Number</option>
+                                      <option selected>i-2024-01-11-0001</option>
+                                      <option value="1">Item Number 1</option>
+                                      <option value="2">Item Number 2</option>
+                                      <option value="3">Item Number 3</option>
+                                    </select>
+                                    <label for="itemNumber">Item Number</label>
+                                  </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
 
-                          <!-- Cost Input -->
-                          <div class="col-md-3 col-3">
-                            <div class="form-floating form-floating-outline">
-                              <input type="number" class="form-control" id="floatingInput" value="0" placeholder="Cost" disabled>
-                              <label for="floatingInput">Cost</label>
+                            <!-- Cost Input -->
+                            <div class="col-md-3">
+                              <div class="form-floating form-floating-outline">
+                                <input
+                                  type="number"
+                                  class="form-control"
+                                  id="floatingInput"
+                                  value="50.000"
+                                  placeholder="Cost"
+                                  disabled
+                                />
+                                <label for="floatingInput">Cost</label>
+                              </div>
+                            </div>
+
+                            <!-- Remove Button -->
+                            <div class="col-md-2 d-flex align-items-center justify-content-end">
+                              <button
+                                class="btn btn-text-danger bg-label-danger text-capitalize px-2"
+                              >
+                                <i class="mdi mdi-minus me-2"></i>
+                                <span class="">Remove</span>
+                              </button>
+                            </div>
+
+                            <div class="small text-secondary fst-italic">
+                              by Admin Super | Wed, 20 Sept 2025 13:00
                             </div>
                           </div>
 
-                          <!-- Remove Button -->
-                          <div class="col-md-2 col-2 d-flex align-items-center">
-                            <button class="btn btn-text-danger text-capitalize p-0">
-                              <i class="mdi mdi-minus me-2"></i>
-                              <span class="d-none d-md-block">Remove</span>
-                            </button>
+                          <hr class="my-2" />
+
+                          <div class="row g-2 align-items-center my-3">
+                            <!-- Dropdown Selects -->
+                            <div class="col-md-7">
+                              <div class="row g-2">
+                                <div class="col-md-6">
+                                  <div
+                                    class="form-floating form-floating-outline"
+                                  >
+                                    <select
+                                      class="form-select select"
+                                      id="assetName"
+                                    >
+                                      <option>Select Asset Name</option>
+                                      <option selected>Oil Filter</option>
+                                      <option value="1">Asset Name 1</option>
+                                      <option value="2">Asset Name 2</option>
+                                      <option value="3">Asset Name 3</option>
+                                    </select>
+                                    <label for="assetName">Asset Name</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                  <div
+                                    class="form-floating form-floating-outline"
+                                  >
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      id="floatingInput"
+                                      value="10"
+                                      placeholder="John Doe"
+                                      aria-describedby="floatingInputHelp"
+                                      disabled
+                                    />
+                                    <label for="floatingInput">Available</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                  <div
+                                    class="form-floating form-floating-outline"
+                                  >
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      id="floatingInput"
+                                      value="40"
+                                      placeholder="John Doe"
+                                      aria-describedby="floatingInputHelp"
+                                    />
+                                    <label for="floatingInput">Qty Used</label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- Cost Input -->
+                            <div class="col-md-3">
+                              <div class="form-floating form-floating-outline">
+                                <input
+                                  type="number"
+                                  class="form-control"
+                                  id="floatingInput"
+                                  value="5000"
+                                  placeholder="Cost"
+                                  disabled
+                                />
+                                <label for="floatingInput">Cost</label>
+                              </div>
+                            </div>
+
+                            <!-- Remove Button -->
+                            <div class="col-md-2 d-flex align-items-center justify-content-end">
+                              <button
+                                class="btn btn-text-danger bg-label-danger text-capitalize px-2"
+                              >
+                                <i class="mdi mdi-minus me-2"></i>
+                                <span class="">Remove</span>
+                              </button>
+                            </div>
+
+                            <div class="small text-secondary fst-italic">
+                              by Admin Super | Wed, 20 Sept 2025 13:00
+                            </div>
                           </div>
+
+                          <hr class="my-2" />
+
+                          <div class="row g-2 align-items-center my-3">
+                            <!-- Dropdown Selects -->
+                            <div class="col-md-7">
+                              <div class="row g-2">
+                                <div class="col-md-12">
+                                  <div
+                                    class="form-floating form-floating-outline"
+                                  >
+                                    <select
+                                      class="form-select select"
+                                      id="assetName"
+                                    >
+                                      <option>Select Asset Name</option>
+                                      <option selected>Oil Filter</option>
+                                      <option value="1">Asset Name 1</option>
+                                      <option value="2">Asset Name 2</option>
+                                      <option value="3">Asset Name 3</option>
+                                    </select>
+                                    <label for="assetName">Asset Name</label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- Cost Input -->
+                            <div class="col-md-3">
+                              <div class="form-floating form-floating-outline">
+                                <input
+                                  type="number"
+                                  class="form-control"
+                                  id="floatingInput"
+                                  value="0"
+                                  placeholder="Cost"
+                                  disabled
+                                />
+                                <label for="floatingInput">Cost</label>
+                              </div>
+                            </div>
+
+                            <!-- Remove Button -->
+                            <div class="col-md-2 d-flex align-items-center justify-content-end">
+                              <button
+                                class="btn btn-text-danger bg-label-danger text-capitalize px-2"
+                              >
+                                <i class="mdi mdi-minus me-2"></i>
+                                <span class="">Remove</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                        <hr class="my-2" />
+                        <div class="text-end fs-3 text-primary fw-semibold">
+                          Total : 755.000
                         </div>
                       </div>
-                      <hr class="my-2">
-                      <div class="text-end fs-3 text-primary fw-semibold">Total : 755.000</div>
-                      <hr class="my-2">
-                      <div class="row align-items-start mt-4">
-                        <div class="col-md-2 text-md-end mb-2 mb-md-0">Documentation (audio, photo, video or file):</div>
-                        <div class="col-md-10">
-                          <div class="d-flex gap-3">
-                            <div id="previewContainer-1" class="d-flex gap-3 flex-wrap">
-                              <div class="image-preview position-relative">
-                                <img src="https://image.sumberberkatabadi.com/s3/productimages/webp/co26696/p1323680/w600-h600/5d9804e6-8311-4c0d-b3e7-9b7d6fa129fc.jpg" class="img-thumbnail">
-                                <button class="delete-btn">DELETE</button>
-                              </div>
+                    </div>
+                    <div class="card mb-3">
+                      <div class="card-body">
+                        <div class="row align-items-start mt-4">
+                          <div class="col-md-3 mb-2 mb-md-0">
+                            Documentation (audio, photo, video or file):<br/>
+                            <div class="small text-secondary fst-italic">
+                              by Admin Super | Wed, 20 Sept 2025 13:00
                             </div>
-                            <input type="file" id="Documentation (audio, photo, video or file):Upload-1" class="d-none" accept="image/*" multiple>
-                            <label for="Documentation (audio, photo, video or file):Upload-1" class="upload-box" id="uploadBox-1">
-                              <i class="mdi mdi-24px mdi-plus text-primary"></i>
-                            </label>
+                          </div>
+                          <div class="col-md-8">
+                            <div class="d-flex gap-3">
+                              <div
+                                id="previewContainer-1"
+                                class="d-flex gap-3 flex-wrap"
+                              >
+                                <div class="image-preview position-relative">
+                                  <img
+                                    src="https://image.sumberberkatabadi.com/s3/productimages/webp/co26696/p1323680/w600-h600/5d9804e6-8311-4c0d-b3e7-9b7d6fa129fc.jpg"
+                                    class="img-thumbnail"
+                                  />
+                                  <button class="delete-btn">DELETE</button>
+                                </div>
+                              </div>
+                              <input
+                                type="file"
+                                id="Documentation (audio, photo, video or file):Upload-1"
+                                class="d-none"
+                                accept="image/*"
+                                multiple
+                              />
+                              <label
+                                for="Documentation (audio, photo, video or file):Upload-1"
+                                class="upload-box"
+                                id="uploadBox-1"
+                              >
+                                <i class="mdi mdi-24px mdi-plus text-primary"></i>
+                              </label>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="card-footer">
-                      <div class="pt-1 row g-2">
-                        <div class="col-md-12 col-12 text-end">
-                          <button type="submit" class="btn btn-primary">
-                            Save Cost
-                          </button>
-                        </div>
+                    <div class="pt-2 row g-2">
+                      <div class="col-md-12 col-12 text-end">
+                        <button type="submit" class="btn btn-primary">
+                          Save Cost Report
+                        </button>
                       </div>
                     </div>
-                  </div>
                 </div>
                 <!-- Update Last Done -->
                 <div
