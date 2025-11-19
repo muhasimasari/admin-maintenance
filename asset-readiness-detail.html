@@ -520,7 +520,7 @@
                           <input
                             type="search"
                             class="form-control form-control-sm ps-4 mb-md-0 mb-3 ml-2"
-                            placeholder="Search Item number, PO Number, PIC"
+                            placeholder="Search Item number or tag"
                             aria-controls="search datatable"
                             style="padding-left: 2.5rem!important;"
                           >
@@ -532,18 +532,24 @@
                     <table class="table card-table table-borderless">
                       <thead>
                         <tr>
-                          <th style="min-width: 220px;">item number</th>
-                          <th style="min-width: 160px;">start date</th>
-                          <th style="min-width: 160px;">usage start (km)</th>
+                          <th style="min-width: 220px; max-width: 230px;">item number & Tag</th>
+                          <th style="min-width: 160px;">initial start date</th>
+                          <th style="min-width: 160px;">initial usage start (km)</th>
                           <th>po number<br/>& acquisition date</th>
-                          <th>pic</th>
+                          <th style="min-width: 160px; max-width: 160px;">pic</th>
                           <th>#MTC</th>
                           <th style="min-width: 200px;">Action</th>
                         </tr>
                       </thead>
                       <tbody class="table-border-bottom-0">
                         <tr>
-                          <td><div class="ps-2">i-2025-05-23-402001</div></td>
+                          <td>
+                            <div class="ps-2">i-2025-05-23-402001</div>
+                            <div class="d-flex align-items-center mt-1 text-muted gap-1 px-2">
+                              <i class="mdi mdi-tag-outline"></i>
+                              67GTFG56TYRFJUGTF676549HHF
+                            </div>
+                          </td>
                           <td>
                             <div class="d-flex gap-2 align-items-center justify-content-between" id="start-date-cell">
                               <span class="value-display">01 May 2025</span>
@@ -563,9 +569,9 @@
                           <td>PO-00001<br/>01 May 2025</td>
                           <td>Daniel Sinanta</td>
                           <td class="text-center">
-                            <button type="button" class="btn btn-text-primary p-0 text-decoration-underline" data-bs-toggle="modal" data-bs-target="#MTCTask">
+                            <a href="./asset-readiness-item-detail.html" class="btn btn-text-primary p-0 text-decoration-underline">
                               5
-                            </button>
+                            </a>
                           </td>
                           <td class="text-center">
                             <button type="button" class="btn btn-text-primary" data-bs-toggle="modal" data-bs-target="#addMTCTask">
@@ -574,7 +580,13 @@
                           </td>
                         </tr>
                         <tr>
-                          <td><div class="ps-2">i-2025-05-23-402001</div></td>
+                          <td>
+                            <div class="ps-2">i-2025-05-23-402001</div>
+                            <div class="d-flex align-items-center mt-1 text-muted gap-1 px-2">
+                              <i class="mdi mdi-tag-outline"></i>
+                              67GTFG56TYRFJUGTF676549HHF
+                            </div>
+                          </td>
                           <td>
                             <div class="d-flex gap-2 align-items-center justify-content-between" id="start-date-cell">
                               <span class="value-display">01 May 2025</span>
@@ -594,9 +606,9 @@
                           <td>PO-00001<br/>01 May 2025</td>
                           <td>Daniel Sinanta</td>
                           <td class="text-center">
-                            <button type="button" class="btn btn-text-primary p-0 text-center text-decoration-underline" data-bs-toggle="modal" data-bs-target="#MTCTask">
+                            <a href="./asset-readiness-item-detail.html" class="btn btn-text-primary p-0 text-decoration-underline">
                               5
-                            </button>
+                            </a>
                           </td>
                           <td class="text-center">
                             <button type="button" class="btn btn-text-primary" data-bs-toggle="modal" data-bs-target="#addMTCTask">
@@ -605,7 +617,13 @@
                           </td>
                         </tr>
                         <tr>
-                          <td><div class="ps-2">i-2025-05-23-402001</div></td>
+                          <td>
+                            <div class="ps-2">i-2025-05-23-402001</div>
+                            <div class="d-flex align-items-center mt-1 text-muted gap-1 px-2">
+                              <i class="mdi mdi-tag-outline"></i>
+                              67GTFG56TYRFJUGTF676549HHF
+                            </div>
+                          </td>
                           <td>
                             <div class="d-flex gap-2 align-items-center justify-content-between" id="start-date-cell">
                               <span class="value-display">01 May 2025</span>
@@ -625,9 +643,9 @@
                           <td>PO-00001<br/>01 May 2025</td>
                           <td>Daniel Sinanta</td>
                           <td class="text-center">
-                            <button type="button" class="btn btn-text-primary p-0 text-center text-decoration-underline" data-bs-toggle="modal" data-bs-target="#MTCTask">
+                            <a href="./asset-readiness-item-detail.html" class="btn btn-text-primary p-0 text-decoration-underline">
                               5
-                            </button>
+                            </a>
                           </td>
                           <td class="text-center">
                             <button type="button" class="btn btn-text-primary" data-bs-toggle="modal" data-bs-target="#addMTCTask">

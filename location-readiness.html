@@ -404,7 +404,7 @@
                     </div>
                     <!-- Info & Buttons -->
                     <div class="d-flex align-items-center justify-content-between mt-3">
-                      <div class="d-flex align-items-center gap-3 py-2 px-3" 
+                      <div class="d-flex align-items-center gap-3 py-2 px-3 w-100" 
                           style="background-color: #f6f6f8; border-radius: 8px;">
                           <div>
                               <span class="fw-semibold text-primary">Showing 100 location.</span>
@@ -422,11 +422,6 @@
                               </a>
                           </div>
                       </div>
-                      <button class="btn btn-light shadow-none rounded px-3 py-2 ms-3" 
-                          style="color:#3C57A1; background-color: #f6f6f8; border-color:#f6f6f8; font-weight: 500;" data-bs-toggle="modal"
-                          data-bs-target="#triggerSettingModal">
-                          MTC Config (All)
-                      </button>
                     </div>
                   </div>
                 </div>
@@ -454,9 +449,9 @@
                           </div>
                         </td>
                         <td class="text-center">
-                          <button type="button" class="btn btn-text-primary p-0 text-center text-decoration-underline" data-bs-toggle="modal" data-bs-target="#MTCTaskModal">
+                          <a href="location-readiness-detail.html" class="btn btn-text-primary p-0 text-center text-decoration-underline">
                             5
-                          </button>
+                          </a>
                         </td>
 
                         <td>
@@ -608,51 +603,6 @@
               </div>
             </div>
 
-             <!-- Trigger Setting Modal All -->
-            <div class="modal fade" id="triggerSettingModal" tabindex="-1" aria-labelledby="triggerSettingLabel" aria-hidden="true">
-              <div class="modal-dialog modal-md modal-dialog-centered">
-                <div class="modal-content">
-
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="triggerSettingLabel">Set Initial Data</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-
-                  <div class="modal-body">
-                    <p class="mb-4">Set MTC Config to <strong>50</strong> Location</p>
-
-                    <div class="form-floating form-floating-outline mb-3">
-                              <select id="12" class="form-select" style="width: 100%;">
-                                <option value="Normal">Day(s)</option>
-                                <option value="Normal">Week(s)</option>
-                                <option value="High">Month(s)</option>
-                              </select>
-                              <label for="12">Unit</label>
-                            </div>
-
-                    <div class="position-relative">
-                              <div class="form-floating form-floating-outline">
-                                <input
-                                  type="text"
-                                  class="form-control pe-5"
-                                  placeholder="dd-mm-yyyy"
-                                  id="startDate"
-                                />
-                                <label for="startDate">Start Date</label>
-                              </div>
-                              <i class="mdi mdi-calendar position-absolute text-muted" style="top: 50%; right: 15px; transform: translateY(-50%); pointer-events: none;"></i>
-                            </div>
-                  </div>
-
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary">Save</button>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-
             <!-- Trigger Setting Modal  -->
             <div class="modal fade" id="triggerModal" tabindex="-1" aria-labelledby="triggerSettingLabel" aria-hidden="true">
               <div class="modal-dialog modal-md modal-dialog-centered">
@@ -673,7 +623,7 @@
                       <label for="12">Unit</label>
                     </div>
 
-                    <div class="position-relative">
+                    <div class="position-relative mb-3">
                       <div class="form-floating form-floating-outline">
                         <input
                           type="text"
@@ -685,6 +635,15 @@
                       </div>
                       <i class="mdi mdi-calendar position-absolute text-muted" style="top: 50%; right: 15px; transform: translateY(-50%); pointer-events: none;"></i>
                     </div>
+
+                    <label class="switch">
+                      <input type="checkbox" class="switch-input">
+                      <span class="switch-toggle-slider">
+                        <span class="switch-on"></span>
+                        <span class="switch-off"></span>
+                      </span>
+                      <span class="switch-label">Apply to All Asset Item</span>
+                    </label>
                   </div>
 
                   <div class="modal-footer">

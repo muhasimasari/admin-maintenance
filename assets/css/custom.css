@@ -622,6 +622,10 @@ label.form-check-label.custom-option-content {
   color: #ca4046;
 }
 
+.btn-text-success {
+  color: var(--approve-color)!important;
+}
+
 table.dataTable > tbody > tr.child ul.dtr-details {
   width: 100%;
 }
@@ -1672,4 +1676,28 @@ div.badge {
 .bg-label-info-custom {
   background-color: #c6e8ff !important;
   color: #2F8FCF !important;
+}
+
+.bg-label-primary-custom {
+  background-color: #3C57A120 !important;
+  color: #3C57A1 !important;
+  text-transform: uppercase;
+}
+
+.bg-label-success-custom {
+  background-color: #1A895A10 !important;
+  color: #1A895A !important;
+  text-transform: uppercase;
+}
+
+.bg-label-warning-custom {
+  background-color: #FFF3CD !important;
+  color: #FFB800 !important;
+  text-transform: uppercase;
+}
+
+.bg-label-dark-custom {
+  background-color: #13131320 !important;
+  color: #131313 !important;
+  text-transform: uppercase;
 }

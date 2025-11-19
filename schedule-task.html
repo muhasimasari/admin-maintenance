@@ -79,6 +79,22 @@
     />
     <link
       rel="stylesheet"
+      href=".\assets\vendor\libs\bootstrap-datepicker\bootstrap-datepicker.css"
+    />
+    <link
+      rel="stylesheet"
+      href=".\assets\vendor\libs\bootstrap-daterangepicker\bootstrap-daterangepicker.css"
+    />
+    <link
+      rel="stylesheet"
+      href=".\assets\vendor\libs\jquery-timepicker\jquery-timepicker.css"
+    />
+    <link
+      rel="stylesheet"
+      href=".\assets\vendor\libs\pickr\pickr-themes.css"
+    />
+    <link
+      rel="stylesheet"
       href="./assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css"
     />
     <link
@@ -342,251 +358,356 @@
                   </li> -->
                 </ol>
               </nav>
-              <div class="row g-3 mb-4 align-items-center">
-                <div class="col-md-4">
-                  <div class="row g-3 align-items-center">
-                    <div class="col-md-3">
-                      <label for="status" class="form-label mb-1">Location</label>
+              <!-- Filter Desktop -->
+              <div class="d-none d-md-block">
+                <div class="row g-3 mb-4 align-items-end">
+                  <div class="col-md-2 filter-type">
+                    <label for="status" class="form-label mb-1">Type</label>
+                    <select id="status" class="form-select select2" style="width: 100%">
+                      <option value="">All</option>
+                      <option value="">Asset</option>
+                      <option value="">Location</option>
+                    </select>
+                  </div>
+                  <div class="col-md-2 filter-priority">
+                    <label for="status" class="form-label mb-1">Priority</label>
+                    <select id="status" class="form-select select2" style="width: 100%">
+                      <option value="">All</option>
+                      <option value="">Urgent</option>
+                      <option value="">High</option>
+                      <option value="">Normal</option>
+                    </select>
+                  </div>
+                  <div class="col-md-2 filter-status">
+                    <label for="status" class="form-label mb-1">Status</label>
+                    <select id="status" class="form-select select2" style="width: 100%">
+                      <option value="">Open</option>
+                      <option value="">Completed</option>
+                    </select>
+                  </div>
+                  <div class="col-md-3 filter-date">
+                    <label for="daterange1" class="form-label mb-1">Date Range</label>
+                    <div class="input-group input-group-merge">
+                      <input
+                        type="text"
+                        id="daterange1"
+                        class="form-control"
+                      />
+                      <span class="input-group-text"><i class="mdi mdi-calendar-range"></i></span>
                     </div>
-                    <div class="col-md-9">
+                  </div>
+                  <div class="col-md-3">
+                    <button id="toggleBtnScan-desktop" class="btn btn-primary w-100 toggleBtnScan">
+                      <i class="mdi mdi-barcode me-2"></i>
+                      Scan Assets
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- / Filter Desktop -->
+
+              <!-- Filter Mobile -->
+              <div class="d-md-none mb-4">
+                <div class="d-flex justify-content-between align-items-center gap-2">
+                  <button
+                    class="btn-dark all-filter btn"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#filterCollapse"
+                    aria-expanded="false"
+                    aria-controls="filterCollapse"
+                  >
+                    <i class="mdi mdi-filter-variant me-2"></i>
+                    Filter
+                  </button>
+                  <button id="toggleBtnScan-mobile" class="btn btn-primary toggleBtnScan" type="button">
+                    <i class="mdi mdi-barcode me-2"></i>
+                    Scan Assets
+                  </button>
+                </div>
+                <div class="collapse mt-3" id="filterCollapse">
+                  <div class="card card-body">
+                    <div class="mb-3">
+                      <label for="status" class="form-label mb-1">Type</label>
                       <select id="status" class="form-select select2" style="width: 100%">
                         <option value="">All</option>
-                        <option value="">Gudang A.1</option>
-                        <option value="">Gudang A.2</option>
-                        <option value="">Gudang A.3</option>
+                        <option value="">Asset</option>
+                        <option value="">Location</option>
                       </select>
                     </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="btn-group" role="group" aria-label="Time based radio group">
-                    <input type="radio" class="btn-check btn-check-custom" name="btnradio" id="btnradio1" checked autocomplete="off" />
-                    <label class="btn btn-outline-primary btn-custom-primary" for="btnradio1">Today</label>
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" />
-                    <label class="btn btn-outline-primary" for="btnradio2">Upcoming</label>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-check d-flex gap-2 justify-content-end">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                    <label class="form-check-label" for="defaultCheck1"> Completed </label>
-                  </div>
-                </div>
-              </div>
-              <div class="row g-3">
-                <div class="col-md-4">
-                  <div class="card">
-                    <div class="card-header btn-danger">
-                      <div class="text-end mb-2">
-                        <span class="badge status-badge bg-label-secondary rounded-pill">PENDING</span>
-                      </div>
-                      <h5 class="text-white mb-2">MT-A001 - Engine Oil Check</h5>
-                      <div class="fs-6 mb-2">Toyota Innova Reborn Hitam</div>
-                      <div class="info-line">
-                        <i class="mdi mdi-map-marker"></i>
-                        <span>Gedung A</span>
-                      </div>
+                    <div class="mb-3">
+                      <label for="status" class="form-label mb-1">Priority</label>
+                      <select id="status" class="form-select select2" style="width: 100%">
+                        <option value="">All</option>
+                        <option value="">Urgent</option>
+                        <option value="">High</option>
+                        <option value="">Normal</option>
+                      </select>
                     </div>
-                    <div class="card-body py-3">
-                      <div class="d-flex gap-1 align-items-center mb-2">
-                        <i class="mdi mdi-calendar-blank"></i>
-                        <span>9 May 2025</span>
-                        <i class="mdi mdi-alert-circle text-danger ms-1"></i>
-                      </div>
-                      <div class="d-flex gap-1 align-items-center mb-2">
-                        <i class="mdi mdi-file-document-outline"></i>
-                        <span>WO-2025-05-07-0041</span>
-                      </div>
-                      <div class="d-flex gap-1 align-items-center mb-2">
-                        <i class="mdi mdi-barcode-scan"></i>
-                        <span>I-2026-05-02-0020</span>
-                      </div>
-                      <div class="d-flex gap-1 align-items-center mb-2">
-                        <i class="mdi mdi-repeat"></i>
-                        <span>Interval</span>
-                      </div>
-                      <div class="d-flex gap-1 align-items-center justify-content-between mt-4">
-                        <div class="d-flex gap-1 align-items-center">
-                          <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
-                            <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up" aria-label="Vinnie Mostowy" data-bs-original-title="Vinnie Mostowy">
-                              <img class="rounded-circle" src="./assets/img/avatars/5.png" alt="Avatar">
-                            </li>
-                            <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up" aria-label="Allen Rieske" data-bs-original-title="Allen Rieske">
-                              <img class="rounded-circle" src="./assets/img/avatars/12.png" alt="Avatar">
-                            </li>
-                            <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up" aria-label="Julee Rossignol" data-bs-original-title="Julee Rossignol">
-                              <img class="rounded-circle" src="./assets/img/avatars/6.png" alt="Avatar">
-                            </li>
-                            <li class="avatar">
-                              <span class="avatar-initial rounded-circle pull-up bg-lightest text-body" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="3 more">+3</span>
-                            </li>
-                          </ul>
-                        </div>
-                        <a href="./schedule-task-detail.html" class="btn btn-primary btn-sm">Start Inspection</a>
-                      </div>
+                    <div class="mb-3">
+                      <label for="status" class="form-label mb-1">Status</label>
+                      <select id="status" class="form-select select2" style="width: 100%">
+                        <option value="">Open</option>
+                        <option value="">Completed</option>
+                      </select>
                     </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="card">
-                    <div class="card-header bg-warning">
-                      <div class="text-end mb-2">
-                        <span class="badge status-badge bg-label-secondary rounded-pill">IN PROGRESS</span>
-                      </div>
-                      <h5 class="mb-2 custom-text-dark">MT-A001 - Engine Oil Check</h5>
-                      <div class="fs-6 mb-2 custom-text-dark">Toyota Innova Reborn Hitam</div>
-                      <div class="info-line custom-text-dark">
-                        <i class="mdi mdi-map-marker"></i>
-                        <span>Gedung A</span>
-                      </div>
-                    </div>
-                    <div class="card-body py-3">
-                      <div class="d-flex gap-1 align-items-center mb-2">
-                        <i class="mdi mdi-calendar-blank"></i>
-                        <span>9 May 2025</span>
-                        <i class="mdi mdi-alert-circle text-danger ms-1"></i>
-                      </div>
-                      <div class="d-flex gap-1 align-items-center mb-2">
-                        <i class="mdi mdi-file-document-outline"></i>
-                        <span>WO-2025-05-07-0041</span>
-                      </div>
-                      <div class="d-flex gap-1 align-items-center mb-2">
-                        <i class="mdi mdi-barcode-scan"></i>
-                        <span>I-2026-05-02-0020</span>
-                      </div>
-                      <div class="d-flex gap-1 align-items-center mb-2">
-                        <i class="mdi mdi-repeat"></i>
-                        <span>Interval</span>
-                      </div>
-                      <div class="d-flex gap-1 align-items-center justify-content-between mt-4">
-                        <div class="d-flex gap-1 align-items-center">
-                          <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
-                            <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up" aria-label="Vinnie Mostowy" data-bs-original-title="Vinnie Mostowy">
-                              <img class="rounded-circle" src="./assets/img/avatars/5.png" alt="Avatar">
-                            </li>
-                            <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up" aria-label="Allen Rieske" data-bs-original-title="Allen Rieske">
-                              <img class="rounded-circle" src="./assets/img/avatars/12.png" alt="Avatar">
-                            </li>
-                            <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up" aria-label="Julee Rossignol" data-bs-original-title="Julee Rossignol">
-                              <img class="rounded-circle" src="./assets/img/avatars/6.png" alt="Avatar">
-                            </li>
-                            <li class="avatar">
-                              <span class="avatar-initial rounded-circle pull-up bg-lightest text-body" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="3 more">+3</span>
-                            </li>
-                          </ul>
-                        </div>
-                        <a href="./schedule-task-detail.html" class="btn btn-primary btn-sm">Start Inspection</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="card">
-                    <div class="card-header bg-warning">
-                      <div class="text-end mb-2">
-                        <span class="badge status-badge bg-label-secondary rounded-pill">IN PROGRESS</span>
-                      </div>
-                      <h5 class="mb-2 custom-text-dark">MT-A001 - Engine Oil Check</h5>
-                      <div class="fs-6 mb-2 custom-text-dark">Toyota Innova Reborn Hitam</div>
-                      <div class="info-line custom-text-dark">
-                        <i class="mdi mdi-map-marker"></i>
-                        <span>Gedung A</span>
-                      </div>
-                    </div>
-                    <div class="card-body py-3">
-                      <div class="d-flex gap-1 align-items-center mb-2">
-                        <i class="mdi mdi-calendar-blank"></i>
-                        <span>9 May 2025</span>
-                        <!-- <i class="mdi mdi-alert-circle text-danger ms-1"></i> -->
-                      </div>
-                      <div class="d-flex gap-1 align-items-center mb-2">
-                        <i class="mdi mdi-file-document-outline"></i>
-                        <span>WO-2025-05-07-0041</span>
-                      </div>
-                      <div class="d-flex gap-1 align-items-center mb-2">
-                        <i class="mdi mdi-barcode-scan"></i>
-                        <span>I-2026-05-02-0020</span>
-                      </div>
-                      <div></div>
-                      <div class="d-flex gap-1 align-items-center text-info">
-                        <i class="mdi mdi-calendar-sync-outline"></i>
-                        <span>Scheduled Repeat</span>
-                      </div>
-                      <div class="d-flex gap-1 align-items-center justify-content-between mt-4">
-                        <div class="d-flex gap-1 align-items-center">
-                          <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
-                            <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up" aria-label="Vinnie Mostowy" data-bs-original-title="Vinnie Mostowy">
-                              <img class="rounded-circle" src="./assets/img/avatars/5.png" alt="Avatar">
-                            </li>
-                            <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up" aria-label="Allen Rieske" data-bs-original-title="Allen Rieske">
-                              <img class="rounded-circle" src="./assets/img/avatars/12.png" alt="Avatar">
-                            </li>
-                            <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up" aria-label="Julee Rossignol" data-bs-original-title="Julee Rossignol">
-                              <img class="rounded-circle" src="./assets/img/avatars/6.png" alt="Avatar">
-                            </li>
-                            <li class="avatar">
-                              <span class="avatar-initial rounded-circle pull-up bg-lightest text-body" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="3 more">+3</span>
-                            </li>
-                          </ul>
-                        </div>
-                        <a href="./schedule-task-detail.html" class="btn btn-label-dark btn-sm">Detail</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="card">
-                    <div class="card-header bg-success">
-                      <div class="text-end mb-2">
-                        <span class="badge status-badge bg-label-secondary rounded-pill">Pending</span>
-                      </div>
-                      <h5 class="mb-2 text-white">MT-L001 - Sanitary Check</h5>
-                      <div class="d-flex gap-1 align-items-center text-white fs-6">
-                        <i class="mdi mdi-map-marker"></i>
-                        <span>Building A</span>
-                        <i class="mdi mdi-chevron-right"></i>
-                        <span>Floor 1</span>
-                        <i class="mdi mdi-chevron-right"></i>
-                        <span>Room 101</span>
-                      </div>
-                    </div>
-                    <div class="card-body py-3">
-                      <div class="d-flex gap-1 align-items-center mb-2">
-                        <i class="mdi mdi-calendar-blank"></i>
-                        <span>9 May 2025</span>
-                        <!-- <i class="mdi mdi-alert-circle text-danger ms-1"></i> -->
-                      </div>
-                      <div class="d-flex gap-1 align-items-center mb-2">
-                        <i class="mdi mdi-file-document-outline"></i>
-                        <span>WO-2025-05-07-0041</span>
-                      </div>
-                      <div class="d-flex gap-1 align-items-center text-secondary">
-                        <i class="mdi mdi-calendar-sync-outline"></i>
-                        <span>Scheduled One-Time</span>
-                      </div>
-                      <div class="d-flex gap-1 align-items-center justify-content-between mt-4">
-                        <div class="d-flex gap-1 align-items-center">
-                          <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
-                            <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up" aria-label="Vinnie Mostowy" data-bs-original-title="Vinnie Mostowy">
-                              <img class="rounded-circle" src="./assets/img/avatars/5.png" alt="Avatar">
-                            </li>
-                            <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up" aria-label="Allen Rieske" data-bs-original-title="Allen Rieske">
-                              <img class="rounded-circle" src="./assets/img/avatars/12.png" alt="Avatar">
-                            </li>
-                            <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up" aria-label="Julee Rossignol" data-bs-original-title="Julee Rossignol">
-                              <img class="rounded-circle" src="./assets/img/avatars/6.png" alt="Avatar">
-                            </li>
-                            <li class="avatar">
-                              <span class="avatar-initial rounded-circle pull-up bg-lightest text-body" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="3 more">+3</span>
-                            </li>
-                          </ul>
-                        </div>
-                        <a href="./schedule-task-detail.html" class="btn btn-label-dark btn-sm">Detail</a>
+                    <div class="mb-3">
+                      <label for="daterange2" class="form-label mb-1">Date Range</label>
+                      <div class="input-group input-group-merge">
+                        <input
+                          type="text"
+                          id="daterange2"
+                          class="form-control"
+                        />
+                        <span class="input-group-text"><i class="mdi mdi-calendar-range"></i></span>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+              <!-- / Filter Mobile -->
+
+              <!-- View Work List -->
+              <div id="workListView" style="display: block;">
+                <div class="row g-3">
+                  <div class="d-block d-md-flex gap-3 align-items-center">
+                    <h5 class="mb-md-0 mb-2 flex-shrink-0">5 Work Orders</h5>
+
+                    <div class="d-flex flex-nowrap overflow-auto" style="gap: 0.5rem; -webkit-overflow-scrolling: touch; scroll-behavior: smooth;">
+                      <button type="button" class="btn btn-label-dark btn-sm rounded-pill py-1 px-3 text-capitalize flex-shrink-0">
+                        Gedung A
+                        <i class="mdi mdi-20px mdi-close-circle ms-2"></i>
+                      </button>
+                      <button type="button" class="btn btn-label-dark btn-sm rounded-pill py-1 px-3 text-capitalize flex-shrink-0">
+                        Toyota Innova Reborn Hitam
+                        <i class="mdi mdi-20px mdi-close-circle ms-2"></i>
+                      </button>
+                      <button type="button" class="btn btn-label-dark btn-sm rounded-pill py-1 px-3 text-capitalize flex-shrink-0">
+                        MT-A001 - Engine Oil Check
+                        <i class="mdi mdi-20px mdi-close-circle ms-2"></i>
+                      </button>
+                    </div>
+                  </div>
+
+
+                  <!-- WL 1 -->
+                  <div class="col-md-4">
+                    <div class="card" style="border-top: 10px; border-top-color: #CA4046; border-top-style: solid;">
+                      <div class="card-header" style="color: #131313;">
+                        <div class="mb-3">
+                          <span class="d-flex gap-1 align-items-center rounded-2 py-1 px-2 btn-dark text-uppercase btn-sm" style="width: fit-content;">
+                            <i class="mdi mdi-progress-alert"></i>
+                            <span class="">Open</span>
+                          </span>
+                        </div>
+                        <div class="mb-1 text-decoration-underline fs-5 fw-semibold" style="cursor: pointer;">MT-A001 - Engine Oil Check</div>
+                        <div class="fs-6 mb-2 text-decoration-underline" style="cursor: pointer;">Toyota Innova Reborn Hitam</div>
+                        <div class="info-line">
+                          <i class="mdi mdi-map-marker"></i>
+                          <span class="text-decoration-underline" style="cursor: pointer;">Gedung A</span>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="card-body py-3">
+                        <div class="d-flex gap-1 align-items-center mb-3">
+                          <i class="mdi mdi-calendar-month" style="color: #13131380;"></i>
+                          <span>9 May 2025</span>
+                          <i class="mdi mdi-alert-circle text-danger ms-1"></i>
+                        </div>
+                        <div class="d-flex gap-1 align-items-center mb-3">
+                          <i class="mdi mdi-archive-outline" style="color: #13131380;"></i>
+                          <span>WO-2025-05-07-0041</span>
+                        </div>
+                        <div class="d-flex gap-1 align-items-center mb-3">
+                          <i class="mdi mdi-tag-text-outline" style="color: #13131380;"></i>
+                          <span>I-2026-05-02-0020</span>
+                        </div>
+                        <div class="d-flex gap-1 align-items-center justify-content-between mt-4">
+                          <a href="./schedule-task-detail.html" class="btn btn-primary w-100">Start Inspection</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- WL 2 -->
+                  <div class="col-md-4">
+                    <div class="card" style="border-top: 10px; border-top-color: #EA9612; border-top-style: solid;">
+                      <div class="card-header" style="color: #131313;">
+                        <div class="mb-3">
+                          <span class="d-flex gap-1 align-items-center rounded-2 py-1 px-2 btn-warning text-uppercase btn-sm" style="width: fit-content;">
+                            <i class="mdi mdi-progress-wrench"></i>
+                            <span class="">IN PROGRESS</span>
+                          </span>
+                        </div>
+                        <div class="mb-1 text-decoration-underline fs-5 fw-semibold" style="cursor: pointer;">MT-A002 - Engine Oil Check</div>
+                        <div class="fs-6 mb-2 text-decoration-underline" style="cursor: pointer;">Toyota Avanza 2024 Hitam</div>
+                        <div class="info-line">
+                          <i class="mdi mdi-map-marker"></i>
+                          <span class="text-decoration-underline" style="cursor: pointer;">Gedung C</span>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="card-body py-3">
+                        <div class="d-flex gap-1 align-items-center mb-3">
+                          <i class="mdi mdi-calendar-month" style="color: #13131380;"></i>
+                          <span>9 May 2025</span>
+                          <i class="mdi mdi-alert-circle text-danger ms-1"></i>
+                        </div>
+                        <div class="d-flex gap-1 align-items-center mb-3">
+                          <i class="mdi mdi-archive-outline" style="color: #13131380;"></i>
+                          <span>WO-2025-05-07-0026</span>
+                        </div>
+                        <div class="d-flex gap-1 align-items-center mb-3">
+                          <i class="mdi mdi-tag-text-outline" style="color: #13131380;"></i>
+                          <span>i-2025-05-02-0234</span>
+                        </div>
+                        <div class="d-flex gap-1 align-items-center justify-content-between mt-4">
+                          <a href="./schedule-task-detail.html" class="btn btn-primary w-100">Start Inspection</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- WL 3 -->
+                  <div class="col-md-4">
+                    <div class="card" style="border-top: 10px; border-top-color: #EA9612; border-top-style: solid;">
+                      <div class="card-header" style="color: #131313;">
+                        <div class="mb-3">
+                          <span class="d-flex gap-1 align-items-center rounded-2 py-1 px-2 btn-success text-uppercase btn-sm" style="width: fit-content;">
+                            <i class="mdi mdi-progress-check"></i>
+                            <span class="">Completed</span>
+                          </span>
+                        </div>
+                        <div class="mb-1 text-decoration-underline fs-5 fw-semibold" style="cursor: pointer;">MT-A002 - Engine Oil Check</div>
+                        <div class="fs-6 mb-2 text-decoration-underline" style="cursor: pointer;">All New Avanza 2017 Silver</div>
+                        <div class="info-line">
+                          <i class="mdi mdi-map-marker"></i>
+                          <span class="text-decoration-underline" style="cursor: pointer;">Gedung B</span>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="card-body py-3">
+                        <div class="d-flex gap-1 align-items-center mb-3">
+                          <i class="mdi mdi-calendar-month" style="color: #13131380;"></i>
+                          <span>9 August 2025</span>
+                        </div>
+                        <div class="d-flex gap-1 align-items-center mb-3">
+                          <i class="mdi mdi-archive-outline" style="color: #13131380;"></i>
+                          <span>WO-2025-05-07-0035</span>
+                        </div>
+                        <div class="d-flex gap-1 align-items-center mb-3">
+                          <i class="mdi mdi-tag-text-outline" style="color: #13131380;"></i>
+                          <span>i-2025-05-02-1234</span>
+                        </div>
+                        <div class="d-flex gap-1 align-items-center justify-content-between mt-4">
+                          <a href="./schedule-task-detail.html" class="btn btn-label-dark w-100">Detail</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- WL 4 -->
+                  <div class="col-md-4">
+                    <div class="card" style="border-top: 10px; border-top-color: #1A895A; border-top-style: solid;">
+                      <div class="card-header" style="color: #131313;">
+                        <div class="mb-3">
+                          <span class="d-flex gap-1 align-items-center rounded-2 py-1 px-2 btn-warning text-uppercase btn-sm" style="width: fit-content;">
+                            <i class="mdi mdi-progress-wrench"></i>
+                            <span class="">IN PROGRESS</span>
+                          </span>
+                        </div>
+                        <div class="mb-1 text-decoration-underline fs-5 fw-semibold" style="cursor: pointer;">MT-A002 - Engine Oil Check</div>
+                        <div class="fs-6 mb-2 text-decoration-underline" style="cursor: pointer;">All New Avanza 2017 Silver</div>
+                        <div class="info-line">
+                          <i class="mdi mdi-map-marker"></i>
+                          <span class="text-decoration-underline" style="cursor: pointer;">Gedung B</span>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="card-body py-3">
+                        <div class="d-flex gap-1 align-items-center mb-3">
+                          <i class="mdi mdi-calendar-month" style="color: #13131380;"></i>
+                          <span>21 May 2025</span>
+                        </div>
+                        <div class="d-flex gap-1 align-items-center mb-3">
+                          <i class="mdi mdi-archive-outline" style="color: #13131380;"></i>
+                          <span>WO-2025-05-07-0026</span>
+                        </div>
+                        <div class="d-flex gap-1 align-items-center mb-3">
+                          <i class="mdi mdi-tag-text-outline" style="color: #13131380;"></i>
+                          <span>i-2025-05-02-0234</span>
+                        </div>
+                        <div class="d-flex gap-1 align-items-center justify-content-between mt-4">
+                          <a href="./schedule-task-detail.html" class="btn btn-primary w-100">Start Inspection</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- WL 5 -->
+                  <div class="col-md-4">
+                    <div class="card" style="border-top: 10px; border-top-color: #1A895A; border-top-style: solid;">
+                      <div class="card-header" style="color: #131313;">
+                        <div class="mb-3">
+                          <span class="d-flex gap-1 align-items-center rounded-2 py-1 px-2 btn-dark text-uppercase btn-sm" style="width: fit-content;">
+                            <i class="mdi mdi-progress-alert"></i>
+                            <span class="">Open</span>
+                          </span>
+                        </div>
+                        <div class="mb-1 text-decoration-underline fs-5 fw-semibold" style="cursor: pointer;">MT-L001 - Sanitary Check</div>
+                        <div class="d-flex gap-1 align-items-center fs-6 text-decoration-underline" style="cursor: pointer;">
+                          <i class="mdi mdi-map-marker"></i>
+                          <span>Building A</span>
+                          <i class="mdi mdi-chevron-right"></i>
+                          <span>Floor 1</span>
+                          <i class="mdi mdi-chevron-right"></i>
+                          <span>Room 101</span>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="card-body py-3">
+                        <div class="d-flex gap-1 align-items-center mb-3">
+                          <i class="mdi mdi-calendar-month" style="color: #13131380;"></i>
+                          <span>14 June 2025</span>
+                        </div>
+                        <div class="d-flex gap-1 align-items-center mb-3">
+                          <i class="mdi mdi-archive-outline" style="color: #13131380;"></i>
+                          <span>WO-2025-05-07-0026</span>
+                        </div>
+                        <div class="d-flex gap-1 align-items-center justify-content-between mt-4">
+                          <a href="./schedule-task-detail.html" class="btn btn-primary w-100">Start Inspection</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- / View Work List -->
+              
+              <!-- Scan Barcode -->
+              <div id="scanBarcodeView" class="mt-4 justify-content-center w-100" style="display: none;">
+                <div class="col-12 col-md-4">
+                  <div class="d-flex align-items-center justify-content-center flex-column text-center py-5">
+                    <img src="./assets/img/scan.png" alt="No Data" class="mb-3" style="width: 200px; height: auto;">
+                    <h5 class="mb-2">Scan Assets</h5>
+                    <p class="text-muted mb-1">
+                      Scan the barcode to see asset details and related information.
+                    </p>
+                    <div class="divider my-1 w-100">
+                      <div class="divider-text">OR</div>
+                    </div>
+                    <div class="my-2 w-100">
+                      <input type="text" class="form-control w-100" id="input-asset-tag" placeholder="Enter asset tag" aria-describedby="input-barcode">
+                    </div>
+                    <button class="btn btn-primary mt-1 w-100">
+                      <i class="mdi mdi-magnify me-2"></i>
+                      Find Asset
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- / Scan Barcode -->
+
             </div>
             <!-- / Content -->
 
@@ -704,13 +825,47 @@
     <script src="./assets/js/main.js"></script>
 
     <!-- Page JS -->
+    <script src="./assets/js/schedule-task.js"></script>
+    <script src="./assets/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+    <script src="./assets/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.js"></script>
+
+    <!-- Scan Button View & Work List View -->
     <script>
-      flatpickr("#dateRange", {
-        mode: "range",
-        dateFormat: "d/m/Y",
-        locale: {
-          firstDayOfWeek: 1 // Senin sebagai hari pertama
-        },
+      const toggleButtons = document.querySelectorAll(".toggleBtnScan");
+
+      toggleButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const scanBarcodeView = document.getElementById("scanBarcodeView");
+          const workListView = document.getElementById("workListView");
+          const isScanViewVisible = scanBarcodeView.style.display === "flex";
+          const filterElements = document.querySelectorAll(
+            ".filter-type, .filter-priority, .filter-status, .filter-date, .all-filter"
+          );
+
+          if (isScanViewVisible) {
+            scanBarcodeView.style.display = "none";
+            workListView.style.display = "block";
+
+            filterElements.forEach((f) => (f.style.display = "block"));
+
+            toggleButtons.forEach((b) => {
+              b.classList.remove("btn-outline-primary");
+              b.classList.add("btn-primary");
+              b.innerHTML = `<i class="mdi mdi-barcode me-2"></i>Scan Assets`;
+            });
+          } else {
+            scanBarcodeView.style.display = "flex";
+            workListView.style.display = "none";
+
+            filterElements.forEach((f) => (f.style.display = "none"));
+
+            toggleButtons.forEach((b) => {
+              b.classList.remove("btn-primary");
+              b.classList.add("btn-outline-primary");
+              b.innerHTML = `<i class="mdi mdi-arrow-left me-2"></i>Back`;
+            });
+          }
+        });
       });
     </script>
   </body>
