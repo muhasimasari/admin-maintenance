@@ -96,15 +96,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // check/uncheck all
   checkAll.addEventListener("change", function () {
-    checkedAllClass.forEach(cb => cb.checked = checkAll.checked);
+    checkedAllClass.forEach((cb) => (cb.checked = checkAll.checked));
     updateToolbar();
   });
 
   // kalau ada yang diubah manual
-  checkedAllClass.forEach(cb => {
+  checkedAllClass.forEach((cb) => {
     cb.addEventListener("change", function () {
       // kalau semua dicentang manual, centang juga "check all"
-      checkAll.checked = document.querySelectorAll(".checked-all:checked").length === checkboxes.length;
+      checkAll.checked =
+        document.querySelectorAll(".checked-all:checked").length ===
+        checkboxes.length;
       updateToolbar();
     });
   });
@@ -411,4 +413,50 @@ noUiSlider.create(slider, {
       return Math.round(percentage) + "%";
     },
   },
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const slider = document.getElementById("slider-usage");
+  const tooltip = document.getElementById("slider-tooltip");
+  const hiddenInput = document.getElementById("input-usage-value");
+  const sliderWrapper = document.querySelector(".slider-wrapper");
+  const root = document.documentElement;
+
+  const WARNING_THRESHOLD = 80;
+
+  function updateSlider() {
+    const val = slider.value;
+    const min = slider.min ? slider.min : 0;
+    const max = slider.max ? slider.max : 100;
+
+    // 1. Update Input Hidden
+    hiddenInput.value = val;
+
+    // 2. Logic Warna & Text Warning
+    let currentColorVar = "--slider-color";
+    let trackColorVar = "--track-color";
+
+    const styles = getComputedStyle(document.body);
+    // Cek status warning
+    if (val >= WARNING_THRESHOLD) {
+      sliderWrapper.classList.add("slider-warning-state");
+      // Saat warning, tooltip berubah
+      tooltip.innerHTML = `${val}%`;
+    } else {
+      sliderWrapper.classList.remove("slider-warning-state");
+      tooltip.innerHTML = `${val}%`;
+    }
+    const activeColor = val >= WARNING_THRESHOLD ? "#dc3545" : "#ea9b1c";
+    const trackColor = "#e9ecef";
+    const percentage = ((val - min) * 100) / (max - min);
+
+    slider.style.background = `linear-gradient(to right, ${activeColor} 0%, ${activeColor} ${percentage}%, ${trackColor} ${percentage}%, ${trackColor} 100%)`;
+    const thumbWidth = 24; // Sesuai CSS --thumb-size
+  }
+
+  // Event Listeners
+  slider.addEventListener("input", updateSlider);
+
+  // Inisialisasi awal
+  updateSlider();
 });

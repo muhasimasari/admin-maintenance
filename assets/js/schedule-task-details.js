@@ -21,52 +21,51 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("item-modal")
   );
 
-// Add initial demo data
-costData.labor.push({
-  itemNum: "I-2024-01-11-0001",
-  item: "Oil Change Service",
-  currency: "IDR",
-  rate: 1,
-  cost: 100000,
-  qty: 1,
-});
+  // Add initial demo data
+  costData.labor.push({
+    itemNum: "I-2024-01-11-0001",
+    item: "Oil Change Service",
+    currency: "IDR",
+    rate: 1,
+    cost: 100000,
+    qty: 1,
+  });
 
-costData.vendor.push({
-  itemNum: "I-2024-01-11-0002",
-  item: "ABC Workshop",
-  currency: "IDR",
-  rate: 1,
-  cost: 250000,
-  qty: 1,
-});
+  costData.vendor.push({
+    itemNum: "I-2024-01-11-0002",
+    item: "ABC Workshop",
+    currency: "IDR",
+    rate: 1,
+    cost: 250000,
+    qty: 1,
+  });
 
-costData.adhoc.push({
-  itemNum: "I-2024-01-11-0003",
-  item: "Shell Helix HX-8 Gallon",
-  currency: "IDR",
-  rate: 1,
-  cost: 350000,
-  qty: 1,
-});
+  costData.adhoc.push({
+    itemNum: "I-2024-01-11-0003",
+    item: "Shell Helix HX-8 Gallon",
+    currency: "IDR",
+    rate: 1,
+    cost: 350000,
+    qty: 1,
+  });
 
-costData.registered.push({
-  asset: "Oil Filter",
-  itemNum: "I-2024-01-11-0004",
-  currency: "IDR",
-  rate: 1,
-  cost: 50000,
-  qty: 1,
-});
+  costData.registered.push({
+    asset: "Oil Filter",
+    itemNum: "I-2024-01-11-0004",
+    currency: "IDR",
+    rate: 1,
+    cost: 50000,
+    qty: 1,
+  });
 
-costData.registered.push({
-  asset: "Klip Body",
-  itemNum: "I-2024-01-11-0005",
-  currency: "IDR",
-  rate: 1,
-  cost: 5000,
-  qty: 50,
-});
-
+  costData.registered.push({
+    asset: "Klip Body",
+    itemNum: "I-2024-01-11-0005",
+    currency: "IDR",
+    rate: 1,
+    cost: 5000,
+    qty: 50,
+  });
 
   // Initial render
   renderListsAndCalculateTotal();
@@ -348,8 +347,12 @@ function createItemDisplayHtml(section, item, index, itemTotalCost) {
     costDisplayHtml = `
       <div class="d-flex gap-2 justify-content-between align-items-center">
         <span class="d-flex flex-column text-black-custom me-3 text-start" style="font-size: 0.9rem;" title="Original Cost">
-          <span class="fw-semibold fs-6">${item.currency} ${originalCostFormatted}</span>
-          <small class="text-muted">Rate: ${item.currency} @ ${new Intl.NumberFormat("en-US").format(item.rate)}</small>
+          <span class="fw-semibold fs-6">${
+            item.currency
+          } ${originalCostFormatted}</span>
+          <small class="text-muted">Rate: ${
+            item.currency
+          } @ ${new Intl.NumberFormat("en-US").format(item.rate)}</small>
         </span>
         <span class="fw-semibold fs-6 text-black-custom" title="Calculated IDR Cost">
           ${formatCurrency(itemTotalCost)}
@@ -385,3 +388,88 @@ function createItemDisplayHtml(section, item, index, itemTotalCost) {
     </li>
   `;
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  flatpickr(".flatpickr-date", {
+    dateFormat: "Y-m-d",
+    altInput: true,
+    altFormat: "j F Y", // Format tampilan: 22 November 2025
+    allowInput: true,
+  });
+});
+
+$(document).ready(function () {
+  // Inisialisasi Select2 dengan tema bootstrap-5
+  $("#engineer").select2({
+    width: "100%",
+  });
+  $("#vendor").select2({
+    width: "100%",
+  });
+  $("#rootCauseCategory").select2({
+    width: "100%",
+  });
+});
+
+const btnResolved = document.getElementById("btn-resolved");
+const btnNotResolved = document.getElementById("btn-not-resolved");
+
+// Definisi Objek Warna dalam JS (Pengganti CSS Classes)
+const styles = {
+  success: {
+    backgroundColor: "#d1e7dd",
+    color: "#0f5132",
+    borderColor: "#badbcc",
+  },
+  danger: {
+    backgroundColor: "#f8d7da",
+    color: "#842029",
+    borderColor: "#f5c2c7",
+  },
+  secondary: {
+    // Warna Abu-abu (Inactive)
+    backgroundColor: "#e9ecef",
+    color: "#6c757d",
+    borderColor: "#dee2e6",
+  },
+};
+
+// Fungsi Helper untuk menerapkan style
+function applyStyle(element, styleName) {
+  const style = styles[styleName];
+  element.style.backgroundColor = style.backgroundColor;
+  element.style.color = style.color;
+  element.style.borderColor = style.borderColor;
+}
+
+// 1. Set Initial State saat Load (Resolved Aktif, Not Resolved Inaktif)
+applyStyle(btnResolved, "success");
+applyStyle(btnNotResolved, "secondary");
+
+// 2. Event Listener Click untuk Resolved
+btnResolved.addEventListener("click", function () {
+  applyStyle(btnResolved, "success"); // Set diri sendiri jadi Hijau
+  applyStyle(btnNotResolved, "secondary"); // Set tombol lain jadi Abu
+});
+
+// 3. Event Listener Click untuk Not Resolved
+btnNotResolved.addEventListener("click", function () {
+  applyStyle(btnNotResolved, "danger"); // Set diri sendiri jadi Merah
+  applyStyle(btnResolved, "secondary"); // Set tombol lain jadi Abu
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Initialize Flatpickr
+  flatpickr("#datePicker1", {
+    dateFormat: "d-m-Y",
+    wrap: true,
+    allowInput: true,
+    static: true,
+  });
+  $(".select2-basic").select2({
+    width: "100%",
+    placeholder: "Select Option",
+    allowClear: true,
+    dropdownParent: $("#caModal"), // Important: Attach to modal to avoid scrolling issues/z-index issues
+  });
+});
