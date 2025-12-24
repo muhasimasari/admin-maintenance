@@ -381,45 +381,55 @@
                 <table class="table card-table table-borderless text-nowrap">
                   <thead>
                     <tr>
-                      <th style="min-width: 200px; max-width: 200px">
+                      <th style="min-width: 240px; max-width: 240px">
                         Discrepancy ID
                       </th>
-                      <th class="text-center">Aging Days <span class="mdi mdi-sort-descending"></span></th>
-                      <th style="min-width: 245px; max-width: 200px">
+                      <th class="text-center" style="min-width: 80px; max-width: 80px">Aging <br/>Days <span class="mdi mdi-sort-descending"></span></th>
+                      <th style="min-width: 190px; max-width: 190px">
                         Main Task & INSP. ID
                       </th>
-                      <th class="text-center">Asset Item/Location</th>
-                      <th class="text-center">Category & Description</th>
+                      <th style="min-width: 180px; max-width: 180px;">Asset Item/Location <br/>& Issue Description</th>
+                      <!-- <th class="text-center">Category & Description</th> -->
                       <th class="text-center">Severity</th>
-                      <th style="min-width: 180px;">Status</th>
-                      <th style="min-width: 260px;">Action</th>
+                      <th class="text-center" style="min-width: 180px;">Status</th>
+                      <!-- <th style="min-width: 260px;">Action</th> -->
                     </tr>
                   </thead>
                   <tbody class="table-border-bottom-0">
                     <tr>
                       <td class="position-relative">
 
-                        <div class="ps-3">
+                        <div class="ps-3 py-2">
                           <a href="discrepancy-report-detail-otomatis-asset.html"
                             class="fw-semibold text-primary">DR–A–AC–CLEAN</a><br />
-                          <small>01 Jun 2025</small><br />
-                          <span>Andi Kuncoro</span>
+                          <span>01 Jun 2025</span><br />
+                          <span>Andi Kuncoro</span><br/>
+                          <div class="mt-1 mb-2 d-flex flex-nowrap gap-2">
+                            <button type="button" class="btn btn-primary btn-sm waves-effect waves-light btn-assignment me-1" style="padding: 6px 13px; font-size: 14px; line-height: 1.4; white-space: nowrap;" data-bs-toggle="modal" data-mtc-task="" data-mdr-id="26" data-asset-id="3521" data-asset-item-id="49131" data-discrepancy-no="DR-A-01-31-REM" data-asset-name="Carry Pickup th 2020" data-target-type="0" data-asset-item-name="i-2025-10-09-41533">
+                              ASSIGN TO
+                            </button>
+                            <button type="button" class="btn btn-danger btn-sm waves-effect waves-light btn-decline" style="padding: 6px 13px; font-size: 14px; line-height: 1.4; white-space: nowrap;" data-bs-toggle="modal" data-mdr-id="26">
+                              DECLINE
+                            </button>
+                          </div>
                         </div>
                       </td>
                       <td class="text-center fw-bold">30</td>
                       <td>
-                        <div>MC–L001 – Check Sanitary</div>
+                        <div class="d-inline-block text-truncate" style="min-width: 190px; max-width: 190px">MC–L001 – Check Sanitary</div>
                         <div>
-                          <span class="mdi mdi-arrow-right-bottom"></span><b>INSP–0012 – Wasteafel</b>
-                          <span class="badge status-warning rounded text-white">Deferred Insp.</span>
+                          <div class="d-flex align-items-end gap-2">
+                            <span class="mdi mdi-arrow-right-bottom"></span>
+                            <div class="d-inline-block text-truncate" style="min-width: 190px; max-width: 190px"><b>INSP–0003 – Check Filter Oil </b></div><br/>
+                          </div>
+                          <span class="badge status-warning rounded text-white mt-2">Deferred Insp.</span>
+                          <div class="mt-2 text-start">
+                            <a href="#" class="text-decoration-underline">PM-A-Carry-Change -M/Km-424</a>
+                          </div>
                         </div>
                       </td>
-                      <td class="text-center">
+                      <td class="">
                         <a href="asset-item-log.html" class="text-decoration-underline">i-2025–01–01–0002</a>
-                      </td>
-                      <td class="text-left">
-                        <strong>Sanitary</strong><br />
-                        Pembuatan saluran pembuangan d...
                       </td>
                       <td class="text-center">
                         <div class="badge status-danger w-100">Critical</div>
@@ -427,10 +437,10 @@
                       <td class="text-center">
                         DECLINED<br /><small class="text-muted">By John Terry</small>
                       </td>
-                      <td class="text-center">
+                      <!-- <td class="text-center">
                         <a href="corrective-work-order-detail.html"
                           class="btn btn-text-primary px-0 text-capitalize">WO-2025-05-07-0041</a>
-                      </td>
+                      </td> -->
                     </tr>
 
                     <tr>
@@ -439,24 +449,27 @@
                         <div class="ps-3">
                           <a href="discrepancy-report-detail-otomatis-asset.html"
                             class="fw-semibold text-primary">DR–B–AVANZ–KABEL</a><br />
-                          <small>02 Jun 2025</small><br />
+                          <span>01 Jun 2025</span><br />
                           <span>Kuncoro</span>
                         </div>
                       </td>
                       <td class="text-center fw-bold">30</td>
                       <td>
-                        <div>MC–A009 – Check</div>
+                        <div class="d-inline-block text-truncate" style="min-width: 190px; max-width: 190px">MC–A009 – Check</div>
                         <div>
-                          <span class="mdi mdi-arrow-right-bottom"></span><b>INSP–0003 – Drain Pipe</b>
-                          <span class="badge status-danger rounded text-white">Failed Insp.</span>
+                          <div class="d-flex align-items-end gap-2">
+                            <span class="mdi mdi-arrow-right-bottom"></span>
+                            <div class="d-inline-block text-truncate" style="min-width: 190px; max-width: 190px"><b>INSP–0003 – Drain Pipe </b></div><br/>
+                          </div>
+                          <span class="badge status-danger rounded text-white mt-2">Failed Insp.</span>
                         </div>
                       </td>
-                      <td class="text-center">
+                      <td class="">
                         <a href="asset-item-log.html" class="text-decoration-underline">i-2025–01–01–0003</a>
-                      </td>
-                      <td class="text-left">
-                        <strong>Electrical</strong><br />
-                        Kabel Body Konslet
+                        <div class="mt-2">
+                          <strong>Electrical</strong><br />
+                          <small class="d-inline-block text-truncate" style="width: 180px;">Ada kebocoran blok mesin di bagian tengah</small>
+                        </div>
                       </td>
                       <td class="text-center">
                         <div class="badge status-success w-100">Low</div>
@@ -464,7 +477,7 @@
                       <td class="text-center fw-semibold text-primary">
                         OPEN
                       </td>
-                      <td class="text-center">
+                      <!-- <td class="text-center">
                         <a href="#"
                           class="btn btn-text-primary px-0 text-capitalize" data-bs-toggle="modal" data-bs-target="#assignModal">Assign To</a>
                         |
@@ -474,7 +487,7 @@
                         </a>
                         <a href="corrective-work-order-detail.html"
                           class="btn btn-text-primary px-0 text-capitalize">WO-2025-05-07-0042</a>
-                      </td>
+                      </td> -->
                     </tr>
 
                     <tr>
@@ -483,24 +496,27 @@
                         <div class="ps-3">
                           <a href="discrepancy-report-detail-otomatis-asset.html"
                             class="fw-semibold text-primary">DR–A–AC–CLEAN</a><br />
-                          <small>01 Jun 2025</small><br />
+                          <span>01 Jun 2025</span><br />
                           <span>Andi Kuncoro</span>
                         </div>
                       </td>
                       <td class="text-center fw-bold">30</td>
                       <td>
-                        <div>MC–A007 – Cleaning</div>
+                        <div class="d-inline-block text-truncate" style="min-width: 190px; max-width: 190px">MC–A007 – Cleaning</div>
                         <div>
-                          <span class="mdi mdi-arrow-right-bottom"></span><b>INSP–0003 – Drain Pipe</b>
-                          <span class="badge status-danger rounded text-white">Failed Insp.</span>
+                         <div class="d-flex align-items-end gap-2">
+                            <span class="mdi mdi-arrow-right-bottom"></span>
+                            <div class="d-inline-block text-truncate" style="min-width: 190px; max-width: 190px"><b>INSP–0003 – Check Filter Oil </b></div><br/>
+                          </div>
+                          <span class="badge status-danger rounded text-white mt-2">Failed Insp.</span>
                         </div>
                       </td>
-                      <td class="text-center">
+                      <td class="">
                         <a href="asset-item-log.html" class="text-decoration-underline">i-2024–01–01–0014</a>
-                      </td>
-                      <td class="text-left">
-                        <strong>Cooling System</strong><br />
-                        Tetesan Air dari indoor
+                        <div class="mt-2">
+                          <strong>Cooling System</strong><br />
+                          <small class="d-inline-block text-truncate" style="width: 180px;">Tetesan Air dari indoor</small>
+                        </div>
                       </td>
                       <td class="text-center">
                         <div class="badge status-warning w-100">Medium</div>
@@ -508,10 +524,10 @@
                       <td class="text-center">
                         ASSIGNED<br /><small class="text-muted">By Admin Supervisor</small>
                       </td>
-                      <td class="text-center">
+                      <!-- <td class="text-center">
                         <a href="corrective-work-order-detail.html"
                           class="btn btn-text-primary px-0 text-capitalize">WO-2025-05-07-0043</a>
-                      </td>
+                      </td> -->
                     </tr>
 
                     <tr>
@@ -520,17 +536,19 @@
                         <div class="ps-3">
                           <a href="discrepancy-report-detail-manual-location.html"
                             class="fw-semibold text-primary">DR–A–AVANZ–KABEL</a><br />
-                          <small>01 Jun 2025</small><br />
+                          <span>01 Jun 2025</span><br />
                           <span>Admin Operational</span>
                         </div>
                       </td>
                       <td class="text-center fw-bold">30</td>
                       <td>-
                       </td>
-                      <td class="text-center">Floor 1 <span class="mdi mdi-arrow-right-box"></span> Room 101</td>
-                      <td class="text-left">
-                        <strong>Electrical</strong><br />
-                        Kabel Body Konslet
+                      <td class="">
+                        <div>Floor 1 <span class="mdi mdi-arrow-right-box"></span> Room 101</div>
+                        <div class="mt-2">
+                          <strong>Electrical</strong><br />
+                          <small class="d-inline-block text-truncate" style="width: 180px;">Kabel Body Konslet</small>
+                        </div>
                       </td>
                       <td class="text-center">
                         <div class="badge status-warning w-100">Medium</div>
@@ -538,7 +556,7 @@
                       <td class="text-center fw-semibold text-primary">
                         OPEN
                       </td>
-                      <td class="text-center">
+                      <!-- <td class="text-center">
                         <a href="#"
                           class="btn btn-text-primary px-0 text-capitalize" data-bs-toggle="modal" data-bs-target="#assignModal">Assign To</a>
                         |
@@ -547,7 +565,7 @@
                           Decline
                         </a>
                         
-                      </td>
+                      </td> -->
                     </tr>
 
                     <tr>
@@ -556,25 +574,28 @@
                         <div class="ps-3">
                           <a href="discrepancy-report-detail-otomatis-asset.html"
                             class="fw-semibold text-primary">DR–L–R101–MONTHLY</a><br />
-                          <small>01 Jun 2025</small><br />
+                          <span>01 Jun 2025</span><br />
                           <span>Budi Setyawan</span>
                         </div>
                       </td>
 
                       <td class="text-center fw-bold">30</td>
                       <td>
-                        <div>MC–A007 – Cleaning</div>
+                        <div class="d-inline-block text-truncate" style="min-width: 190px; max-width: 190px">MC–A007 – Cleaning</div>
                         <div>
-                          <span class="mdi mdi-arrow-right-bottom"></span><b> INSP–0003 – Outdoor </b>
-                          <span class="badge status-danger rounded text-white">Failed Insp.</span>
+                          <div class="d-flex align-items-end gap-2">
+                            <span class="mdi mdi-arrow-right-bottom"></span>
+                            <div class="d-inline-block text-truncate" style="min-width: 190px; max-width: 190px"><b>INSP–0003 – Check Filter Oil </b></div><br/>
+                          </div>
+                          <span class="badge status-danger rounded text-white mt-2">Failed Insp.</span>
                         </div>
                       </td>
-                      <td class="text-center">
+                      <td class="">
                         <a href="asset-item-log.html" class="text-decoration-underline">i-2025–01–01–0015</a>
-                      </td>
-                      <td class="text-left">
-                        <strong>Cooling System</strong><br />
-                        Kapasitor mati
+                        <div class="mt-2">
+                          <strong>Cooling System</strong><br />
+                          <small class="d-inline-block text-truncate" style="width: 180px;">Kapasitor mati</small>
+                        </div>
                       </td>
                       <td class="text-center">
                         <div class="badge status-danger w-100">High</div>
@@ -582,10 +603,10 @@
                       <td class="text-center">
                         ASSIGNED<br /><small class="text-muted">By Admin Supervisor</small>
                       </td>
-                      <td class="text-center">
+                      <!-- <td class="text-center">
                         <a href="corrective-work-order-detail.html"
                           class="btn btn-text-primary px-0 text-capitalize">WO-2025-05-07-0046</a>
-                      </td>
+                      </td> -->
                     </tr>
                   </tbody>
                 </table>
