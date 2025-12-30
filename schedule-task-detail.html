@@ -1506,30 +1506,44 @@
                               <div
                                 class="p-3 bg-label-light rounded-3 border mt-3 custom-content-wrapper"
                               >
-                                <div class="mb-3">
+                                <div class="mb-2">
                                   <label
                                     for="engineer"
                                     class="form-label text-black-custom fs-6"
                                     >Engineer:</label
                                   >
-                                  <select class="form-select" id="engineer">
+                                  <!-- <select class="form-select" id="engineer">
                                     <option selected>Budi Santoso</option>
                                     <option value="1">Andi Pratama</option>
                                     <option value="2">Siti Aminah</option>
-                                  </select>
+                                  </select> -->
+                                </div>
+                                <div class="mb-4">
+                                  <div
+                                    class="badge rounded-pill bg-label-primary"
+                                  >
+                                    Budi Santoso
+                                  </div>
                                 </div>
 
-                                <div class="mb-3">
+                                <div class="mb-2">
                                   <label
                                     for="vendor"
                                     class="form-label text-black-custom fs-6"
                                     >Vendor:</label
                                   >
-                                  <select class="form-select" id="vendor">
+                                  <!-- <select class="form-select" id="vendor">
                                     <option selected>Nasmoco Motor</option>
                                     <option value="1">Astra Honda</option>
                                     <option value="2">Yamaha Music</option>
-                                  </select>
+                                  </select> -->
+                                </div>
+                                <div class="mb-4">
+                                  <div
+                                    class="badge rounded-pill bg-label-primary"
+                                  >
+                                    Nasmoco Motor
+                                  </div>
                                 </div>
 
                                 <div class="mb-4">
@@ -1796,7 +1810,7 @@
                 >
                   <div class="card mb-3">
                     <div class="card-header bg-white pb-3 pt-3">
-                      <ul class="nav nav-pills" id="costTabs" role="tablist">
+                      <ul class="nav nav-pills" id="costTabs" role="tablist" style="flex-wrap: wrap;">
                         <li class="nav-item" role="presentation">
                           <button
                             class="nav-link active d-none"
@@ -3090,21 +3104,17 @@ Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea
                         
                         <div class="col-md-12">
                           <label class="form-label">Engineer</label>
-                          <select class="form-select select2-basic">
-                            <option></option> <!-- Placeholder -->
-                            <option value="1">Ahmad Kurniawan</option>
-                            <option value="2">Budi Santoso</option>
-                          </select>
+                          <div class="badge rounded-pill bg-label-primary ms-1">
+                            Budi Santoso
+                          </div>
                         </div>
 
                         <!-- Row 2: Vendor & Action -->
                         <div class="col-md-12">
                           <label class="form-label">Vendor:</label>
-                          <select class="form-select select2-basic">
-                            <option></option> <!-- Placeholder -->
-                            <option value="1">Vendor A</option>
-                            <option value="2">Vendor B</option>
-                          </select>
+                          <div class="badge rounded-pill bg-label-primary ms-1">
+                            Nasmoco Motor
+                          </div>
                         </div>
                         <div class="col-md-12">
                           <label class="form-label">Action:</label>
@@ -3165,11 +3175,6 @@ Kondisi filter oli rusak diperlukan untuk pengecekan lebih lanjut</textarea
                   </div>
                 </div>
               </div>
-
-              <button class="btn btn-label-primary w-100 mt-3">
-                <i class="mdi mdi-plus"></i>
-                Add Action
-              </button>
             </div>
 
             <!-- Footer -->
